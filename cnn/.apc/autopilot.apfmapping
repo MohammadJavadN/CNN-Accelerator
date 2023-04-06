@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="activ_fun.c" path="E:\code\hls\3\lib\activ_fun.c"/>
+    <originFiles name="cnn.c" path="E:\code\hls\3\cnn.c"/>
+    <originFiles name="conv.c" path="E:\code\hls\3\lib\conv.c"/>
+    <originFiles name="dense.c" path="E:\code\hls\3\lib\dense.c"/>
+    <originFiles name="flat.c" path="E:\code\hls\3\lib\flat.c"/>
+    <originFiles name="pool.c" path="E:\code\hls\3\lib\pool.c"/>
+    <originFiles name="utils.c" path="E:\code\hls\3\lib\utils.c"/>
+  </source>
+  <testbench>
+    <originFiles name="in.dat" path="E:\code\hls\3\tb\in.dat"/>
+    <originFiles name="out.dat" path="E:\code\hls\3\tb\out.dat"/>
+    <originFiles name="cnn_tb.c" path="E:\code\hls\3\cnn_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>
