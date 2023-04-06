@@ -2,13 +2,9 @@
     <checksum>
         <value string="false"/>
     </checksum>
-    <downStreamTool>
-        <DownStreamTool name="vivado"/>
-    </downStreamTool>
-    <clockList>
-        <clock name="default" period="100" uncertainty="0.12"/>
-    </clockList>
-    <config/>
+    <config>
+        <schedule model="cnn"/>
+    </config>
     <UIConfigurations>
         <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/qzynq/qzynq</Platform>
@@ -68,5 +64,11 @@
         <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
         <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
     </libraryList>
+    <downStreamTool>
+        <DownStreamTool name="vivado"/>
+    </downStreamTool>
+    <clockList>
+        <clock name="default" default="false" uncertainty="0.12" period="100"/>
+    </clockList>
 </solution>
 

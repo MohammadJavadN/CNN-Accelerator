@@ -1,0 +1,214 @@
+
+
+================================================================
+== Vivado HLS Report for 'max_pool2'
+================================================================
+* Date:           Fri Apr  7 02:00:38 2023
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xq7z100-rf900-2IL
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+--------+----------+------------+
+    |  Clock | Target | Estimated| Uncertainty|
+    +--------+--------+----------+------------+
+    |ap_clk  |  100.00|    31.264|        0.12|
+    +--------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  233|  233|  233|  233|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |                     |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      | min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1             |  232|  232|        58|          -|          -|     4|    no    |
+        | + Loop 1.1          |   56|   56|        14|          -|          -|     4|    no    |
+        |  ++ Loop 1.1.1      |   12|   12|         6|          -|          -|     2|    no    |
+        |   +++ Loop 1.1.1.1  |    4|    4|         2|          -|          -|     2|    no    |
+        +---------------------+-----+-----+----------+-----------+-----------+------+----------+
+
+
+
+================================================================
+== Utilization Estimates
+================================================================
+* Summary: 
++-----------------+---------+-------+--------+--------+-----+
+|       Name      | BRAM_18K| DSP48E|   FF   |   LUT  | URAM|
++-----------------+---------+-------+--------+--------+-----+
+|DSP              |        -|      -|       -|       -|    -|
+|Expression       |        -|      -|       0|     151|    -|
+|FIFO             |        -|      -|       -|       -|    -|
+|Instance         |        -|      2|     243|     670|    -|
+|Memory           |        -|      -|       -|       -|    -|
+|Multiplexer      |        -|      -|       -|      28|    -|
+|Register         |        -|      -|      92|       -|    -|
++-----------------+---------+-------+--------+--------+-----+
+|Total            |        0|      2|     335|     849|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Available        |     1510|   2020|  554800|  277400|    0|
++-----------------+---------+-------+--------+--------+-----+
+|Utilization (%)  |        0|   ~0  |   ~0   |   ~0   |    0|
++-----------------+---------+-------+--------+--------+-----+
+
++ Detail: 
+    * Instance: 
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |         Instance         |        Module        | BRAM_18K| DSP48E|  FF | LUT | URAM|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |cnn_fadd_32ns_32ncud_U13  |cnn_fadd_32ns_32ncud  |        0|      2|  177|  384|    0|
+    |cnn_fcmp_32ns_32nbkb_U14  |cnn_fcmp_32ns_32nbkb  |        0|      0|   66|  239|    0|
+    |cnn_mux_104_32_1_1_U15    |cnn_mux_104_32_1_1    |        0|      0|    0|   47|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+    |Total                     |                      |        0|      2|  243|  670|    0|
+    +--------------------------+----------------------+---------+-------+-----+-----+-----+
+
+    * DSP48E: 
+    N/A
+
+    * Memory: 
+    N/A
+
+    * FIFO: 
+    N/A
+
+    * Expression: 
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |     Variable Name     | Operation| DSP48E| FF| LUT| Bitwidth P0| Bitwidth P1|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |add_ln24_1_fu_479_p2   |     +    |      0|  0|   6|           4|           4|
+    |add_ln24_2_fu_489_p2   |     +    |      0|  0|   8|           8|           8|
+    |add_ln24_fu_365_p2     |     +    |      0|  0|   6|           4|           4|
+    |c_fu_457_p2            |     +    |      0|  0|   6|           2|           4|
+    |pc_fu_473_p2           |     +    |      0|  0|   3|           2|           1|
+    |pr_fu_359_p2           |     +    |      0|  0|   3|           2|           1|
+    |r_fu_343_p2            |     +    |      0|  0|   6|           4|           2|
+    |and_ln24_1_fu_612_p2   |    and   |      0|  0|   1|           1|           1|
+    |and_ln24_fu_606_p2     |    and   |      0|  0|   1|           1|           1|
+    |and_ln7_fu_419_p2      |    and   |      0|  0|   1|           1|           1|
+    |icmp_ln21_fu_353_p2    |   icmp   |      0|  0|   2|           2|           3|
+    |icmp_ln22_fu_467_p2    |   icmp   |      0|  0|   2|           2|           3|
+    |icmp_ln24_1_fu_576_p2  |   icmp   |      0|  0|   9|          23|           1|
+    |icmp_ln24_2_fu_588_p2  |   icmp   |      0|  0|   4|           8|           2|
+    |icmp_ln24_3_fu_594_p2  |   icmp   |      0|  0|   9|          23|           1|
+    |icmp_ln24_fu_570_p2    |   icmp   |      0|  0|   4|           8|           2|
+    |icmp_ln7_1_fu_407_p2   |   icmp   |      0|  0|   9|          23|           1|
+    |icmp_ln7_fu_401_p2     |   icmp   |      0|  0|   4|           8|           2|
+    |or_ln24_1_fu_600_p2    |    or    |      0|  0|   1|           1|           1|
+    |or_ln24_fu_582_p2      |    or    |      0|  0|   1|           1|           1|
+    |or_ln7_fu_413_p2       |    or    |      0|  0|   1|           1|           1|
+    |pool_2_fu_618_p3       |  select  |      0|  0|  32|           1|          32|
+    |pool_feature_d0        |  select  |      0|  0|  32|           1|          32|
+    +-----------------------+----------+-------+---+----+------------+------------+
+    |Total                  |          |      0|  0| 151|         131|         109|
+    +-----------------------+----------+-------+---+----+------------+------------+
+
+    * Multiplexer: 
+    +----------------+----+-----------+-----+-----------+
+    |      Name      | LUT| Input Size| Bits| Total Bits|
+    +----------------+----+-----------+-----+-----------+
+    |ap_NS_fsm       |   4|          7|    1|          7|
+    |c_0_reg_247     |   3|          2|    4|          8|
+    |grp_fu_310_p0   |   3|          3|   32|         96|
+    |grp_fu_310_p1   |   3|          3|   32|         96|
+    |pc_0_reg_294    |   3|          2|    2|          4|
+    |pool_0_reg_259  |   3|          2|   32|         64|
+    |pool_1_reg_282  |   3|          2|   32|         64|
+    |pr_0_reg_271    |   3|          2|    2|          4|
+    |r_0_reg_235     |   3|          2|    4|          8|
+    +----------------+----+-----------+-----+-----------+
+    |Total           |  28|         25|  141|        351|
+    +----------------+----+-----------+-----+-----------+
+
+    * Register: 
+    +----------------------+----+----+-----+-----------+
+    |         Name         | FF | LUT| Bits| Const Bits|
+    +----------------------+----+----+-----+-----------+
+    |ap_CS_fsm             |   6|   0|    6|          0|
+    |c_0_reg_247           |   4|   0|    4|          0|
+    |pc_0_reg_294          |   2|   0|    2|          0|
+    |pc_reg_674            |   2|   0|    2|          0|
+    |pool_0_reg_259        |  32|   0|   32|          0|
+    |pool_1_reg_282        |  32|   0|   32|          0|
+    |pr_0_reg_271          |   2|   0|    2|          0|
+    |pr_reg_656            |   2|   0|    2|          0|
+    |r_0_reg_235           |   4|   0|    4|          0|
+    |trunc_ln28_1_reg_640  |   2|   0|    2|          0|
+    |zext_ln22_1_reg_661   |   4|   0|    8|          4|
+    +----------------------+----+----+-----+-----------+
+    |Total                 |  92|   0|   96|          4|
+    +----------------------+----+----+-----+-----------+
+
+
+
+================================================================
+== Interface
+================================================================
+* Summary: 
++-----------------------+-----+-----+------------+----------------+--------------+
+|       RTL Ports       | Dir | Bits|  Protocol  |  Source Object |    C Type    |
++-----------------------+-----+-----+------------+----------------+--------------+
+|ap_clk                 |  in |    1| ap_ctrl_hs |    max_pool2   | return value |
+|ap_rst                 |  in |    1| ap_ctrl_hs |    max_pool2   | return value |
+|ap_start               |  in |    1| ap_ctrl_hs |    max_pool2   | return value |
+|ap_done                | out |    1| ap_ctrl_hs |    max_pool2   | return value |
+|ap_idle                | out |    1| ap_ctrl_hs |    max_pool2   | return value |
+|ap_ready               | out |    1| ap_ctrl_hs |    max_pool2   | return value |
+|feature_0_address0     | out |    6|  ap_memory |    feature_0   |     array    |
+|feature_0_ce0          | out |    1|  ap_memory |    feature_0   |     array    |
+|feature_0_q0           |  in |   32|  ap_memory |    feature_0   |     array    |
+|feature_1_address0     | out |    6|  ap_memory |    feature_1   |     array    |
+|feature_1_ce0          | out |    1|  ap_memory |    feature_1   |     array    |
+|feature_1_q0           |  in |   32|  ap_memory |    feature_1   |     array    |
+|feature_2_address0     | out |    6|  ap_memory |    feature_2   |     array    |
+|feature_2_ce0          | out |    1|  ap_memory |    feature_2   |     array    |
+|feature_2_q0           |  in |   32|  ap_memory |    feature_2   |     array    |
+|feature_3_address0     | out |    6|  ap_memory |    feature_3   |     array    |
+|feature_3_ce0          | out |    1|  ap_memory |    feature_3   |     array    |
+|feature_3_q0           |  in |   32|  ap_memory |    feature_3   |     array    |
+|feature_4_address0     | out |    6|  ap_memory |    feature_4   |     array    |
+|feature_4_ce0          | out |    1|  ap_memory |    feature_4   |     array    |
+|feature_4_q0           |  in |   32|  ap_memory |    feature_4   |     array    |
+|feature_5_address0     | out |    6|  ap_memory |    feature_5   |     array    |
+|feature_5_ce0          | out |    1|  ap_memory |    feature_5   |     array    |
+|feature_5_q0           |  in |   32|  ap_memory |    feature_5   |     array    |
+|feature_6_address0     | out |    6|  ap_memory |    feature_6   |     array    |
+|feature_6_ce0          | out |    1|  ap_memory |    feature_6   |     array    |
+|feature_6_q0           |  in |   32|  ap_memory |    feature_6   |     array    |
+|feature_7_address0     | out |    6|  ap_memory |    feature_7   |     array    |
+|feature_7_ce0          | out |    1|  ap_memory |    feature_7   |     array    |
+|feature_7_q0           |  in |   32|  ap_memory |    feature_7   |     array    |
+|feature_8_address0     | out |    6|  ap_memory |    feature_8   |     array    |
+|feature_8_ce0          | out |    1|  ap_memory |    feature_8   |     array    |
+|feature_8_q0           |  in |   32|  ap_memory |    feature_8   |     array    |
+|feature_9_address0     | out |    6|  ap_memory |    feature_9   |     array    |
+|feature_9_ce0          | out |    1|  ap_memory |    feature_9   |     array    |
+|feature_9_q0           |  in |   32|  ap_memory |    feature_9   |     array    |
+|feature_offset         |  in |    4|   ap_none  | feature_offset |    scalar    |
+|pool_feature_address0  | out |    8|  ap_memory |  pool_feature  |     array    |
+|pool_feature_ce0       | out |    1|  ap_memory |  pool_feature  |     array    |
+|pool_feature_we0       | out |    1|  ap_memory |  pool_feature  |     array    |
+|pool_feature_d0        | out |   32|  ap_memory |  pool_feature  |     array    |
+|b                      |  in |   32|   ap_none  |        b       |    scalar    |
++-----------------------+-----+-----+------------+----------------+--------------+
+

@@ -6,7 +6,7 @@ void
 dense_layer
 (
   float flat_array  [FLAT_SIZE],
-  float prediction [DIGITS]
+  float prediction [DENSE_SIZE]
 )
 {
   float w_sum = 0.0;

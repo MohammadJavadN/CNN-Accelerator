@@ -31,6 +31,20 @@ normalization_and_padding
       }
     }
 }
+void
+normalization
+(
+  float img_in  [IMG_ROWS][IMG_COLS],
+  float img_out [IMG_ROWS][IMG_COLS]
+)
+{
+  for(int r = 0; r < IMG_ROWS; ++r)
+    for(int c = 0; c < IMG_COLS; ++c)
+    {
+        // Normalize.
+        img_out[r][c] = img_in[r][c] / 255.0;
+    }
+}
 
 #ifndef __SYNTHESIS__
 
@@ -63,9 +77,9 @@ print_pad_img(float img[PAD_IMG_ROWS][PAD_IMG_COLS])
 }
 
 void
-print_features(float features [FILTERS][IMG_ROWS][IMG_COLS])
+print_features(float features [FILTERS1][IMG_ROWS][IMG_COLS])
 {
-  for (int f = 0; f < FILTERS; ++f)
+  for (int f = 0; f < FILTERS1; ++f)
   {
     printf("Feature map %d:\n", f);
 
@@ -83,15 +97,15 @@ print_features(float features [FILTERS][IMG_ROWS][IMG_COLS])
 void
 print_pool_features
 (
-  float pool_features [FILTERS][POOL_IMG_ROWS][POOL_IMG_COLS]
+  float pool_features [FILTERS1][POOL_IMG1_ROWS][POOL_IMG1_COLS]
 )
 {
-  for (int f = 0; f < FILTERS; ++f)
+  for (int f = 0; f < FILTERS1; ++f)
   {
     printf("Pool feature map %d:\n", f);
-    for (int r = 0; r < POOL_IMG_ROWS; ++r)
+    for (int r = 0; r < POOL_IMG1_ROWS; ++r)
     {
-      for (int c = 0; c < POOL_IMG_COLS; ++c)
+      for (int c = 0; c < POOL_IMG1_COLS; ++c)
       {
         printf("%.0f", pool_features[f][r][c]);
       }

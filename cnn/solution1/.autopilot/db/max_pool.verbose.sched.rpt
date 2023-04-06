@@ -1,0 +1,263 @@
+
+
+================================================================
+== Vivado HLS Report for 'max_pool'
+================================================================
+* Date:           Fri Apr  7 02:00:01 2023
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xq7z100-rf900-2IL
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+--------+----------+------------+
+    |  Clock | Target | Estimated| Uncertainty|
+    +--------+--------+----------+------------+
+    |ap_clk  |  100.00|    11.396|        0.12|
+    +--------+--------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +------+------+------+------+---------+
+    |   Latency   |   Interval  | Pipeline|
+    |  min |  max |  min |  max |   Type  |
+    +------+------+------+------+---------+
+    |  2041|  2041|  2041|  2041|   none  |
+    +------+------+------+------+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +---------------------+------+------+----------+-----------+-----------+------+----------+
+        |                     |   Latency   | Iteration|  Initiation Interval  | Trip |          |
+        |      Loop Name      |  min |  max |  Latency |  achieved |   target  | Count| Pipelined|
+        +---------------------+------+------+----------+-----------+-----------+------+----------+
+        |- Loop 1             |  2040|  2040|       170|          -|          -|    12|    no    |
+        | + Loop 1.1          |   168|   168|        14|          -|          -|    12|    no    |
+        |  ++ Loop 1.1.1      |    12|    12|         6|          -|          -|     2|    no    |
+        |   +++ Loop 1.1.1.1  |     4|     4|         2|          -|          -|     2|    no    |
+        +---------------------+------+------+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 6
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 
+3 --> 4 2 
+4 --> 5 3 
+5 --> 6 4 
+6 --> 5 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.31>
+ST_1 : Operation 7 [1/1] (0.00ns)   --->   "%feature_offset_read = call i3 @_ssdm_op_Read.ap_auto.i3(i3 %feature_offset)" [lib/pool.c:55]   --->   Operation 7 'read' 'feature_offset_read' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 8 [1/1] (0.00ns)   --->   "%tmp = call i7 @_ssdm_op_BitConcatenate.i7.i3.i4(i3 %feature_offset_read, i4 0)" [lib/pool.c:55]   --->   Operation 8 'bitconcatenate' 'tmp' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 9 [1/1] (0.00ns)   --->   "%zext_ln55 = zext i7 %tmp to i8" [lib/pool.c:55]   --->   Operation 9 'zext' 'zext_ln55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 10 [1/1] (0.00ns)   --->   "%tmp_9 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %feature_offset_read, i2 0)" [lib/pool.c:55]   --->   Operation 10 'bitconcatenate' 'tmp_9' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 11 [1/1] (0.00ns)   --->   "%zext_ln55_1 = zext i5 %tmp_9 to i8" [lib/pool.c:55]   --->   Operation 11 'zext' 'zext_ln55_1' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 12 [1/1] (1.31ns)   --->   "%sub_ln55 = sub i8 %zext_ln55, %zext_ln55_1" [lib/pool.c:55]   --->   Operation 12 'sub' 'sub_ln55' <Predicate = true> <Delay = 1.31> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%sext_ln55 = sext i8 %sub_ln55 to i9" [lib/pool.c:55]   --->   Operation 13 'sext' 'sext_ln55' <Predicate = true> <Delay = 0.00>
+ST_1 : Operation 14 [1/1] (0.46ns)   --->   "br label %1" [lib/pool.c:42]   --->   Operation 14 'br' <Predicate = true> <Delay = 0.46>
+
+State 2 <SV = 1> <Delay = 2.78>
+ST_2 : Operation 15 [1/1] (0.00ns)   --->   "%r_0 = phi i5 [ 0, %0 ], [ %r, %3 ]"   --->   Operation 15 'phi' 'r_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 16 [1/1] (0.97ns)   --->   "%icmp_ln42 = icmp ult i5 %r_0, -8" [lib/pool.c:42]   --->   Operation 16 'icmp' 'icmp_ln42' <Predicate = true> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 17 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 12, i64 12, i64 12)"   --->   Operation 17 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 18 [1/1] (0.00ns)   --->   "br i1 %icmp_ln42, label %.preheader2.preheader, label %4" [lib/pool.c:42]   --->   Operation 18 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 19 [1/1] (0.00ns)   --->   "%tmp_10 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %r_0, i32 1, i32 4)" [lib/pool.c:55]   --->   Operation 19 'partselect' 'tmp_10' <Predicate = (icmp_ln42)> <Delay = 0.00>
+ST_2 : Operation 20 [1/1] (0.00ns)   --->   "%zext_ln55_2 = zext i4 %tmp_10 to i9" [lib/pool.c:55]   --->   Operation 20 'zext' 'zext_ln55_2' <Predicate = (icmp_ln42)> <Delay = 0.00>
+ST_2 : Operation 21 [1/1] (1.30ns)   --->   "%add_ln55 = add i9 %zext_ln55_2, %sext_ln55" [lib/pool.c:55]   --->   Operation 21 'add' 'add_ln55' <Predicate = (icmp_ln42)> <Delay = 1.30> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 22 [1/1] (0.00ns)   --->   "%trunc_ln55 = trunc i9 %add_ln55 to i7" [lib/pool.c:55]   --->   Operation 22 'trunc' 'trunc_ln55' <Predicate = (icmp_ln42)> <Delay = 0.00>
+ST_2 : Operation 23 [1/1] (0.00ns)   --->   "%p_shl2_cast = call i11 @_ssdm_op_BitConcatenate.i11.i7.i4(i7 %trunc_ln55, i4 0)" [lib/pool.c:55]   --->   Operation 23 'bitconcatenate' 'p_shl2_cast' <Predicate = (icmp_ln42)> <Delay = 0.00>
+ST_2 : Operation 24 [1/1] (0.00ns)   --->   "%p_shl3_cast = call i11 @_ssdm_op_BitConcatenate.i11.i9.i2(i9 %add_ln55, i2 0)" [lib/pool.c:55]   --->   Operation 24 'bitconcatenate' 'p_shl3_cast' <Predicate = (icmp_ln42)> <Delay = 0.00>
+ST_2 : Operation 25 [1/1] (1.48ns)   --->   "%sub_ln55_1 = sub i11 %p_shl2_cast, %p_shl3_cast" [lib/pool.c:55]   --->   Operation 25 'sub' 'sub_ln55_1' <Predicate = (icmp_ln42)> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 26 [1/1] (0.46ns)   --->   "br label %.preheader2" [lib/pool.c:44]   --->   Operation 26 'br' <Predicate = (icmp_ln42)> <Delay = 0.46>
+ST_2 : Operation 27 [1/1] (0.00ns)   --->   "ret void" [lib/pool.c:58]   --->   Operation 27 'ret' <Predicate = (!icmp_ln42)> <Delay = 0.00>
+
+State 3 <SV = 2> <Delay = 1.02>
+ST_3 : Operation 28 [1/1] (0.00ns)   --->   "%c_0 = phi i5 [ %c, %2 ], [ 0, %.preheader2.preheader ]"   --->   Operation 28 'phi' 'c_0' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 29 [1/1] (0.97ns)   --->   "%icmp_ln44 = icmp ult i5 %c_0, -8" [lib/pool.c:44]   --->   Operation 29 'icmp' 'icmp_ln44' <Predicate = true> <Delay = 0.97> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 30 [1/1] (0.00ns)   --->   "%empty_12 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 12, i64 12, i64 12)"   --->   Operation 30 'speclooptripcount' 'empty_12' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 31 [1/1] (0.00ns)   --->   "br i1 %icmp_ln44, label %.preheader1.preheader, label %3" [lib/pool.c:44]   --->   Operation 31 'br' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 32 [1/1] (0.46ns)   --->   "br label %.preheader1" [lib/pool.c:48]   --->   Operation 32 'br' <Predicate = (icmp_ln44)> <Delay = 0.46>
+ST_3 : Operation 33 [1/1] (1.02ns)   --->   "%r = add i5 %r_0, 2" [lib/pool.c:42]   --->   Operation 33 'add' 'r' <Predicate = (!icmp_ln44)> <Delay = 1.02> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 34 [1/1] (0.00ns)   --->   "br label %1" [lib/pool.c:42]   --->   Operation 34 'br' <Predicate = (!icmp_ln44)> <Delay = 0.00>
+
+State 4 <SV = 3> <Delay = 4.25>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%pool_0 = phi float [ %pool_1, %.preheader1.loopexit ], [ 0x3810000000000000, %.preheader1.preheader ]" [lib/pool.c:51]   --->   Operation 35 'phi' 'pool_0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%pr_0 = phi i2 [ %pr, %.preheader1.loopexit ], [ 0, %.preheader1.preheader ]"   --->   Operation 36 'phi' 'pr_0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%zext_ln48 = zext i2 %pr_0 to i5" [lib/pool.c:48]   --->   Operation 37 'zext' 'zext_ln48' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.50ns)   --->   "%icmp_ln48 = icmp eq i2 %pr_0, -2" [lib/pool.c:48]   --->   Operation 38 'icmp' 'icmp_ln48' <Predicate = true> <Delay = 0.50> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%empty_13 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 39 'speclooptripcount' 'empty_13' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 40 [1/1] (0.63ns)   --->   "%pr = add i2 %pr_0, 1" [lib/pool.c:48]   --->   Operation 40 'add' 'pr' <Predicate = true> <Delay = 0.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 41 [1/1] (0.00ns)   --->   "br i1 %icmp_ln48, label %2, label %.preheader.preheader" [lib/pool.c:48]   --->   Operation 41 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 42 [1/1] (1.02ns)   --->   "%add_ln51 = add i5 %zext_ln48, %r_0" [lib/pool.c:51]   --->   Operation 42 'add' 'add_ln51' <Predicate = (!icmp_ln48)> <Delay = 1.02> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_s = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %add_ln51, i5 0)" [lib/pool.c:51]   --->   Operation 43 'bitconcatenate' 'tmp_s' <Predicate = (!icmp_ln48)> <Delay = 0.00>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "%zext_ln51 = zext i10 %tmp_s to i11" [lib/pool.c:51]   --->   Operation 44 'zext' 'zext_ln51' <Predicate = (!icmp_ln48)> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (0.00ns)   --->   "%tmp_1 = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %add_ln51, i3 0)" [lib/pool.c:51]   --->   Operation 45 'bitconcatenate' 'tmp_1' <Predicate = (!icmp_ln48)> <Delay = 0.00>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "%zext_ln51_1 = zext i8 %tmp_1 to i11" [lib/pool.c:51]   --->   Operation 46 'zext' 'zext_ln51_1' <Predicate = (!icmp_ln48)> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (1.41ns)   --->   "%sub_ln51 = sub i11 %zext_ln51, %zext_ln51_1" [lib/pool.c:51]   --->   Operation 47 'sub' 'sub_ln51' <Predicate = (!icmp_ln48)> <Delay = 1.41> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 48 [1/1] (0.46ns)   --->   "br label %.preheader" [lib/pool.c:49]   --->   Operation 48 'br' <Predicate = (!icmp_ln48)> <Delay = 0.46>
+ST_4 : Operation 49 [1/1] (0.00ns)   --->   "%tmp_11 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %c_0, i32 1, i32 4)" [lib/pool.c:55]   --->   Operation 49 'partselect' 'tmp_11' <Predicate = (icmp_ln48)> <Delay = 0.00>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "%zext_ln55_3 = zext i4 %tmp_11 to i11" [lib/pool.c:55]   --->   Operation 50 'zext' 'zext_ln55_3' <Predicate = (icmp_ln48)> <Delay = 0.00>
+ST_4 : Operation 51 [1/1] (1.48ns)   --->   "%add_ln55_1 = add i11 %sub_ln55_1, %zext_ln55_3" [lib/pool.c:55]   --->   Operation 51 'add' 'add_ln55_1' <Predicate = (icmp_ln48)> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "%zext_ln55_4 = zext i11 %add_ln55_1 to i64" [lib/pool.c:55]   --->   Operation 52 'zext' 'zext_ln55_4' <Predicate = (icmp_ln48)> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (0.00ns)   --->   "%pool_feature_addr = getelementptr [864 x float]* %pool_feature, i64 0, i64 %zext_ln55_4" [lib/pool.c:55]   --->   Operation 53 'getelementptr' 'pool_feature_addr' <Predicate = (icmp_ln48)> <Delay = 0.00>
+ST_4 : Operation 54 [1/1] (2.77ns)   --->   "store float %pool_0, float* %pool_feature_addr, align 4" [lib/pool.c:55]   --->   Operation 54 'store' <Predicate = (icmp_ln48)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_4 : Operation 55 [1/1] (1.02ns)   --->   "%c = add i5 %c_0, 2" [lib/pool.c:44]   --->   Operation 55 'add' 'c' <Predicate = (icmp_ln48)> <Delay = 1.02> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "br label %.preheader2" [lib/pool.c:44]   --->   Operation 56 'br' <Predicate = (icmp_ln48)> <Delay = 0.00>
+
+State 5 <SV = 4> <Delay = 5.27>
+ST_5 : Operation 57 [1/1] (0.00ns)   --->   "%pool_1 = phi float [ %pool_3, %._crit_edge ], [ %pool_0, %.preheader.preheader ]"   --->   Operation 57 'phi' 'pool_1' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 58 [1/1] (0.00ns)   --->   "%pc_0 = phi i2 [ %pc, %._crit_edge ], [ 0, %.preheader.preheader ]"   --->   Operation 58 'phi' 'pc_0' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 59 [1/1] (0.00ns)   --->   "%zext_ln49 = zext i2 %pc_0 to i5" [lib/pool.c:49]   --->   Operation 59 'zext' 'zext_ln49' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 60 [1/1] (0.50ns)   --->   "%icmp_ln49 = icmp eq i2 %pc_0, -2" [lib/pool.c:49]   --->   Operation 60 'icmp' 'icmp_ln49' <Predicate = true> <Delay = 0.50> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 61 [1/1] (0.00ns)   --->   "%empty_14 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)"   --->   Operation 61 'speclooptripcount' 'empty_14' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 62 [1/1] (0.63ns)   --->   "%pc = add i2 %pc_0, 1" [lib/pool.c:49]   --->   Operation 62 'add' 'pc' <Predicate = true> <Delay = 0.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 63 [1/1] (0.00ns)   --->   "br i1 %icmp_ln49, label %.preheader1.loopexit, label %._crit_edge" [lib/pool.c:49]   --->   Operation 63 'br' <Predicate = true> <Delay = 0.00>
+ST_5 : Operation 64 [1/1] (1.02ns)   --->   "%add_ln51_1 = add i5 %zext_ln49, %c_0" [lib/pool.c:51]   --->   Operation 64 'add' 'add_ln51_1' <Predicate = (!icmp_ln49)> <Delay = 1.02> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 65 [1/1] (0.00ns)   --->   "%zext_ln51_2 = zext i5 %add_ln51_1 to i11" [lib/pool.c:51]   --->   Operation 65 'zext' 'zext_ln51_2' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_5 : Operation 66 [1/1] (1.48ns)   --->   "%add_ln51_2 = add i11 %sub_ln51, %zext_ln51_2" [lib/pool.c:51]   --->   Operation 66 'add' 'add_ln51_2' <Predicate = (!icmp_ln49)> <Delay = 1.48> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.02> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 67 [1/1] (0.00ns)   --->   "%sext_ln51 = sext i11 %add_ln51_2 to i64" [lib/pool.c:51]   --->   Operation 67 'sext' 'sext_ln51' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_5 : Operation 68 [1/1] (0.00ns)   --->   "%feature_0_addr = getelementptr [576 x float]* %feature_0, i64 0, i64 %sext_ln51" [lib/pool.c:51]   --->   Operation 68 'getelementptr' 'feature_0_addr' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_5 : Operation 69 [1/1] (0.00ns)   --->   "%feature_1_addr = getelementptr [576 x float]* %feature_1, i64 0, i64 %sext_ln51" [lib/pool.c:51]   --->   Operation 69 'getelementptr' 'feature_1_addr' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_5 : Operation 70 [1/1] (0.00ns)   --->   "%feature_2_addr = getelementptr [576 x float]* %feature_2, i64 0, i64 %sext_ln51" [lib/pool.c:51]   --->   Operation 70 'getelementptr' 'feature_2_addr' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_5 : Operation 71 [1/1] (0.00ns)   --->   "%feature_3_addr = getelementptr [576 x float]* %feature_3, i64 0, i64 %sext_ln51" [lib/pool.c:51]   --->   Operation 71 'getelementptr' 'feature_3_addr' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_5 : Operation 72 [1/1] (0.00ns)   --->   "%feature_4_addr = getelementptr [576 x float]* %feature_4, i64 0, i64 %sext_ln51" [lib/pool.c:51]   --->   Operation 72 'getelementptr' 'feature_4_addr' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_5 : Operation 73 [1/1] (0.00ns)   --->   "%feature_5_addr = getelementptr [576 x float]* %feature_5, i64 0, i64 %sext_ln51" [lib/pool.c:51]   --->   Operation 73 'getelementptr' 'feature_5_addr' <Predicate = (!icmp_ln49)> <Delay = 0.00>
+ST_5 : Operation 74 [2/2] (2.77ns)   --->   "%feature_0_load = load float* %feature_0_addr, align 4" [lib/pool.c:51]   --->   Operation 74 'load' 'feature_0_load' <Predicate = (!icmp_ln49)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_5 : Operation 75 [2/2] (2.77ns)   --->   "%feature_1_load = load float* %feature_1_addr, align 4" [lib/pool.c:51]   --->   Operation 75 'load' 'feature_1_load' <Predicate = (!icmp_ln49)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_5 : Operation 76 [2/2] (2.77ns)   --->   "%feature_2_load = load float* %feature_2_addr, align 4" [lib/pool.c:51]   --->   Operation 76 'load' 'feature_2_load' <Predicate = (!icmp_ln49)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_5 : Operation 77 [2/2] (2.77ns)   --->   "%feature_3_load = load float* %feature_3_addr, align 4" [lib/pool.c:51]   --->   Operation 77 'load' 'feature_3_load' <Predicate = (!icmp_ln49)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_5 : Operation 78 [2/2] (2.77ns)   --->   "%feature_4_load = load float* %feature_4_addr, align 4" [lib/pool.c:51]   --->   Operation 78 'load' 'feature_4_load' <Predicate = (!icmp_ln49)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_5 : Operation 79 [2/2] (2.77ns)   --->   "%feature_5_load = load float* %feature_5_addr, align 4" [lib/pool.c:51]   --->   Operation 79 'load' 'feature_5_load' <Predicate = (!icmp_ln49)> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_5 : Operation 80 [1/1] (0.00ns)   --->   "br label %.preheader1"   --->   Operation 80 'br' <Predicate = (icmp_ln49)> <Delay = 0.00>
+
+State 6 <SV = 5> <Delay = 11.3>
+ST_6 : Operation 81 [1/2] (2.77ns)   --->   "%feature_0_load = load float* %feature_0_addr, align 4" [lib/pool.c:51]   --->   Operation 81 'load' 'feature_0_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_6 : Operation 82 [1/2] (2.77ns)   --->   "%feature_1_load = load float* %feature_1_addr, align 4" [lib/pool.c:51]   --->   Operation 82 'load' 'feature_1_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_6 : Operation 83 [1/2] (2.77ns)   --->   "%feature_2_load = load float* %feature_2_addr, align 4" [lib/pool.c:51]   --->   Operation 83 'load' 'feature_2_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_6 : Operation 84 [1/2] (2.77ns)   --->   "%feature_3_load = load float* %feature_3_addr, align 4" [lib/pool.c:51]   --->   Operation 84 'load' 'feature_3_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_6 : Operation 85 [1/2] (2.77ns)   --->   "%feature_4_load = load float* %feature_4_addr, align 4" [lib/pool.c:51]   --->   Operation 85 'load' 'feature_4_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_6 : Operation 86 [1/2] (2.77ns)   --->   "%feature_5_load = load float* %feature_5_addr, align 4" [lib/pool.c:51]   --->   Operation 86 'load' 'feature_5_load' <Predicate = true> <Delay = 2.77> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 2.77> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 32> <Depth = 864> <RAM>
+ST_6 : Operation 87 [1/1] (1.87ns)   --->   "%pool = call float @_ssdm_op_Mux.ap_auto.6float.i3(float %feature_0_load, float %feature_1_load, float %feature_2_load, float %feature_3_load, float %feature_4_load, float %feature_5_load, i3 %feature_offset_read)" [lib/pool.c:51]   --->   Operation 87 'mux' 'pool' <Predicate = true> <Delay = 1.87> <Core = "MuxnS">   --->   Core 31 'MuxnS' <Latency = 0> <II = 1> <Delay = 1.87> <FuncUnit> <Opcode : 'mux'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 88 [1/1] (0.00ns)   --->   "%bitcast_ln51 = bitcast float %pool to i32" [lib/pool.c:51]   --->   Operation 88 'bitcast' 'bitcast_ln51' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 89 [1/1] (0.00ns)   --->   "%tmp_6 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln51, i32 23, i32 30)" [lib/pool.c:51]   --->   Operation 89 'partselect' 'tmp_6' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 90 [1/1] (0.00ns)   --->   "%trunc_ln51 = trunc i32 %bitcast_ln51 to i23" [lib/pool.c:51]   --->   Operation 90 'trunc' 'trunc_ln51' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 91 [1/1] (0.00ns)   --->   "%bitcast_ln51_1 = bitcast float %pool_1 to i32" [lib/pool.c:51]   --->   Operation 91 'bitcast' 'bitcast_ln51_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 92 [1/1] (0.00ns)   --->   "%tmp_7 = call i8 @_ssdm_op_PartSelect.i8.i32.i32.i32(i32 %bitcast_ln51_1, i32 23, i32 30)" [lib/pool.c:51]   --->   Operation 92 'partselect' 'tmp_7' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 93 [1/1] (0.00ns)   --->   "%trunc_ln51_1 = trunc i32 %bitcast_ln51_1 to i23" [lib/pool.c:51]   --->   Operation 93 'trunc' 'trunc_ln51_1' <Predicate = true> <Delay = 0.00>
+ST_6 : Operation 94 [1/1] (1.31ns)   --->   "%icmp_ln51 = icmp ne i8 %tmp_6, -1" [lib/pool.c:51]   --->   Operation 94 'icmp' 'icmp_ln51' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 95 [1/1] (2.02ns)   --->   "%icmp_ln51_1 = icmp eq i23 %trunc_ln51, 0" [lib/pool.c:51]   --->   Operation 95 'icmp' 'icmp_ln51_1' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 96 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_1)   --->   "%or_ln51 = or i1 %icmp_ln51_1, %icmp_ln51" [lib/pool.c:51]   --->   Operation 96 'or' 'or_ln51' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 97 [1/1] (1.31ns)   --->   "%icmp_ln51_2 = icmp ne i8 %tmp_7, -1" [lib/pool.c:51]   --->   Operation 97 'icmp' 'icmp_ln51_2' <Predicate = true> <Delay = 1.31> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 98 [1/1] (2.02ns)   --->   "%icmp_ln51_3 = icmp eq i23 %trunc_ln51_1, 0" [lib/pool.c:51]   --->   Operation 98 'icmp' 'icmp_ln51_3' <Predicate = true> <Delay = 2.02> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 2.02> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 99 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_1)   --->   "%or_ln51_1 = or i1 %icmp_ln51_3, %icmp_ln51_2" [lib/pool.c:51]   --->   Operation 99 'or' 'or_ln51_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 100 [1/1] (0.00ns) (grouped into LUT with out node and_ln51_1)   --->   "%and_ln51 = and i1 %or_ln51, %or_ln51_1" [lib/pool.c:51]   --->   Operation 100 'and' 'and_ln51' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 101 [1/1] (5.24ns)   --->   "%tmp_8 = fcmp ogt float %pool, %pool_1" [lib/pool.c:51]   --->   Operation 101 'fcmp' 'tmp_8' <Predicate = true> <Delay = 5.24> <Core = "FCmp">   --->   Core 111 'FCmp' <Latency = 0> <II = 1> <Delay = 5.24> <FuncUnit> <Opcode : 'fcmp'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 102 [1/1] (0.80ns) (out node of the LUT)   --->   "%and_ln51_1 = and i1 %and_ln51, %tmp_8" [lib/pool.c:51]   --->   Operation 102 'and' 'and_ln51_1' <Predicate = true> <Delay = 0.80> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.80> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 103 [1/1] (0.70ns) (out node of the LUT)   --->   "%pool_3 = select i1 %and_ln51_1, float %pool, float %pool_1" [lib/pool.c:51]   --->   Operation 103 'select' 'pool_3' <Predicate = true> <Delay = 0.70> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.70> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_6 : Operation 104 [1/1] (0.00ns)   --->   "br label %.preheader" [lib/pool.c:49]   --->   Operation 104 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 100ns, clock uncertainty: 0.12ns.
+
+ <State 1>: 1.32ns
+The critical path consists of the following:
+	wire read on port 'feature_offset' (lib/pool.c:55) [9]  (0 ns)
+	'sub' operation ('sub_ln55', lib/pool.c:55) [14]  (1.32 ns)
+
+ <State 2>: 2.79ns
+The critical path consists of the following:
+	'phi' operation ('r') with incoming values : ('r', lib/pool.c:42) [18]  (0 ns)
+	'add' operation ('add_ln55', lib/pool.c:55) [25]  (1.31 ns)
+	'sub' operation ('sub_ln55_1', lib/pool.c:55) [29]  (1.48 ns)
+
+ <State 3>: 1.02ns
+The critical path consists of the following:
+	'add' operation ('r', lib/pool.c:42) [109]  (1.02 ns)
+
+ <State 4>: 4.25ns
+The critical path consists of the following:
+	'add' operation ('add_ln55_1', lib/pool.c:55) [102]  (1.48 ns)
+	'getelementptr' operation ('pool_feature_addr', lib/pool.c:55) [104]  (0 ns)
+	'store' operation ('store_ln55', lib/pool.c:55) of variable 'pool_0', lib/pool.c:51 on array 'pool_feature' [105]  (2.77 ns)
+
+ <State 5>: 5.27ns
+The critical path consists of the following:
+	'phi' operation ('pc') with incoming values : ('pc', lib/pool.c:49) [56]  (0 ns)
+	'add' operation ('add_ln51_1', lib/pool.c:51) [63]  (1.02 ns)
+	'add' operation ('add_ln51_2', lib/pool.c:51) [65]  (1.48 ns)
+	'getelementptr' operation ('feature_0_addr', lib/pool.c:51) [67]  (0 ns)
+	'load' operation ('feature_0_load', lib/pool.c:51) on array 'feature_0' [73]  (2.77 ns)
+
+ <State 6>: 11.4ns
+The critical path consists of the following:
+	'load' operation ('feature_0_load', lib/pool.c:51) on array 'feature_0' [73]  (2.77 ns)
+	'mux' operation ('pool', lib/pool.c:51) [79]  (1.87 ns)
+	'fcmp' operation ('tmp_8', lib/pool.c:51) [93]  (5.25 ns)
+	'and' operation ('and_ln51_1', lib/pool.c:51) [94]  (0.8 ns)
+	'select' operation ('pool', lib/pool.c:51) [95]  (0.705 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

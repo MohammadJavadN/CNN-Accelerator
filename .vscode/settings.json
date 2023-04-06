@@ -1,0 +1,15 @@
+{
+    "C_Cpp.errorSquiggles": "disabled",
+    "files.associations": {
+        "activ_fun.h": "c",
+        "definitions.h": "c",
+        "float.h": "c",
+        "pool.h": "c",
+        "conv.h": "c",
+        "conv_weights.h": "c",
+        "cnn.h": "c",
+        "dense.h": "c",
+        "conv1_weights.h": "c",
+        "dense_weights.h": "c"
+    }
+}
