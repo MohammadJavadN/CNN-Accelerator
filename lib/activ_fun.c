@@ -1,6 +1,6 @@
 #include "activ_fun.h"
 
-float relu (float x)
+T relu (T x)
 {
   if(x > 0.0)
     return x;
@@ -8,9 +8,9 @@ float relu (float x)
     return 0.0;
 }
 
-void soft_max(float dense_array [DIGITS], float pred[DIGITS])
+void soft_max(T dense_array [DIGITS], T pred[DIGITS])
 {
-  float sum = 0.0;
+  T sum = 0.0;
 
   for (int i = 0; i < DIGITS; ++i)
   {

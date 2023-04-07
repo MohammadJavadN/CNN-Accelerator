@@ -7,6 +7,49 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T16:49:24.242+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/cnn_tb.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="cnn" solutionName="solution1" date="2023-04-07T16:49:24.193+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T16:49:23.691+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T16:49:23.652+0430"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="cnn" solutionName="solution1" date="2023-04-07T16:43:54.025+0430"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="cnn" solutionName="solution1" date="2023-04-07T16:43:53.980+0430"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="cnn" solutionName="solution1" date="2023-04-07T16:41:13.407+0430"/>
+        <logs message="@E Simulation failed: SIGSEGV." projectName="cnn" solutionName="solution1" date="2023-04-07T16:41:13.357+0430"/>
+        <logs message="ERROR: [SIM 211-100] CSim failed with errors." projectName="cnn" solutionName="solution1" date="2023-04-07T16:39:50.606+0430"/>
+        <logs message="0000000111111111111@E Simulation failed: SIGSEGV." projectName="cnn" solutionName="solution1" date="2023-04-07T16:39:50.547+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T16:35:49.609+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/cnn_tb.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="cnn" solutionName="solution1" date="2023-04-07T16:35:49.535+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T16:35:49.479+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T16:35:49.442+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T16:06:32.330+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/pool.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="cnn" solutionName="solution1" date="2023-04-07T16:06:32.103+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T16:06:32.031+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T16:06:31.986+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.828+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/cnn_tb.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/utils.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/pool.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/flat.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/dense.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/conv.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/activ_fun.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.778+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.706+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.653+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.610+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.500+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.446+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.399+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.325+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.274+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.224+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.076+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:43.029+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.920+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.832+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.795+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.757+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.695+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.586+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.506+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.466+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.390+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.336+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.296+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:59:42.220+0430"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:34:17.374+0430"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:32:23.340+0430"/>
         <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:31:11.741+0430"/>
@@ -432,6 +475,38 @@
       <mgLog/>
       <packageLog/>
       <csimLog>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T17:10:33.623+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T17:10:28.773+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:52:58.026+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:52:54.463+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:51:12.501+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:51:09.203+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:49:14.574+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:49:09.943+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:43:26.483+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:43:22.716+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:40:45.373+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:40:41.664+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:38:48.073+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:38:43.384+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:37:12.504+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:37:07.801+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:35:29.557+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:35:25.833+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:21:22.439+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:21:17.554+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:16:15.402+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:16:09.470+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:13:56.852+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:13:52.933+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:12:43.379+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:12:40.718+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:10:00.541+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:09:53.831+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:04:43.839+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T16:04:39.781+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:58:29.991+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:58:27.423+0430" type="Warning"/>
         <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:40:27.211+0430" type="Warning"/>
         <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:40:24.826+0430" type="Warning"/>
         <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:34:38.188+0430" type="Warning"/>

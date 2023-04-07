@@ -5520,3 +5520,2160 @@ INFO: [SIM 211-3] *************** CSIM finish ***************
 Command   csim_design done; 94.146 sec.
 Command ap_source done; 96.751 sec.
 Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 15:40:24 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.134 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.214 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.405 sec.
+Command     ap_source done; 0.405 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 1.75 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 2.114 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 2.741 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 44.963 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 147.403 sec.
+Command ap_source done; 150.155 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 15:58:27 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.239 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.403 sec.
+Command     ap_source done; 0.404 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 1.96 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 2.457 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 3.024 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 72.152 sec.
+Command ap_source done; error code: 1; 75.216 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:04:38 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 2.021 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Command         ap_source done; 0.111 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 2.274 sec.
+Command     ap_source done; 2.275 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.4 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 2.82 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 5.269 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 107.87 sec.
+Command ap_source done; error code: 1; 113.165 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:09:52 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.246 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Command           ap_source done; 0.252 sec.
+Command         ap_source done; 0.274 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command         ap_source done; 0.206 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command         ap_source done; 0.121 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Command         ap_source done; 0.117 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.961 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 1.713 sec.
+Command     ap_source done; 1.713 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 4.727 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 5.494 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 9.084 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 46.432 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 100.156 sec.
+Command ap_source done; 109.555 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:12:40 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.113 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.219 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.348 sec.
+Command     ap_source done; 0.35 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.081 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 2.44 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 3.01 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.253 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 18.116 sec.
+Command ap_source done; 21.139 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:13:52 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.131 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.512 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.702 sec.
+Command     ap_source done; 0.702 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.903 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.406 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 4.762 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 0.87 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 17.058 sec.
+Command ap_source done; 22.408 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:16:09 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Command       ap_source done; 0.119 sec.
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command         ap_source done; 0.255 sec.
+Command       ap_source done; 0.262 sec.
+Command     import_lib done; 0.409 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Command         ap_source done; 0.123 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Command           ap_source done; 0.229 sec.
+Command         ap_source done; 0.241 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command         ap_source done; 0.185 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Command         ap_source done; 0.101 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 2.419 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 3.107 sec.
+Command     ap_source done; 3.108 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.258 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 2.584 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 6.318 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 44.143 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 62.19 sec.
+Command ap_source done; 68.554 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:21:17 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.145 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.433 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.585 sec.
+Command     ap_source done; 0.585 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 3.96 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.123 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 4.632 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 5.575 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 45.427 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 60.997 sec.
+Command ap_source done; 66.605 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:35:25 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Command         ap_source done; 0.112 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.4 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.69 sec.
+Command     ap_source done; 0.69 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.675 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.254 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.467 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 4.482 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 19.489 sec.
+Command ap_source done; error code: 1; 24.022 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:37:07 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.293 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.458 sec.
+Command     ap_source done; 0.458 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 3.684 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.404 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 4.44 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 5.233 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 45.955 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 63.613 sec.
+Command ap_source done; 68.86 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:38:43 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.113 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.455 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.67 sec.
+Command     ap_source done; 0.671 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 3.6 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.138 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 4.555 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 5.607 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; error code: 1; 45.355 sec.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 61.712 sec.
+Command ap_source done; error code: 1; 67.345 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:40:41 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.104 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.471 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.735 sec.
+Command     ap_source done; 0.735 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.113 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.551 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.107 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.209 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 4.284 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; error code: 1; 10.066 sec.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 27.579 sec.
+Command ap_source done; error code: 1; 31.898 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:43:22 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.106 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Command           ap_source done; 0.214 sec.
+Command         ap_source done; 0.226 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.352 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.717 sec.
+Command     ap_source done; 0.718 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.758 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.161 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 4.152 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; error code: 1; 9.026 sec.
+ERROR: [SIM 211-100] CSim failed with errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 27.226 sec.
+Command ap_source done; error code: 1; 31.392 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:49:09 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.131 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Command         ap_source done; 0.119 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.545 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.849 sec.
+Command     ap_source done; 0.849 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 3.578 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.92 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 5.262 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s).
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; error code: 2; 9.38 sec.
+Command ap_source done; error code: 1; 14.68 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:51:09 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.189 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.357 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.489 sec.
+Command     ap_source done; 0.49 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.384 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.135 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.077 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 3.953 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 45.519 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 63.114 sec.
+Command ap_source done; 67.208 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 16:52:54 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.118 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.299 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.481 sec.
+Command     ap_source done; 0.483 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.762 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 3.394 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 4.185 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 926.308 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 949.473 sec.
+Command ap_source done; 953.675 sec.
+Execute cleanup_all 
+INFO-FLOW: Workspace E:/code/hls/3/cnn/solution1 opened at Fri Apr 07 17:10:28 +0430 2023
+Execute     config_clock -quiet -name default -period 100 -default=false 
+INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
+Execute     config_clock -quiet -name default -uncertainty 0.12 
+INFO: [SYN 201-201] Setting up clock 'default' with an uncertainty of 0.12ns.
+WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'.
+WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.lib 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.lib 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/dsp48e1.hlp 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Command     import_lib done; 0.166 sec.
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/plb46.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/fsl.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/axi4.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
+Command         ap_source done; 0.111 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
+Command         ap_source done; 0.371 sec.
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
+Command       ap_source done; 0.649 sec.
+Command     ap_source done; 0.65 sec.
+Execute     open_platform DefaultPlatform 
+Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.hlp 
+Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/target_info.tcl 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/xilinx_interface.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.hlp 
+Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.hlp 
+Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.hlp 
+Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
+Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
+Execute     set_part xq7z100-rf900-2IL 
+Execute       ap_part_info -name xq7z100-rf900-2IL -data single -quiet 
+Command       ap_part_info done; 2.865 sec.
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       add_library xilinx/zynq/zynq:xq7z100:-rf900:-2IL 
+Execute         get_default_platform 
+Execute         license_isbetapart xq7z100 
+Command         license_isbetapart done; error code: 1; 
+Execute         ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute         ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute         config_chip_info -quiet -speed medium 
+Command       add_library done; 0.925 sec.
+Execute       add_library xilinx/zynq/zynq_fpv6 
+Execute         get_default_platform 
+INFO: [HLS 200-10] Setting target device to 'xq7z100-rf900-2IL'
+Execute       ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute       get_default_platform 
+Command     set_part done; 4.292 sec.
+Execute     ap_part_info -data single -name xq7z100-rf900-2IL 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data resources 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -resource {SLICE 69350} {LUT 277400} {FF 554800} {DSP48E 2020} {BRAM 1510} {URAM 0} 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     config_chip_info -quiet -speed medium 
+Command   open_solution done; 5.456 sec.
+Execute   csim_design -quiet 
+Execute     source E:/code/hls/3/cnn/solution1/.autopilot/db/global.setting.tcl 
+INFO: [SIM 211-2] *************** CSIM start ***************
+INFO: [SIM 211-4] CSIM will launch GCC as the compiler.
+Execute     source csim/.lst_opt.tcl 
+Execute     is_encrypted E:/code/hls/3/tb/out.dat 
+Execute     is_xip E:/code/hls/3/tb/out.dat 
+Execute     is_encrypted E:/code/hls/3/tb/in.dat 
+Execute     is_xip E:/code/hls/3/tb/in.dat 
+Execute     is_encrypted E:/code/hls/3/cnn_tb.c 
+Execute     is_xip E:/code/hls/3/cnn_tb.c 
+Execute     is_encrypted E:/code/hls/3/lib/utils.c 
+Execute     is_xip E:/code/hls/3/lib/utils.c 
+Execute     is_encrypted E:/code/hls/3/lib/pool.c 
+Execute     is_xip E:/code/hls/3/lib/pool.c 
+Execute     is_encrypted E:/code/hls/3/lib/flat.c 
+Execute     is_xip E:/code/hls/3/lib/flat.c 
+Execute     is_encrypted E:/code/hls/3/lib/dense.c 
+Execute     is_xip E:/code/hls/3/lib/dense.c 
+Execute     is_encrypted E:/code/hls/3/lib/conv.c 
+Execute     is_xip E:/code/hls/3/lib/conv.c 
+Execute     is_encrypted E:/code/hls/3/cnn.c 
+Execute     is_xip E:/code/hls/3/cnn.c 
+Execute     is_encrypted E:/code/hls/3/lib/activ_fun.c 
+Execute     is_xip E:/code/hls/3/lib/activ_fun.c 
+Execute     ap_part_info -name xq7z100-rf900-2IL -data info 
+Execute     source run_sim.tcl 
+Command     ap_source done; 44.15 sec.
+INFO: [SIM 211-1] CSim done with 0 errors.
+INFO: [SIM 211-3] *************** CSIM finish ***************
+Command   csim_design done; 58.846 sec.
+Command ap_source done; 64.317 sec.
+Execute cleanup_all 

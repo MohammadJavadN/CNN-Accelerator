@@ -12,6 +12,16 @@
         "conv1_weights.h": "c",
         "dense_weights.h": "c",
         "stdio.h": "c",
-        "utils.h": "c"
+        "utils.h": "c",
+        "*.tcc": "cpp",
+        "compare": "cpp",
+        "random": "cpp",
+        "limits": "cpp",
+        "new": "cpp",
+        "numeric": "cpp",
+        "cmath": "cpp",
+        "tuple": "cpp",
+        "type_traits": "cpp",
+        "math.h": "c"
     }
 }

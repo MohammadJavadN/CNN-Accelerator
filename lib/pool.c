@@ -4,11 +4,11 @@
 void
 max_pool2
 (
-  float feature      [FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS],
-  float pool_feature [POOL_IMG2_ROWS][POOL_IMG2_COLS], float b
+  T feature      [FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS],
+  T pool_feature [POOL_IMG2_ROWS][POOL_IMG2_COLS], T b
 )
 {
-  float pool = 0.0;
+  T pool = 0.0;
 
   for (int r = 0; r < FEATURE_CONV2_ROWS; r += POOL_ROWS2)
   {
@@ -31,11 +31,11 @@ max_pool2
 void
 max_pool
 (
-  float feature      [FEATURE_CONV1_ROWS][FEATURE_CONV1_COLS],
-  float pool_feature [POOL_IMG1_ROWS][POOL_IMG1_COLS]
+  T feature      [FEATURE_CONV1_ROWS][FEATURE_CONV1_COLS],
+  T pool_feature [POOL_IMG1_ROWS][POOL_IMG1_COLS]
 )
 {
-  float pool = 0.0;
+  T pool = 0.0;
 
   for (int r = 0; r < FEATURE_CONV1_ROWS; r += POOL_ROWS)
   {
@@ -59,8 +59,8 @@ max_pool
 void
 max_pooling_layer1
 (
-  float features      [FILTERS1][FEATURE_CONV1_ROWS][FEATURE_CONV1_COLS],
-  float pool_features [FILTERS1][POOL_IMG1_ROWS][POOL_IMG1_COLS]
+  T features      [FILTERS1][FEATURE_CONV1_ROWS][FEATURE_CONV1_COLS],
+  T pool_features [FILTERS1][POOL_IMG1_ROWS][POOL_IMG1_COLS]
 )
 {
 #pragma HLS INLINE // Into a DATAFLOW region
@@ -72,9 +72,9 @@ max_pooling_layer1
 void
 max_pooling_layer2
 (
-  float features      [FILTERS2][FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS],
-  float pool_features [FILTERS2][POOL_IMG2_ROWS][POOL_IMG2_COLS],
-  float conv_biases2[FILTERS2]
+  T features      [FILTERS2][FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS],
+  T pool_features [FILTERS2][POOL_IMG2_ROWS][POOL_IMG2_COLS],
+  T conv_biases2[FILTERS2]
 )
 {
 #pragma HLS INLINE // Into a DATAFLOW region

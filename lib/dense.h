@@ -6,6 +6,6 @@
 void
 dense_layer
 (
-  float flat_array  [FLAT_SIZE],
-  float dense_array [DENSE_SIZE]
+  T flat_array  [FLAT_SIZE],
+  T dense_array [DENSE_SIZE]
 );

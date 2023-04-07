@@ -4,12 +4,12 @@
 void
 dense_layer
 (
-  float flat_array  [FLAT_SIZE],
-  float prediction [DENSE_SIZE]
+  T flat_array  [FLAT_SIZE],
+  T prediction [DENSE_SIZE]
 )
 {
-  float w_sum = 0.0;
-  float dense_array [DENSE_SIZE] = { 0 };
+  T w_sum = 0.0;
+  T dense_array [DENSE_SIZE] = { 0 };
 
   for (int d = 0; d < DENSE_SIZE; ++d)
   {

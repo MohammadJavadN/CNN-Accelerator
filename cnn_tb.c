@@ -5,45 +5,53 @@
 #include <time.h>
 
 #define N 500
+#define TOT 10000
+int OFSET = 0;
+FILE *fpm;
+
+FILE *fpl;
+
 
 int
-read_images (const char * file, float images [N][IMG_ROWS][IMG_COLS])
+read_images (const char * file, T images [N][IMG_ROWS][IMG_COLS])
 {
-  FILE *fp;
+  // FILE *fp;
 
-  fp = fopen(file, "r");
+  // fp = fopen(file, "r");
 
-  if (fp == NULL)
-    return 0;
+  // if (fp == NULL)
+  //   return -1;
 
-  for (int i = 0; i < N; ++i)
-    for (int x = 0; x < IMG_ROWS; ++x)
-      for (int y = 0; y < IMG_COLS; ++y)
-        if(fscanf(fp, "%f", & images[i][x][y]) != 1)
-          return 0; // Error.
-fclose(fp);
+  for (int i = 0; i <  N; ++i)
+    // if (i >= OFSET)
+      for (int x = 0; x < IMG_ROWS; ++x)
+        for (int y = 0; y < IMG_COLS; ++y)
+          if(fscanf(fpm, "%f", & images[i][x][y]) != 1)
+            return 1; // Error.
+// fclose(fp);
   return 0;
 }
 
 int
 read_labels(const char * file, int labels[N])
 {
-  FILE *fp;
+  // FILE *fp;
 
-  fp = fopen(file, "r");
+  // fp = fopen(file, "r");
 
-  if (fp == NULL)
-    return -1;
+  // if (fp == NULL)
+  //   return -1;
 
-  for (int i = 0; i < N; ++i)
-    if(fscanf(fp, "%d", & labels[i]) != 1)
-      return 1;
-
-  return fclose(fp);
+  for (int i = 0; i <  N; ++i)
+    // if (i >= OFSET)
+      if(fscanf(fpl, "%d", & labels[i]) != 1)
+        return 1;
+// fclose(fp);
+  return 0;
 }
 
 int
-get_max_prediction (float prediction [DIGITS])
+get_max_prediction (T prediction [DIGITS])
 {
   int max_digit = 0;
   for (int i = 0; i < DIGITS; ++i)
@@ -63,61 +71,64 @@ int main ()
     printf("Error: odd kernel sizes are mandatory for this implementation \n");
     return 1;
   }
+  T images[N][IMG_ROWS][IMG_COLS];
+  int labels[N];//={2};
+  T prediction [DIGITS];
+  T norm_img [IMG_ROWS][IMG_COLS];
+fpm = fopen("in.dat", "r");
+fpl = fopen("out.dat", "r");
 
-  /**** Read the images. ****/
-  float images[N][IMG_ROWS][IMG_COLS];
-   if (0 != read_images("in.dat", images))
-   {
-     printf("Error: can't open file ``../Data/in.dat''\n");
-     return 1;
-   }
+double time = 0;
+int correct_predictions = 0;
+for(OFSET = 0; OFSET < TOT; OFSET+=N){
+    /**** Read the images. ****/
+    if (0 != read_images("in.dat", images))
+    {
+      printf("Error: can't open file ``../Data/in.dat''\n");
+      return 1;
+    }
+  //  /**** Read expected labels. ****/
+    if (0 != read_labels("out.dat", labels))
+    {
+      printf("Error: can't open file ``../Data/out.dat''\n");
+      return 1;
+    }
 
-//  /**** Read expected labels. ****/
- int labels[N];//={2};
-  if (0 != read_labels("out.dat", labels))
+  /**** Do N predictions. ****/
+  //
+  for (int i = 0; i < N; ++i)
   {
-    printf("Error: can't open file ``../Data/out.dat''\n");
-    return 1;
+    // CNN execution, obtain a prediction.
+    clock_t begin = clock();
+    cnn(images[i], prediction);
+    clock_t end = clock();
+
+    if (get_max_prediction(prediction) == labels[i])
+    {
+      ++correct_predictions;
+    }
+    else
+    {
+      printf("\nExpected: %d\n", labels[i]);
+      normalization(images[i], norm_img);
+      print_img(norm_img);
+      printf("Prediction:\n");
+      for (int j = 0; j < DIGITS; ++j)
+        printf("%d: %f\n", j, prediction[j]);
+      printf("\n");
+    }
+
+    // Sum up time spent.
+    double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
+    time += time_spent;
   }
-
- /**** Do N predictions. ****/
- double time = 0;
- int correct_predictions = 0;
- float prediction [DIGITS];
-//
- for (int i = 0; i < N; ++i)
- {
-   // CNN execution, obtain a prediction.
-   clock_t begin = clock();
-   cnn(images[i], prediction);
-   clock_t end = clock();
-
-   if (get_max_prediction(prediction) == labels[i])
-   {
-     ++correct_predictions;
-   }
-   else
-   {
-     printf("\nExpected: %d\n", labels[i]);
-     float norm_img [IMG_ROWS][IMG_COLS];
-     normalization(images[i], norm_img);
-     print_img(norm_img);
-     printf("Prediction:\n");
-     for (int j = 0; j < DIGITS; ++j)
-       printf("%d: %f\n", j, prediction[j]);
-     printf("\n");
-   }
-
-   // Sum up time spent.
-   double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
-   time += time_spent;
  }
 
  double
- correct_predictions_perc = (double)correct_predictions * 100.0 / (double)N;
- printf("Total predictions: %d\n", N);
+ correct_predictions_perc = (double)correct_predictions * 100.0 / (double)TOT;
+ printf("Total predictions: %d\n", TOT);
  printf("Correct predictions: %.2f %%\n", correct_predictions_perc);
- printf("Average latency: %f (ms)\n", (time / N) * 1000);
+ printf("Average latency: %f (ms)\n", (time / TOT) * 1000);
 
   return 0;
 }

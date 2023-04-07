@@ -3,6 +3,6 @@
 #include "definitions.h"
 #include <math.h>
 
-float relu (float x);
+T relu (T x);
 
-void soft_max(float dense_array [DIGITS], float pred[DIGITS]);
+void soft_max(T dense_array [DIGITS], T pred[DIGITS]);

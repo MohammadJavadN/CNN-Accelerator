@@ -1586,7 +1586,7 @@ printf("\n = %f\n", llvm_cbe_tmp__98);
 
 llvm_cbe__2e_thread_2e_preheader_2e_us:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%or.cond6.us = and i1 %%11, %%33, !dbg !10 for 0x%I64xth hint within @convolutional_layer1  --> \n", ++aesl_llvm_cbe_or_2e_cond6_2e_us_count);
+printf("\n  %%or.cond6.us = and i1 %%11, %%33, !dbg !9 for 0x%I64xth hint within @convolutional_layer1  --> \n", ++aesl_llvm_cbe_or_2e_cond6_2e_us_count);
   llvm_cbe_or_2e_cond6_2e_us = (bool )((((llvm_cbe_storemerge217&4294967295U) == (0u&4294967295U)) & ((llvm_cbe_storemerge412_2e_us&4294967295U) == (23u&4294967295U)))&1);
 if (AESL_DEBUG_TRACE)
 printf("\nor.cond6.us = 0x%X\n", llvm_cbe_or_2e_cond6_2e_us);
@@ -2528,7 +2528,7 @@ printf("\n = %f\n", llvm_cbe_tmp__158);
 
 llvm_cbe__2e_thread_2e_preheader:
 if (AESL_DEBUG_TRACE)
-printf("\n  %%or.cond6 = and i1 %%11, %%45, !dbg !10 for 0x%I64xth hint within @convolutional_layer1  --> \n", ++aesl_llvm_cbe_or_2e_cond6_count);
+printf("\n  %%or.cond6 = and i1 %%11, %%45, !dbg !9 for 0x%I64xth hint within @convolutional_layer1  --> \n", ++aesl_llvm_cbe_or_2e_cond6_count);
   llvm_cbe_or_2e_cond6 = (bool )((((llvm_cbe_storemerge217&4294967295U) == (0u&4294967295U)) & ((llvm_cbe_storemerge412&4294967295U) == (23u&4294967295U)))&1);
 if (AESL_DEBUG_TRACE)
 printf("\nor.cond6 = 0x%X\n", llvm_cbe_or_2e_cond6);
