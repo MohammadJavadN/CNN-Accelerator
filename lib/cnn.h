@@ -1,6 +1,12 @@
 #pragma once
 
 #include "definitions.h"
+#include "utils.h"
+#include "activ_fun.h"
+#include "conv.h"
+#include "pool.h"
+#include "flat.h"
+#include "dense.h"
 
 void cnn
 (

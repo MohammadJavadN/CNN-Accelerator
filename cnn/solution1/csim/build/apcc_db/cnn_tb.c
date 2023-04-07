@@ -153,8 +153,8 @@ signed int read_labels( char *llvm_cbe_file, signed int *llvm_cbe_labels);
 signed int get_max_prediction(float *llvm_cbe_prediction);
 signed int main(void);
 void cnn(float (*)[28], float *);
-void normalization_and_padding(float (*)[28], float (*)[32]);
-void print_pad_img(float (*)[32]);
+void normalization(float (*)[28], float (*)[28]);
+void print_img(float (*)[28]);
 
 
 /* Global Variable Definitions and Initialization */
@@ -168,9 +168,9 @@ static  char aesl_internal__OC_str9[8] = "%d: %f\n";
 static  char aesl_internal__OC_str11[23] = "Total predictions: %d\n";
 static  char aesl_internal__OC_str12[30] = "Correct predictions: %.2f %%\n";
 static  char aesl_internal__OC_str13[26] = "Average latency: %f (ms)\n";
-static  char aesl_internal_str1[43] = "Error: can't open file ``../Data/out.dat''";
-static  char aesl_internal_str[42] = "Error: can't open file ``../Data/in.dat''";
 static  char aesl_internal_str2[12] = "Prediction:";
+static  char aesl_internal_str[42] = "Error: can't open file ``../Data/in.dat''";
+static  char aesl_internal_str1[43] = "Error: can't open file ``../Data/out.dat''";
 
 
 /* Function Bodies */
@@ -1064,8 +1064,8 @@ signed int main(void) {
   static  unsigned long long aesl_llvm_cbe_prediction_count = 0;
   float llvm_cbe_prediction[10];    /* Address-exposed local */
   static  unsigned long long aesl_llvm_cbe_237_count = 0;
-  static  unsigned long long aesl_llvm_cbe_pad_img_count = 0;
-  float llvm_cbe_pad_img[32][32];    /* Address-exposed local */
+  static  unsigned long long aesl_llvm_cbe_norm_img_count = 0;
+  float llvm_cbe_norm_img[28][28];    /* Address-exposed local */
   static  unsigned long long aesl_llvm_cbe_238_count = 0;
   static  unsigned long long aesl_llvm_cbe_239_count = 0;
   float (*llvm_cbe_tmp__78)[28][28];
@@ -1092,7 +1092,7 @@ signed int main(void) {
   static  unsigned long long aesl_llvm_cbe_255_count = 0;
   float *llvm_cbe_tmp__82;
   static  unsigned long long aesl_llvm_cbe_256_count = 0;
-  float (*llvm_cbe_tmp__83)[32];
+  float (*llvm_cbe_tmp__83)[28];
   static  unsigned long long aesl_llvm_cbe_257_count = 0;
   static  unsigned long long aesl_llvm_cbe_puts2_count = 0;
   unsigned int llvm_cbe_puts2;
@@ -1407,10 +1407,10 @@ printf("\n  %%9 = getelementptr inbounds [10 x float]* %%prediction, i64 0, i64 
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%10 = getelementptr inbounds [32 x [32 x float]]* %%pad_img, i64 0, i64 0, !dbg !9 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_256_count);
-  llvm_cbe_tmp__83 = (float (*)[32])(&llvm_cbe_pad_img[(((signed long long )0ull))
+printf("\n  %%10 = getelementptr inbounds [28 x [28 x float]]* %%norm_img, i64 0, i64 0, !dbg !9 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_256_count);
+  llvm_cbe_tmp__83 = (float (*)[28])(&llvm_cbe_norm_img[(((signed long long )0ull))
 #ifdef AESL_BC_SIM
- % 32
+ % 28
 #endif
 ]);
 if (AESL_DEBUG_TRACE) {
@@ -1593,17 +1593,17 @@ printf("\nArgument  = 0x%X",llvm_cbe_tmp__92);
 printf("\nReturn  = 0x%X",llvm_cbe_tmp__94);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  call void @normalization_and_padding([28 x float]* %%17, [32 x float]* %%10) nounwind, !dbg !9 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_282_count);
-  normalization_and_padding(llvm_cbe_tmp__88, llvm_cbe_tmp__83);
+printf("\n  call void @normalization([28 x float]* %%17, [28 x float]* %%10) nounwind, !dbg !9 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_282_count);
+  normalization(llvm_cbe_tmp__88, llvm_cbe_tmp__83);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  call void @print_pad_img([32 x float]* %%10) nounwind, !dbg !11 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_283_count);
-  print_pad_img(llvm_cbe_tmp__83);
+printf("\n  call void @print_img([28 x float]* %%10) nounwind, !dbg !10 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_283_count);
+  print_img(llvm_cbe_tmp__83);
 if (AESL_DEBUG_TRACE) {
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%puts3 = call i32 @puts(i8* getelementptr inbounds ([12 x i8]* @aesl_internal_str2, i64 0, i64 0)), !dbg !11 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_puts3_count);
+printf("\n  %%puts3 = call i32 @puts(i8* getelementptr inbounds ([12 x i8]* @aesl_internal_str2, i64 0, i64 0)), !dbg !10 for 0x%I64xth hint within @main  --> \n", ++aesl_llvm_cbe_puts3_count);
   puts(( char *)((&aesl_internal_str2[(((signed long long )0ull))
 #ifdef AESL_BC_SIM
  % 12

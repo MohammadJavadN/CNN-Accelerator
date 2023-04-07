@@ -1,15 +1,11 @@
 #pragma once
+
 typedef float T;
+
 #define DIGITS 10
 
 #define IMG_ROWS 28
 #define IMG_COLS 28
-
-// Padding.
-#define	PAD_ROWS (KRN_ROWS1 - 1)
-#define	PAD_COLS (KRN_COLS1 - 1)
-#define PAD_IMG_ROWS (IMG_ROWS + PAD_ROWS)
-#define PAD_IMG_COLS (IMG_COLS + PAD_COLS)
 
 // Convolutional layer1.
 #define KRN_ROWS1	5

@@ -6,7 +6,24 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog/>
+      <csimLog>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:34:17.374+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:32:23.340+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:31:11.741+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:29:13.008+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:27:56.922+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="cnn" solutionName="solution1" date="2023-04-07T15:27:56.516+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:27:56.313+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:27:56.097+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:25:02.194+0430"/>
+        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-07T15:22:14.495+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed.&#xD;&#xA;g++.exe: error: obj/cnn_tb.o: No such file or directory&#xD;&#xA;g++.exe: error: obj/cnn.o: No such file or directory&#xD;&#xA;make: *** [csim.exe] Error 1" projectName="cnn" solutionName="solution1" date="2023-04-07T15:22:14.419+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:22:14.255+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:22:14.129+0430"/>
+        <logs message="ERROR: [APCC 202-1] APCC failed." projectName="cnn" solutionName="solution1" date="2023-04-07T15:22:14.017+0430"/>
+        <logs message="ERROR: [APCC 202-1] ProcessSources failed" projectName="cnn" solutionName="solution1" date="2023-04-07T15:22:13.918+0430"/>
+        <logs message="ERROR: [APCC 202-10] clang compile failed: child process exited abnormally" projectName="cnn" solutionName="solution1" date="2023-04-07T15:22:13.718+0430"/>
+      </csimLog>
     </logs>
   </errorLogs>
   <warningLogs>
@@ -414,7 +431,26 @@
       <simLog/>
       <mgLog/>
       <packageLog/>
-      <csimLog/>
+      <csimLog>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:40:27.211+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:40:24.826+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:34:38.188+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:34:35.912+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:34:13.342+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:34:08.488+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:31:40.387+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:31:38.066+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:30:25.747+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:30:23.228+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:28:56.371+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:28:54.052+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:27:33.162+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:27:30.833+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:24:25.337+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:24:22.473+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'xilinx/qzynq/qzynq'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:20:36.423+0430" type="Warning"/>
+        <logs message="WARNING: [HLS 200-40] Cannot find library 'E:/Xilinx/Vivado/2019.1/common/technology/xilinx/qzynq/qzynq.lib'." projectName="cnn" solutionName="solution1" date="2023-04-07T15:20:31.473+0430" type="Warning"/>
+      </csimLog>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

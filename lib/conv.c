@@ -1,6 +1,4 @@
 #include "conv.h"
-#include "definitions.h"
-#include "activ_fun.h"
 #include "conv1_weights.h"
 
 void convolutional_layer1

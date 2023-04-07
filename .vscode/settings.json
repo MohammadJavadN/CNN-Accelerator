@@ -10,6 +10,8 @@
         "cnn.h": "c",
         "dense.h": "c",
         "conv1_weights.h": "c",
-        "dense_weights.h": "c"
+        "dense_weights.h": "c",
+        "stdio.h": "c",
+        "utils.h": "c"
     }
 }

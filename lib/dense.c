@@ -1,6 +1,5 @@
 #include "dense.h"
 #include "dense_weights.h"
-#include "activ_fun.h"
 
 void
 dense_layer

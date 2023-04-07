@@ -1,6 +1,7 @@
 #pragma once
 
 #include "definitions.h"
+#include "activ_fun.h"
 
 void convolutional_layer1
 (

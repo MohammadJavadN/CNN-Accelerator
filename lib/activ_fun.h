@@ -1,6 +1,7 @@
 #pragma once
 
 #include "definitions.h"
+#include <math.h>
 
 float relu (float x);
 

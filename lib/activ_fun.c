@@ -1,7 +1,5 @@
 #include "activ_fun.h"
 
-#include <math.h>
-
 float relu (float x)
 {
   if(x > 0.0)

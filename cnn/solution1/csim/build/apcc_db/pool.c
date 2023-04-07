@@ -127,9 +127,6 @@ typedef union {
   double Double;
 } llvmBitCastUnion;
 
-/* External Global Variable Declarations */
-extern float conv_biases2[10];
-
 /* Function Declarations */
 double fmod(double, double);
 float fmodf(float, float);
@@ -139,10 +136,6 @@ float relu(float );
 void max_pool(float (*llvm_cbe_feature)[24], float (*llvm_cbe_pool_feature)[12]);
 void max_pooling_layer1(float (*llvm_cbe_features)[24][24], float (*llvm_cbe_pool_features)[12][12]);
 void max_pooling_layer2(float (*llvm_cbe_features)[8][8], float (*llvm_cbe_pool_features)[4][4], float *llvm_cbe_conv_biases2);
-
-
-/* Global Variable Definitions and Initialization */
-float conv_biases2[10] = { -0x1.111fa6p-6, -0x1.fab688p-3, -0x1.a9a9d6p-1, -0x1.f6cb28p-1, -0x1.35b1d8p-5, 0x1.74a3e6p-7, 0x1.0a17cap-1, -0x1.72325ep-2, 0x0p0, 0x0p0 };
 
 
 /* Function Bodies */
@@ -622,12 +615,12 @@ printf("\n = 0x%X",0u);
 printf("\n = 0x%X",llvm_cbe_tmp__66);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%1 = sdiv i32 %%storemerge10, 2, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_23_count);
+printf("\n  %%1 = sdiv i32 %%storemerge10, 2, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_23_count);
   llvm_cbe_tmp__1 = (unsigned int )((signed int )(((signed int )llvm_cbe_storemerge10) / ((signed int )2u)));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((signed int )llvm_cbe_tmp__1));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%2 = sext i32 %%1 to i64, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_24_count);
+printf("\n  %%2 = sext i32 %%1 to i64, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_24_count);
   llvm_cbe_tmp__2 = (unsigned long long )((signed long long )(signed int )llvm_cbe_tmp__1);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%I64X\n", llvm_cbe_tmp__2);
@@ -747,19 +740,19 @@ printf("\n  %%21 = select i1 %%20, float %%19, float %%17, !dbg !7 for 0x%I64xth
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__17, *(int*)(&llvm_cbe_tmp__17));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%22 = fadd float %%21, %%b, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_102_count);
+printf("\n  %%22 = fadd float %%21, %%b, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_102_count);
   llvm_cbe_tmp__18 = (float )((float )(llvm_cbe_tmp__17 + llvm_cbe_b));
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__18, *(int*)(&llvm_cbe_tmp__18));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%23 = tail call float @relu(float %%22) nounwind, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_103_count);
+printf("\n  %%23 = tail call float @relu(float %%22) nounwind, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_103_count);
   llvm_cbe_tmp__19 = (float ) /*tail*/ relu(llvm_cbe_tmp__18);
 if (AESL_DEBUG_TRACE) {
 printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__18, *(int*)(&llvm_cbe_tmp__18));
 printf("\nReturn  = %f",llvm_cbe_tmp__19);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%24 = getelementptr inbounds [4 x float]* %%pool_feature, i64 %%2, i64 0, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_104_count);
+printf("\n  %%24 = getelementptr inbounds [4 x float]* %%pool_feature, i64 %%2, i64 0, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_104_count);
   llvm_cbe_tmp__20 = (float *)(&llvm_cbe_pool_feature[(((signed long long )llvm_cbe_tmp__2))
 #ifdef AESL_BC_SIM
  % 4
@@ -774,7 +767,7 @@ printf("\n = 0x%I64X",((signed long long )llvm_cbe_tmp__2));
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  store float %%23, float* %%24, align 4, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_105_count);
+printf("\n  store float %%23, float* %%24, align 4, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_105_count);
   *llvm_cbe_tmp__20 = llvm_cbe_tmp__19;
 if (AESL_DEBUG_TRACE)
 printf("\n = %f\n", llvm_cbe_tmp__19);
@@ -879,19 +872,19 @@ printf("\n  %%40 = select i1 %%39, float %%38, float %%36, !dbg !7 for 0x%I64xth
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__32, *(int*)(&llvm_cbe_tmp__32));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%41 = fadd float %%40, %%b, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_186_count);
+printf("\n  %%41 = fadd float %%40, %%b, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_186_count);
   llvm_cbe_tmp__33 = (float )((float )(llvm_cbe_tmp__32 + llvm_cbe_b));
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__33, *(int*)(&llvm_cbe_tmp__33));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%42 = tail call float @relu(float %%41) nounwind, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_187_count);
+printf("\n  %%42 = tail call float @relu(float %%41) nounwind, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_187_count);
   llvm_cbe_tmp__34 = (float ) /*tail*/ relu(llvm_cbe_tmp__33);
 if (AESL_DEBUG_TRACE) {
 printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__33, *(int*)(&llvm_cbe_tmp__33));
 printf("\nReturn  = %f",llvm_cbe_tmp__34);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%43 = getelementptr inbounds [4 x float]* %%pool_feature, i64 %%2, i64 1, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_188_count);
+printf("\n  %%43 = getelementptr inbounds [4 x float]* %%pool_feature, i64 %%2, i64 1, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_188_count);
   llvm_cbe_tmp__35 = (float *)(&llvm_cbe_pool_feature[(((signed long long )llvm_cbe_tmp__2))
 #ifdef AESL_BC_SIM
  % 4
@@ -906,7 +899,7 @@ printf("\n = 0x%I64X",((signed long long )llvm_cbe_tmp__2));
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  store float %%42, float* %%43, align 4, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_189_count);
+printf("\n  store float %%42, float* %%43, align 4, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_189_count);
   *llvm_cbe_tmp__35 = llvm_cbe_tmp__34;
 if (AESL_DEBUG_TRACE)
 printf("\n = %f\n", llvm_cbe_tmp__34);
@@ -1011,19 +1004,19 @@ printf("\n  %%59 = select i1 %%58, float %%57, float %%55, !dbg !7 for 0x%I64xth
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__47, *(int*)(&llvm_cbe_tmp__47));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%60 = fadd float %%59, %%b, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_270_count);
+printf("\n  %%60 = fadd float %%59, %%b, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_270_count);
   llvm_cbe_tmp__48 = (float )((float )(llvm_cbe_tmp__47 + llvm_cbe_b));
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__48, *(int*)(&llvm_cbe_tmp__48));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%61 = tail call float @relu(float %%60) nounwind, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_271_count);
+printf("\n  %%61 = tail call float @relu(float %%60) nounwind, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_271_count);
   llvm_cbe_tmp__49 = (float ) /*tail*/ relu(llvm_cbe_tmp__48);
 if (AESL_DEBUG_TRACE) {
 printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__48, *(int*)(&llvm_cbe_tmp__48));
 printf("\nReturn  = %f",llvm_cbe_tmp__49);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%62 = getelementptr inbounds [4 x float]* %%pool_feature, i64 %%2, i64 2, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_272_count);
+printf("\n  %%62 = getelementptr inbounds [4 x float]* %%pool_feature, i64 %%2, i64 2, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_272_count);
   llvm_cbe_tmp__50 = (float *)(&llvm_cbe_pool_feature[(((signed long long )llvm_cbe_tmp__2))
 #ifdef AESL_BC_SIM
  % 4
@@ -1038,7 +1031,7 @@ printf("\n = 0x%I64X",((signed long long )llvm_cbe_tmp__2));
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  store float %%61, float* %%62, align 4, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_273_count);
+printf("\n  store float %%61, float* %%62, align 4, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_273_count);
   *llvm_cbe_tmp__50 = llvm_cbe_tmp__49;
 if (AESL_DEBUG_TRACE)
 printf("\n = %f\n", llvm_cbe_tmp__49);
@@ -1143,19 +1136,19 @@ printf("\n  %%78 = select i1 %%77, float %%76, float %%74, !dbg !7 for 0x%I64xth
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__62, *(int*)(&llvm_cbe_tmp__62));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%79 = fadd float %%78, %%b, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_354_count);
+printf("\n  %%79 = fadd float %%78, %%b, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_354_count);
   llvm_cbe_tmp__63 = (float )((float )(llvm_cbe_tmp__62 + llvm_cbe_b));
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__63, *(int*)(&llvm_cbe_tmp__63));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%80 = tail call float @relu(float %%79) nounwind, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_355_count);
+printf("\n  %%80 = tail call float @relu(float %%79) nounwind, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_355_count);
   llvm_cbe_tmp__64 = (float ) /*tail*/ relu(llvm_cbe_tmp__63);
 if (AESL_DEBUG_TRACE) {
 printf("\nArgument  = %f,  0x%x",llvm_cbe_tmp__63, *(int*)(&llvm_cbe_tmp__63));
 printf("\nReturn  = %f",llvm_cbe_tmp__64);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%81 = getelementptr inbounds [4 x float]* %%pool_feature, i64 %%2, i64 3, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_356_count);
+printf("\n  %%81 = getelementptr inbounds [4 x float]* %%pool_feature, i64 %%2, i64 3, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_356_count);
   llvm_cbe_tmp__65 = (float *)(&llvm_cbe_pool_feature[(((signed long long )llvm_cbe_tmp__2))
 #ifdef AESL_BC_SIM
  % 4
@@ -1170,7 +1163,7 @@ printf("\n = 0x%I64X",((signed long long )llvm_cbe_tmp__2));
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  store float %%80, float* %%81, align 4, !dbg !9 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_357_count);
+printf("\n  store float %%80, float* %%81, align 4, !dbg !8 for 0x%I64xth hint within @max_pool2  --> \n", ++aesl_llvm_cbe_357_count);
   *llvm_cbe_tmp__65 = llvm_cbe_tmp__64;
 if (AESL_DEBUG_TRACE)
 printf("\n = %f\n", llvm_cbe_tmp__64);
@@ -1370,12 +1363,12 @@ printf("\n = 0x%X",0u);
 printf("\n = 0x%X",llvm_cbe_tmp__92);
 }
 if (AESL_DEBUG_TRACE)
-printf("\n  %%1 = sdiv i32 %%storemerge10, 2, !dbg !9 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_394_count);
+printf("\n  %%1 = sdiv i32 %%storemerge10, 2, !dbg !8 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_394_count);
   llvm_cbe_tmp__68 = (unsigned int )((signed int )(((signed int )llvm_cbe_storemerge10) / ((signed int )2u)));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((signed int )llvm_cbe_tmp__68));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%2 = sext i32 %%1 to i64, !dbg !9 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_395_count);
+printf("\n  %%2 = sext i32 %%1 to i64, !dbg !8 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_395_count);
   llvm_cbe_tmp__69 = (unsigned long long )((signed long long )(signed int )llvm_cbe_tmp__68);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%I64X\n", llvm_cbe_tmp__69);
@@ -1540,17 +1533,17 @@ printf("\n  %%24 = select i1 %%23, float %%22, float %%20, !dbg !7 for 0x%I64xth
 if (AESL_DEBUG_TRACE)
 printf("\n = %f,  0x%x\n", llvm_cbe_tmp__87, *(int*)(&llvm_cbe_tmp__87));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%25 = sdiv i32 %%storemerge19, 2, !dbg !9 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_477_count);
+printf("\n  %%25 = sdiv i32 %%storemerge19, 2, !dbg !8 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_477_count);
   llvm_cbe_tmp__88 = (unsigned int )((signed int )(((signed int )llvm_cbe_storemerge19) / ((signed int )2u)));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((signed int )llvm_cbe_tmp__88));
 if (AESL_DEBUG_TRACE)
-printf("\n  %%26 = sext i32 %%25 to i64, !dbg !9 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_478_count);
+printf("\n  %%26 = sext i32 %%25 to i64, !dbg !8 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_478_count);
   llvm_cbe_tmp__89 = (unsigned long long )((signed long long )(signed int )llvm_cbe_tmp__88);
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%I64X\n", llvm_cbe_tmp__89);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%27 = getelementptr inbounds [12 x float]* %%pool_feature, i64 %%2, i64 %%26, !dbg !9 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_479_count);
+printf("\n  %%27 = getelementptr inbounds [12 x float]* %%pool_feature, i64 %%2, i64 %%26, !dbg !8 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_479_count);
   llvm_cbe_tmp__90 = (float *)(&llvm_cbe_pool_feature[(((signed long long )llvm_cbe_tmp__69))
 #ifdef AESL_BC_SIM
  % 12
@@ -1566,12 +1559,12 @@ printf("\n = 0x%I64X",((signed long long )llvm_cbe_tmp__89));
 
 #endif
 if (AESL_DEBUG_TRACE)
-printf("\n  store float %%24, float* %%27, align 4, !dbg !9 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_480_count);
+printf("\n  store float %%24, float* %%27, align 4, !dbg !8 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_480_count);
   *llvm_cbe_tmp__90 = llvm_cbe_tmp__87;
 if (AESL_DEBUG_TRACE)
 printf("\n = %f\n", llvm_cbe_tmp__87);
 if (AESL_DEBUG_TRACE)
-printf("\n  %%28 = add nsw i32 %%storemerge19, 2, !dbg !10 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_481_count);
+printf("\n  %%28 = add nsw i32 %%storemerge19, 2, !dbg !9 for 0x%I64xth hint within @max_pool  --> \n", ++aesl_llvm_cbe_481_count);
   llvm_cbe_tmp__91 = (unsigned int )((unsigned int )(llvm_cbe_storemerge19&4294967295ull)) + ((unsigned int )(2u&4294967295ull));
 if (AESL_DEBUG_TRACE)
 printf("\n = 0x%X\n", ((unsigned int )(llvm_cbe_tmp__91&4294967295ull)));

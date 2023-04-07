@@ -1,6 +1,8 @@
 #pragma once
 
 #include "definitions.h"
+#include "activ_fun.h"
+#include <float.h>
 
 void
 max_pooling_layer1

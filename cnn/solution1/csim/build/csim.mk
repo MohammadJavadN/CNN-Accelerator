@@ -18,7 +18,7 @@ __SIM_DDS__ = 1
 
 ObjDir = obj
 
-HLS_SOURCES = ../../../../cnn_tb.c ../../../../lib/activ_fun.c ../../../../cnn.c ../../../../lib/conv.c ../../../../lib/dense.c ../../../../lib/flat.c ../../../../lib/pool.c ../../../../lib/utils.c
+HLS_SOURCES = ../../../../cnn_tb.c ../../../../lib/utils.c ../../../../lib/pool.c ../../../../lib/flat.c ../../../../lib/dense.c ../../../../lib/conv.c ../../../../cnn.c ../../../../lib/activ_fun.c
 
 TARGET := csim.exe
 
@@ -55,6 +55,7 @@ IFLAG += -D__SIM_FIR__
 IFLAG += -D__SIM_DDS__
 
 IFLAG += -D__DSP48E1__
+IFLAG += -Wno-unknown-pragmas 
 IFLAG += -g
 IFLAG += -DNT
 LFLAG += -Wl,--enable-auto-import 
@@ -75,39 +76,15 @@ AUTOCC := cmd //c apcc.bat
 
 $(ObjDir)/cnn_tb.o: ../../../../cnn_tb.c $(ObjDir)/.dir
 	$(Echo) "   Compiling(apcc) ../../../../cnn_tb.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+	$(Verb)  $(AUTOCC) -c -MMD -Wno-unknown-pragmas -Wno-unknown-pragmas  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
 -include $(ObjDir)/cnn_tb.d
 
-$(ObjDir)/activ_fun.o: ../../../../lib/activ_fun.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../lib/activ_fun.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/utils.o: ../../../../lib/utils.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../lib/utils.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/activ_fun.d
-
-$(ObjDir)/cnn.o: ../../../../cnn.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../cnn.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/cnn.d
-
-$(ObjDir)/conv.o: ../../../../lib/conv.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../lib/conv.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/conv.d
-
-$(ObjDir)/dense.o: ../../../../lib/dense.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../lib/dense.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/dense.d
-
-$(ObjDir)/flat.o: ../../../../lib/flat.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../lib/flat.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
-	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
-
--include $(ObjDir)/flat.d
+-include $(ObjDir)/utils.d
 
 $(ObjDir)/pool.o: ../../../../lib/pool.c $(ObjDir)/.dir
 	$(Echo) "   Compiling(apcc) ../../../../lib/pool.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
@@ -115,8 +92,32 @@ $(ObjDir)/pool.o: ../../../../lib/pool.c $(ObjDir)/.dir
 
 -include $(ObjDir)/pool.d
 
-$(ObjDir)/utils.o: ../../../../lib/utils.c $(ObjDir)/.dir
-	$(Echo) "   Compiling(apcc) ../../../../lib/utils.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+$(ObjDir)/flat.o: ../../../../lib/flat.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../lib/flat.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
 	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
 
--include $(ObjDir)/utils.d
+-include $(ObjDir)/flat.d
+
+$(ObjDir)/dense.o: ../../../../lib/dense.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../lib/dense.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/dense.d
+
+$(ObjDir)/conv.o: ../../../../lib/conv.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../lib/conv.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/conv.d
+
+$(ObjDir)/cnn.o: ../../../../cnn.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../cnn.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/cnn.d
+
+$(ObjDir)/activ_fun.o: ../../../../lib/activ_fun.c $(ObjDir)/.dir
+	$(Echo) "   Compiling(apcc) ../../../../lib/activ_fun.c in $(BuildMode) mode" $(AVE_DIR_DLOG)
+	$(Verb)  $(AUTOCC) -c -MMD  $(IFLAG) $(DFLAG) $< -o $@ ; \
+
+-include $(ObjDir)/activ_fun.d

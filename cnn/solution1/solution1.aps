@@ -2,12 +2,20 @@
     <checksum>
         <value string="false"/>
     </checksum>
+    <downStreamTool>
+        <DownStreamTool name="vivado"/>
+    </downStreamTool>
+    <clockList>
+        <clock default="false" name="default" period="100" uncertainty="0.12"/>
+    </clockList>
     <config>
         <schedule model="cnn"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
             <Platform>xilinx/qzynq/qzynq</Platform>
+            <Platform>xilinx/zynq/zynq</Platform>
+            <Platform>xilinx/zynq/zynq_fpv6</Platform>
             <customLibs/>
         </UIAutosynConf>
         <UIIPPackagerConf AskAgain="true" DescriptionButton="false" LibraryButton="false" RTLLanguage="verilog" UseNetList="none" VendorButton="false" VersionButton="false" evaluateRTL="false" setup="false">
@@ -61,14 +69,8 @@
     </targetInfo>
     <libraryList>
         <library name="DefaultPlatform" value="xilinx/qzynq/qzynq"/>
-        <library value="xilinx/zynq/zynq" name="DefaultPlatform"/>
-        <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
+        <library name="DefaultPlatform" value="xilinx/zynq/zynq"/>
+        <library name="DefaultPlatform" value="xilinx/zynq/zynq_fpv6"/>
     </libraryList>
-    <downStreamTool>
-        <DownStreamTool name="vivado"/>
-    </downStreamTool>
-    <clockList>
-        <clock name="default" default="false" uncertainty="0.12" period="100"/>
-    </clockList>
 </solution>
 
