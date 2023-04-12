@@ -18,6 +18,7 @@ void cnn(hls::stream<T> &img_in , T prediction[DIGITS])
 
 /**************** Convolution layer. ****************/
   T features_conv2 [FILTERS2][FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS] = { 0 };
+#pragma unroll(1)
   for (int f = 0; f < FILTERS1; f++)
     convolutional_layer2(pool_features1[f], features_conv2, conv2_weights[f]);
 

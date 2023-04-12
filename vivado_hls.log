@@ -1,5 +1,5 @@
 INFO: [HLS 200-10] Running 'E:/Xilinx/Vivado/2019.1/bin/unwrapped/win64.o/vivado_hls.exe'
-INFO: [HLS 200-10] For user 'User' on host 'desktop-ag9jmfg' (Windows NT_amd64 version 6.2) on Thu Apr 13 01:05:17 +0430 2023
+INFO: [HLS 200-10] For user 'User' on host 'desktop-ag9jmfg' (Windows NT_amd64 version 6.2) on Thu Apr 13 02:40:53 +0430 2023
 INFO: [HLS 200-10] In directory 'E:/code/hls/2'
 Sourcing Tcl script 'E:/code/hls/2/cnn/solution1/csynth.tcl'
 INFO: [HLS 200-10] Opening project 'E:/code/hls/2/cnn'.
@@ -25,20 +25,20 @@ INFO: [HLS 200-10] Analyzing design file 'lib/dense.cpp' ...
 INFO: [HLS 200-10] Analyzing design file 'lib/flat.cpp' ... 
 INFO: [HLS 200-10] Analyzing design file 'lib/pool.cpp' ... 
 INFO: [HLS 200-10] Analyzing design file 'lib/utils.cpp' ... 
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:05 ; elapsed = 00:02:01 . Memory (MB): peak = 185.172 ; gain = 94.027
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:05 ; elapsed = 00:02:01 . Memory (MB): peak = 185.172 ; gain = 94.027
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:05 ; elapsed = 00:01:37 . Memory (MB): peak = 186.098 ; gain = 95.902
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:05 ; elapsed = 00:01:37 . Memory (MB): peak = 186.098 ; gain = 95.902
 INFO: [HLS 200-10] Starting code transformations ...
 INFO: [XFORM 203-603] Inlining function 'convolutional_layer1' into 'cnn' (cnn.cpp:13).
 INFO: [XFORM 203-603] Inlining function 'max_pooling_layer1' into 'cnn' (cnn.cpp:17).
-INFO: [XFORM 203-603] Inlining function 'convolutional_layer2' into 'cnn' (cnn.cpp:22).
-INFO: [XFORM 203-603] Inlining function 'max_pooling_layer2' into 'cnn' (cnn.cpp:26).
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:02 ; elapsed = 00:03:08 . Memory (MB): peak = 185.172 ; gain = 94.027
+INFO: [XFORM 203-603] Inlining function 'convolutional_layer2' into 'cnn' (cnn.cpp:23).
+INFO: [XFORM 203-603] Inlining function 'max_pooling_layer2' into 'cnn' (cnn.cpp:27).
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:04 ; elapsed = 00:02:41 . Memory (MB): peak = 186.098 ; gain = 95.902
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO: [XFORM 203-602] Inlining function 'relu' into 'max_pool2' (lib/pool.cpp:26) automatically.
 INFO: [XFORM 203-602] Inlining function 'soft_max' into 'dense_layer' (lib/dense.cpp:26) automatically.
 INFO: [XFORM 203-602] Inlining function 'normalization' into 'cnn' (cnn.cpp:9) automatically.
 INFO: [XFORM 203-602] Inlining function 'relu' into 'cnn' (lib/conv.cpp:59->cnn.cpp:13) automatically.
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:02:27 ; elapsed = 00:04:37 . Memory (MB): peak = 185.172 ; gain = 94.027
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:02:38 ; elapsed = 00:04:25 . Memory (MB): peak = 186.098 ; gain = 95.902
 INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'conv2' (lib/conv.cpp:25) in function 'cnn' for pipelining.
 INFO: [XFORM 203-502] Unrolling all sub-loops inside loop 'conv2' (lib/conv.cpp:88) in function 'cnn' for pipelining.
 INFO: [HLS 200-489] Unrolling loop 'conv3' (lib/conv.cpp:29) in function 'cnn' completely with a factor of 5.
@@ -120,213 +120,213 @@ INFO: [XFORM 203-602] Inlining function 'relu' into 'max_pool2' (lib/pool.cpp:26
 INFO: [XFORM 203-602] Inlining function 'soft_max' into 'dense_layer' (lib/dense.cpp:26) automatically.
 INFO: [XFORM 203-602] Inlining function 'normalization' into 'cnn' (cnn.cpp:9) automatically.
 INFO: [XFORM 203-602] Inlining function 'relu' into 'cnn' (lib/conv.cpp:59->cnn.cpp:13) automatically.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:03:55 ; elapsed = 00:06:09 . Memory (MB): peak = 185.172 ; gain = 94.027
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:04:01 ; elapsed = 00:05:54 . Memory (MB): peak = 186.098 ; gain = 95.902
 INFO: [XFORM 203-541] Flattening a loop nest 'conv1' (lib/conv.cpp:24:46) in function 'cnn'.
 INFO: [XFORM 203-541] Flattening a loop nest 'conv1' (lib/conv.cpp:87:64) in function 'cnn'.
-INFO: [XFORM 203-541] Flattening a loop nest 'Loop-5' (cnn.cpp:21:17) in function 'cnn'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.109'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.111'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.11'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.110'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.101'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.1'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.105'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.0'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.106'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-5' (cnn.cpp:22:16) in function 'cnn'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.104'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.103'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.100'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.102'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.101'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.10'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.108'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.0'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.107'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.110'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.105'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.1'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.108'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.102'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.111'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.103'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.109'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.106'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.100'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.94'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.75'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.71'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.96'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.7'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.70'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.8'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.69'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.82'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.87'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.68'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.67'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.99'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.98'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.87'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.84'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.83'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.88'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.86'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.79'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.76'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.75'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.78'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.95'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.93'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.92'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.9'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.89'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.81'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.97'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.85'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.77'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.74'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.73'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.82'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.91'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.94'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.80'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.99'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.90'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.97'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.86'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.96'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.92'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.91'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.9'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.81'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.78'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.77'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.76'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.74'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.72'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.45'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.26'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.25'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.59'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.29'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.53'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.23'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.56'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.24'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.5'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.48'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.40'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.57'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.32'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.22'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.21'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.20'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.61'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.37'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.4'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.42'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.46'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.41'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.2'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.19'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.18'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.62'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.43'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.52'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.38'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.15'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.139'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.70'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.88'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.84'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.95'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.83'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.80'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.93'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.79'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.89'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.85'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.138'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.137'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.44'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.30'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.136'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.14'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.64'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.49'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.17'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.50'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.137'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.136'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.135'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.134'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.44'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.66'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.16'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.39'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.58'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.63'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.51'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.34'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.47'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.65'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.6'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.54'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.33'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.27'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.42'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.37'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.59'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.3'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.55'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.31'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.60'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.25'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.16'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.47'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.38'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.52'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.26'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.35'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.29'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.139'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.2'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.21'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.63'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.4'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.36'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.34'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.30'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.23'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.134'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.54'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.39'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.51'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.32'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.43'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.57'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.15'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.19'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.62'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.55'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.45'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.64'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.31'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.58'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.49'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.61'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.41'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.28'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.112'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.122'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.13'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.127'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.129'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.125'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.115'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.121'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.124'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.131'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.120'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.118'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.132'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.133'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.27'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.65'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.33'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.24'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.22'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.53'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.46'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.20'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.56'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.14'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.116'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.126'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.117'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.123'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.114'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.127'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.118'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.119'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.12'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.113'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.130'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.112'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.128'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.121'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.123'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.130'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.125'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.117'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.115'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.131'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.133'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.13'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.132'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.126'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.129'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.124'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.122'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.120'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.0'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.36'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.6'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.53'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.43'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.7'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.58'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.41'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.59'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.46'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.38'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.37'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.36'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.9'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.8'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.57'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.55'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.56'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.54'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.51'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.47'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.55'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.49'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.50'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.44'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.42'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.52'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.45'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.47'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.57'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.46'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.4'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.39'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.38'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.37'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.41'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.31'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.3'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.28'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.33'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.11'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.27'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.32'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.25'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.23'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.15'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.12'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.49'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.52'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.45'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.58'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.44'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.43'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.42'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.14'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.30'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.20'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.26'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.24'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.19'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.2'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.35'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.25'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.15'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.28'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.13'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.33'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.30'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.2'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.16'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.21'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.22'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.10'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.34'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.35'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.29'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.23'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.21'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.26'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.22'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.32'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.31'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.20'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.19'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.24'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.27'.
 INTERNAL-INFO: never seen llvm instruction 'fexp'(507)
 INTERNAL-INFO: never seen llvm instruction 'fexp'(507)
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:04:07 ; elapsed = 00:06:30 . Memory (MB): peak = 217.613 ; gain = 126.469
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:04:13 ; elapsed = 00:06:22 . Memory (MB): peak = 217.199 ; gain = 127.004
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO: [HLS 200-10] Synthesizing 'cnn' ...
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -334,50 +334,50 @@ INFO: [HLS 200-42] -- Implementing module 'max_pool'
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 390.389 seconds; current allocated memory: 160.533 MB.
+INFO: [HLS 200-111]  Elapsed time: 383.116 seconds; current allocated memory: 160.543 MB.
 INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 1.336 seconds; current allocated memory: 160.858 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.876 seconds; current allocated memory: 160.868 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'max_pool2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.572 seconds; current allocated memory: 161.178 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.843 seconds; current allocated memory: 161.188 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.706 seconds; current allocated memory: 161.506 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.465 seconds; current allocated memory: 161.516 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'flattening_layer' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.991 seconds; current allocated memory: 161.615 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.594 seconds; current allocated memory: 161.625 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.363 seconds; current allocated memory: 161.761 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 161.770 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_layer' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.735 seconds; current allocated memory: 161.984 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.57 seconds; current allocated memory: 161.993 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 0.583 seconds; current allocated memory: 162.222 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.477 seconds; current allocated memory: 162.232 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'cnn' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -387,13 +387,13 @@ INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-61] Pipelining loop 'L_conv1_conv2'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 12.899 seconds; current allocated memory: 166.746 MB.
+INFO: [HLS 200-111]  Elapsed time: 11.864 seconds; current allocated memory: 166.762 MB.
 INFO: [BIND 205-100] Starting micro-architecture generation ...
 INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-INFO: [HLS 200-111]  Elapsed time: 7.606 seconds; current allocated memory: 172.675 MB.
+INFO: [HLS 200-111]  Elapsed time: 7.265 seconds; current allocated memory: 172.678 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'max_pool' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -401,7 +401,7 @@ INFO: [SYN 201-210] Renamed object name 'cnn_fcmp_32ns_32ns_1_1_1' to 'cnn_fcmp_
 INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32nbkb': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'cnn_mux_63_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
-INFO: [HLS 200-111]  Elapsed time: 7.555 seconds; current allocated memory: 173.426 MB.
+INFO: [HLS 200-111]  Elapsed time: 7.389 seconds; current allocated memory: 173.430 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'max_pool2' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -410,12 +410,12 @@ INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32ncud': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32nbkb': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'cnn_mux_104_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool2'.
-INFO: [HLS 200-111]  Elapsed time: 1.223 seconds; current allocated memory: 174.176 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.05 seconds; current allocated memory: 174.180 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'flattening_layer' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [RTGEN 206-100] Finished creating RTL model for 'flattening_layer'.
-INFO: [HLS 200-111]  Elapsed time: 1.326 seconds; current allocated memory: 174.555 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.969 seconds; current allocated memory: 174.559 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_layer' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -430,7 +430,7 @@ INFO: [RTGEN 206-100] Generating core module 'cnn_fdiv_32ns_32nhbi': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'cnn_fexp_32ns_32nibs': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ng8j': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_layer'.
-INFO: [HLS 200-111]  Elapsed time: 1.324 seconds; current allocated memory: 175.164 MB.
+INFO: [HLS 200-111]  Elapsed time: 1.53 seconds; current allocated memory: 175.167 MB.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cnn' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -905,7 +905,7 @@ INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32nbkb': 6 instance(
 INFO: [RTGEN 206-100] Generating core module 'cnn_fdiv_32ns_32nhbi': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ng8j': 250 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn'.
-INFO: [HLS 200-111]  Elapsed time: 65.179 seconds; current allocated memory: 191.011 MB.
+INFO: [HLS 200-111]  Elapsed time: 98.883 seconds; current allocated memory: 191.015 MB.
 INFO: [RTMG 210-279] Implementing memory 'dense_layer_densedEe_rom' using auto ROMs.
 INFO: [RTMG 210-279] Implementing memory 'dense_layer_denseeOg_rom' using distributed ROMs.
 INFO: [RTMG 210-278] Implementing memory 'dense_layer_densefYi_ram (RAM)' using distributed RAMs.
@@ -1165,7 +1165,7 @@ INFO: [RTMG 210-279] Implementing memory 'cnn_conv2_biases_rom' using distribute
 INFO: [RTMG 210-278] Implementing memory 'cnn_pool_features2_ram (RAM)' using block RAMs with power-on initialization.
 INFO: [RTMG 210-278] Implementing memory 'cnn_features_converQ_ram (RAM)' using block RAMs.
 INFO: [RTMG 210-285] Implementing FIFO 'norm_img_V_U(fifo_w32_d784_A)' using Block RAMs.
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:06:07 ; elapsed = 00:12:14 . Memory (MB): peak = 307.000 ; gain = 215.855
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:06:22 ; elapsed = 00:11:55 . Memory (MB): peak = 306.996 ; gain = 216.801
 INFO: [VHDL 208-304] Generating VHDL RTL for cnn.
 INFO: [VLOG 209-307] Generating Verilog RTL for cnn.
-INFO: [HLS 200-112] Total elapsed time: 736.068 seconds; peak allocated memory: 191.011 MB.
+INFO: [HLS 200-112] Total elapsed time: 715.478 seconds; peak allocated memory: 191.015 MB.

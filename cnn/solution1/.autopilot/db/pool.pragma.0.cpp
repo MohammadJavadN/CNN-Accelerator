@@ -782,7 +782,7 @@ max_pooling_layer2
 (
   T features [10][(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) - (5 - 1))],
   T pool_features [10][((((28 - (5 - 1)) / 2) - (5 - 1)) / 2)][((((28 - (5 - 1)) / 2) - (5 - 1)) / 2)],
-  T conv_biases2[10]
+  const T conv_biases2[10]
 );
 # 2 "lib/pool.cpp" 2
 #pragma GCC diagnostic ignored "-Wunused-label"
@@ -791,7 +791,7 @@ void
 max_pool2
 (
   T feature [(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) - (5 - 1))],
-  T pool_feature [((((28 - (5 - 1)) / 2) - (5 - 1)) / 2)][((((28 - (5 - 1)) / 2) - (5 - 1)) / 2)], T b
+  T pool_feature [((((28 - (5 - 1)) / 2) - (5 - 1)) / 2)][((((28 - (5 - 1)) / 2) - (5 - 1)) / 2)], const T b
 )
 {_ssdm_SpecArrayDimSize(feature, 8);_ssdm_SpecArrayDimSize(pool_feature, 4);
   T pool = 0.0;
@@ -860,7 +860,7 @@ max_pooling_layer2
 (
   T features [10][(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) - (5 - 1))],
   T pool_features [10][((((28 - (5 - 1)) / 2) - (5 - 1)) / 2)][((((28 - (5 - 1)) / 2) - (5 - 1)) / 2)],
-  T conv_biases2[10]
+  const T conv_biases2[10]
 )
 {_ssdm_SpecArrayDimSize(features, 10);_ssdm_SpecArrayDimSize(pool_features, 10);_ssdm_SpecArrayDimSize(conv_biases2, 10);
 #pragma HLS INLINE

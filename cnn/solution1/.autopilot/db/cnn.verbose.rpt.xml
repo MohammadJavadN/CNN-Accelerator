@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'cnn'" level="0">
-<item name = "Date">Thu Apr 13 01:13:38 2023
+<item name = "Date">Thu Apr 13 02:49:38 2023
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">cnn</item>
@@ -879,7 +879,7 @@
 <column name="add_ln20_1_fu_10559_p2">+, 0, 0, 12, 3, 1</column>
 <column name="add_ln20_2_fu_10565_p2">+, 0, 0, 12, 3, 1</column>
 <column name="add_ln20_fu_10553_p2">+, 0, 0, 13, 4, 1</column>
-<column name="add_ln21_fu_10617_p2">+, 0, 0, 14, 10, 1</column>
+<column name="add_ln22_fu_10617_p2">+, 0, 0, 14, 10, 1</column>
 <column name="add_ln24_1_fu_8543_p2">+, 0, 0, 14, 10, 1</column>
 <column name="add_ln24_fu_9814_p2">+, 0, 0, 15, 6, 4</column>
 <column name="add_ln59_1_fu_10219_p2">+, 0, 0, 13, 11, 11</column>
@@ -900,8 +900,8 @@
 <column name="sub_ln91_1_fu_11404_p2">-, 0, 0, 11, 11, 11</column>
 <column name="sub_ln91_fu_11365_p2">-, 0, 0, 11, 64, 64</column>
 <column name="and_ln115_fu_11331_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln22_2_fu_11041_p2">and, 0, 0, 2, 1, 1</column>
-<column name="and_ln22_fu_11029_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln23_1_fu_11041_p2">and, 0, 0, 2, 1, 1</column>
+<column name="and_ln23_fu_11029_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln52_fu_9799_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln5_1_fu_10322_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln5_2_fu_10373_p2">and, 0, 0, 2, 1, 1</column>
@@ -920,7 +920,7 @@
 <column name="icmp_ln20_1_fu_10599_p2">icmp, 0, 0, 9, 3, 2</column>
 <column name="icmp_ln20_2_fu_10605_p2">icmp, 0, 0, 9, 4, 4</column>
 <column name="icmp_ln20_fu_10593_p2">icmp, 0, 0, 9, 3, 2</column>
-<column name="icmp_ln21_fu_10611_p2">icmp, 0, 0, 13, 10, 9</column>
+<column name="icmp_ln22_fu_10611_p2">icmp, 0, 0, 13, 10, 9</column>
 <column name="icmp_ln24_fu_8537_p2">icmp, 0, 0, 13, 10, 9</column>
 <column name="icmp_ln25_fu_8555_p2">icmp, 0, 0, 11, 5, 4</column>
 <column name="icmp_ln52_1_fu_8595_p2">icmp, 0, 0, 9, 3, 1</column>
@@ -955,9 +955,9 @@
 <column name="features_conv1_3_d0">select, 0, 0, 32, 1, 32</column>
 <column name="features_conv1_4_d0">select, 0, 0, 32, 1, 32</column>
 <column name="features_conv1_5_d0">select, 0, 0, 32, 1, 32</column>
-<column name="select_ln22_2_fu_10635_p3">select, 0, 0, 3, 1, 3</column>
-<column name="select_ln22_3_fu_11110_p3">select, 0, 0, 4, 1, 4</column>
-<column name="select_ln22_fu_11001_p3">select, 0, 0, 4, 1, 1</column>
+<column name="select_ln23_2_fu_10635_p3">select, 0, 0, 3, 1, 3</column>
+<column name="select_ln23_3_fu_11110_p3">select, 0, 0, 4, 1, 4</column>
+<column name="select_ln23_fu_11001_p3">select, 0, 0, 4, 1, 1</column>
 <column name="select_ln24_1_fu_8601_p3">select, 0, 0, 2, 1, 1</column>
 <column name="select_ln24_2_fu_8609_p3">select, 0, 0, 5, 1, 5</column>
 <column name="select_ln24_fu_8561_p3">select, 0, 0, 5, 1, 1</column>
@@ -970,7 +970,7 @@
 <column name="ap_enable_pp1">xor, 0, 0, 2, 1, 2</column>
 <column name="ap_enable_reg_pp0_iter1">xor, 0, 0, 2, 2, 1</column>
 <column name="ap_enable_reg_pp1_iter1">xor, 0, 0, 2, 2, 1</column>
-<column name="xor_ln22_fu_11008_p2">xor, 0, 0, 2, 1, 2</column>
+<column name="xor_ln23_fu_11008_p2">xor, 0, 0, 2, 1, 2</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
@@ -1682,7 +1682,7 @@
 <column name="grp_flattening_layer_fu_5288_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_max_pool2_fu_5248_ap_start_reg">1, 0, 1, 0</column>
 <column name="grp_max_pool_fu_5268_ap_start_reg">1, 0, 1, 0</column>
-<column name="icmp_ln21_reg_11929">1, 0, 1, 0</column>
+<column name="icmp_ln22_reg_11929">1, 0, 1, 0</column>
 <column name="icmp_ln24_reg_11835">1, 0, 1, 0</column>
 <column name="icmp_ln87_reg_11938">1, 0, 1, 0</column>
 <column name="indvar_flatten11_reg_5189">8, 0, 8, 0</column>
@@ -1863,7 +1863,7 @@
 <column name="r_reg_11817">5, 0, 5, 0</column>
 <column name="row_0_i49_reg_5200">4, 0, 4, 0</column>
 <column name="row_0_i_reg_5098">5, 0, 5, 0</column>
-<column name="select_ln22_2_reg_11946">3, 0, 3, 0</column>
+<column name="select_ln23_2_reg_11946">3, 0, 3, 0</column>
 <column name="select_ln24_2_reg_11849">5, 0, 5, 0</column>
 <column name="select_ln24_reg_11844">5, 0, 5, 0</column>
 <column name="select_ln91_1_reg_13338">4, 0, 4, 0</column>
@@ -1915,11 +1915,11 @@
 <column name="tmp_8_4_7_8_reg_13653">32, 0, 32, 0</column>
 <column name="tmp_8_4_7_9_reg_13658">32, 0, 32, 0</column>
 <column name="tmp_8_4_7_reg_13613">32, 0, 32, 0</column>
-<column name="zext_ln22_reg_11953">3, 0, 64, 61</column>
-<column name="icmp_ln21_reg_11929">64, 32, 1, 0</column>
+<column name="zext_ln23_reg_11953">3, 0, 64, 61</column>
+<column name="icmp_ln22_reg_11929">64, 32, 1, 0</column>
 <column name="icmp_ln87_reg_11938">64, 32, 1, 0</column>
-<column name="select_ln22_2_reg_11946">64, 32, 3, 0</column>
-<column name="zext_ln22_reg_11953">64, 32, 64, 61</column>
+<column name="select_ln23_2_reg_11946">64, 32, 3, 0</column>
+<column name="zext_ln23_reg_11953">64, 32, 64, 61</column>
 </table>
 </item>
 </section>

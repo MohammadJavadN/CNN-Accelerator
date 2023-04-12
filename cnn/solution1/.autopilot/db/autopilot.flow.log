@@ -1,4 +1,4 @@
-INFO-FLOW: Workspace E:/code/hls/2/cnn/solution1 opened at Thu Apr 13 01:05:17 +0430 2023
+INFO-FLOW: Workspace E:/code/hls/2/cnn/solution1 opened at Thu Apr 13 02:40:54 +0430 2023
 Execute     config_clock -quiet -name default -period 100 -default=false 
 INFO: [SYN 201-201] Setting up clock 'default' with a period of 100ns.
 Execute     config_clock -quiet -name default -uncertainty 0.12 
@@ -42,11 +42,11 @@ Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interfac
 Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
-Command         ap_source done; 0.221 sec.
+Command         ap_source done; 0.302 sec.
 Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command       ap_source done; 0.348 sec.
-Command     ap_source done; 0.349 sec.
+Command       ap_source done; 0.448 sec.
+Command     ap_source done; 0.448 sec.
 Execute     open_platform DefaultPlatform 
 Execute     import_lib E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6 
 Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.lib 
@@ -61,7 +61,7 @@ Execute     source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fp
 Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 Execute     set_part xc7z020i-clg484-1L 
 Execute       ap_part_info -name xc7z020i-clg484-1L -data single -quiet 
-Command       ap_part_info done; 1.817 sec.
+Command       ap_part_info done; 2.038 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 Execute       add_library xilinx/zynq/zynq:xc7z020i:-clg484:-1L 
 Execute         get_default_platform 
@@ -79,7 +79,7 @@ Execute         get_default_platform
 INFO: [HLS 200-10] Setting target device to 'xc7z020i-clg484-1L'
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 Execute       get_default_platform 
-Command     set_part done; 2.134 sec.
+Command     set_part done; 2.385 sec.
 Execute     ap_part_info -data single -name xc7z020i-clg484-1L 
 Execute     ap_part_info -name xc7z020i-clg484-1L -data resources 
 Execute     ap_part_info -name xc7z020i-clg484-1L -data info 
@@ -87,7 +87,7 @@ Execute     ap_part_info -name xc7z020i-clg484-1L -data info
 Execute     config_chip_info -quiet -resource {SLICE 13300} {LUT 53200} {FF 106400} {DSP48E 220} {BRAM 280} {URAM 0} 
 Execute     ap_part_info -name xc7z020i-clg484-1L -data info 
 Execute     config_chip_info -quiet -speed slow 
-Command   open_solution done; 2.636 sec.
+Command   open_solution done; 3.018 sec.
 Execute   set_part xc7z020i-clg484-1L -tool vivado 
 Execute     ap_part_info -name xc7z020i-clg484-1L -data single -quiet 
 Execute     ap_part_info -name xc7z020i-clg484-1L -data info 
@@ -106,7 +106,7 @@ Execute     add_library xilinx/zynq/zynq_fpv6
 Execute       get_default_platform 
 Execute     ap_part_info -name xc7z020i-clg484-1L -data info 
 Execute     get_default_platform 
-Command   set_part done; 0.271 sec.
+Command   set_part done; 0.29 sec.
 Execute   create_clock -period 100 -name default 
 Execute   set_clock_uncertainty 0.12 
 Execute   csynth_design 
@@ -135,47 +135,47 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "lib/activ_fun.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-exceptions -D__llvm__ -E lib/activ_fun.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp
-Command       clang done; 5.259 sec.
+Command       clang done; 3.97 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.936 sec.
+Command       tidy_31 done; 0.392 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp"  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp -o E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc
-Command       clang done; 4.89 sec.
-INFO-FLOW: Done: GCC PP time: 11.1 seconds per iteration
+Command       clang done; 2.428 sec.
+INFO-FLOW: Done: GCC PP time: 6.8 seconds per iteration
 Execute       source E:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/huddle.tcl 
 Execute       source E:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/json2huddle.tcl 
 Execute         source E:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/try/try.tcl 
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.175 sec.
+Command       tidy_31 done; 0.136 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.122 sec.
+Command       tidy_31 done; 0.159 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.activ_fun.pp.0.cpp.diag.yml E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.activ_fun.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.activ_fun.pp.0.cpp.err.log 
-Command       ap_eval done; 0.659 sec.
+Command       ap_eval done; 0.185 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.activ_fun.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.activ_fun.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.activ_fun.pp.0.cpp.err.log 
-Command         ap_eval done; 0.19 sec.
+Command         ap_eval done; 1.012 sec.
 Execute         source E:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/yaml/yaml.tcl 
 Execute           source E:/Xilinx/Vivado/2019.1/tps/tcl/tcllib1.11.1/cmdline/cmdline.tcl 
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.activ_fun.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.activ_fun.pp.0.cpp.err.log 
-Command         ap_eval done; 0.563 sec.
-Command       tidy_31 done; 0.924 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.7 seconds per iteration
+Command         ap_eval done; 0.217 sec.
+Command       tidy_31 done; 1.68 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 2 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.134 sec.
+Command       tidy_31 done; 0.127 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 INFO-FLOW: Processing labels
 Execute       clang -src E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.bc" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.bc
-Command       clang done; 2.601 sec.
+Command       clang done; 2.792 sec.
 INFO: [HLS 200-10] Analyzing design file 'cnn.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       is_m_axi_addr64 
@@ -187,42 +187,42 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "cnn.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-exceptions -D__llvm__ -E cnn.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp
-Command       clang done; 4.247 sec.
+Command       clang done; 3.493 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.825 sec.
+Command       tidy_31 done; 0.288 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp"  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp -o E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc
-Command       clang done; 3.462 sec.
-INFO-FLOW: Done: GCC PP time: 8.5 seconds per iteration
+Command       clang done; 2.425 sec.
+INFO-FLOW: Done: GCC PP time: 6.2 seconds per iteration
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.544 sec.
+Command       tidy_31 done; 0.182 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.187 sec.
+Command       tidy_31 done; 0.182 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.cnn.pp.0.cpp.diag.yml E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.cnn.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.cnn.pp.0.cpp.err.log 
-Command       ap_eval done; 0.754 sec.
+Command       ap_eval done; 0.16 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.cnn.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.cnn.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.cnn.pp.0.cpp.err.log 
-Command         ap_eval done; 0.33 sec.
+Command         ap_eval done; 0.532 sec.
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.cnn.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.cnn.pp.0.cpp.err.log 
-Command         ap_eval done; 2.343 sec.
-Command       tidy_31 done; 2.702 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 3.6 seconds per iteration
+Command         ap_eval done; 0.25 sec.
+Command       tidy_31 done; 0.853 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.2 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.344 sec.
+Command       tidy_31 done; 0.358 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 INFO-FLOW: Processing labels
 Execute       clang -src E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.bc" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.bc
-Command       clang done; 2.682 sec.
+Command       clang done; 3.3 sec.
 INFO: [HLS 200-10] Analyzing design file 'lib/conv.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       is_m_axi_addr64 
@@ -234,42 +234,42 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "lib/conv.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-exceptions -D__llvm__ -E lib/conv.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp
-Command       clang done; 2.435 sec.
+Command       clang done; 3.344 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.641 sec.
+Command       tidy_31 done; 0.17 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp"  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp -o E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc
-Command       clang done; 2.718 sec.
-INFO-FLOW: Done: GCC PP time: 5.8 seconds per iteration
+Command       clang done; 2.423 sec.
+INFO-FLOW: Done: GCC PP time: 5.9 seconds per iteration
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.195 sec.
+Command       tidy_31 done; 0.138 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.143 sec.
+Command       tidy_31 done; 0.149 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.diag.yml E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.conv.pp.0.cpp.err.log 
-Command       ap_eval done; 0.289 sec.
+Command       ap_eval done; 0.104 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.conv.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.conv.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.conv.pp.0.cpp.err.log 
-Command         ap_eval done; 0.591 sec.
+Command         ap_eval done; 0.252 sec.
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.conv.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.conv.pp.0.cpp.err.log 
-Command         ap_eval done; 0.807 sec.
-Command       tidy_31 done; 1.449 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.9 seconds per iteration
+Command         ap_eval done; 0.179 sec.
+Command       tidy_31 done; 0.527 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 0.8 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.235 sec.
+Command       tidy_31 done; 0.33 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 INFO-FLOW: Processing labels
 Execute       clang -src E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/code/hls/2/cnn/solution1/.autopilot/db/conv.bc" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/code/hls/2/cnn/solution1/.autopilot/db/conv.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/code/hls/2/cnn/solution1/.autopilot/db/conv.bc
-Command       clang done; 2.908 sec.
+Command       clang done; 3.769 sec.
 INFO: [HLS 200-10] Analyzing design file 'lib/dense.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       is_m_axi_addr64 
@@ -281,42 +281,42 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "lib/dense.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-exceptions -D__llvm__ -E lib/dense.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp
-Command       clang done; 3.012 sec.
+Command       clang done; 2.691 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.489 sec.
+Command       tidy_31 done; 0.275 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp"  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp -o E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc
-Command       clang done; 2.479 sec.
-INFO-FLOW: Done: GCC PP time: 6 seconds per iteration
+Command       clang done; 3.503 sec.
+INFO-FLOW: Done: GCC PP time: 6.5 seconds per iteration
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.15 sec.
+Command       tidy_31 done; 0.156 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.175 sec.
+Command       tidy_31 done; 0.157 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.dense.pp.0.cpp.diag.yml E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.dense.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.dense.pp.0.cpp.err.log 
-Command       ap_eval done; 0.272 sec.
+Command       ap_eval done; 0.443 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.dense.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.dense.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.dense.pp.0.cpp.err.log 
-Command         ap_eval done; 0.273 sec.
+Command         ap_eval done; 0.936 sec.
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.dense.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.dense.pp.0.cpp.err.log 
-Command         ap_eval done; 0.315 sec.
-Command       tidy_31 done; 0.829 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.3 seconds per iteration
+Command         ap_eval done; 0.13 sec.
+Command       tidy_31 done; 1.097 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.7 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.227 sec.
+Command       tidy_31 done; 0.376 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 INFO-FLOW: Processing labels
 Execute       clang -src E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/code/hls/2/cnn/solution1/.autopilot/db/dense.bc" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/code/hls/2/cnn/solution1/.autopilot/db/dense.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense.bc
-Command       clang done; 2.642 sec.
+Command       clang done; 3.363 sec.
 INFO: [HLS 200-10] Analyzing design file 'lib/flat.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       is_m_axi_addr64 
@@ -328,42 +328,42 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "lib/flat.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-exceptions -D__llvm__ -E lib/flat.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp
-Command       clang done; 2.683 sec.
+Command       clang done; 2.669 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 1.471 sec.
+Command       tidy_31 done; 0.133 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp"  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp -o E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc
-Command       clang done; 4.142 sec.
-INFO-FLOW: Done: GCC PP time: 8.3 seconds per iteration
+Command       clang done; 3.206 sec.
+INFO-FLOW: Done: GCC PP time: 6 seconds per iteration
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.471 sec.
+Command       tidy_31 done; 0.608 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.132 sec.
+Command       tidy_31 done; 0.145 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.flat.pp.0.cpp.diag.yml E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.flat.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.flat.pp.0.cpp.err.log 
-Command       ap_eval done; 0.242 sec.
+Command       ap_eval done; 0.129 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.flat.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.flat.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.flat.pp.0.cpp.err.log 
-Command         ap_eval done; 0.157 sec.
+Command         ap_eval done; 0.343 sec.
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.flat.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.flat.pp.0.cpp.err.log 
-Command         ap_eval done; 0.275 sec.
-Command       tidy_31 done; 0.469 sec.
+Command         ap_eval done; 0.137 sec.
+Command       tidy_31 done; 0.533 sec.
 INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 0.8 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.123 sec.
+Command       tidy_31 done; 0.189 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 INFO-FLOW: Processing labels
 Execute       clang -src E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/code/hls/2/cnn/solution1/.autopilot/db/flat.bc" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/code/hls/2/cnn/solution1/.autopilot/db/flat.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/code/hls/2/cnn/solution1/.autopilot/db/flat.bc
-Command       clang done; 3.336 sec.
+Command       clang done; 2.833 sec.
 INFO: [HLS 200-10] Analyzing design file 'lib/pool.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       is_m_axi_addr64 
@@ -375,42 +375,42 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "lib/pool.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-exceptions -D__llvm__ -E lib/pool.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp
-Command       clang done; 2.578 sec.
+Command       clang done; 2.889 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.2 sec.
+Command       tidy_31 done; 0.153 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp"  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp -o E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc
-Command       clang done; 5.49 sec.
-INFO-FLOW: Done: GCC PP time: 8.3 seconds per iteration
+Command       clang done; 2.882 sec.
+INFO-FLOW: Done: GCC PP time: 5.9 seconds per iteration
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.804 sec.
+Command       tidy_31 done; 0.418 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.394 sec.
+Command       tidy_31 done; 0.326 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.pool.pp.0.cpp.diag.yml E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.pool.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.pool.pp.0.cpp.err.log 
-Command       ap_eval done; 0.84 sec.
+Command       ap_eval done; 0.178 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.pool.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.pool.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.pool.pp.0.cpp.err.log 
-Command         ap_eval done; 0.496 sec.
+Command         ap_eval done; 0.291 sec.
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.pool.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.pool.pp.0.cpp.err.log 
-Command         ap_eval done; 0.468 sec.
-Command       tidy_31 done; 1.174 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 2.4 seconds per iteration
+Command         ap_eval done; 0.167 sec.
+Command       tidy_31 done; 0.628 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.1 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.266 sec.
+Command       tidy_31 done; 0.232 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 INFO-FLOW: Processing labels
 Execute       clang -src E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/code/hls/2/cnn/solution1/.autopilot/db/pool.bc" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/code/hls/2/cnn/solution1/.autopilot/db/pool.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/code/hls/2/cnn/solution1/.autopilot/db/pool.bc
-Command       clang done; 3.421 sec.
+Command       clang done; 3.606 sec.
 INFO: [HLS 200-10] Analyzing design file 'lib/utils.cpp' ... 
 INFO-FLOW: Compiling one TU...
 Execute       is_m_axi_addr64 
@@ -422,63 +422,62 @@ INFO-FLOW: Running: GCC PP
 INFO-FLOW: Source preprocessing
 Execute       clang  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls  -fno-exceptions  -D__llvm__  -E "lib/utils.cpp"     -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-exceptions -D__llvm__ -E lib/utils.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -o E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp
-Command       clang done; 6 sec.
+Command       clang done; 3.86 sec.
 Execute       tidy_31 xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-xfmat-array-geometry -quiet -fix E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 1.537 sec.
+Command       tidy_31 done; 0.162 sec.
 INFO-FLOW: Syntax Checking before pre-processing...
 Execute       clang -syntaxcheck -src E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp  -fno-limit-debug-info -gcc-toolchain "E:/Xilinx/Vivado/2019.1/msys" -hls    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit  -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__  "E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp"  -o "E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc"  
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -fno-threadsafe-statics -fno-use-cxa-atexit -D__CLANG_3_1__ -D__cdecl= -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp -o E:/code/hls/2/cnn/solution1/.autopilot/db/useless.bc
-Command       clang done; 7.02 sec.
-INFO-FLOW: Done: GCC PP time: 14.6 seconds per iteration
+Command       clang done; 2.524 sec.
+INFO-FLOW: Done: GCC PP time: 6.5 seconds per iteration
 Execute       list_core -type functional_unit 
 Execute       tidy_31 xilinx-systemc-detector E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-systemc-detector -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/.systemc_flag -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 1.027 sec.
+Command       tidy_31 done; 0.149 sec.
 INFO-FLOW: Running: tidy-3.1 CDT preprocess
 Execute       tidy_31 xilinx-directive2pragma E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp std=gnu++98 -directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-directive2pragma -import-directive=E:/code/hls/2/cnn/solution1/.autopilot/db/all.directive.json -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.133 sec.
+Command       tidy_31 done; 0.174 sec.
 Execute       get_config_dataflow -strict_mode 
 Execute       ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-dataflow-lawyer -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.utils.pp.0.cpp.diag.yml E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 -fstrict-dataflow > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.utils.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-dataflow-lawyer.utils.pp.0.cpp.err.log 
-Command       ap_eval done; 0.797 sec.
+Command       ap_eval done; 0.239 sec.
 Execute       tidy_31 -errorcheck xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp std=gnu++98 
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -export-fixes=E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.utils.pp.0.cpp.diag.yml -header-filter=.* -checks=-*,xilinx-constantarray-param,xilinx-resource-pragma-transformer,xilinx-xfmat-array-geometry -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.utils.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/tidy-3.1.utils.pp.0.cpp.err.log 
-Command         ap_eval done; 0.133 sec.
+Command         ap_eval done; 0.398 sec.
 Execute         ap_eval exec -ignorestderr E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/xilinx-legacy-rewriter E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pp.0.cpp -- -std=gnu++98 -fhls -ferror-limit=0 > E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.utils.pp.0.cpp.out.log 2> E:/code/hls/2/cnn/solution1/.autopilot/db/xilinx-legacy-rewriter.utils.pp.0.cpp.err.log 
-Command         ap_eval done; 0.541 sec.
-Command       tidy_31 done; 0.682 sec.
-INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 2.3 seconds per iteration
+Command         ap_eval done; 0.249 sec.
+Command       tidy_31 done; 0.657 sec.
+INFO-FLOW: Done: tidy-3.1 CDT preprocess time: 1.1 seconds per iteration
 INFO-FLOW: Pragma Handling...
 Execute       tidy_31 xilinx-ssdm-intrinsics-arguments E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pragma.1.cpp std=gnu++98 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang-3.9-csynth/bin/tidy-3.1 -header-filter=.* -checks=-*,xilinx-ssdm-intrinsics-arguments -quiet -fix-errors E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pragma.1.cpp -- -std=gnu++98 -fhls -ferror-limit=0
-Command       tidy_31 done; 0.136 sec.
+Command       tidy_31 done; 0.252 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info 
 INFO-FLOW: Processing labels
 Execute       clang -src E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pragma.2.cpp  -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions  -D__llvm__  -w  "E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pragma.2.cpp"    -fno-math-errno -c -emit-llvm -O0  -mllvm -disable-llvm-optzns -fno-threadsafe-statics  -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot" -I "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc" -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o "E:/code/hls/2/cnn/solution1/.autopilot/db/utils.bc" 
 INFO-FLOW: exec E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/clang -fno-limit-debug-info -gcc-toolchain E:/Xilinx/Vivado/2019.1/msys -hls -hls-analyze-label -hls-analyze-pragma -fno-exceptions -D__llvm__ -w E:/code/hls/2/cnn/solution1/.autopilot/db/utils.pragma.2.cpp -fno-math-errno -c -emit-llvm -O0 -mllvm -disable-llvm-optzns -fno-threadsafe-statics -fno-use-cxa-atexit -DAESL_SYN -D__SYNTHESIS__ -D__HLS_SYN__ -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot -I E:/Xilinx/Vivado/2019.1/common/technology/autopilot/ap_sysc -include etc/autopilot_ssdm_op.h -D__DSP48E1__ -g -o E:/code/hls/2/cnn/solution1/.autopilot/db/utils.bc
-Command       clang done; 2.512 sec.
+Command       clang done; 3.864 sec.
 INFO-FLOW: Linking Debug ...
 Execute       llvm-ld E:/code/hls/2/cnn/solution1/.autopilot/db/activ_fun.g.bc E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.g.bc E:/code/hls/2/cnn/solution1/.autopilot/db/conv.g.bc E:/code/hls/2/cnn/solution1/.autopilot/db/dense.g.bc E:/code/hls/2/cnn/solution1/.autopilot/db/flat.g.bc E:/code/hls/2/cnn/solution1/.autopilot/db/pool.g.bc E:/code/hls/2/cnn/solution1/.autopilot/db/utils.g.bc -hls-opt -except-internalize cnn -LE:/Xilinx/Vivado/2019.1/win64/lib -lhlsm -lhlsmc++ -o E:/code/hls/2/cnn/solution1/.autopilot/db/a.g 
-Command       llvm-ld done; 13.382 sec.
-INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:05 ; elapsed = 00:02:01 . Memory (MB): peak = 185.172 ; gain = 94.027
-INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:05 ; elapsed = 00:02:01 . Memory (MB): peak = 185.172 ; gain = 94.027
+Command       llvm-ld done; 11.787 sec.
+INFO: [HLS 200-111] Finished Linking Time (s): cpu = 00:00:05 ; elapsed = 00:01:37 . Memory (MB): peak = 186.098 ; gain = 95.902
+INFO: [HLS 200-111] Finished Checking Pragmas Time (s): cpu = 00:00:05 ; elapsed = 00:01:37 . Memory (MB): peak = 186.098 ; gain = 95.902
 Execute       get_config_sdx -target 
 Execute       opt_and_import_c a -opt_level=2 -skip_syncheck=0 -ng=0 -keep_printf=0 
 Execute         cleanup_all_models 
 INFO: [HLS 200-10] Starting code transformations ...
 Execute         transform -promote-dbg-pointer E:/code/hls/2/cnn/solution1/.autopilot/db/a.pp.bc -o E:/code/hls/2/cnn/solution1/.autopilot/db/a.pp.0.bc -f 
-Command         transform done; 2.592 sec.
 Execute         llvm-ld E:/code/hls/2/cnn/solution1/.autopilot/db/a.pp.0.bc -disable-opt -LE:/Xilinx/Vivado/2019.1/win64/lib -lfloatconversion -o E:/code/hls/2/cnn/solution1/.autopilot/db/a.g.0 
-Command         llvm-ld done; 1.903 sec.
+Command         llvm-ld done; 1.777 sec.
 INFO-FLOW: Running Standard Transforms...
 Execute         transform -hls -share-std-xform -demangle-name -inline-byval-memcpy -always-inline -promote-dbg-pointer -interface-preproc -mem2reg -scalarrepl -mem2reg -keep-read-access -instcombine -dce -promote-dbg-pointer -bitop-raise -loop-simplify -indvarspre -indvars -loop-simplify -xunroll -constprop -instcombine -simplifycfg -indvars -simplifycfg -dce -globaldce -basicaa -simplifycfg -mem2reg -globalopt -global-constprop -deadargelim -instcombine -simplifycfg -prune-eh -simplifycfg -scalarrepl -instcombine -reassociate -licm -simplifycfg -loop-simplify -indvars -instcombine -simplifycfg -mem2reg -loop-simplify -indvars -instcombine -gvn -gvn -instcombine -adce -break-crit-edges -simplifycfg -loop-delete -global-array-opt -dce -dse -adce -find-syn-modules -top cnn -deadargelim -mem2reg -instcombine -dce -presyn-prepare -auto-rom-infer -interface-preproc -syn-check -check-rec-only -find-region -simplifycfg -func-extr -function-inline -globaldce -mem2reg -instcombine -dce -gvn -globaldce -adce -adse -constprop -instcombine -bit-constprop -instcombine -dce -simplifycfg -bitop-raise -simplifycfg -dce -loop-delete -reassociate -globalopt -global-privatize -mem2reg -dce -global-constprop -pointer-simplify -constprop -dce -func-inst -deadargelim -auto-shift-reg-idiom -promote-dbg-pointer -norm-name E:/code/hls/2/cnn/solution1/.autopilot/db/a.g.0.bc -o E:/code/hls/2/cnn/solution1/.autopilot/db/a.g.1.bc -f -phase std-opt 
 INFO: [XFORM 203-603] Inlining function 'convolutional_layer1' into 'cnn' (cnn.cpp:13).
 INFO: [XFORM 203-603] Inlining function 'max_pooling_layer1' into 'cnn' (cnn.cpp:17).
-INFO: [XFORM 203-603] Inlining function 'convolutional_layer2' into 'cnn' (cnn.cpp:22).
-INFO: [XFORM 203-603] Inlining function 'max_pooling_layer2' into 'cnn' (cnn.cpp:26).
-Command         transform done; 60.473 sec.
-INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:02 ; elapsed = 00:03:08 . Memory (MB): peak = 185.172 ; gain = 94.027
+INFO: [XFORM 203-603] Inlining function 'convolutional_layer2' into 'cnn' (cnn.cpp:23).
+INFO: [XFORM 203-603] Inlining function 'max_pooling_layer2' into 'cnn' (cnn.cpp:27).
+Command         transform done; 62.137 sec.
+INFO: [HLS 200-111] Finished Standard Transforms Time (s): cpu = 00:01:04 ; elapsed = 00:02:41 . Memory (MB): peak = 186.098 ; gain = 95.902
 INFO: [HLS 200-10] Checking synthesizability ...
 INFO-FLOW: Checking Synthesizability 1/2..
 Execute         transform -hls -syn-check -check-rec-only -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -function-uniquify -directive-preproc -mem2reg -dse -dce -auto-rom-infer -dce -pag -array-normalize -instcombine -dce -warn-fifo-pointer -array-seg-normalize -instcombine -dce -array-flatten -instcombine -dce -array-burst -dce -deadargelim -promote-global-argument -simplifycfg -mem2reg -globaldce -dce -deadargelim -dce -instcombine -function-inline -globaldce -dce -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -dse -adse -instcombine -ptrLegalization -simplifycfg -dce -instcombine -pointer-simplify -ptrArgReplace -dce -instcombine -resolve-double-ptr -disaggr -scalarrepl -norm-name -dce -mem2reg -instcombine -ptrLegalization -simplifycfg -deadargelim -instcombine -dce -inst-simplify -function-uniquify -directive-preproc -mem2reg -dse -dce -globaldce -check-dspbuiltin E:/code/hls/2/cnn/solution1/.autopilot/db/a.g.1.bc -o E:/code/hls/2/cnn/solution1/.autopilot/db/a.g.2.prechk.bc -f 
@@ -486,10 +485,10 @@ INFO: [XFORM 203-602] Inlining function 'relu' into 'max_pool2' (lib/pool.cpp:26
 INFO: [XFORM 203-602] Inlining function 'soft_max' into 'dense_layer' (lib/dense.cpp:26) automatically.
 INFO: [XFORM 203-602] Inlining function 'normalization' into 'cnn' (cnn.cpp:9) automatically.
 INFO: [XFORM 203-602] Inlining function 'relu' into 'cnn' (lib/conv.cpp:59->cnn.cpp:13) automatically.
-Command         transform done; 88.73 sec.
+Command         transform done; 103.361 sec.
 INFO-FLOW: Checking Synthesizability 2/2..
 Execute         transform -syn-check E:/code/hls/2/cnn/solution1/.autopilot/db/a.g.2.prechk.bc -o E:/code/hls/2/cnn/solution1/.autopilot/db/a.g.2.bc -f -phase syn-check 
-INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:02:27 ; elapsed = 00:04:37 . Memory (MB): peak = 185.172 ; gain = 94.027
+INFO: [HLS 200-111] Finished Checking Synthesizability Time (s): cpu = 00:02:38 ; elapsed = 00:04:25 . Memory (MB): peak = 186.098 ; gain = 95.902
 INFO-FLOW: Compiler optimizing ...
 INFO-FLOW: Share syncheck's 1.bc for syn flow: copy E:/code/hls/2/cnn/solution1/.autopilot/db/a.g.1.bc to E:/code/hls/2/cnn/solution1/.autopilot/db/a.o.1.bc
 INFO-FLOW: Presyn 1...
@@ -575,221 +574,221 @@ INFO: [XFORM 203-602] Inlining function 'relu' into 'max_pool2' (lib/pool.cpp:26
 INFO: [XFORM 203-602] Inlining function 'soft_max' into 'dense_layer' (lib/dense.cpp:26) automatically.
 INFO: [XFORM 203-602] Inlining function 'normalization' into 'cnn' (cnn.cpp:9) automatically.
 INFO: [XFORM 203-602] Inlining function 'relu' into 'cnn' (lib/conv.cpp:59->cnn.cpp:13) automatically.
-Command         transform done; 90.613 sec.
+Command         transform done; 88.287 sec.
 INFO-FLOW: Presyn 2...
 Execute         transform -hls -keep-callgraph -scalarrepl -mem2reg -port-alignment -attach-range -dce -pipe-mux-gen -indvars -loop-bound -inst-simplify -instcombine -dce -merge-array-access -mem2reg -dce -clean-region -mergereturn -if-conv -instcombine -dce -constprop -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -gvn -gvn -basicaa -aggr-aa -aggrmodref-aa -aggr-aa -dse -adse -adce -scalarrepl -mem2reg -global-constprop -deadargelim -deadargelim -instcombine -dce -simplifycfg -ptrArgReplace -mem2reg -function-inline -globaldce -mem2reg -instcombine -dce -expr-balance -instcombine -dce -bitwidthmin -interface-preproc -directive-preproc -inst-rectify -instcombine -dce -functionattrs -constprop -instcombine -bit-constprop -simplify-global-access -globalopt -globaldce -inst-simplify -instcombine -elimdeaddata -dce -loop-delete -simplifycfg -loop-simplify -auto-burst -norm-name E:/code/hls/2/cnn/solution1/.autopilot/db/a.o.1.tmp.bc -o E:/code/hls/2/cnn/solution1/.autopilot/db/a.o.2.bc -f -phase presyn 
-Command         transform done; 1.547 sec.
-INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:03:55 ; elapsed = 00:06:09 . Memory (MB): peak = 185.172 ; gain = 94.027
+Command         transform done; 1.131 sec.
+INFO: [HLS 200-111] Finished Pre-synthesis Time (s): cpu = 00:04:01 ; elapsed = 00:05:54 . Memory (MB): peak = 186.098 ; gain = 95.902
 INFO-FLOW: Building ssdm...
 Execute         transform -hls -function-uniquify -auto-function-inline -globaldce -ptrArgReplace -mem2reg -dce -reset-lda -loop-simplify -indvars -licm -loop-dep -loop-bound -licm -loop-simplify -flattenloopnest -array-flatten -gvn -instcombine -dce -array-map -dce -func-legal -gvn -adce -instcombine -cfgopt -simplifycfg -loop-simplify -array-burst -promote-global-argument -dce -ptrLegalization -axi4-lower -array-seg-normalize -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -gvn -gvn -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -dse -adse -adce -licm -inst-simplify -dce -globaldce -instcombine -array-stream -eliminate-keepreads -instcombine -dce -deadargelim -doublePtrSimplify -doublePtrElim -dce -doublePtrSimplify -promote-dbg-pointer -dce -scalarrepl -mem2reg -disaggr -norm-name -mem2reg -instcombine -dse -adse -adce -ptrLegalization -dce -auto-rom-infer -array-flatten -dce -instcombine -check-doubleptr -loop-rot -constprop -cfgopt -simplifycfg -loop-simplify -indvars -pointer-simplify -dce -loop-bound -loop-simplify -loop-preproc -constprop -global-constprop -gvn -mem2reg -instcombine -dce -loop-bound -loop-merge -dce -bitwidthmin -deadargelim -dce -canonicalize-dataflow -dce -scalar-propagation -deadargelim -globaldce -mem2reg -read-loop-dep -interface-preproc -directive-preproc -interface-gen -bram-byte-enable -deadargelim -inst-simplify -dce -gvn -mem2reg -instcombine -dce -adse -loop-bound -instcombine -cfgopt -simplifycfg -loop-simplify -clean-region -io-protocol -find-region -mem2reg -bitop-raise -complex-op-raise -inst-simplify -inst-rectify -instcombine -adce -deadargelim -loop-simplify -phi-opt -bitop-raise -cfgopt -simplifycfg -strip-dead-prototypes -interface-lower -bitop-lower -intrinsic-lower -auto-function-inline -basicaa -aggrmodref-aa -globalsmodref-aa -aggr-aa -inst-simplify -simplifycfg -loop-simplify -mergereturn -inst-simplify -inst-rectify -dce -load-elim -bitop-lower -loop-rewind -pointer-simplify -dce -cfgopt -dce -loop-bound -loop-dep -read-loop-dep -dce -check-stream -norm-name -legalize -validate-dataflow -inst-clarity -bitwidth -dump-loop-dep-to-ir -check-all-ssdm -cdfg-build E:/code/hls/2/cnn/solution1/.autopilot/db/a.o.2.bc -o E:/code/hls/2/cnn/solution1/.autopilot/db/a.o.3.bc -f -phase build-ssdm 
 INFO: [XFORM 203-541] Flattening a loop nest 'conv1' (lib/conv.cpp:24:46) in function 'cnn'.
 INFO: [XFORM 203-541] Flattening a loop nest 'conv1' (lib/conv.cpp:87:64) in function 'cnn'.
-INFO: [XFORM 203-541] Flattening a loop nest 'Loop-5' (cnn.cpp:21:17) in function 'cnn'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.109'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.111'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.11'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.110'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.101'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.1'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.105'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.0'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.106'.
+INFO: [XFORM 203-541] Flattening a loop nest 'Loop-5' (cnn.cpp:22:16) in function 'cnn'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.104'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.103'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.100'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.102'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.101'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.10'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.108'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.0'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.107'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.110'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.105'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.1'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.108'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.102'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.111'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.103'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.109'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.106'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.100'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.94'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.75'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.71'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.96'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.7'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.70'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.8'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.69'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.82'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.87'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.68'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.67'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.99'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.98'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.87'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.84'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.83'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.88'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.86'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.79'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.76'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.75'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.78'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.95'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.93'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.92'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.9'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.89'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.81'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.97'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.85'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.77'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.74'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.73'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.82'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.91'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.94'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.80'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.99'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.90'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.97'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.86'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.96'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.92'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.91'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.9'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.81'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.78'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.77'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.76'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.74'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.72'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.45'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.26'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.25'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.59'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.29'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.53'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.23'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.56'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.24'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.5'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.48'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.40'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.57'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.32'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.22'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.21'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.20'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.61'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.37'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.4'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.42'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.46'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.41'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.2'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.19'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.18'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.62'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.43'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.52'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.38'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.15'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.139'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.70'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.88'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.84'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.95'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.83'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.80'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.93'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.79'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.89'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.85'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.138'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.137'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.44'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.30'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.136'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.14'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.64'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.49'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.17'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.50'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.137'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.136'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.135'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.134'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.44'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.66'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.16'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.39'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.58'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.63'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.51'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.34'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.47'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.65'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.6'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.54'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.33'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.27'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.42'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.37'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.59'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.3'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.55'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.31'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.60'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.25'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.16'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.47'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.38'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.52'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.26'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.35'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.29'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.139'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.2'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.21'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.63'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.4'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.36'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.34'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.30'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.23'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.134'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.54'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.39'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.51'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.32'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.43'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.57'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.15'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.19'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.62'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.55'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.45'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.64'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.31'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.58'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.49'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.61'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.41'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.28'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.112'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.122'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.13'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.127'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.129'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.125'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.115'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.121'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.124'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.131'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.120'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.118'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.132'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.133'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.27'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.65'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.33'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.24'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.22'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.53'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.46'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.20'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.56'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.14'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.116'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.126'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.117'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.123'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.114'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.127'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.118'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.119'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.12'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.113'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.130'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.112'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.128'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.121'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.123'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.130'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.125'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.117'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.115'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.131'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.133'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.13'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.132'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.126'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.129'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.124'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.122'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.1.120'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.0'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.36'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.6'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.53'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.43'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.7'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.58'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.41'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.59'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.46'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.6'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.38'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.37'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.36'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.9'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.8'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.57'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.55'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.56'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.54'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.51'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.47'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.55'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.49'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.50'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.44'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.42'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.52'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.45'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.40'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.5'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.47'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.57'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.46'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.4'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.39'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.38'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.37'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.41'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.31'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.3'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.28'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.33'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.11'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.27'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.32'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.25'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.23'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.15'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.12'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.49'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.48'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.8'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.52'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.7'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.45'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.58'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.44'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.43'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.42'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.14'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.30'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.20'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.26'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.24'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.19'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.2'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.35'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.25'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.18'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.11'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.15'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.28'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.13'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.12'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.33'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.3'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.30'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.2'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.16'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.21'.
-WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.22'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.10'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.34'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.35'.
 WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.29'.
-Command         transform done; 20.782 sec.
-INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:04:07 ; elapsed = 00:06:30 . Memory (MB): peak = 217.613 ; gain = 126.469
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.23'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.21'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.17'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.26'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.22'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.32'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.31'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.20'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.19'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.24'.
+WARNING: [ANALYSIS 214-52] Found false inter dependency for variable 'linebuf.27'.
+Command         transform done; 28.116 sec.
+INFO: [HLS 200-111] Finished Architecture Synthesis Time (s): cpu = 00:04:13 ; elapsed = 00:06:22 . Memory (MB): peak = 217.199 ; gain = 127.004
 INFO-FLOW: Finish building internal data model.
-Command       opt_and_import_c done; 266.906 sec.
-Command     elaborate done; 385.171 sec.
+Command       opt_and_import_c done; 285.011 sec.
+Command     elaborate done; 377.632 sec.
 Execute     autosyn -from_csynth_design=1 
 INFO: [HLS 200-10] Starting hardware synthesis ...
 INFO-FLOW: Synthesizing C/C++ design ...
@@ -838,7 +837,7 @@ Execute       rtl_gen_preprocess dense_layer
 INFO-FLOW: Preprocessing Module: cnn ...
 Execute       set_default_model cnn 
 Execute       cdfg_preprocess -model cnn 
-Command       cdfg_preprocess done; 0.148 sec.
+Command       cdfg_preprocess done; 0.171 sec.
 Execute       rtl_gen_preprocess cnn 
 INFO-FLOW: Model list for synthesis: max_pool max_pool2 flattening_layer dense_layer cnn
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -848,13 +847,13 @@ Execute       set_default_model max_pool
 Execute       schedule -model max_pool 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.365 sec.
-INFO: [HLS 200-111]  Elapsed time: 390.389 seconds; current allocated memory: 160.533 MB.
+Command       schedule done; 0.284 sec.
+INFO: [HLS 200-111]  Elapsed time: 383.116 seconds; current allocated memory: 160.543 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool.verbose.sched.rpt 
 INFO: [HLS 200-434] Only 0 loops out of a total 4 loops have been pipelined in this design.
-Command       syn_report done; 0.151 sec.
+Command       syn_report done; 0.251 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool.sched.adb -f 
-Command       db_write done; 0.3 sec.
+Command       db_write done; 0.183 sec.
 INFO-FLOW: Finish scheduling max_pool.
 Execute       set_default_model max_pool 
 Execute       bind -model max_pool 
@@ -864,11 +863,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.801 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.336 seconds; current allocated memory: 160.858 MB.
+Command       bind done; 0.314 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.876 seconds; current allocated memory: 160.868 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool.verbose.bind.rpt 
-Command       syn_report done; 0.155 sec.
+Command       syn_report done; 0.254 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool.bind.adb -f 
+Command       db_write done; 0.161 sec.
 INFO-FLOW: Finish binding max_pool.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'max_pool2' 
@@ -877,12 +877,11 @@ Execute       set_default_model max_pool2
 Execute       schedule -model max_pool2 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.118 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.572 seconds; current allocated memory: 161.178 MB.
+Command       schedule done; 0.196 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.843 seconds; current allocated memory: 161.188 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2.verbose.sched.rpt 
-Command       syn_report done; 0.134 sec.
+Command       syn_report done; 0.132 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2.sched.adb -f 
-Command       db_write done; 0.183 sec.
 INFO-FLOW: Finish scheduling max_pool2.
 Execute       set_default_model max_pool2 
 Execute       bind -model max_pool2 
@@ -892,12 +891,11 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.225 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.706 seconds; current allocated memory: 161.506 MB.
+Command       bind done; 0.162 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.465 seconds; current allocated memory: 161.516 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2.verbose.bind.rpt 
-Command       syn_report done; 0.536 sec.
+Command       syn_report done; 0.215 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2.bind.adb -f 
-Command       db_write done; 0.113 sec.
 INFO-FLOW: Finish binding max_pool2.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'flattening_layer' 
@@ -906,9 +904,11 @@ Execute       set_default_model flattening_layer
 Execute       schedule -model flattening_layer 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-INFO: [HLS 200-111]  Elapsed time: 0.991 seconds; current allocated memory: 161.615 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.594 seconds; current allocated memory: 161.625 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.verbose.sched.rpt 
+Command       syn_report done; 0.25 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.sched.adb -f 
+Command       db_write done; 0.215 sec.
 INFO-FLOW: Finish scheduling flattening_layer.
 Execute       set_default_model flattening_layer 
 Execute       bind -model flattening_layer 
@@ -918,11 +918,11 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.182 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.363 seconds; current allocated memory: 161.761 MB.
+Command       bind done; 0.115 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.66 seconds; current allocated memory: 161.770 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.verbose.bind.rpt 
+Command       syn_report done; 0.151 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.bind.adb -f 
-Command       db_write done; 0.133 sec.
 INFO-FLOW: Finish binding flattening_layer.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'dense_layer' 
@@ -931,10 +931,9 @@ Execute       set_default_model dense_layer
 Execute       schedule -model dense_layer 
 INFO: [SCHED 204-11] Starting scheduling ...
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 0.299 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.735 seconds; current allocated memory: 161.984 MB.
+Command       schedule done; 0.164 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.57 seconds; current allocated memory: 161.993 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer.verbose.sched.rpt 
-Command       syn_report done; 0.254 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer.sched.adb -f 
 INFO-FLOW: Finish scheduling dense_layer.
 Execute       set_default_model dense_layer 
@@ -945,11 +944,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 0.183 sec.
-INFO: [HLS 200-111]  Elapsed time: 0.583 seconds; current allocated memory: 162.222 MB.
+Command       bind done; 0.177 sec.
+INFO: [HLS 200-111]  Elapsed time: 0.477 seconds; current allocated memory: 162.232 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer.verbose.bind.rpt 
-Command       syn_report done; 0.271 sec.
+Command       syn_report done; 0.161 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer.bind.adb -f 
+Command       db_write done; 0.11 sec.
 INFO-FLOW: Finish binding dense_layer.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-42] -- Implementing module 'cnn' 
@@ -962,12 +962,12 @@ INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 2.
 INFO: [SCHED 204-61] Pipelining loop 'L_conv1_conv2'.
 INFO: [SCHED 204-61] Pipelining result : Target II = 1, Final II = 1, Depth = 6.
 INFO: [SCHED 204-11] Finished scheduling.
-Command       schedule done; 12.357 sec.
-INFO: [HLS 200-111]  Elapsed time: 12.899 seconds; current allocated memory: 166.746 MB.
+Command       schedule done; 11.403 sec.
+INFO: [HLS 200-111]  Elapsed time: 11.864 seconds; current allocated memory: 166.762 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.verbose.sched.rpt 
-Command       syn_report done; 2.279 sec.
+Command       syn_report done; 2.163 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.sched.adb -f 
-Command       db_write done; 1.056 sec.
+Command       db_write done; 1.13 sec.
 INFO-FLOW: Finish scheduling cnn.
 Execute       set_default_model cnn 
 Execute       bind -model cnn 
@@ -977,12 +977,12 @@ INFO: [BIND 205-101] Performing variable lifetime analysis.
 INFO: [BIND 205-101] Exploring resource sharing.
 INFO: [BIND 205-101] Binding ...
 INFO: [BIND 205-100] Finished micro-architecture generation.
-Command       bind done; 4.163 sec.
-INFO: [HLS 200-111]  Elapsed time: 7.606 seconds; current allocated memory: 172.675 MB.
+Command       bind done; 3.849 sec.
+INFO: [HLS 200-111]  Elapsed time: 7.265 seconds; current allocated memory: 172.678 MB.
 Execute       syn_report -verbosereport -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.verbose.bind.rpt 
-Command       syn_report done; 5.826 sec.
+Command       syn_report done; 5.969 sec.
 Execute       db_write -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.bind.adb -f 
-Command       db_write done; 1.151 sec.
+Command       db_write done; 1.055 sec.
 INFO-FLOW: Finish binding cnn.
 Execute       get_model_list cnn -filter all-wo-channel 
 INFO-FLOW: Preprocessing for RTLGen ...
@@ -1002,19 +1002,18 @@ INFO: [SYN 201-210] Renamed object name 'cnn_fcmp_32ns_32ns_1_1_1' to 'cnn_fcmp_
 INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32nbkb': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'cnn_mux_63_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool'.
-Command       create_rtl_model done; 0.358 sec.
-INFO: [HLS 200-111]  Elapsed time: 7.555 seconds; current allocated memory: 173.426 MB.
+Command       create_rtl_model done; 0.139 sec.
+INFO: [HLS 200-111]  Elapsed time: 7.389 seconds; current allocated memory: 173.430 MB.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.rtl_wrap.cfg.tcl 
 Execute       gen_rtl max_pool -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o E:/code/hls/2/cnn/solution1/syn/systemc/max_pool -synmodules max_pool max_pool2 flattening_layer dense_layer cnn 
 Execute       gen_rtl max_pool -style xilinx -f -lang vhdl -o E:/code/hls/2/cnn/solution1/syn/vhdl/max_pool 
 Execute       gen_rtl max_pool -style xilinx -f -lang vlog -o E:/code/hls/2/cnn/solution1/syn/verilog/max_pool 
 Execute       syn_report -csynth -model max_pool -o E:/code/hls/2/cnn/solution1/syn/report/max_pool_csynth.rpt 
 Execute       syn_report -rtlxml -model max_pool -o E:/code/hls/2/cnn/solution1/syn/report/max_pool_csynth.xml 
-Command       syn_report done; 0.143 sec.
 Execute       syn_report -verbosereport -model max_pool -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool.verbose.rpt 
-Command       syn_report done; 0.168 sec.
+Command       syn_report done; 0.166 sec.
 Execute       db_write -model max_pool -f -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool.adb 
-Command       db_write done; 0.112 sec.
+Command       db_write done; 0.155 sec.
 Execute       gen_tb_info max_pool -p E:/code/hls/2/cnn/solution1/.autopilot/db -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'max_pool2' 
@@ -1027,8 +1026,8 @@ INFO: [RTGEN 206-100] Generating core module 'cnn_fadd_32ns_32ncud': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32nbkb': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'cnn_mux_104_32_1_1': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'max_pool2'.
-Command       create_rtl_model done; 0.22 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.223 seconds; current allocated memory: 174.176 MB.
+Command       create_rtl_model done; 0.191 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.05 seconds; current allocated memory: 174.180 MB.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.rtl_wrap.cfg.tcl 
 Execute       gen_rtl max_pool2 -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o E:/code/hls/2/cnn/solution1/syn/systemc/max_pool2 -synmodules max_pool max_pool2 flattening_layer dense_layer cnn 
 Execute       gen_rtl max_pool2 -style xilinx -f -lang vhdl -o E:/code/hls/2/cnn/solution1/syn/vhdl/max_pool2 
@@ -1036,9 +1035,9 @@ Execute       gen_rtl max_pool2 -style xilinx -f -lang vlog -o E:/code/hls/2/cnn
 Execute       syn_report -csynth -model max_pool2 -o E:/code/hls/2/cnn/solution1/syn/report/max_pool2_csynth.rpt 
 Execute       syn_report -rtlxml -model max_pool2 -o E:/code/hls/2/cnn/solution1/syn/report/max_pool2_csynth.xml 
 Execute       syn_report -verbosereport -model max_pool2 -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2.verbose.rpt 
-Command       syn_report done; 0.457 sec.
+Command       syn_report done; 0.194 sec.
 Execute       db_write -model max_pool2 -f -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2.adb 
-Command       db_write done; 0.143 sec.
+Command       db_write done; 0.172 sec.
 Execute       gen_tb_info max_pool2 -p E:/code/hls/2/cnn/solution1/.autopilot/db -o E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2 
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'flattening_layer' 
@@ -1047,7 +1046,7 @@ Execute       get_config_rtl -module_prefix
 Execute       get_config_rtl -module_auto_prefix 
 Execute       create_rtl_model flattening_layer -vendor xilinx -mg_file E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.compgen.tcl 
 INFO: [RTGEN 206-100] Finished creating RTL model for 'flattening_layer'.
-INFO: [HLS 200-111]  Elapsed time: 1.326 seconds; current allocated memory: 174.555 MB.
+INFO: [HLS 200-111]  Elapsed time: 0.969 seconds; current allocated memory: 174.559 MB.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.rtl_wrap.cfg.tcl 
 Execute       gen_rtl flattening_layer -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o E:/code/hls/2/cnn/solution1/syn/systemc/flattening_layer -synmodules max_pool max_pool2 flattening_layer dense_layer cnn 
 Execute       gen_rtl flattening_layer -style xilinx -f -lang vhdl -o E:/code/hls/2/cnn/solution1/syn/vhdl/flattening_layer 
@@ -1055,9 +1054,11 @@ Execute       gen_rtl flattening_layer -style xilinx -f -lang vlog -o E:/code/hl
 Execute       syn_report -csynth -model flattening_layer -o E:/code/hls/2/cnn/solution1/syn/report/flattening_layer_csynth.rpt 
 Execute       syn_report -rtlxml -model flattening_layer -o E:/code/hls/2/cnn/solution1/syn/report/flattening_layer_csynth.xml 
 Execute       syn_report -verbosereport -model flattening_layer -o E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.verbose.rpt 
+Command       syn_report done; 0.112 sec.
 Execute       db_write -model flattening_layer -f -o E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.adb 
-Command       db_write done; 0.136 sec.
+Command       db_write done; 0.11 sec.
 Execute       gen_tb_info flattening_layer -p E:/code/hls/2/cnn/solution1/.autopilot/db -o E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer 
+Command       gen_tb_info done; 0.487 sec.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'dense_layer' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1075,20 +1076,21 @@ INFO: [RTGEN 206-100] Generating core module 'cnn_fdiv_32ns_32nhbi': 1 instance(
 INFO: [RTGEN 206-100] Generating core module 'cnn_fexp_32ns_32nibs': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ng8j': 1 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'dense_layer'.
-Command       create_rtl_model done; 0.632 sec.
-INFO: [HLS 200-111]  Elapsed time: 1.324 seconds; current allocated memory: 175.164 MB.
+Command       create_rtl_model done; 0.369 sec.
+INFO: [HLS 200-111]  Elapsed time: 1.53 seconds; current allocated memory: 175.167 MB.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.rtl_wrap.cfg.tcl 
 Execute       gen_rtl dense_layer -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o E:/code/hls/2/cnn/solution1/syn/systemc/dense_layer -synmodules max_pool max_pool2 flattening_layer dense_layer cnn 
 Execute       gen_rtl dense_layer -style xilinx -f -lang vhdl -o E:/code/hls/2/cnn/solution1/syn/vhdl/dense_layer 
 Execute       gen_rtl dense_layer -style xilinx -f -lang vlog -o E:/code/hls/2/cnn/solution1/syn/verilog/dense_layer 
 Execute       syn_report -csynth -model dense_layer -o E:/code/hls/2/cnn/solution1/syn/report/dense_layer_csynth.rpt 
-Command       syn_report done; 0.112 sec.
+Command       syn_report done; 0.133 sec.
 Execute       syn_report -rtlxml -model dense_layer -o E:/code/hls/2/cnn/solution1/syn/report/dense_layer_csynth.xml 
 Execute       syn_report -verbosereport -model dense_layer -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer.verbose.rpt 
-Command       syn_report done; 0.27 sec.
+Command       syn_report done; 0.225 sec.
 Execute       db_write -model dense_layer -f -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer.adb 
-Command       db_write done; 0.159 sec.
+Command       db_write done; 0.181 sec.
 Execute       gen_tb_info dense_layer -p E:/code/hls/2/cnn/solution1/.autopilot/db -o E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer 
+Command       gen_tb_info done; 0.177 sec.
 INFO: [HLS 200-10] ----------------------------------------------------------------
 INFO: [HLS 200-10] -- Generating RTL for module 'cnn' 
 INFO: [HLS 200-10] ----------------------------------------------------------------
@@ -1566,32 +1568,32 @@ INFO: [RTGEN 206-100] Generating core module 'cnn_fcmp_32ns_32nbkb': 6 instance(
 INFO: [RTGEN 206-100] Generating core module 'cnn_fdiv_32ns_32nhbi': 1 instance(s).
 INFO: [RTGEN 206-100] Generating core module 'cnn_fmul_32ns_32ng8j': 250 instance(s).
 INFO: [RTGEN 206-100] Finished creating RTL model for 'cnn'.
-Command       create_rtl_model done; 63.813 sec.
-INFO: [HLS 200-111]  Elapsed time: 65.179 seconds; current allocated memory: 191.011 MB.
+Command       create_rtl_model done; 97.571 sec.
+INFO: [HLS 200-111]  Elapsed time: 98.883 seconds; current allocated memory: 191.015 MB.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.rtl_wrap.cfg.tcl 
 Execute       gen_rtl cnn -istop -style xilinx -tracefl mytrace -tracefmt vcd -traceopt all -f -lang sc -o E:/code/hls/2/cnn/solution1/syn/systemc/cnn -synmodules max_pool max_pool2 flattening_layer dense_layer cnn 
-Command       gen_rtl done; 0.125 sec.
+Command       gen_rtl done; 0.138 sec.
 Execute       gen_rtl cnn -istop -style xilinx -f -lang vhdl -o E:/code/hls/2/cnn/solution1/syn/vhdl/cnn 
-Command       gen_rtl done; 3.637 sec.
+Command       gen_rtl done; 3.621 sec.
 Execute       gen_rtl cnn -istop -style xilinx -f -lang vlog -o E:/code/hls/2/cnn/solution1/syn/verilog/cnn 
-Command       gen_rtl done; 1.684 sec.
+Command       gen_rtl done; 1.613 sec.
 Execute       syn_report -csynth -model cnn -o E:/code/hls/2/cnn/solution1/syn/report/cnn_csynth.rpt 
-Command       syn_report done; 1.844 sec.
+Command       syn_report done; 1.703 sec.
 Execute       syn_report -rtlxml -model cnn -o E:/code/hls/2/cnn/solution1/syn/report/cnn_csynth.xml 
-Command       syn_report done; 1.706 sec.
+Command       syn_report done; 1.825 sec.
 Execute       syn_report -verbosereport -model cnn -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.verbose.rpt 
-Command       syn_report done; 7.437 sec.
+Command       syn_report done; 7.788 sec.
 Execute       db_write -model cnn -f -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.adb 
-Command       db_write done; 3.853 sec.
+Command       db_write done; 3.319 sec.
 Execute       gen_tb_info cnn -p E:/code/hls/2/cnn/solution1/.autopilot/db -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn 
+Command       gen_tb_info done; 0.869 sec.
 Execute       export_constraint_db -f -tool general -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.constraint.tcl 
 Execute       syn_report -designview -model cnn -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.design.xml 
-Command       syn_report done; 3.371 sec.
+Command       syn_report done; 3.975 sec.
 Execute       get_config_rtl -disable_wave_debug 
 Execute       syn_report -wcfg -model cnn -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn_dataflow_ana.wcfg 
-Command       syn_report done; 0.176 sec.
 Execute       syn_report -protoinst -model cnn -o E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.protoinst 
-Command       syn_report done; 0.663 sec.
+Command       syn_report done; 0.146 sec.
 Execute       get_config_debug -directory 
 Execute       sc_get_clocks cnn 
 Execute       get_config_export -vivado_clock 
@@ -2441,17 +2443,16 @@ Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interf
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
 Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
-Command           ap_source done; 0.127 sec.
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
-Command           ap_source done; 0.189 sec.
+Command           ap_source done; 0.232 sec.
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 0.585 sec.
-Command       ap_source done; 0.585 sec.
+Command         ap_source done; 0.355 sec.
+Command       ap_source done; 0.356 sec.
 Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 INFO-FLOW: DBG:CMD:   using AESL_AUTOCG::g_clock_period=100.000 (was NA)
@@ -2466,13 +2467,13 @@ Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
-Command       ap_source done; 0.661 sec.
+Command       ap_source done; 0.196 sec.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2.compgen.tcl 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
-Command       ap_source done; 0.479 sec.
+Command       ap_source done; 0.302 sec.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.compgen.tcl 
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer.compgen.tcl 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
@@ -2498,7 +2499,7 @@ Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet
 INFO: [RTMG 210-278] Implementing memory 'dense_layer_densefYi_ram (RAM)' using distributed RAMs.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
-Command       ap_source done; 1.511 sec.
+Command       ap_source done; 1.427 sec.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.compgen.tcl 
 INFO: [RTMG 210-278] Implementing memory 'cnn_features_convjbC_ram (RAM)' using block RAMs with power-on initialization.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
@@ -2836,7 +2837,6 @@ Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
-Command         ap_part_info done; 0.117 sec.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 INFO: [RTMG 210-279] Implementing memory 'cnn_conv2_weightsbak_rom' using distributed ROMs.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
@@ -2844,7 +2844,6 @@ Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
-Command         ap_part_info done; 0.115 sec.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 INFO: [RTMG 210-279] Implementing memory 'cnn_conv2_weightsbbk_rom' using distributed ROMs.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
@@ -3368,7 +3367,6 @@ INFO: [RTMG 210-279] Implementing memory 'cnn_conv2_weightscnw_rom' using distri
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
-Command         ap_part_info done; 0.109 sec.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
@@ -3854,7 +3852,6 @@ Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
-Command         ap_part_info done; 0.122 sec.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 INFO: [RTMG 210-279] Implementing memory 'cnn_conv2_weightsdvH_rom' using distributed ROMs.
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
@@ -4276,7 +4273,7 @@ Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 INFO: [RTMG 210-285] Implementing FIFO 'norm_img_V_U(fifo_w32_d784_A)' using Block RAMs.
-Command       ap_source done; 85.642 sec.
+Command       ap_source done; 70.068 sec.
 INFO-FLOW: DBG:CMD:     auto_generate -export -impltomg_flag -rtl both -tool Vivado -pcore_version 1.00.a -phase csynth_design -d E:/code/hls/2/cnn/solution1
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/global.setting.tcl 
 INFO-FLOW: DBG:CMD: read_platform_lib E:/code/hls/2/cnn/solution1/.autopilot/db/global.setting.tcl
@@ -4294,19 +4291,16 @@ Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interf
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/nativeAXI4.gen 
 Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/saxilite.gen 
 Execute             source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/maxi.gen 
-Command           ap_source done; 0.136 sec.
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/scripts/xilinxcoregen.gen 
-Command           ap_source done; 0.141 sec.
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/interface/XilEDKCoreGen.gen 
-Command           ap_source done; 0.106 sec.
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/dds_compiler.gen 
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/util.gen 
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfft.gen 
-Command           ap_source done; 1.101 sec.
+Command           ap_source done; 0.439 sec.
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/ip/xfir.gen 
 Execute           source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/dsp48.gen 
-Command         ap_source done; 1.516 sec.
-Command       ap_source done; 1.517 sec.
+Command         ap_source done; 0.715 sec.
+Command       ap_source done; 0.715 sec.
 Execute       source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/zynq/zynq_fpv6.gen 
 Execute         source E:/Xilinx/Vivado/2019.1/common/technology/xilinx/common/xilinx_fp.gen 
 INFO-FLOW: DBG:CMD:       initCTypeInfo top_module=cnn xml_exists=0
@@ -4321,11 +4315,11 @@ Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/global.setting.tc
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool.compgen.tcl 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
-Command       ap_source done; 0.995 sec.
+Command       ap_source done; 0.302 sec.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool2.compgen.tcl 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
-Command       ap_source done; 0.363 sec.
+Command       ap_source done; 0.444 sec.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/flattening_layer.compgen.tcl 
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/dense_layer.compgen.tcl 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
@@ -4334,9 +4328,8 @@ Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
-Command       ap_source done; 1.346 sec.
+Command       ap_source done; 1.022 sec.
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/cnn.compgen.tcl 
-Command       ap_source done; 0.113 sec.
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=1 expOnly=1 dstVlogDir=impl/.pcores/verilog
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/global.setting.tcl 
 Execute       source E:/code/hls/2/cnn/solution1/.autopilot/db/max_pool.compgen.tcl 
@@ -4361,7 +4354,7 @@ Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute         ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
-Command       ap_source done; 0.353 sec.
+Command       ap_source done; 0.199 sec.
 Execute       ap_part_info -name xc7z020i-clg484-1L -data names -quiet 
 Execute       ap_part_info -name xc7z020i-clg484-1L -data info -quiet 
 INFO-FLOW: DBG:CMD:       generate_ip_cores sim=0 export=0 expOnly=0 dstVlogDir=impl/.pcores/verilog_sim
@@ -4420,11 +4413,11 @@ Execute       get_config_rtl -stall_sig_gen
 Execute       get_config_rtl -profile 
 INFO-FLOW: DBG:CMD: add_json_sdx_info kernel file does not exist, skipping opencl info: E:/code/hls/2/cnn/solution1/.autopilot/db/kernel.internal.xml
 INFO-FLOW: DBG:CMD:       delete-temp-dirs (skipped for debug)
-INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:06:07 ; elapsed = 00:12:14 . Memory (MB): peak = 307.000 ; gain = 215.855
+INFO: [HLS 200-111] Finished generating all RTL models Time (s): cpu = 00:06:22 ; elapsed = 00:11:55 . Memory (MB): peak = 306.996 ; gain = 216.801
 INFO: [VHDL 208-304] Generating VHDL RTL for cnn.
 INFO: [VLOG 209-307] Generating Verilog RTL for cnn.
-Command     autosyn done; 345.328 sec.
-Command   csynth_design done; 730.526 sec.
-Command ap_source done; 733.655 sec.
+Command     autosyn done; 332.843 sec.
+Command   csynth_design done; 710.502 sec.
+Command ap_source done; 714.034 sec.
 Execute cleanup_all 
-Command cleanup_all done; 0.637 sec.
+Command cleanup_all done; 0.163 sec.

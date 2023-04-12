@@ -1,13 +1,6 @@
 INFO: [SIM 2] *************** CSIM start ***************
 INFO: [SIM 4] CSIM will launch GCC as the compiler.
-   Compiling ../../../../cnn_tb.cpp in debug mode
-   Compiling ../../../../lib/utils.cpp in debug mode
-   Compiling ../../../../lib/pool.cpp in debug mode
-   Compiling ../../../../lib/flat.cpp in debug mode
-   Compiling ../../../../lib/dense.cpp in debug mode
-   Compiling ../../../../lib/conv.cpp in debug mode
    Compiling ../../../../cnn.cpp in debug mode
-   Compiling ../../../../lib/activ_fun.cpp in debug mode
    Generating csim.exe
 
 Expected: 3
@@ -263,6 +256,6 @@ Prediction:
 
 Total predictions: 500
 Correct predictions: 98.80 %
-Average latency: 25.248000 (ms)
+Average latency: 24.998000 (ms)
 INFO: [SIM 1] CSim done with 0 errors.
 INFO: [SIM 3] *************** CSIM finish ***************

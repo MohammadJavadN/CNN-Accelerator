@@ -67,7 +67,7 @@ void convolutional_layer2
 (
   T src[POOL_IMG1_ROWS][POOL_IMG1_COLS], 
   T dst[FILTERS2][FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS], 
-  T weights[FILTERS2][KRN_ROWS2][KRN_COLS2]
+  const T weights[FILTERS2][KRN_ROWS2][KRN_COLS2]
 )
 {
             // #ifndef __SYNTHESIS__

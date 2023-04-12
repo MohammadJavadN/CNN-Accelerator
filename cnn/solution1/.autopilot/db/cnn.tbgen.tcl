@@ -550,8 +550,8 @@ set RtlHierarchyInfo {[
 			{"Name" : "conv2_biases", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "pool_features2", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "286", "SubInstance" : "grp_flattening_layer_fu_5288", "Port" : "pool_features2"},
-					{"ID" : "279", "SubInstance" : "grp_max_pool2_fu_5248", "Port" : "pool_feature"}]},
+					{"ID" : "279", "SubInstance" : "grp_max_pool2_fu_5248", "Port" : "pool_feature"},
+					{"ID" : "286", "SubInstance" : "grp_flattening_layer_fu_5288", "Port" : "pool_features2"}]},
 			{"Name" : "flat_array", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
 					{"ID" : "271", "SubInstance" : "grp_dense_layer_fu_5236", "Port" : "flat_array"},
