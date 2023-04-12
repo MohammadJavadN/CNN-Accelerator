@@ -3,6 +3,22 @@
 void
 normalization
 (
+  hls::stream<T> &img_in ,
+  hls::stream<T> & img_out
+)
+{
+  for(int r = 0; r < IMG_ROWS; ++r)
+    for(int c = 0; c < IMG_COLS; ++c)
+    {
+        // Normalize.
+        img_out << img_in.read() / 255.0;
+    }
+}
+
+#ifndef __SYNTHESIS__
+void
+normalization
+(
   T img_in  [IMG_ROWS][IMG_COLS],
   T img_out [IMG_ROWS][IMG_COLS]
 )
@@ -14,8 +30,6 @@ normalization
         img_out[r][c] = img_in[r][c] / 255.0;
     }
 }
-
-#ifndef __SYNTHESIS__
 
 void
 print_img(T img[IMG_ROWS][IMG_COLS])

@@ -1,15 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
   <source>
-    <originFiles name="activ_fun.cpp" path="E:\code\hls\2\lib\activ_fun.cpp"/>
-    <originFiles name="cnn.cpp" path="E:\code\hls\2\cnn.cpp"/>
-    <originFiles name="conv.cpp" path="E:\code\hls\2\lib\conv.cpp"/>
-    <originFiles name="dense.cpp" path="E:\code\hls\2\lib\dense.cpp"/>
-    <originFiles name="flat.cpp" path="E:\code\hls\2\lib\flat.cpp"/>
-    <originFiles name="pool.cpp" path="E:\code\hls\2\lib\pool.cpp"/>
     <originFiles name="utils.cpp" path="E:\code\hls\2\lib\utils.cpp"/>
+    <originFiles name="pool.cpp" path="E:\code\hls\2\lib\pool.cpp"/>
+    <originFiles name="flat.cpp" path="E:\code\hls\2\lib\flat.cpp"/>
+    <originFiles name="dense.cpp" path="E:\code\hls\2\lib\dense.cpp"/>
+    <originFiles name="conv.cpp" path="E:\code\hls\2\lib\conv.cpp"/>
+    <originFiles name="cnn.cpp" path="E:\code\hls\2\cnn.cpp"/>
+    <originFiles name="activ_fun.cpp" path="E:\code\hls\2\lib\activ_fun.cpp"/>
   </source>
   <testbench>
+    <originFiles name="out.dat" path="E:\code\hls\2\tb\out.dat"/>
+    <originFiles name="in.dat" path="E:\code\hls\2\tb\in.dat"/>
     <originFiles name="cnn_tb.cpp" path="E:\code\hls\2\cnn_tb.cpp"/>
   </testbench>
 </autopilotfilemapping:AutoPilotFileMapping>

@@ -2,17 +2,23 @@
 <vivadoHLSLog:LogRoot xmlns:vivadoHLSLog="www.xilinx.com/vivadoHLSLog">
   <errorLogs>
     <logs>
-      <csimLog>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: nonzero return value." projectName="cnn" solutionName="solution1" date="2023-04-12T18:32:10.125+0430"/>
-        <logs message="@E Simulation failed: Function 'main' returns nonzero value '1'." projectName="cnn" solutionName="solution1" date="2023-04-12T18:32:10.098+0430"/>
-        <logs message="Error: can't open file ``../Data/in.dat''" projectName="cnn" solutionName="solution1" date="2023-04-12T18:32:09.688+0430"/>
-        <logs message="ERROR: [SIM 211-100] 'csim_design' failed: compilation error(s)." projectName="cnn" solutionName="solution1" date="2023-04-12T18:30:51.065+0430"/>
-      </csimLog>
+      <synLog/>
     </logs>
   </errorLogs>
   <warningLogs>
     <logs>
-      <csimLog/>
+      <synLog>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_58' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:25.464+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_57' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.786+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_56' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.691+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_55' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.654+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_54' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.635+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_53' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.618+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_52' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.602+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_51' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.586+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_50' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.570+0430" type="Warning"/>
+        <logs message="WARNING: [RTGEN 206-101] Register 'linebuf_49' is power-on initialization." projectName="cnn" solutionName="solution1" date="2023-04-13T01:13:24.554+0430" type="Warning"/>
+      </synLog>
     </logs>
   </warningLogs>
 </vivadoHLSLog:LogRoot>

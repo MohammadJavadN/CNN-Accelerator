@@ -82,6 +82,16 @@
 			<location>E:/code/hls/2/cnn_tb.cpp</location>
 		</link>
 		<link>
+			<name>testbench/in.dat</name>
+			<type>1</type>
+			<location>E:/code/hls/2/tb/in.dat</location>
+		</link>
+		<link>
+			<name>testbench/out.dat</name>
+			<type>1</type>
+			<location>E:/code/hls/2/tb/out.dat</location>
+		</link>
+		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
 			<location>E:/code/hls/2/cnn/solution1/solution1.directive</location>

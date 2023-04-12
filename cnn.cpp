@@ -1,10 +1,11 @@
 #include "lib/cnn.h"
 #include "lib/conv2_weights.h"
 
-void cnn(T img_in [IMG_ROWS][IMG_COLS], T prediction[DIGITS])
+void cnn(hls::stream<T> &img_in , T prediction[DIGITS])
 {
 /**************** Normalization. ********************/
-  T norm_img [IMG_ROWS][IMG_COLS] = { 0 };
+  hls::stream<T> norm_img("norm_img");
+#pragma HLS stream variable=norm_img depth=784
   normalization(img_in, norm_img);
 
 /**************** Convolution layer. ****************/

@@ -2,10 +2,11 @@
 
 #include "definitions.h"
 #include "activ_fun.h"
+#include <hls_stream.h>
 
 void convolutional_layer1
 (
-  T src[IMG_ROWS][IMG_COLS],
+  hls::stream<T> &src,
   T dst[FILTERS1][FEATURE_CONV1_ROWS][FEATURE_CONV1_COLS]
 );
 void convolutional_layer2

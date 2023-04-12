@@ -7,6 +7,7 @@ typedef float T;
 
 #define IMG_ROWS 28
 #define IMG_COLS 28
+#define IMG_SIZE (IMG_ROWS * IMG_COLS)
 
 // Convolutional layer1.
 #define KRN_ROWS1	5

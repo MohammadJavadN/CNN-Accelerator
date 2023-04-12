@@ -7,9 +7,9 @@
 #include "pool.h"
 #include "flat.h"
 #include "dense.h"
-
+#include <hls_stream.h>
 void cnn
 (
-  T img_in [IMG_ROWS][IMG_COLS], // Take an image in input.
+  hls::stream<T> &img_in , // Take an image in input.
   T pred   [DIGITS]              // Get a prediction in output.
 );

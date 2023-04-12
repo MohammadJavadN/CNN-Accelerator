@@ -3,13 +3,20 @@
 
 #include <stdio.h>
 #include <time.h>
+#include <fstream>
+#include <iostream>
+using namespace std;
 
 #define N 500
-#define TOT 10000
+#define TOT 500
 int OFSET = 0;
-FILE *fpm;
 
-FILE *fpl;
+ifstream fpm; 
+ifstream fpl; 
+
+// FILE *fpm;
+
+// FILE *fpl;
 
 
 int
@@ -26,8 +33,9 @@ read_images (const char * file, T images [N][IMG_ROWS][IMG_COLS])
     // if (i >= OFSET)
       for (int x = 0; x < IMG_ROWS; ++x)
         for (int y = 0; y < IMG_COLS; ++y)
-          if(fscanf(fpm, "%f", & images[i][x][y]) != 1)
-            return 1; // Error.
+          fpm>> images[i][x][y];
+          // if(fscanf(fpm, "%f ", & images[i][x][y]) != 1)
+          //   return 1; // Error.
 // fclose(fp);
   return 0;
 }
@@ -43,9 +51,10 @@ read_labels(const char * file, int labels[N])
   //   return -1;
 
   for (int i = 0; i <  N; ++i)
+    fpl>>labels[i];
     // if (i >= OFSET)
-      if(fscanf(fpl, "%d", & labels[i]) != 1)
-        return 1;
+      // if(fscanf(fpl, "%d ", & labels[i]) != 1)
+      //   return 1;
 // fclose(fp);
   return 0;
 }
@@ -72,11 +81,15 @@ int main ()
     return 1;
   }
   T images[N][IMG_ROWS][IMG_COLS];
+  hls::stream<T> src_img_strm("src_img_strm");
   int labels[N];//={2};
   T prediction [DIGITS];
   T norm_img [IMG_ROWS][IMG_COLS];
-fpm = fopen("in.dat", "r");
-fpl = fopen("out.dat", "r");
+
+  fpm.open("in.dat");
+  fpl.open("out.dat");
+// fpm = fopen("in.dat", "r");
+// fpl = fopen("out.dat", "r");
 
 double time = 0;
 int correct_predictions = 0;
@@ -98,9 +111,13 @@ for(OFSET = 0; OFSET < TOT; OFSET+=N){
   //
   for (int i = 0; i < N; ++i)
   {
+    for (int ii = 0; ii < IMG_ROWS; ii++)
+      for (int jj = 0; jj < IMG_COLS; jj++)
+        src_img_strm<<   images[i][ii][jj];    
+    
     // CNN execution, obtain a prediction.
     clock_t begin = clock();
-    cnn(images[i], prediction);
+    cnn(src_img_strm, prediction);
     clock_t end = clock();
 
     if (get_max_prediction(prediction) == labels[i])

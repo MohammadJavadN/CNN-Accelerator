@@ -3,7 +3,7 @@
 
 void convolutional_layer1
 (
-  T src[IMG_ROWS][IMG_COLS],
+  hls::stream<T> &src,
   T dst[FILTERS1][FEATURE_CONV1_ROWS][FEATURE_CONV1_COLS]
 )
 {
@@ -25,7 +25,7 @@ void convolutional_layer1
         conv2:for(int col = 0; col < IMG_COLS; col++) {
 #pragma HLS DEPENDENCE variable=linebuf inter false
 #pragma HLS PIPELINE
-            in_val = src[row][col];
+            in_val = src.read();
             conv3:for(int i = 0; i < KRN_ROWS1; i++) {
                 conv4:for (int j = 0; j < IMG_COLS; j++)
                 {                    
@@ -41,12 +41,12 @@ void convolutional_layer1
                         }
                     }
                     
-                    if (j > 0){
+                    if (j > 0 || i>0){
                         linebuf[i*IMG_COLS + j-1] = win_val;
-                    }else if (i>0)
+                    }/*else if (i>0)
                     {
                         linebuf[i*IMG_COLS-1] = win_val;
-                    }
+                    }*/
                 }                
             }
             if (row >= KRN_ROWS1-1 && col >= KRN_COLS1-1){   
@@ -104,12 +104,12 @@ void convolutional_layer2
                         }
                     }
                     
-                    if (j > 0){
+                    if (j > 0 || i>0){
                         linebuf[i*POOL_IMG1_COLS + j-1] = win_val;
-                    }else if (i>0)
+                    }/*else if (i>0)
                     {
                         linebuf[i*POOL_IMG1_COLS-1] = win_val;
-                    }
+                    }*/
                 }                
             }
             if (row >= KRN_ROWS2-1 && col >= KRN_COLS2-1){   

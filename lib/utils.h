@@ -2,14 +2,22 @@
 
 #include "definitions.h"
 #include <stdio.h>
+#include <hls_stream.h>
 
+void
+normalization
+(
+  hls::stream<T> &img_in  ,
+  hls::stream<T> &img_out
+);
+#ifndef __SYNTHESIS__
 void
 normalization
 (
   T img_in  [IMG_ROWS][IMG_COLS],
   T img_out [IMG_ROWS][IMG_COLS]
 );
-#ifndef __SYNTHESIS__
+
 void
 print_img(T img[IMG_ROWS][IMG_COLS]);
 
