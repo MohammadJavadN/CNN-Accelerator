@@ -1,13 +1,13 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'max_pool'" level="0">
-<item name = "Date">Thu Apr 13 02:47:47 2023
+<item name = "Date">Thu Apr 13 03:29:12 2023
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">cnn</item>
 <item name = "Solution">solution1</item>
-<item name = "Product family">zynq</item>
-<item name = "Target device">xc7z020i-clg484-1L</item>
+<item name = "Product family">virtex7</item>
+<item name = "Target device">xq7vx980t-rf1930-2L</item>
 </section>
 
 <section name = "Performance Estimates" level="0">
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">100.00, 14.047, 0.12</column>
+<column name="ap_clk">100.00, 8.351, 0.12</column>
 </table>
 </item>
 </section>
@@ -51,22 +51,22 @@
 <item name = "Summary"><table name="" hasTotal="1">
 <keys size="6">Name, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
 <column name="DSP">-, -, -, -, -</column>
-<column name="Expression">-, -, 0, 300, -</column>
+<column name="Expression">-, -, 0, 321, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 0, 66, 294, -</column>
+<column name="Instance">-, 0, 66, 119, -</column>
 <column name="Memory">-, -, -, -, -</column>
 <column name="Multiplexer">-, -, -, 92, -</column>
 <column name="Register">-, -, 112, -, -</column>
-<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">0, 0, ~0, 1, 0</specialColumn>
+<specialColumn name="Available">3000, 3600, 1224000, 612000, 0</specialColumn>
+<specialColumn name="Utilization (%)">0, 0, ~0, ~0, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
-<column name="cnn_fcmp_32ns_32nbkb_U1">cnn_fcmp_32ns_32nbkb, 0, 0, 66, 239, 0</column>
-<column name="cnn_mux_63_32_1_1_U2">cnn_mux_63_32_1_1, 0, 0, 0, 55, 0</column>
+<column name="cnn_fcmp_32ns_32nbkb_U1">cnn_fcmp_32ns_32nbkb, 0, 0, 66, 72, 0</column>
+<column name="cnn_mux_63_32_1_1_U2">cnn_mux_63_32_1_1, 0, 0, 0, 47, 0</column>
 </table>
 </item>
 <item name = "DSP48E"><table name="" hasTotal="0">
@@ -84,16 +84,16 @@
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
 <column name="add_ln49_1_fu_442_p2">+, 0, 0, 15, 5, 5</column>
-<column name="add_ln49_2_fu_452_p2">+, 0, 0, 13, 11, 11</column>
+<column name="add_ln49_2_fu_452_p2">+, 0, 0, 18, 11, 11</column>
 <column name="add_ln49_fu_360_p2">+, 0, 0, 15, 5, 5</column>
-<column name="add_ln53_1_fu_410_p2">+, 0, 0, 13, 11, 11</column>
-<column name="add_ln53_fu_301_p2">+, 0, 0, 15, 9, 9</column>
+<column name="add_ln53_1_fu_410_p2">+, 0, 0, 18, 11, 11</column>
+<column name="add_ln53_fu_301_p2">+, 0, 0, 16, 9, 9</column>
 <column name="c_fu_420_p2">+, 0, 0, 15, 5, 2</column>
 <column name="pc_fu_436_p2">+, 0, 0, 10, 2, 1</column>
 <column name="pr_fu_354_p2">+, 0, 0, 10, 2, 1</column>
 <column name="r_fu_338_p2">+, 0, 0, 15, 5, 2</column>
-<column name="sub_ln49_fu_390_p2">-, 0, 0, 13, 11, 11</column>
-<column name="sub_ln53_1_fu_326_p2">-, 0, 0, 13, 11, 11</column>
+<column name="sub_ln49_fu_390_p2">-, 0, 0, 18, 11, 11</column>
+<column name="sub_ln53_1_fu_326_p2">-, 0, 0, 18, 11, 11</column>
 <column name="sub_ln53_fu_271_p2">-, 0, 0, 15, 8, 8</column>
 <column name="and_ln49_1_fu_563_p2">and, 0, 0, 2, 1, 1</column>
 <column name="and_ln49_fu_557_p2">and, 0, 0, 2, 1, 1</column>

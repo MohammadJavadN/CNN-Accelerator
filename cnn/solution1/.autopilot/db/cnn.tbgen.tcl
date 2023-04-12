@@ -59,7 +59,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "22378", "EstimateLatencyMax" : "22378",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "22366", "EstimateLatencyMax" : "22366",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -67,10 +67,10 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"WaitState" : [
-			{"State" : "ap_ST_fsm_state25", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_dense_layer_fu_5236"},
-			{"State" : "ap_ST_fsm_state22", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_max_pool2_fu_5248"},
+			{"State" : "ap_ST_fsm_state23", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_dense_layer_fu_5236"},
+			{"State" : "ap_ST_fsm_state20", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_max_pool2_fu_5248"},
 			{"State" : "ap_ST_fsm_state9", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_max_pool_fu_5268"},
-			{"State" : "ap_ST_fsm_state23", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_flattening_layer_fu_5288"}],
+			{"State" : "ap_ST_fsm_state21", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_flattening_layer_fu_5288"}],
 		"Port" : [
 			{"Name" : "img_in_V", "Type" : "Fifo", "Direction" : "I",
 				"BlockSignal" : [
@@ -554,8 +554,8 @@ set RtlHierarchyInfo {[
 					{"ID" : "286", "SubInstance" : "grp_flattening_layer_fu_5288", "Port" : "pool_features2"}]},
 			{"Name" : "flat_array", "Type" : "Memory", "Direction" : "IO",
 				"SubConnect" : [
-					{"ID" : "271", "SubInstance" : "grp_dense_layer_fu_5236", "Port" : "flat_array"},
-					{"ID" : "286", "SubInstance" : "grp_flattening_layer_fu_5288", "Port" : "flat_array"}]},
+					{"ID" : "286", "SubInstance" : "grp_flattening_layer_fu_5288", "Port" : "flat_array"},
+					{"ID" : "271", "SubInstance" : "grp_dense_layer_fu_5236", "Port" : "flat_array"}]},
 			{"Name" : "dense_weights", "Type" : "Memory", "Direction" : "I",
 				"SubConnect" : [
 					{"ID" : "271", "SubInstance" : "grp_dense_layer_fu_5236", "Port" : "dense_weights"}]},
@@ -838,7 +838,7 @@ set RtlHierarchyInfo {[
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
 		"Pipeline" : "None", "UnalignedPipeline" : "0", "RewindPipeline" : "0", "ProcessNetwork" : "0",
 		"II" : "0",
-		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "3323", "EstimateLatencyMax" : "3323",
+		"VariableLatency" : "1", "ExactLatency" : "-1", "EstimateLatencyMin" : "3313", "EstimateLatencyMax" : "3313",
 		"Combinational" : "0",
 		"Datapath" : "0",
 		"ClockEnable" : "0",
@@ -1440,7 +1440,7 @@ set RtlHierarchyInfo {[
 set ArgLastReadFirstWriteLatency {
 	cnn {
 		img_in_V {Type I LastRead 2 FirstWrite -1}
-		prediction {Type O LastRead -1 FirstWrite 8}
+		prediction {Type O LastRead -1 FirstWrite 7}
 		features_conv1_0 {Type IO LastRead -1 FirstWrite -1}
 		features_conv1_1 {Type IO LastRead -1 FirstWrite -1}
 		features_conv1_2 {Type IO LastRead -1 FirstWrite -1}
@@ -1902,7 +1902,7 @@ set ArgLastReadFirstWriteLatency {
 		dense_weights {Type I LastRead -1 FirstWrite -1}
 		dense_biases {Type I LastRead -1 FirstWrite -1}}
 	dense_layer {
-		prediction {Type O LastRead -1 FirstWrite 8}
+		prediction {Type O LastRead -1 FirstWrite 7}
 		dense_weights {Type I LastRead -1 FirstWrite -1}
 		flat_array {Type I LastRead 3 FirstWrite -1}
 		dense_biases {Type I LastRead -1 FirstWrite -1}}
@@ -1936,8 +1936,8 @@ set ArgLastReadFirstWriteLatency {
 set hasDtUnsupportedChannel 0
 
 set PerformanceInfo {[
-	{"Name" : "Latency", "Min" : "22378", "Max" : "22378"}
-	, {"Name" : "Interval", "Min" : "22379", "Max" : "22379"}
+	{"Name" : "Latency", "Min" : "22366", "Max" : "22366"}
+	, {"Name" : "Interval", "Min" : "22367", "Max" : "22367"}
 ]}
 
 set PipelineEnableSignalInfo {[

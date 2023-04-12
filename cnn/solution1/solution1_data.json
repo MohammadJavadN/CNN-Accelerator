@@ -7,14 +7,15 @@
   "GenerateBdFiles": "0",
   "HostMachineBits": "64",
   "Target": {
-    "Family": "zynq",
-    "Device": "xc7z020i",
-    "Package": "-clg484",
-    "Speed": "-1L"
+    "Family": "qvirtex7",
+    "Device": "xq7vx980t",
+    "Package": "-rf1930",
+    "Speed": "-2L"
   },
-  "HlsSolution": {
-    
-  },
+  "HlsSolution": {"Config": [
+      "config_sdx -target=none",
+      "config_export -vivado_optimization_level=2"
+    ]},
   "Args": {
     "img_in": {
       "index": "0",
@@ -46,7 +47,7 @@
     "ClockPeriod": "100",
     "IsCombLogic": "0",
     "II": "x",
-    "Latency": "22378",
+    "Latency": "22366",
     "Uncertainty": "0.12"
   },
   "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 100.000 [get_ports ap_clk]"]},
@@ -1103,7 +1104,7 @@
         "Timing": {
           "Target": "100.00",
           "Uncertainty": "0.12",
-          "Estimate": "14.047"
+          "Estimate": "8.351"
         },
         "Loops": [{
             "Name": "Loop 1",
@@ -1136,7 +1137,7 @@
         "Area": {
           "DSP48E": "0",
           "FF": "178",
-          "LUT": "686",
+          "LUT": "532",
           "BRAM_18K": "0",
           "URAM": "0"
         }
@@ -1153,7 +1154,7 @@
         "Timing": {
           "Target": "100.00",
           "Uncertainty": "0.12",
-          "Estimate": "39.244"
+          "Estimate": "23.076"
         },
         "Loops": [{
             "Name": "Loop 1",
@@ -1186,7 +1187,7 @@
         "Area": {
           "DSP48E": "2",
           "FF": "335",
-          "LUT": "1069",
+          "LUT": "703",
           "BRAM_18K": "0",
           "URAM": "0"
         }
@@ -1203,7 +1204,7 @@
         "Timing": {
           "Target": "100.00",
           "Uncertainty": "0.12",
-          "Estimate": "6.508"
+          "Estimate": "4.532"
         },
         "Loops": [{
             "Name": "Loop 1",
@@ -1228,7 +1229,7 @@
           }],
         "Area": {
           "FF": "76",
-          "LUT": "226",
+          "LUT": "227",
           "BRAM_18K": "0",
           "DSP48E": "0",
           "URAM": "0"
@@ -1236,17 +1237,17 @@
       },
       "dense_layer": {
         "Latency": {
-          "LatencyBest": "3323",
-          "LatencyAvg": "3323",
-          "LatencyWorst": "3323",
-          "PipelineII": "3323",
+          "LatencyBest": "3313",
+          "LatencyAvg": "3313",
+          "LatencyWorst": "3313",
+          "PipelineII": "3313",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "100.00",
           "Uncertainty": "0.12",
-          "Estimate": "86.234"
+          "Estimate": "74.606"
         },
         "Loops": [
           {
@@ -1280,32 +1281,32 @@
           {
             "Name": "Loop 4",
             "TripCount": "10",
-            "Latency": "50",
+            "Latency": "40",
             "PipelineII": "",
-            "PipelineDepth": "5"
+            "PipelineDepth": "4"
           }
         ],
         "Area": {
           "BRAM_18K": "4",
           "DSP48E": "12",
-          "FF": "789",
-          "LUT": "2919",
+          "FF": "756",
+          "LUT": "2344",
           "URAM": "0"
         }
       },
       "cnn": {
         "Latency": {
-          "LatencyBest": "22378",
-          "LatencyAvg": "22378",
-          "LatencyWorst": "22378",
-          "PipelineII": "22379",
+          "LatencyBest": "22366",
+          "LatencyAvg": "22366",
+          "LatencyWorst": "22366",
+          "PipelineII": "22367",
           "PipelineDepth": "",
           "PipelineType": "none"
         },
         "Timing": {
           "Target": "100.00",
           "Uncertainty": "0.12",
-          "Estimate": "95.689"
+          "Estimate": "88.716"
         },
         "Loops": [
           {
@@ -1360,9 +1361,9 @@
           {
             "Name": "L_conv1_conv2",
             "TripCount": "864",
-            "Latency": "868",
+            "Latency": "866",
             "PipelineII": "1",
-            "PipelineDepth": "6"
+            "PipelineDepth": "4"
           },
           {
             "Name": "Loop 6",
@@ -1375,8 +1376,8 @@
         "Area": {
           "BRAM_18K": "42",
           "DSP48E": "1264",
-          "FF": "93613",
-          "LUT": "195421",
+          "FF": "92751",
+          "LUT": "99031",
           "URAM": "0"
         }
       }
@@ -1392,7 +1393,7 @@
   },
   "GenData": {
     "DataVersion": "0.2",
-    "Time": "2023-04-13 02:52:40 +0430",
+    "Time": "2023-04-13 03:35:35 +0430",
     "ToolName": "vivado_hls",
     "ToolVersion": "2019.1"
   }

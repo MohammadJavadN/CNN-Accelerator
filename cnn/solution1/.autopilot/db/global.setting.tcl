@@ -39,7 +39,7 @@ set ExportMCPathFlag 0
 set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
-set TargetInfo xc7z020i:-clg484:-1L
+set TargetInfo xq7vx980t:-rf1930:-2L
 set SourceFiles {sc {} c {../../lib/activ_fun.cpp ../../cnn.cpp ../../lib/conv.cpp ../../lib/dense.cpp ../../lib/flat.cpp ../../lib/pool.cpp ../../lib/utils.cpp}}
 set SourceFlags {sc {} c {{} {} {} {} {} {} {}}}
 set DirectiveFile E:/code/hls/2/cnn/solution1/solution1.directive
@@ -59,5 +59,5 @@ set DefaultPlatform DefaultPlatform
 set multiClockList {}
 set SCPortClockMap {}
 set intNbAccess 0
-set PlatformFiles {{DefaultPlatform {xilinx/zynq/zynq xilinx/zynq/zynq_fpv6}}}
+set PlatformFiles {{DefaultPlatform {xilinx/virtex7/virtex7 xilinx/virtex7/virtex7_fpv6}}}
 set HPFPO 0

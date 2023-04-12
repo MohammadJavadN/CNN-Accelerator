@@ -1,13 +1,13 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dense_layer'" level="0">
-<item name = "Date">Thu Apr 13 02:47:50 2023
+<item name = "Date">Thu Apr 13 03:29:15 2023
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">cnn</item>
 <item name = "Solution">solution1</item>
-<item name = "Product family">zynq</item>
-<item name = "Target device">xc7z020i-clg484-1L</item>
+<item name = "Product family">virtex7</item>
+<item name = "Target device">xq7vx980t-rf1930-2L</item>
 </section>
 
 <section name = "Performance Estimates" level="0">
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">100.00, 86.234, 0.12</column>
+<column name="ap_clk">100.00, 74.606, 0.12</column>
 </table>
 </item>
 </section>
@@ -24,7 +24,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">3323, 3323, 3323, 3323, none</column>
+<column name="">3313, 3313, 3313, 3313, none</column>
 </table>
 </item>
 <item name = "Detail">
@@ -39,7 +39,7 @@
 <column name="- Loop 2">3230, 3230, 323, -, -, 10, no</column>
 <column name=" + Loop 2.1">320, 320, 2, -, -, 160, no</column>
 <column name="- Loop 3">30, 30, 3, -, -, 10, no</column>
-<column name="- Loop 4">50, 50, 5, -, -, 10, no</column>
+<column name="- Loop 4">40, 40, 4, -, -, 10, no</column>
 </table>
 </item>
 </section>
@@ -54,22 +54,22 @@
 <column name="DSP">-, -, -, -, -</column>
 <column name="Expression">-, -, 0, 136, -</column>
 <column name="FIFO">-, -, -, -, -</column>
-<column name="Instance">-, 12, 527, 2570, -</column>
+<column name="Instance">-, 12, 527, 1998, -</column>
 <column name="Memory">4, -, 96, 10, 0</column>
-<column name="Multiplexer">-, -, -, 203, -</column>
-<column name="Register">-, -, 166, -, -</column>
-<specialColumn name="Available">280, 220, 106400, 53200, 0</specialColumn>
-<specialColumn name="Utilization (%)">1, 5, ~0, 5, 0</specialColumn>
+<column name="Multiplexer">-, -, -, 200, -</column>
+<column name="Register">-, -, 133, -, -</column>
+<specialColumn name="Available">3000, 3600, 1224000, 612000, 0</specialColumn>
+<specialColumn name="Utilization (%)">~0, ~0, ~0, ~0, 0</specialColumn>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="1">
 <keys size="7">Instance, Module, BRAM_18K, DSP48E, FF, LUT, URAM</keys>
-<column name="cnn_fadd_32ns_32ncud_U33">cnn_fadd_32ns_32ncud, 0, 2, 177, 385, 0</column>
-<column name="cnn_fdiv_32ns_32nhbi_U35">cnn_fdiv_32ns_32nhbi, 0, 0, 128, 947, 0</column>
-<column name="cnn_fexp_32ns_32nibs_U36">cnn_fexp_32ns_32nibs, 0, 7, 94, 918, 0</column>
-<column name="cnn_fmul_32ns_32ng8j_U34">cnn_fmul_32ns_32ng8j, 0, 3, 128, 320, 0</column>
+<column name="cnn_fadd_32ns_32ncud_U33">cnn_fadd_32ns_32ncud, 0, 2, 177, 194, 0</column>
+<column name="cnn_fdiv_32ns_32nhbi_U35">cnn_fdiv_32ns_32nhbi, 0, 0, 128, 755, 0</column>
+<column name="cnn_fexp_32ns_32nibs_U36">cnn_fexp_32ns_32nibs, 0, 7, 94, 914, 0</column>
+<column name="cnn_fmul_32ns_32ng8j_U34">cnn_fmul_32ns_32ng8j, 0, 3, 128, 135, 0</column>
 </table>
 </item>
 <item name = "DSP48E"><table name="" hasTotal="0">
@@ -89,23 +89,23 @@
 </item>
 <item name = "Expression"><table name="" hasTotal="1">
 <keys size="7">Variable Name, Operation, DSP48E, FF, LUT, Bitwidth P0, Bitwidth P1</keys>
-<column name="add_ln12_fu_250_p2">+, 0, 0, 13, 4, 1</column>
-<column name="add_ln20_1_fu_334_p2">+, 0, 0, 11, 12, 12</column>
-<column name="add_ln20_fu_328_p2">+, 0, 0, 11, 12, 12</column>
-<column name="d_fu_273_p2">+, 0, 0, 13, 4, 1</column>
-<column name="f_fu_293_p2">+, 0, 0, 15, 8, 1</column>
-<column name="i_fu_350_p2">+, 0, 0, 13, 4, 1</column>
-<column name="j_fu_367_p2">+, 0, 0, 13, 4, 1</column>
-<column name="icmp_ln12_fu_261_p2">icmp, 0, 0, 9, 4, 4</column>
-<column name="icmp_ln14_fu_267_p2">icmp, 0, 0, 9, 4, 4</column>
-<column name="icmp_ln15_fu_344_p2">icmp, 0, 0, 9, 4, 4</column>
-<column name="icmp_ln18_fu_287_p2">icmp, 0, 0, 11, 8, 8</column>
-<column name="icmp_ln20_fu_361_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="add_ln12_fu_251_p2">+, 0, 0, 13, 4, 1</column>
+<column name="add_ln20_1_fu_335_p2">+, 0, 0, 11, 12, 12</column>
+<column name="add_ln20_fu_329_p2">+, 0, 0, 11, 12, 12</column>
+<column name="d_fu_274_p2">+, 0, 0, 13, 4, 1</column>
+<column name="f_fu_294_p2">+, 0, 0, 15, 8, 1</column>
+<column name="i_fu_351_p2">+, 0, 0, 13, 4, 1</column>
+<column name="j_fu_368_p2">+, 0, 0, 13, 4, 1</column>
+<column name="icmp_ln12_fu_262_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="icmp_ln14_fu_268_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="icmp_ln15_fu_345_p2">icmp, 0, 0, 9, 4, 4</column>
+<column name="icmp_ln18_fu_288_p2">icmp, 0, 0, 11, 8, 8</column>
+<column name="icmp_ln20_fu_362_p2">icmp, 0, 0, 9, 4, 4</column>
 </table>
 </item>
 <item name = "Multiplexer"><table name="" hasTotal="1">
 <keys size="5">Name, LUT, Input Size, Bits, Total Bits</keys>
-<column name="ap_NS_fsm">62, 15, 1, 15</column>
+<column name="ap_NS_fsm">59, 14, 1, 14</column>
 <column name="d_0_reg_149">9, 2, 4, 8</column>
 <column name="dense_array_address0">27, 5, 4, 20</column>
 <column name="dense_array_d0">15, 3, 32, 96</column>
@@ -121,22 +121,21 @@
 </item>
 <item name = "Register"><table name="" hasTotal="1">
 <keys size="5">Name, FF, LUT, Bits, Const Bits</keys>
-<column name="ap_CS_fsm">14, 0, 14, 0</column>
+<column name="ap_CS_fsm">13, 0, 13, 0</column>
 <column name="d_0_reg_149">4, 0, 4, 0</column>
-<column name="d_reg_389">4, 0, 4, 0</column>
+<column name="d_reg_390">4, 0, 4, 0</column>
 <column name="f_0_reg_172">8, 0, 8, 0</column>
-<column name="f_reg_408">8, 0, 8, 0</column>
+<column name="f_reg_409">8, 0, 8, 0</column>
 <column name="i_0_i_reg_195">4, 0, 4, 0</column>
-<column name="i_reg_436">4, 0, 4, 0</column>
+<column name="i_reg_437">4, 0, 4, 0</column>
 <column name="j_0_i_reg_206">4, 0, 4, 0</column>
-<column name="j_reg_454">4, 0, 4, 0</column>
+<column name="j_reg_455">4, 0, 4, 0</column>
 <column name="phi_ln12_reg_138">4, 0, 4, 0</column>
 <column name="sum_0_i_reg_183">32, 0, 32, 0</column>
-<column name="tmp_2_i_reg_469">32, 0, 32, 0</column>
 <column name="w_sum_0_reg_160">32, 0, 32, 0</column>
-<column name="zext_ln18_reg_400">4, 0, 12, 8</column>
-<column name="zext_ln20_reg_394">4, 0, 64, 60</column>
-<column name="zext_ln22_reg_459">4, 0, 64, 60</column>
+<column name="zext_ln18_reg_401">4, 0, 12, 8</column>
+<column name="zext_ln20_reg_395">4, 0, 64, 60</column>
+<column name="zext_ln22_reg_460">4, 0, 64, 60</column>
 </table>
 </item>
 </section>

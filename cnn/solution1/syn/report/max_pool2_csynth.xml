@@ -6,8 +6,8 @@
 
 <UserAssignments>
 <unit>ns</unit>
-<ProductFamily>zynq</ProductFamily>
-<Part>xc7z020i-clg484-1L</Part>
+<ProductFamily>virtex7</ProductFamily>
+<Part>xq7vx980t-rf1930-2L</Part>
 <TopModelName>max_pool2</TopModelName>
 <TargetClockPeriod>100.00</TargetClockPeriod>
 <ClockUncertainty>0.12</ClockUncertainty>
@@ -17,7 +17,7 @@
 <PipelineType>none</PipelineType>
 <SummaryOfTimingAnalysis>
 <unit>ns</unit>
-<EstimatedClockPeriod>39.244</EstimatedClockPeriod>
+<EstimatedClockPeriod>23.076</EstimatedClockPeriod>
 </SummaryOfTimingAnalysis>
 <SummaryOfOverallLatency>
 <unit>clock cycles</unit>
@@ -55,15 +55,15 @@
 <Resources>
 <DSP48E>2</DSP48E>
 <FF>335</FF>
-<LUT>1069</LUT>
+<LUT>703</LUT>
 <BRAM_18K>0</BRAM_18K>
 <URAM>0</URAM>
 </Resources>
 <AvailableResources>
-<BRAM_18K>280</BRAM_18K>
-<DSP48E>220</DSP48E>
-<FF>106400</FF>
-<LUT>53200</LUT>
+<BRAM_18K>3000</BRAM_18K>
+<DSP48E>3600</DSP48E>
+<FF>1224000</FF>
+<LUT>612000</LUT>
 <URAM>0</URAM>
 </AvailableResources>
 </AreaEstimates>

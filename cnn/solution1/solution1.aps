@@ -2,13 +2,17 @@
     <checksum>
         <value string="false"/>
     </checksum>
+    <downStreamTool>
+        <DownStreamTool name=""/>
+    </downStreamTool>
     <config>
         <schedule model="cnn"/>
+        <config_sdx target="none"/>
+        <config_export vivado_optimization_level="2"/>
     </config>
     <UIConfigurations>
-        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="false" isStopAskAgain="false" showDetailDesignViewer="false">
-            <Platform>xilinx/zynq/zynq</Platform>
-            <Platform>xilinx/zynq/zynq_fpv6</Platform>
+        <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="true" isStopAskAgain="false" showDetailDesignViewer="false">
+            <Platform>xilinx/qvirtex7/qvirtex7</Platform>
             <customLibs/>
         </UIAutosynConf>
         <UIIPPackagerConf AskAgain="true" DescriptionButton="false" LibraryButton="false" RTLLanguage="verilog" UseNetList="none" VendorButton="false" VersionButton="false" evaluateRTL="false" setup="false">
@@ -37,7 +41,7 @@
             </RTLs>
         </UIAutoSimConf>
     </UIConfigurations>
-    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" rtl="verilog" rtlButton="false" rtlCombo="verilog">
+    <ExportDesign askAgain="true" evaluate="false" flow="false" flowChoice="syn" formatName="ip_catalog" rtl="verilog" rtlButton="true" rtlCombo="verilog">
         <Format formatName="ip_catalog"/>
         <Format formatName="sysgen"/>
         <Format formatName="sysgen_ise"/>
@@ -58,15 +62,13 @@
         <value string="cnn"/>
     </project>
     <targetInfo>
-        <TargetInfo value="xc7z020i:-clg484:-1L"/>
+        <TargetInfo value="xq7vx980t:-rf1930:-2L"/>
     </targetInfo>
     <libraryList>
-        <library name="DefaultPlatform" value="xilinx/zynq/zynq"/>
-        <library name="DefaultPlatform" value="xilinx/zynq/zynq_fpv6"/>
+        <library name="DefaultPlatform" value="xilinx/qvirtex7/qvirtex7"/>
+        <library value="xilinx/virtex7/virtex7" name="DefaultPlatform"/>
+        <library value="xilinx/virtex7/virtex7_fpv6" name="DefaultPlatform"/>
     </libraryList>
-    <downStreamTool>
-        <DownStreamTool name="vivado"/>
-    </downStreamTool>
     <clockList>
         <clock default="false" name="default" uncertainty="0.12" period="100"/>
     </clockList>
