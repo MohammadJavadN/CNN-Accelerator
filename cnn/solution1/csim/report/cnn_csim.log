@@ -1,0 +1,12 @@
+INFO: [SIM 2] *************** CSIM start ***************
+INFO: [SIM 4] CSIM will launch GCC as the compiler.
+   Compiling ../../../../cnn.cpp in debug mode
+   Compiling ../../../../lib/conv.cpp in debug mode
+   Compiling ../../../../lib/dense.cpp in debug mode
+   Compiling ../../../../lib/flat.cpp in debug mode
+   Compiling ../../../../lib/pool.cpp in debug mode
+   Compiling ../../../../lib/utils.cpp in debug mode
+   Generating csim.exe
+Error: can't open file ``../Data/in.dat''
+ERR: [SIM 100] 'csim_design' failed: nonzero return value.
+INFO: [SIM 3] *************** CSIM finish ***************

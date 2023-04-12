@@ -29,87 +29,72 @@
 		<link>
 			<name>source</name>
 			<type>2</type>
-			<location>E:/code/hls/3/cnn/.apc/.src</location>
+			<location>E:/code/hls/2/cnn/.apc/.src</location>
 		</link>
 		<link>
 			<name>testbench</name>
 			<type>2</type>
-			<location>E:/code/hls/3/cnn/.apc/.tb</location>
-		</link>
-		<link>
-			<name>.reference/ap_fixed.h</name>
-			<type>1</type>
-			<location>E:/Xilinx/Vivado/2019.1/include/ap_fixed.h</location>
+			<location>E:/code/hls/2/cnn/.apc/.tb</location>
 		</link>
 		<link>
 			<name>solution1/constraints</name>
 			<type>2</type>
-			<location>E:/code/hls/3/cnn/solution1/.tcls</location>
+			<location>E:/code/hls/2/cnn/solution1/.tcls</location>
 		</link>
 		<link>
-			<name>source/activ_fun.c</name>
+			<name>source/activ_fun.cpp</name>
 			<type>1</type>
-			<location>E:/code/hls/3/lib/activ_fun.c</location>
+			<location>E:/code/hls/2/lib/activ_fun.cpp</location>
 		</link>
 		<link>
-			<name>source/cnn.c</name>
+			<name>source/cnn.cpp</name>
 			<type>1</type>
-			<location>E:/code/hls/3/cnn.c</location>
+			<location>E:/code/hls/2/cnn.cpp</location>
 		</link>
 		<link>
-			<name>source/conv.c</name>
+			<name>source/conv.cpp</name>
 			<type>1</type>
-			<location>E:/code/hls/3/lib/conv.c</location>
+			<location>E:/code/hls/2/lib/conv.cpp</location>
 		</link>
 		<link>
-			<name>source/dense.c</name>
+			<name>source/dense.cpp</name>
 			<type>1</type>
-			<location>E:/code/hls/3/lib/dense.c</location>
+			<location>E:/code/hls/2/lib/dense.cpp</location>
 		</link>
 		<link>
-			<name>source/flat.c</name>
+			<name>source/flat.cpp</name>
 			<type>1</type>
-			<location>E:/code/hls/3/lib/flat.c</location>
+			<location>E:/code/hls/2/lib/flat.cpp</location>
 		</link>
 		<link>
-			<name>source/pool.c</name>
+			<name>source/pool.cpp</name>
 			<type>1</type>
-			<location>E:/code/hls/3/lib/pool.c</location>
+			<location>E:/code/hls/2/lib/pool.cpp</location>
 		</link>
 		<link>
-			<name>source/utils.c</name>
+			<name>source/utils.cpp</name>
 			<type>1</type>
-			<location>E:/code/hls/3/lib/utils.c</location>
+			<location>E:/code/hls/2/lib/utils.cpp</location>
 		</link>
 		<link>
-			<name>testbench/cnn_tb.c</name>
+			<name>testbench/cnn_tb.cpp</name>
 			<type>1</type>
-			<location>E:/code/hls/3/cnn_tb.c</location>
-		</link>
-		<link>
-			<name>testbench/in.dat</name>
-			<type>1</type>
-			<location>E:/code/hls/3/tb/in.dat</location>
-		</link>
-		<link>
-			<name>testbench/out.dat</name>
-			<type>1</type>
-			<location>E:/code/hls/3/tb/out.dat</location>
+			<location>E:/code/hls/2/cnn_tb.cpp</location>
 		</link>
 		<link>
 			<name>solution1/constraints/.xml.directive</name>
 			<type>1</type>
-			<location>E:/code/hls/3/cnn/solution1/solution1.directive</location>
+			<location>E:/code/hls/2/cnn/solution1/solution1.directive</location>
 		</link>
 		<link>
 			<name>solution1/constraints/directives.tcl</name>
 			<type>1</type>
-			<location>E:/code/hls/3/cnn/solution1/directives.tcl</location>
+			<location>E:/code/hls/2/cnn/solution1/directives.tcl</location>
 		</link>
 		<link>
 			<name>solution1/constraints/script.tcl</name>
 			<type>1</type>
-			<location>E:/code/hls/3/cnn/solution1/script.tcl</location>
+			<location>E:/code/hls/2/cnn/solution1/script.tcl</location>
 		</link>
 	</linkedResources>
 </projectDescription>
