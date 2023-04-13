@@ -8,7 +8,7 @@ use ieee.std_logic_unsigned.all;
 
 entity cnn_conv2_weightsThq_rom is 
     generic(
-             DWIDTH     : integer := 32; 
+             DWIDTH     : integer := 10; 
              AWIDTH     : integer := 3; 
              MEM_SIZE    : integer := 6
     ); 
@@ -26,12 +26,8 @@ architecture rtl of cnn_conv2_weightsThq_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "10111110001011010011000001101011", 
-    1 => "10111101100110100100000110111000", 
-    2 => "10111100111011000010010001100101", 
-    3 => "10111110010111110110110001110010", 
-    4 => "10111101110010110100101100101100", 
-    5 => "00111101011010100111000101010010" );
+    0 => "0000011010", 1 => "0000011001", 2 => "1110101110", 3 => "1111000111", 
+    4 => "1110100111", 5 => "1010010011" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -69,7 +65,7 @@ use IEEE.std_logic_1164.all;
 
 entity cnn_conv2_weightsThq is
     generic (
-        DataWidth : INTEGER := 32;
+        DataWidth : INTEGER := 10;
         AddressRange : INTEGER := 6;
         AddressWidth : INTEGER := 3);
     port (

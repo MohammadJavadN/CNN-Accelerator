@@ -1,13 +1,13 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dense_layer'" level="0">
-<item name = "Date">Thu Apr 13 03:28:44 2023
+<item name = "Date">Thu Apr 13 22:44:21 2023
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">cnn</item>
 <item name = "Solution">solution1</item>
-<item name = "Product family">virtex7</item>
-<item name = "Target device">xq7vx980t-rf1930-2L</item>
+<item name = "Product family">zynq</item>
+<item name = "Target device">xc7z020-clg484-3</item>
 </section>
 
 <section name = "Performance Estimates" level="0">
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">100.00, 74.606, 0.12</column>
+<column name="ap_clk">10.00, 8.510, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,22 +24,21 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">3313, 3313, 3313, 3313, none</column>
+<column name="">14864, 14864, 14864, 14864, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
+<column name="grp_soft_max_fu_242">soft_max, 352, 352, 352, 352, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
 <column name="- memset_dense_array">9, 9, 1, -, -, 10, no</column>
-<column name="- Loop 2">3230, 3230, 323, -, -, 10, no</column>
-<column name=" + Loop 2.1">320, 320, 2, -, -, 160, no</column>
-<column name="- Loop 3">30, 30, 3, -, -, 10, no</column>
-<column name="- Loop 4">40, 40, 4, -, -, 10, no</column>
+<column name="- Loop 2">14500, 14500, 1450, -, -, 10, no</column>
+<column name=" + Loop 2.1">1440, 1440, 9, -, -, 160, no</column>
 </table>
 </item>
 </section>

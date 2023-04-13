@@ -8,7 +8,7 @@ use ieee.std_logic_unsigned.all;
 
 entity cnn_conv2_weightsGfk_rom is 
     generic(
-             DWIDTH     : integer := 32; 
+             DWIDTH     : integer := 7; 
              AWIDTH     : integer := 3; 
              MEM_SIZE    : integer := 6
     ); 
@@ -26,12 +26,8 @@ architecture rtl of cnn_conv2_weightsGfk_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "10111101110000001111001101110000", 
-    1 => "10111110110111011111000011001011", 
-    2 => "00111101101010000110001011101010", 
-    3 => "00111101101110010000100011000011", 
-    4 => "00111110101101010010110001110111", 
-    5 => "00111110011000000111000110010011" );
+    0 => "1111101", 1 => "0110100", 2 => "0001010", 3 => "0011100", 
+    4 => "0101011", 5 => "0101001" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -69,7 +65,7 @@ use IEEE.std_logic_1164.all;
 
 entity cnn_conv2_weightsGfk is
     generic (
-        DataWidth : INTEGER := 32;
+        DataWidth : INTEGER := 7;
         AddressRange : INTEGER := 6;
         AddressWidth : INTEGER := 3);
     port (

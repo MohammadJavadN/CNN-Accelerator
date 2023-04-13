@@ -5,4 +5,4 @@
 
 T relu (T x);
 
-void soft_max(T dense_array [DIGITS], T pred[DIGITS]);
+void soft_max(T2 dense_array [DIGITS], T pred[DIGITS]);

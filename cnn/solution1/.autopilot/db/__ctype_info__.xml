@@ -10,13 +10,13 @@
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>prediction</name>
+<name>prediction_V</name>
 <CType>
-<TypeName>float</TypeName>
-<TypeWidth>32</TypeWidth>
-<PhysicalWidth>32</PhysicalWidth>
+<TypeName>ap_fixed 14 6 5 3 0</TypeName>
+<TypeWidth>14</TypeWidth>
+<PhysicalWidth>14</PhysicalWidth>
 </CType>
-<CFractionWidth>24</CFractionWidth>
+<CFractionWidth>8</CFractionWidth>
 <InvalidType>0</InvalidType>
 </RtlPorts>
 </InterfaceSummary>

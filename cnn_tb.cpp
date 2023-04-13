@@ -8,7 +8,7 @@
 using namespace std;
 
 #define N 500
-#define TOT 500
+#define TOT 10000
 int OFSET = 0;
 
 ifstream fpm; 
@@ -20,7 +20,7 @@ ifstream fpl;
 
 
 int
-read_images (const char * file, T images [N][IMG_ROWS][IMG_COLS])
+read_images (const char * file, T2 images [N][IMG_ROWS][IMG_COLS])
 {
   // FILE *fp;
 
@@ -80,11 +80,11 @@ int main ()
     printf("Error: odd kernel sizes are mandatory for this implementation \n");
     return 1;
   }
-  T images[N][IMG_ROWS][IMG_COLS];
-  hls::stream<T> src_img_strm("src_img_strm");
+  T2 images[N][IMG_ROWS][IMG_COLS];
+  hls::stream<T2> src_img_strm("src_img_strm");
   int labels[N];//={2};
   T prediction [DIGITS];
-  T norm_img [IMG_ROWS][IMG_COLS];
+  T2 norm_img [IMG_ROWS][IMG_COLS];
 
   fpm.open("in.dat");
   fpl.open("out.dat");
@@ -126,15 +126,14 @@ for(OFSET = 0; OFSET < TOT; OFSET+=N){
     }
     else
     {
-      printf("\nExpected: %d\n", labels[i]);
-      normalization(images[i], norm_img);
-      print_img(norm_img);
-      printf("Prediction:\n");
-      for (int j = 0; j < DIGITS; ++j)
-        printf("%d: %f\n", j, prediction[j]);
-      printf("\n");
+      // printf("\nExpected: %d\n", labels[i]);
+      // normalization(images[i], norm_img);
+      // print_img(norm_img);
+      // printf("Prediction:\n");
+      // for (int j = 0; j < DIGITS; ++j)
+      //   printf("%d: %f\n", j, (T2)prediction[j]);
+      printf("\n false ");
     }
-
     // Sum up time spent.
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
     time += time_spent;

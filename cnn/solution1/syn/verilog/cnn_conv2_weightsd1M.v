@@ -6,7 +6,7 @@
 (* rom_style = "distributed" *) module cnn_conv2_weightsd1M_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 32;
+parameter DWIDTH = 9;
 parameter AWIDTH = 3;
 parameter MEM_SIZE = 6;
 
@@ -43,7 +43,7 @@ module cnn_conv2_weightsd1M(
     ce0,
     q0);
 
-parameter DataWidth = 32'd32;
+parameter DataWidth = 32'd9;
 parameter AddressRange = 32'd6;
 parameter AddressWidth = 32'd3;
 input reset;

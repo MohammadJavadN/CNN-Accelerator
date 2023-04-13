@@ -1,25 +1,25 @@
 #include "activ_fun.h"
-
+T ZERO = 0;
 T relu (T x)
 {
-  if(x > 0.0)
+  if(x > ZERO)
     return x;
   else
-    return 0.0;
+    return ZERO;
 }
 
-void soft_max(T dense_array [DIGITS], T pred[DIGITS])
+void soft_max(T2 dense_array [DIGITS], T pred[DIGITS])
 {
-  T sum = 0.0;
+  T2 sum = 0.0;
 
   for (int i = 0; i < DIGITS; ++i)
   {
-    sum += expf(dense_array[i]);
+    sum += expf((T2)dense_array[i]);
   }
 
   for (int j = 0; j < DIGITS; ++j)
   {
-    pred[j] = expf(dense_array[j]) / sum;
+    pred[j] = ((T) (expf((T2)dense_array[j]) / sum));
   }
 
 }

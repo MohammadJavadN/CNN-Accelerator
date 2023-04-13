@@ -25,10 +25,10 @@ void cnn::thread_hdltv_gen() {
         mHdltvinHandle << " , " <<  " \"img_in_V_dout\" :  \"" << img_in_V_dout.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"img_in_V_empty_n\" :  \"" << img_in_V_empty_n.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"img_in_V_read\" :  \"" << img_in_V_read.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_address0\" :  \"" << prediction_address0.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_ce0\" :  \"" << prediction_ce0.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_we0\" :  \"" << prediction_we0.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_d0\" :  \"" << prediction_d0.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_V_address0\" :  \"" << prediction_V_address0.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_V_ce0\" :  \"" << prediction_V_ce0.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_V_we0\" :  \"" << prediction_V_we0.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_V_d0\" :  \"" << prediction_V_d0.read() << "\" ";
         mHdltvinHandle << "}" << std::endl;
         mHdltvoutHandle << "}" << std::endl;
         ap_cycleNo++;

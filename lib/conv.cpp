@@ -116,8 +116,8 @@ void convolutional_layer2
               for (int f = 0; f < FILTERS2; f++)
               {
             // #ifndef __SYNTHESIS__
-            // if(f==0 && col == KRN_COLS2-1)
-            //     printf("%f, ", dst[f][row-(KRN_ROWS2-1)][col - ( KRN_COLS2-1)]);
+            //   if(f==0 && col == KRN_COLS2-1)
+            //     printf("%f, ", (T2) dst[f][row-(KRN_ROWS2-1)][col - ( KRN_COLS2-1)]);
             // #endif
                 dst[f][row-(KRN_ROWS2-1)][col - ( KRN_COLS2-1)] += out_val[f];
               }             

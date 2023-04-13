@@ -11,17 +11,17 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 31 \
-    name flat_array \
+    id 42 \
+    name pool_features_V \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename flat_array \
+    dir I \
+    corename pool_features_V \
     op interface \
-    ports { flat_array_address0 { O 8 vector } flat_array_ce0 { O 1 bit } flat_array_we0 { O 1 bit } flat_array_d0 { O 32 vector } } \
+    ports { pool_features_V_address0 { O 8 vector } pool_features_V_ce0 { O 1 bit } pool_features_V_q0 { I 13 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'flat_array'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'pool_features_V'"
 }
 }
 
@@ -30,17 +30,17 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 32 \
-    name pool_features2 \
+    id 43 \
+    name flat_array_V \
     reset_level 1 \
     sync_rst true \
-    dir I \
-    corename pool_features2 \
+    dir O \
+    corename flat_array_V \
     op interface \
-    ports { pool_features2_address0 { O 8 vector } pool_features2_ce0 { O 1 bit } pool_features2_q0 { I 32 vector } } \
+    ports { flat_array_V_address0 { O 8 vector } flat_array_V_ce0 { O 1 bit } flat_array_V_we0 { O 1 bit } flat_array_V_d0 { O 13 vector } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'pool_features2'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'flat_array_V'"
 }
 }
 

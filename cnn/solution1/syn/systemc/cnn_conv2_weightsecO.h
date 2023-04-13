@@ -18,7 +18,7 @@ using namespace sc_dt;
 
 struct cnn_conv2_weightsecO_ram : public sc_core::sc_module {
 
-  static const unsigned DataWidth = 32;
+  static const unsigned DataWidth = 8;
   static const unsigned AddressRange = 6;
   static const unsigned AddressWidth = 3;
 
@@ -36,12 +36,12 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(cnn_conv2_weightsecO_ram) {
-        ram[0] = "0b00111110111100100010101110101010";
-        ram[1] = "0b00111110001001000010011011111001";
-        ram[2] = "0b10111101100010011001101001111011";
-        ram[3] = "0b10111110011110111000010011000111";
-        ram[4] = "0b10111110101100110010011111110001";
-        ram[5] = "0b00111010101101001011100100010101";
+        ram[0] = "0b10110011";
+        ram[1] = "0b00000101";
+        ram[2] = "0b00001011";
+        ram[3] = "0b11111011";
+        ram[4] = "0b00000000";
+        ram[5] = "0b11010000";
 
 
 SC_METHOD(prc_write_0);
@@ -67,7 +67,7 @@ void prc_write_0()
 SC_MODULE(cnn_conv2_weightsecO) {
 
 
-static const unsigned DataWidth = 32;
+static const unsigned DataWidth = 8;
 static const unsigned AddressRange = 6;
 static const unsigned AddressWidth = 3;
 

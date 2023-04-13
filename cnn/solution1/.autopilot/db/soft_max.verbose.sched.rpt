@@ -1,0 +1,510 @@
+
+
+================================================================
+== Vivado HLS Report for 'soft_max'
+================================================================
+* Date:           Thu Apr 13 22:44:13 2023
+
+* Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
+* Project:        cnn
+* Solution:       solution1
+* Product family: zynq
+* Target device:  xc7z020-clg484-3
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |  10.00|     8.510|        1.25|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+---------+
+    |  Latency  |  Interval | Pipeline|
+    | min | max | min | max |   Type  |
+    +-----+-----+-----+-----+---------+
+    |  352|  352|  352|  352|   none  |
+    +-----+-----+-----+-----+---------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |          |  Latency  | Iteration|  Initiation Interval  | Trip |          |
+        | Loop Name| min | max |  Latency |  achieved |   target  | Count| Pipelined|
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+        |- Loop 1  |  130|  130|        13|          -|          -|    10|    no    |
+        |- Loop 2  |  220|  220|        22|          -|          -|    10|    no    |
+        +----------+-----+-----+----------+-----------+-----------+------+----------+
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 0
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 0
+HasVarLatency: 1
+IsPipeline: 0
+IsRtlPipelined: 0
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 36
+* Pipeline : 0
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 2 
+2 --> 3 15 
+3 --> 4 
+4 --> 5 
+5 --> 6 
+6 --> 7 
+7 --> 8 
+8 --> 9 
+9 --> 10 
+10 --> 11 
+11 --> 12 
+12 --> 13 
+13 --> 14 
+14 --> 2 
+15 --> 16 
+16 --> 17 
+17 --> 18 
+18 --> 19 
+19 --> 20 
+20 --> 21 
+21 --> 22 
+22 --> 23 
+23 --> 24 
+24 --> 25 
+25 --> 26 
+26 --> 27 
+27 --> 28 
+28 --> 29 
+29 --> 30 
+30 --> 31 
+31 --> 32 
+32 --> 33 
+33 --> 34 
+34 --> 35 
+35 --> 36 
+36 --> 15 
+
+* FSM state operations: 
+
+State 1 <SV = 0> <Delay = 1.17>
+ST_1 : Operation 37 [1/1] (1.17ns)   --->   "br label %1" [lib/activ_fun.cpp:15]   --->   Operation 37 'br' <Predicate = true> <Delay = 1.17>
+
+State 2 <SV = 1> <Delay = 1.56>
+ST_2 : Operation 38 [1/1] (0.00ns)   --->   "%sum_0 = phi float [ 0.000000e+00, %0 ], [ %sum, %2 ]"   --->   Operation 38 'phi' 'sum_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%i_0 = phi i4 [ 0, %0 ], [ %i, %2 ]"   --->   Operation 39 'phi' 'i_0' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 40 [1/1] (1.08ns)   --->   "%icmp_ln15 = icmp eq i4 %i_0, -6" [lib/activ_fun.cpp:15]   --->   Operation 40 'icmp' 'icmp_ln15' <Predicate = true> <Delay = 1.08> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%empty = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 41 'speclooptripcount' 'empty' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 42 [1/1] (1.40ns)   --->   "%i = add i4 %i_0, 1" [lib/activ_fun.cpp:15]   --->   Operation 42 'add' 'i' <Predicate = true> <Delay = 1.40> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "br i1 %icmp_ln15, label %.preheader.preheader, label %2" [lib/activ_fun.cpp:15]   --->   Operation 43 'br' <Predicate = true> <Delay = 0.00>
+ST_2 : Operation 44 [1/1] (0.00ns)   --->   "%zext_ln17 = zext i4 %i_0 to i64" [lib/activ_fun.cpp:17]   --->   Operation 44 'zext' 'zext_ln17' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%dense_array_addr = getelementptr [10 x float]* %dense_array, i64 0, i64 %zext_ln17" [lib/activ_fun.cpp:17]   --->   Operation 45 'getelementptr' 'dense_array_addr' <Predicate = (!icmp_ln15)> <Delay = 0.00>
+ST_2 : Operation 46 [2/2] (1.56ns)   --->   "%dense_array_load = load float* %dense_array_addr, align 4" [lib/activ_fun.cpp:17]   --->   Operation 46 'load' 'dense_array_load' <Predicate = (!icmp_ln15)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_2 : Operation 47 [1/1] (1.17ns)   --->   "br label %.preheader" [lib/activ_fun.cpp:20]   --->   Operation 47 'br' <Predicate = (icmp_ln15)> <Delay = 1.17>
+
+State 3 <SV = 2> <Delay = 7.67>
+ST_3 : Operation 48 [1/2] (1.56ns)   --->   "%dense_array_load = load float* %dense_array_addr, align 4" [lib/activ_fun.cpp:17]   --->   Operation 48 'load' 'dense_array_load' <Predicate = true> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_3 : Operation 49 [8/8] (6.11ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [lib/activ_fun.cpp:17]   --->   Operation 49 'fexp' 'tmp' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 4 <SV = 3> <Delay = 6.11>
+ST_4 : Operation 50 [7/8] (6.11ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [lib/activ_fun.cpp:17]   --->   Operation 50 'fexp' 'tmp' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 5 <SV = 4> <Delay = 6.11>
+ST_5 : Operation 51 [6/8] (6.11ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [lib/activ_fun.cpp:17]   --->   Operation 51 'fexp' 'tmp' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 6 <SV = 5> <Delay = 6.11>
+ST_6 : Operation 52 [5/8] (6.11ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [lib/activ_fun.cpp:17]   --->   Operation 52 'fexp' 'tmp' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 7 <SV = 6> <Delay = 6.11>
+ST_7 : Operation 53 [4/8] (6.11ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [lib/activ_fun.cpp:17]   --->   Operation 53 'fexp' 'tmp' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 8 <SV = 7> <Delay = 6.11>
+ST_8 : Operation 54 [3/8] (6.11ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [lib/activ_fun.cpp:17]   --->   Operation 54 'fexp' 'tmp' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 9 <SV = 8> <Delay = 6.11>
+ST_9 : Operation 55 [2/8] (6.11ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [lib/activ_fun.cpp:17]   --->   Operation 55 'fexp' 'tmp' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 10 <SV = 9> <Delay = 6.11>
+ST_10 : Operation 56 [1/8] (6.11ns)   --->   "%tmp = call float @llvm.exp.f32(float %dense_array_load)" [lib/activ_fun.cpp:17]   --->   Operation 56 'fexp' 'tmp' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 11 <SV = 10> <Delay = 7.28>
+ST_11 : Operation 57 [4/4] (7.28ns)   --->   "%sum = fadd float %sum_0, %tmp" [lib/activ_fun.cpp:17]   --->   Operation 57 'fadd' 'sum' <Predicate = true> <Delay = 7.28> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 12 <SV = 11> <Delay = 7.28>
+ST_12 : Operation 58 [3/4] (7.28ns)   --->   "%sum = fadd float %sum_0, %tmp" [lib/activ_fun.cpp:17]   --->   Operation 58 'fadd' 'sum' <Predicate = true> <Delay = 7.28> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 13 <SV = 12> <Delay = 7.28>
+ST_13 : Operation 59 [2/4] (7.28ns)   --->   "%sum = fadd float %sum_0, %tmp" [lib/activ_fun.cpp:17]   --->   Operation 59 'fadd' 'sum' <Predicate = true> <Delay = 7.28> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+
+State 14 <SV = 13> <Delay = 7.28>
+ST_14 : Operation 60 [1/4] (7.28ns)   --->   "%sum = fadd float %sum_0, %tmp" [lib/activ_fun.cpp:17]   --->   Operation 60 'fadd' 'sum' <Predicate = true> <Delay = 7.28> <Core = "FAddSub">   --->   Core 105 'FAddSub' <Latency = 3> <II = 1> <Delay = 7.28> <FuncUnit> <Opcode : 'fadd' 'fsub'> <InPorts = 2> <OutPorts = 1>
+ST_14 : Operation 61 [1/1] (0.00ns)   --->   "br label %1" [lib/activ_fun.cpp:15]   --->   Operation 61 'br' <Predicate = true> <Delay = 0.00>
+
+State 15 <SV = 2> <Delay = 1.56>
+ST_15 : Operation 62 [1/1] (0.00ns)   --->   "%j_0 = phi i4 [ %j, %_ifconv ], [ 0, %.preheader.preheader ]"   --->   Operation 62 'phi' 'j_0' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 63 [1/1] (1.08ns)   --->   "%icmp_ln20 = icmp eq i4 %j_0, -6" [lib/activ_fun.cpp:20]   --->   Operation 63 'icmp' 'icmp_ln20' <Predicate = true> <Delay = 1.08> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 64 [1/1] (0.00ns)   --->   "%empty_32 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 10, i64 10, i64 10)"   --->   Operation 64 'speclooptripcount' 'empty_32' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 65 [1/1] (1.40ns)   --->   "%j = add i4 %j_0, 1" [lib/activ_fun.cpp:20]   --->   Operation 65 'add' 'j' <Predicate = true> <Delay = 1.40> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_15 : Operation 66 [1/1] (0.00ns)   --->   "br i1 %icmp_ln20, label %3, label %_ifconv" [lib/activ_fun.cpp:20]   --->   Operation 66 'br' <Predicate = true> <Delay = 0.00>
+ST_15 : Operation 67 [1/1] (0.00ns)   --->   "%zext_ln22 = zext i4 %j_0 to i64" [lib/activ_fun.cpp:22]   --->   Operation 67 'zext' 'zext_ln22' <Predicate = (!icmp_ln20)> <Delay = 0.00>
+ST_15 : Operation 68 [1/1] (0.00ns)   --->   "%dense_array_addr_1 = getelementptr [10 x float]* %dense_array, i64 0, i64 %zext_ln22" [lib/activ_fun.cpp:22]   --->   Operation 68 'getelementptr' 'dense_array_addr_1' <Predicate = (!icmp_ln20)> <Delay = 0.00>
+ST_15 : Operation 69 [2/2] (1.56ns)   --->   "%dense_array_load_1 = load float* %dense_array_addr_1, align 4" [lib/activ_fun.cpp:22]   --->   Operation 69 'load' 'dense_array_load_1' <Predicate = (!icmp_ln20)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_15 : Operation 70 [1/1] (0.00ns)   --->   "ret void" [lib/activ_fun.cpp:25]   --->   Operation 70 'ret' <Predicate = (icmp_ln20)> <Delay = 0.00>
+
+State 16 <SV = 3> <Delay = 7.67>
+ST_16 : Operation 71 [1/2] (1.56ns)   --->   "%dense_array_load_1 = load float* %dense_array_addr_1, align 4" [lib/activ_fun.cpp:22]   --->   Operation 71 'load' 'dense_array_load_1' <Predicate = true> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_16 : Operation 72 [8/8] (6.11ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [lib/activ_fun.cpp:22]   --->   Operation 72 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 17 <SV = 4> <Delay = 6.11>
+ST_17 : Operation 73 [7/8] (6.11ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [lib/activ_fun.cpp:22]   --->   Operation 73 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 18 <SV = 5> <Delay = 6.11>
+ST_18 : Operation 74 [6/8] (6.11ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [lib/activ_fun.cpp:22]   --->   Operation 74 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 19 <SV = 6> <Delay = 6.11>
+ST_19 : Operation 75 [5/8] (6.11ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [lib/activ_fun.cpp:22]   --->   Operation 75 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 20 <SV = 7> <Delay = 6.11>
+ST_20 : Operation 76 [4/8] (6.11ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [lib/activ_fun.cpp:22]   --->   Operation 76 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 21 <SV = 8> <Delay = 6.11>
+ST_21 : Operation 77 [3/8] (6.11ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [lib/activ_fun.cpp:22]   --->   Operation 77 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 22 <SV = 9> <Delay = 6.11>
+ST_22 : Operation 78 [2/8] (6.11ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [lib/activ_fun.cpp:22]   --->   Operation 78 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 23 <SV = 10> <Delay = 6.11>
+ST_23 : Operation 79 [1/8] (6.11ns)   --->   "%tmp_2 = call float @llvm.exp.f32(float %dense_array_load_1)" [lib/activ_fun.cpp:22]   --->   Operation 79 'fexp' 'tmp_2' <Predicate = true> <Delay = 6.11> <Core = "FExp">   --->   Core 127 'FExp' <Latency = 7> <II = 1> <Delay = 6.11> <FuncUnit> <Opcode : 'fexp'> <InPorts = 1> <OutPorts = 1>
+
+State 24 <SV = 11> <Delay = 7.84>
+ST_24 : Operation 80 [10/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 80 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 25 <SV = 12> <Delay = 7.84>
+ST_25 : Operation 81 [9/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 81 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 26 <SV = 13> <Delay = 7.84>
+ST_26 : Operation 82 [8/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 82 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 27 <SV = 14> <Delay = 7.84>
+ST_27 : Operation 83 [7/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 83 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 28 <SV = 15> <Delay = 7.84>
+ST_28 : Operation 84 [6/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 84 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 29 <SV = 16> <Delay = 7.84>
+ST_29 : Operation 85 [5/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 85 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 30 <SV = 17> <Delay = 7.84>
+ST_30 : Operation 86 [4/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 86 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 31 <SV = 18> <Delay = 7.84>
+ST_31 : Operation 87 [3/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 87 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 32 <SV = 19> <Delay = 7.84>
+ST_32 : Operation 88 [2/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 88 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 33 <SV = 20> <Delay = 7.84>
+ST_33 : Operation 89 [1/10] (7.84ns)   --->   "%v_assign = fdiv float %tmp_2, %sum_0" [lib/activ_fun.cpp:22]   --->   Operation 89 'fdiv' 'v_assign' <Predicate = true> <Delay = 7.84> <Core = "FDiv">   --->   Core 107 'FDiv' <Latency = 9> <II = 1> <Delay = 7.84> <FuncUnit> <Opcode : 'fdiv' 'frem'> <InPorts = 2> <OutPorts = 1>
+
+State 34 <SV = 21> <Delay = 3.04>
+ST_34 : Operation 90 [2/2] (3.04ns)   --->   "%d_assign = fpext float %v_assign to double" [lib/activ_fun.cpp:22]   --->   Operation 90 'fpext' 'd_assign' <Predicate = true> <Delay = 3.04> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 3.04> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+
+State 35 <SV = 22> <Delay = 6.82>
+ST_35 : Operation 91 [1/2] (3.04ns)   --->   "%d_assign = fpext float %v_assign to double" [lib/activ_fun.cpp:22]   --->   Operation 91 'fpext' 'd_assign' <Predicate = true> <Delay = 3.04> <Core = "Float2Double">   --->   Core 114 'Float2Double' <Latency = 1> <II = 1> <Delay = 3.04> <FuncUnit> <Opcode : 'fpext'> <InPorts = 1> <OutPorts = 1>
+ST_35 : Operation 92 [1/1] (0.00ns)   --->   "%ireg_V = bitcast double %d_assign to i64" [lib/activ_fun.cpp:22]   --->   Operation 92 'bitcast' 'ireg_V' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 93 [1/1] (0.00ns)   --->   "%trunc_ln556 = trunc i64 %ireg_V to i63" [lib/activ_fun.cpp:22]   --->   Operation 93 'trunc' 'trunc_ln556' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 94 [1/1] (0.00ns)   --->   "%p_Result_s = call i1 @_ssdm_op_BitSelect.i1.i64.i32(i64 %ireg_V, i32 63)" [lib/activ_fun.cpp:22]   --->   Operation 94 'bitselect' 'p_Result_s' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 95 [1/1] (0.00ns)   --->   "%exp_tmp_V = call i11 @_ssdm_op_PartSelect.i11.i64.i32.i32(i64 %ireg_V, i32 52, i32 62)" [lib/activ_fun.cpp:22]   --->   Operation 95 'partselect' 'exp_tmp_V' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 96 [1/1] (0.00ns)   --->   "%zext_ln461 = zext i11 %exp_tmp_V to i12" [lib/activ_fun.cpp:22]   --->   Operation 96 'zext' 'zext_ln461' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 97 [1/1] (0.00ns)   --->   "%trunc_ln565 = trunc i64 %ireg_V to i52" [lib/activ_fun.cpp:22]   --->   Operation 97 'trunc' 'trunc_ln565' <Predicate = true> <Delay = 0.00>
+ST_35 : Operation 98 [1/1] (2.11ns)   --->   "%icmp_ln571 = icmp eq i63 %trunc_ln556, 0" [lib/activ_fun.cpp:22]   --->   Operation 98 'icmp' 'icmp_ln571' <Predicate = true> <Delay = 2.11> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 99 [1/1] (1.63ns)   --->   "%F2 = sub i12 1075, %zext_ln461" [lib/activ_fun.cpp:22]   --->   Operation 99 'sub' 'F2' <Predicate = true> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 100 [1/1] (1.55ns)   --->   "%icmp_ln581 = icmp sgt i12 %F2, 8" [lib/activ_fun.cpp:22]   --->   Operation 100 'icmp' 'icmp_ln581' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 101 [1/1] (1.63ns)   --->   "%add_ln581 = add i12 -8, %F2" [lib/activ_fun.cpp:22]   --->   Operation 101 'add' 'add_ln581' <Predicate = true> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 102 [1/1] (1.63ns)   --->   "%sub_ln581 = sub i12 8, %F2" [lib/activ_fun.cpp:22]   --->   Operation 102 'sub' 'sub_ln581' <Predicate = true> <Delay = 1.63> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_35 : Operation 103 [1/1] (0.51ns)   --->   "%sh_amt = select i1 %icmp_ln581, i12 %add_ln581, i12 %sub_ln581" [lib/activ_fun.cpp:22]   --->   Operation 103 'select' 'sh_amt' <Predicate = true> <Delay = 0.51> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.55> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_35 : Operation 104 [1/1] (1.55ns)   --->   "%icmp_ln582 = icmp eq i12 %F2, 8" [lib/activ_fun.cpp:22]   --->   Operation 104 'icmp' 'icmp_ln582' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+
+State 36 <SV = 23> <Delay = 8.50>
+ST_36 : Operation 105 [1/1] (0.00ns)   --->   "%tmp_1 = call i53 @_ssdm_op_BitConcatenate.i53.i1.i52(i1 true, i52 %trunc_ln565)" [lib/activ_fun.cpp:22]   --->   Operation 105 'bitconcatenate' 'tmp_1' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 106 [1/1] (0.00ns)   --->   "%p_Result_1 = zext i53 %tmp_1 to i54" [lib/activ_fun.cpp:22]   --->   Operation 106 'zext' 'p_Result_1' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 107 [1/1] (2.42ns)   --->   "%man_V_1 = sub i54 0, %p_Result_1" [lib/activ_fun.cpp:22]   --->   Operation 107 'sub' 'man_V_1' <Predicate = (p_Result_s)> <Delay = 2.42> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.63> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 108 [1/1] (0.80ns)   --->   "%man_V_2 = select i1 %p_Result_s, i54 %man_V_1, i54 %p_Result_1" [lib/activ_fun.cpp:22]   --->   Operation 108 'select' 'man_V_2' <Predicate = true> <Delay = 0.80> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.55> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_36 : Operation 109 [1/1] (0.00ns)   --->   "%sext_ln581 = sext i12 %sh_amt to i32" [lib/activ_fun.cpp:22]   --->   Operation 109 'sext' 'sext_ln581' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 110 [1/1] (0.00ns)   --->   "%trunc_ln583 = trunc i54 %man_V_2 to i14" [lib/activ_fun.cpp:22]   --->   Operation 110 'trunc' 'trunc_ln583' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 111 [1/1] (1.55ns)   --->   "%icmp_ln585 = icmp ult i12 %sh_amt, 54" [lib/activ_fun.cpp:22]   --->   Operation 111 'icmp' 'icmp_ln585' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 112 [1/1] (1.55ns)   --->   "%icmp_ln603 = icmp ult i12 %sh_amt, 14" [lib/activ_fun.cpp:22]   --->   Operation 112 'icmp' 'icmp_ln603' <Predicate = true> <Delay = 1.55> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.55> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 113 [1/1] (0.00ns) (grouped into LUT with out node select_ln603)   --->   "%zext_ln586 = zext i32 %sext_ln581 to i54" [lib/activ_fun.cpp:22]   --->   Operation 113 'zext' 'zext_ln586' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 114 [1/1] (0.00ns) (grouped into LUT with out node select_ln603)   --->   "%ashr_ln586 = ashr i54 %man_V_2, %zext_ln586" [lib/activ_fun.cpp:22]   --->   Operation 114 'ashr' 'ashr_ln586' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.63> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 115 [1/1] (0.00ns) (grouped into LUT with out node select_ln603)   --->   "%trunc_ln586 = trunc i54 %ashr_ln586 to i14" [lib/activ_fun.cpp:22]   --->   Operation 115 'trunc' 'trunc_ln586' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 116 [1/1] (0.00ns) (grouped into LUT with out node select_ln603_1)   --->   "%bitcast_ln696 = bitcast float %v_assign to i32" [lib/activ_fun.cpp:22]   --->   Operation 116 'bitcast' 'bitcast_ln696' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 117 [1/1] (0.00ns) (grouped into LUT with out node select_ln603_1)   --->   "%tmp_4 = call i1 @_ssdm_op_BitSelect.i1.i32.i32(i32 %bitcast_ln696, i32 31)" [lib/activ_fun.cpp:22]   --->   Operation 117 'bitselect' 'tmp_4' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 118 [1/1] (0.00ns) (grouped into LUT with out node select_ln603_1)   --->   "%select_ln588 = select i1 %tmp_4, i14 -1, i14 0" [lib/activ_fun.cpp:22]   --->   Operation 118 'select' 'select_ln588' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.55> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_36 : Operation 119 [1/1] (0.00ns) (grouped into LUT with out node select_ln603)   --->   "%sext_ln581cast = trunc i32 %sext_ln581 to i14" [lib/activ_fun.cpp:22]   --->   Operation 119 'trunc' 'sext_ln581cast' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 120 [1/1] (0.00ns) (grouped into LUT with out node select_ln603)   --->   "%shl_ln604 = shl i14 %trunc_ln583, %sext_ln581cast" [lib/activ_fun.cpp:22]   --->   Operation 120 'shl' 'shl_ln604' <Predicate = true> <Delay = 0.00> <Core = "Shift">   --->   Core 28 'Shift' <Latency = 0> <II = 1> <Delay = 2.63> <FuncUnit> <Opcode : 'shl' 'lshr' 'ashr'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 121 [1/1] (0.00ns) (grouped into LUT with out node or_ln603_2)   --->   "%xor_ln571 = xor i1 %icmp_ln571, true" [lib/activ_fun.cpp:22]   --->   Operation 121 'xor' 'xor_ln571' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 122 [1/1] (0.00ns) (grouped into LUT with out node or_ln603_2)   --->   "%and_ln582 = and i1 %icmp_ln582, %xor_ln571" [lib/activ_fun.cpp:22]   --->   Operation 122 'and' 'and_ln582' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 123 [1/1] (0.71ns)   --->   "%or_ln582 = or i1 %icmp_ln571, %icmp_ln582" [lib/activ_fun.cpp:22]   --->   Operation 123 'or' 'or_ln582' <Predicate = true> <Delay = 0.71> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 124 [1/1] (0.00ns) (grouped into LUT with out node and_ln581)   --->   "%xor_ln582 = xor i1 %or_ln582, true" [lib/activ_fun.cpp:22]   --->   Operation 124 'xor' 'xor_ln582' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 125 [1/1] (0.71ns) (out node of the LUT)   --->   "%and_ln581 = and i1 %icmp_ln581, %xor_ln582" [lib/activ_fun.cpp:22]   --->   Operation 125 'and' 'and_ln581' <Predicate = true> <Delay = 0.71> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 126 [1/1] (0.00ns) (grouped into LUT with out node and_ln585)   --->   "%xor_ln585 = xor i1 %icmp_ln585, true" [lib/activ_fun.cpp:22]   --->   Operation 126 'xor' 'xor_ln585' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 127 [1/1] (0.71ns) (out node of the LUT)   --->   "%and_ln585 = and i1 %and_ln581, %xor_ln585" [lib/activ_fun.cpp:22]   --->   Operation 127 'and' 'and_ln585' <Predicate = true> <Delay = 0.71> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 128 [1/1] (0.00ns) (grouped into LUT with out node or_ln603)   --->   "%and_ln585_1 = and i1 %and_ln581, %icmp_ln585" [lib/activ_fun.cpp:22]   --->   Operation 128 'and' 'and_ln585_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 129 [1/1] (0.00ns) (grouped into LUT with out node and_ln603)   --->   "%or_ln581 = or i1 %or_ln582, %icmp_ln581" [lib/activ_fun.cpp:22]   --->   Operation 129 'or' 'or_ln581' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 130 [1/1] (0.00ns) (grouped into LUT with out node and_ln603)   --->   "%xor_ln581 = xor i1 %or_ln581, true" [lib/activ_fun.cpp:22]   --->   Operation 130 'xor' 'xor_ln581' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 131 [1/1] (0.71ns) (out node of the LUT)   --->   "%and_ln603 = and i1 %icmp_ln603, %xor_ln581" [lib/activ_fun.cpp:22]   --->   Operation 131 'and' 'and_ln603' <Predicate = true> <Delay = 0.71> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 132 [1/1] (3.16ns) (out node of the LUT)   --->   "%select_ln603 = select i1 %and_ln603, i14 %shl_ln604, i14 %trunc_ln586" [lib/activ_fun.cpp:22]   --->   Operation 132 'select' 'select_ln603' <Predicate = true> <Delay = 3.16> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.55> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_36 : Operation 133 [1/1] (0.71ns) (out node of the LUT)   --->   "%or_ln603 = or i1 %and_ln603, %and_ln585_1" [lib/activ_fun.cpp:22]   --->   Operation 133 'or' 'or_ln603' <Predicate = true> <Delay = 0.71> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 134 [1/1] (0.72ns) (out node of the LUT)   --->   "%select_ln603_1 = select i1 %and_ln585, i14 %select_ln588, i14 %trunc_ln583" [lib/activ_fun.cpp:22]   --->   Operation 134 'select' 'select_ln603_1' <Predicate = true> <Delay = 0.72> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.55> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_36 : Operation 135 [1/1] (0.00ns) (grouped into LUT with out node or_ln603_2)   --->   "%or_ln603_1 = or i1 %and_ln585, %and_ln582" [lib/activ_fun.cpp:22]   --->   Operation 135 'or' 'or_ln603_1' <Predicate = true> <Delay = 0.00> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 136 [1/1] (0.00ns) (grouped into LUT with out node select_ln603_3)   --->   "%select_ln603_2 = select i1 %or_ln603, i14 %select_ln603, i14 %select_ln603_1" [lib/activ_fun.cpp:22]   --->   Operation 136 'select' 'select_ln603_2' <Predicate = true> <Delay = 0.00> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.55> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_36 : Operation 137 [1/1] (0.71ns) (out node of the LUT)   --->   "%or_ln603_2 = or i1 %or_ln603, %or_ln603_1" [lib/activ_fun.cpp:22]   --->   Operation 137 'or' 'or_ln603_2' <Predicate = true> <Delay = 0.71> <Core = "LogicGate">   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.71> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_36 : Operation 138 [1/1] (0.55ns) (out node of the LUT)   --->   "%select_ln603_3 = select i1 %or_ln603_2, i14 %select_ln603_2, i14 0" [lib/activ_fun.cpp:22]   --->   Operation 138 'select' 'select_ln603_3' <Predicate = true> <Delay = 0.55> <Core = "Sel">   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.55> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_36 : Operation 139 [1/1] (0.00ns)   --->   "%pred_V_addr = getelementptr [10 x i14]* %pred_V, i64 0, i64 %zext_ln22" [lib/activ_fun.cpp:22]   --->   Operation 139 'getelementptr' 'pred_V_addr' <Predicate = true> <Delay = 0.00>
+ST_36 : Operation 140 [1/1] (1.56ns)   --->   "store i14 %select_ln603_3, i14* %pred_V_addr, align 2" [lib/activ_fun.cpp:22]   --->   Operation 140 'store' <Predicate = true> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 10> <RAM>
+ST_36 : Operation 141 [1/1] (0.00ns)   --->   "br label %.preheader" [lib/activ_fun.cpp:20]   --->   Operation 141 'br' <Predicate = true> <Delay = 0.00>
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 10ns, clock uncertainty: 1.25ns.
+
+ <State 1>: 1.18ns
+The critical path consists of the following:
+	multiplexor before 'phi' operation ('sum') with incoming values : ('sum', lib/activ_fun.cpp:17) [5]  (1.18 ns)
+
+ <State 2>: 1.57ns
+The critical path consists of the following:
+	'phi' operation ('i') with incoming values : ('i', lib/activ_fun.cpp:15) [6]  (0 ns)
+	'getelementptr' operation ('dense_array_addr', lib/activ_fun.cpp:17) [13]  (0 ns)
+	'load' operation ('dense_array_load', lib/activ_fun.cpp:17) on array 'dense_array' [14]  (1.57 ns)
+
+ <State 3>: 7.68ns
+The critical path consists of the following:
+	'load' operation ('dense_array_load', lib/activ_fun.cpp:17) on array 'dense_array' [14]  (1.57 ns)
+	'fexp' operation ('tmp', lib/activ_fun.cpp:17) [15]  (6.11 ns)
+
+ <State 4>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', lib/activ_fun.cpp:17) [15]  (6.11 ns)
+
+ <State 5>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', lib/activ_fun.cpp:17) [15]  (6.11 ns)
+
+ <State 6>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', lib/activ_fun.cpp:17) [15]  (6.11 ns)
+
+ <State 7>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', lib/activ_fun.cpp:17) [15]  (6.11 ns)
+
+ <State 8>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', lib/activ_fun.cpp:17) [15]  (6.11 ns)
+
+ <State 9>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', lib/activ_fun.cpp:17) [15]  (6.11 ns)
+
+ <State 10>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp', lib/activ_fun.cpp:17) [15]  (6.11 ns)
+
+ <State 11>: 7.28ns
+The critical path consists of the following:
+	'fadd' operation ('sum', lib/activ_fun.cpp:17) [16]  (7.28 ns)
+
+ <State 12>: 7.28ns
+The critical path consists of the following:
+	'fadd' operation ('sum', lib/activ_fun.cpp:17) [16]  (7.28 ns)
+
+ <State 13>: 7.28ns
+The critical path consists of the following:
+	'fadd' operation ('sum', lib/activ_fun.cpp:17) [16]  (7.28 ns)
+
+ <State 14>: 7.28ns
+The critical path consists of the following:
+	'fadd' operation ('sum', lib/activ_fun.cpp:17) [16]  (7.28 ns)
+
+ <State 15>: 1.57ns
+The critical path consists of the following:
+	'phi' operation ('j') with incoming values : ('j', lib/activ_fun.cpp:20) [21]  (0 ns)
+	'getelementptr' operation ('dense_array_addr_1', lib/activ_fun.cpp:22) [28]  (0 ns)
+	'load' operation ('dense_array_load_1', lib/activ_fun.cpp:22) on array 'dense_array' [29]  (1.57 ns)
+
+ <State 16>: 7.68ns
+The critical path consists of the following:
+	'load' operation ('dense_array_load_1', lib/activ_fun.cpp:22) on array 'dense_array' [29]  (1.57 ns)
+	'fexp' operation ('tmp_2', lib/activ_fun.cpp:22) [30]  (6.11 ns)
+
+ <State 17>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', lib/activ_fun.cpp:22) [30]  (6.11 ns)
+
+ <State 18>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', lib/activ_fun.cpp:22) [30]  (6.11 ns)
+
+ <State 19>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', lib/activ_fun.cpp:22) [30]  (6.11 ns)
+
+ <State 20>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', lib/activ_fun.cpp:22) [30]  (6.11 ns)
+
+ <State 21>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', lib/activ_fun.cpp:22) [30]  (6.11 ns)
+
+ <State 22>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', lib/activ_fun.cpp:22) [30]  (6.11 ns)
+
+ <State 23>: 6.11ns
+The critical path consists of the following:
+	'fexp' operation ('tmp_2', lib/activ_fun.cpp:22) [30]  (6.11 ns)
+
+ <State 24>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 25>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 26>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 27>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 28>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 29>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 30>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 31>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 32>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 33>: 7.85ns
+The critical path consists of the following:
+	'fdiv' operation ('v', lib/activ_fun.cpp:22) [31]  (7.85 ns)
+
+ <State 34>: 3.04ns
+The critical path consists of the following:
+	'fpext' operation ('d', lib/activ_fun.cpp:22) [32]  (3.04 ns)
+
+ <State 35>: 6.82ns
+The critical path consists of the following:
+	'fpext' operation ('d', lib/activ_fun.cpp:22) [32]  (3.04 ns)
+	'sub' operation ('F2', lib/activ_fun.cpp:22) [44]  (1.63 ns)
+	'add' operation ('add_ln581', lib/activ_fun.cpp:22) [46]  (1.63 ns)
+	'select' operation ('sh_amt', lib/activ_fun.cpp:22) [48]  (0.518 ns)
+
+ <State 36>: 8.51ns
+The critical path consists of the following:
+	'sub' operation ('man.V', lib/activ_fun.cpp:22) [41]  (2.42 ns)
+	'select' operation ('man.V', lib/activ_fun.cpp:22) [42]  (0.805 ns)
+	'shl' operation ('shl_ln604', lib/activ_fun.cpp:22) [61]  (0 ns)
+	'select' operation ('select_ln603', lib/activ_fun.cpp:22) [73]  (3.16 ns)
+	'select' operation ('select_ln603_2', lib/activ_fun.cpp:22) [77]  (0 ns)
+	'select' operation ('select_ln603_3', lib/activ_fun.cpp:22) [79]  (0.552 ns)
+	'store' operation ('store_ln22', lib/activ_fun.cpp:22) of variable 'select_ln603_3', lib/activ_fun.cpp:22 on array 'pred_V' [81]  (1.57 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+	State 13
+	State 14
+	State 15
+	State 16
+	State 17
+	State 18
+	State 19
+	State 20
+	State 21
+	State 22
+	State 23
+	State 24
+	State 25
+	State 26
+	State 27
+	State 28
+	State 29
+	State 30
+	State 31
+	State 32
+	State 33
+	State 34
+	State 35
+	State 36
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

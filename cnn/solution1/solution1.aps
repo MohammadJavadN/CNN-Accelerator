@@ -8,11 +8,11 @@
     <config>
         <schedule model="cnn"/>
         <config_sdx target="none"/>
-        <config_export vivado_optimization_level="2"/>
+        <config_export format="" rtl="" use_netlist="" vivado_optimization_level="2" vivado_phys_opt="place" vivado_report_level="0"/>
     </config>
     <UIConfigurations>
         <UIAutosynConf hideTrivialOp="true" isBasedOnBoard="false" isSolutionDirty="true" isStopAskAgain="false" showDetailDesignViewer="false">
-            <Platform>xilinx/qvirtex7/qvirtex7</Platform>
+            <Platform>xilinx/zynq/zynq</Platform>
             <customLibs/>
         </UIAutosynConf>
         <UIIPPackagerConf AskAgain="true" DescriptionButton="false" LibraryButton="false" RTLLanguage="verilog" UseNetList="none" VendorButton="false" VersionButton="false" evaluateRTL="false" setup="false">
@@ -62,15 +62,14 @@
         <value string="cnn"/>
     </project>
     <targetInfo>
-        <TargetInfo value="xq7vx980t:-rf1930:-2L"/>
+        <TargetInfo value="xc7z020:-clg484:-3"/>
     </targetInfo>
     <libraryList>
-        <library name="DefaultPlatform" value="xilinx/qvirtex7/qvirtex7"/>
-        <library value="xilinx/virtex7/virtex7" name="DefaultPlatform"/>
-        <library value="xilinx/virtex7/virtex7_fpv6" name="DefaultPlatform"/>
+        <library name="DefaultPlatform" value="xilinx/zynq/zynq"/>
+        <library value="xilinx/zynq/zynq_fpv6" name="DefaultPlatform"/>
     </libraryList>
     <clockList>
-        <clock default="false" name="default" uncertainty="0.12" period="100"/>
+        <clock name="default" default="false" uncertainty="12.5%" period="10"/>
     </clockList>
 </solution>
 
