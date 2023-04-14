@@ -6,12 +6,6 @@
 
 void makeItZero(T A[FILTERS2][FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS]);
 
-void
-normalization
-(
-  hls::stream<T2> &img_in  ,
-  hls::stream<T> &img_out
-);
 #ifndef __SYNTHESIS__
 void
 normalization

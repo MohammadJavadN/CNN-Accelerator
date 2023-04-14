@@ -8,21 +8,6 @@ void makeItZero(T A[FILTERS2][FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS])
         A[f][row][col] = 0;
 }
 
-void
-normalization
-(
-  hls::stream<T2> &img_in ,
-  hls::stream<T> & img_out
-)
-{
-  for(int r = 0; r < IMG_ROWS; ++r)
-    for(int c = 0; c < IMG_COLS; ++c)
-    {
-        // Normalize.
-        img_out << img_in.read() / 255.0;
-    }
-}
-
 #ifndef __SYNTHESIS__
 void
 normalization

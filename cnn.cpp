@@ -1,27 +1,22 @@
 #include "lib/cnn.h"
 #include "lib/conv2_weights.h"
 
-void cnn(hls::stream<T2> &img_in , hls::stream<T> &prediction)
+void cnn(hls::stream<T> &img_in , hls::stream<T> &prediction)
 {
 #pragma HLS INTERFACE axis port=&img_in
 #pragma HLS INTERFACE axis port=&prediction
   T features_conv2 [FILTERS2][FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS];
   makeItZero(features_conv2);
-/**************** Normalization. ********************/
-  hls::stream<T> norm_img("norm_img");
-#pragma HLS stream variable=norm_img depth=784
-  normalization(img_in, norm_img);
 
 /**************** Convolution layer. ****************/
   T features_conv1 [FILTERS1][FEATURE_CONV1_ROWS][FEATURE_CONV1_COLS];
-  convolutional_layer1(norm_img, features_conv1);
+  convolutional_layer1(img_in, features_conv1);
 
 /**************** Maxpooling layer1. ****************/
   T pool_features1 [FILTERS1][POOL_IMG1_ROWS][POOL_IMG1_COLS];
   max_pooling_layer1(features_conv1, pool_features1);
 
 /**************** Convolution layer. ****************/
-#pragma unroll(1)
   for (int f = 0; f < FILTERS1; f++)
     convolutional_layer2(pool_features1[f], features_conv2, conv2_weights[f]);
 

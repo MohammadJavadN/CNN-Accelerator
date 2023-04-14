@@ -10,6 +10,6 @@
 #include <hls_stream.h>
 void cnn
 (
-  hls::stream<T2> &img_in , // Take an image in input.
+  hls::stream<T> &img_in , // Take an image in input.
   hls::stream<T> &pred                 // Get a prediction in output.
 );

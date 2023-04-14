@@ -7,8 +7,8 @@
 #include <iostream>
 using namespace std;
 
-#define N 10 // number of images in 'images' array 
-#define TOT 10 // total number of images under test
+#define N 500 // number of images in 'images' array 
+#define TOT 500 // total number of images under test
 int OFSET = 0;
 
 ifstream fpm; 
@@ -60,7 +60,7 @@ int main ()
     return 1;
   }
   T2 images[N][IMG_ROWS][IMG_COLS];
-  hls::stream<T2> src_img_strm("src_img_strm");
+  hls::stream<T> src_img_strm("src_img_strm");
   hls::stream<T> prediction("prediction");
   int labels[N];
   T2 norm_img [IMG_ROWS][IMG_COLS];
@@ -83,7 +83,7 @@ for(OFSET = 0; OFSET < TOT; OFSET+=N){
   {
     for (int ii = 0; ii < IMG_ROWS; ii++)
       for (int jj = 0; jj < IMG_COLS; jj++)
-        src_img_strm<<   images[i][ii][jj];    
+        src_img_strm<<  ((T)(images[i][ii][jj]/256.0));    
     
     // CNN execution, obtain a prediction.
     clock_t begin = clock();
