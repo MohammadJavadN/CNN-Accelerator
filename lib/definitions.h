@@ -1,7 +1,7 @@
 #pragma once
 
 #include "ap_fixed.h"
-typedef ap_fixed<14, 6> T;
+typedef ap_fixed<15, 6> T;
 typedef float T2;
 
 #define DIGITS 10

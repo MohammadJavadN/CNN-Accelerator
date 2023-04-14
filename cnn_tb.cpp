@@ -8,7 +8,7 @@
 using namespace std;
 
 #define N 500 // number of images in 'images' array 
-#define TOT 500 // total number of images under test
+#define TOT 10000 // total number of images under test
 int OFSET = 0;
 
 ifstream fpm; 
@@ -96,13 +96,13 @@ for(OFSET = 0; OFSET < TOT; OFSET+=N){
     }
     else
     {
-      // printf("\nExpected: %d\n", labels[i]);
-      // normalization(images[i], norm_img);
-      // print_img(norm_img);
-      // printf("Prediction:\n");
-      // for (int j = 0; j < DIGITS; ++j)
-      //   printf("%d: %f\n", j, (T2)prediction[j]);
-      printf("\n false ");
+      printf("\nExpected: %d\n", labels[i]);
+      normalization(images[i], norm_img);
+      print_img(norm_img);
+      printf("Prediction:\n");
+      for (int j = 0; j < DIGITS; ++j)
+        printf("%d: %f\n", j, (T2)prediction[j]);
+      printf("\n ");
     }
     // Sum up time spent.
     double time_spent = (double)(end - begin) / CLOCKS_PER_SEC;
