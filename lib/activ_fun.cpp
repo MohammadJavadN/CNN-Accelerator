@@ -8,7 +8,7 @@ T relu (T x)
     return ZERO;
 }
 
-void soft_max(T2 dense_array [DIGITS], T pred[DIGITS])
+void soft_max(T2 dense_array [DIGITS], hls::stream<T> &pred)
 {
   T2 sum = 0.0;
 
@@ -19,7 +19,7 @@ void soft_max(T2 dense_array [DIGITS], T pred[DIGITS])
 
   for (int j = 0; j < DIGITS; ++j)
   {
-    pred[j] = ((T) (expf((T2)dense_array[j]) / sum));
+    pred << ((T) (expf((T2)dense_array[j]) / sum));
   }
 
 }

@@ -5,7 +5,7 @@ void
 dense_layer
 (
   T flat_array  [FLAT_SIZE],
-  T prediction [DENSE_SIZE]
+  hls::stream<T> &prediction 
 )
 {
 

@@ -11,5 +11,5 @@
 void cnn
 (
   hls::stream<T2> &img_in , // Take an image in input.
-  T pred   [DIGITS]              // Get a prediction in output.
+  hls::stream<T> &pred                 // Get a prediction in output.
 );

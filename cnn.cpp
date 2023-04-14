@@ -1,8 +1,10 @@
 #include "lib/cnn.h"
 #include "lib/conv2_weights.h"
 
-void cnn(hls::stream<T2> &img_in , T prediction[DIGITS])
+void cnn(hls::stream<T2> &img_in , hls::stream<T> &prediction)
 {
+#pragma HLS INTERFACE axis port=&img_in
+#pragma HLS INTERFACE axis port=&prediction
   T features_conv2 [FILTERS2][FEATURE_CONV2_ROWS][FEATURE_CONV2_COLS];
   makeItZero(features_conv2);
 /**************** Normalization. ********************/

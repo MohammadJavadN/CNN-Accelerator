@@ -7,61 +7,40 @@
 #include <iostream>
 using namespace std;
 
-#define N 500
-#define TOT 10000
+#define N 10 // number of images in 'images' array 
+#define TOT 10 // total number of images under test
 int OFSET = 0;
 
 ifstream fpm; 
 ifstream fpl; 
 
-// FILE *fpm;
-
-// FILE *fpl;
-
-
 int
 read_images (const char * file, T2 images [N][IMG_ROWS][IMG_COLS])
 {
-  // FILE *fp;
-
-  // fp = fopen(file, "r");
-
-  // if (fp == NULL)
-  //   return -1;
-
   for (int i = 0; i <  N; ++i)
-    // if (i >= OFSET)
       for (int x = 0; x < IMG_ROWS; ++x)
         for (int y = 0; y < IMG_COLS; ++y)
           fpm>> images[i][x][y];
-          // if(fscanf(fpm, "%f ", & images[i][x][y]) != 1)
-          //   return 1; // Error.
-// fclose(fp);
   return 0;
 }
 
 int
 read_labels(const char * file, int labels[N])
 {
-  // FILE *fp;
-
-  // fp = fopen(file, "r");
-
-  // if (fp == NULL)
-  //   return -1;
-
   for (int i = 0; i <  N; ++i)
     fpl>>labels[i];
-    // if (i >= OFSET)
-      // if(fscanf(fpl, "%d ", & labels[i]) != 1)
-      //   return 1;
-// fclose(fp);
   return 0;
 }
 
 int
-get_max_prediction (T prediction [DIGITS])
+get_max_prediction (hls::stream<T> &pred)
 {
+  T prediction [DIGITS];
+  for (int i = 0; i < DIGITS; ++i)
+  {
+    prediction[i]  = pred.read();
+  }
+
   int max_digit = 0;
   for (int i = 0; i < DIGITS; ++i)
   {
@@ -82,33 +61,24 @@ int main ()
   }
   T2 images[N][IMG_ROWS][IMG_COLS];
   hls::stream<T2> src_img_strm("src_img_strm");
-  int labels[N];//={2};
-  T prediction [DIGITS];
+  hls::stream<T> prediction("prediction");
+  int labels[N];
   T2 norm_img [IMG_ROWS][IMG_COLS];
 
   fpm.open("in.dat");
   fpl.open("out.dat");
-// fpm = fopen("in.dat", "r");
-// fpl = fopen("out.dat", "r");
 
 double time = 0;
 int correct_predictions = 0;
+  /**** Do TOT predictions. ****/
 for(OFSET = 0; OFSET < TOT; OFSET+=N){
     /**** Read the images. ****/
-    if (0 != read_images("in.dat", images))
-    {
-      printf("Error: can't open file ``../Data/in.dat''\n");
-      return 1;
-    }
+    read_images("in.dat", images);
+
   //  /**** Read expected labels. ****/
-    if (0 != read_labels("out.dat", labels))
-    {
-      printf("Error: can't open file ``../Data/out.dat''\n");
-      return 1;
-    }
+    read_labels("out.dat", labels);
 
   /**** Do N predictions. ****/
-  //
   for (int i = 0; i < N; ++i)
   {
     for (int ii = 0; ii < IMG_ROWS; ii++)
