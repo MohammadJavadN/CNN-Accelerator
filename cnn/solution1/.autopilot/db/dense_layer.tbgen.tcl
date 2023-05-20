@@ -14,14 +14,14 @@ set isEnableWaveformDebug 1
 set C_modelName {dense_layer}
 set C_modelType { void 0 }
 set C_modelArgList {
-	{ flat_array_V int 13 regular {array 160 { 1 3 } 1 1 }  }
-	{ prediction_V int 14 regular {array 10 { 0 3 } 0 1 }  }
+	{ flat_array_V int 14 regular {array 160 { 1 3 } 1 1 }  }
+	{ prediction_V_V int 16 regular {axi_s 1 volatile  { prediction_V_V Data } }  }
 }
 set C_modelArgMapList {[ 
-	{ "Name" : "flat_array_V", "interface" : "memory", "bitwidth" : 13, "direction" : "READONLY"} , 
- 	{ "Name" : "prediction_V", "interface" : "memory", "bitwidth" : 14, "direction" : "WRITEONLY"} ]}
+	{ "Name" : "flat_array_V", "interface" : "memory", "bitwidth" : 14, "direction" : "READONLY"} , 
+ 	{ "Name" : "prediction_V_V", "interface" : "axis", "bitwidth" : 16, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 13
+set portNum 12
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -31,11 +31,10 @@ set portList {
 	{ ap_ready sc_out sc_logic 1 ready -1 } 
 	{ flat_array_V_address0 sc_out sc_lv 8 signal 0 } 
 	{ flat_array_V_ce0 sc_out sc_logic 1 signal 0 } 
-	{ flat_array_V_q0 sc_in sc_lv 13 signal 0 } 
-	{ prediction_V_address0 sc_out sc_lv 4 signal 1 } 
-	{ prediction_V_ce0 sc_out sc_logic 1 signal 1 } 
-	{ prediction_V_we0 sc_out sc_logic 1 signal 1 } 
-	{ prediction_V_d0 sc_out sc_lv 14 signal 1 } 
+	{ flat_array_V_q0 sc_in sc_lv 14 signal 0 } 
+	{ prediction_V_V_TDATA sc_out sc_lv 16 signal 1 } 
+	{ prediction_V_V_TVALID sc_out sc_logic 1 outvld 1 } 
+	{ prediction_V_V_TREADY sc_in sc_logic 1 outacc 1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -46,11 +45,10 @@ set NewPortList {[
  	{ "name": "ap_ready", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "ready", "bundle":{"name": "ap_ready", "role": "default" }} , 
  	{ "name": "flat_array_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":8, "type": "signal", "bundle":{"name": "flat_array_V", "role": "address0" }} , 
  	{ "name": "flat_array_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "flat_array_V", "role": "ce0" }} , 
- 	{ "name": "flat_array_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":13, "type": "signal", "bundle":{"name": "flat_array_V", "role": "q0" }} , 
- 	{ "name": "prediction_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "prediction_V", "role": "address0" }} , 
- 	{ "name": "prediction_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "prediction_V", "role": "ce0" }} , 
- 	{ "name": "prediction_V_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "prediction_V", "role": "we0" }} , 
- 	{ "name": "prediction_V_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":14, "type": "signal", "bundle":{"name": "prediction_V", "role": "d0" }}  ]}
+ 	{ "name": "flat_array_V_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":14, "type": "signal", "bundle":{"name": "flat_array_V", "role": "q0" }} , 
+ 	{ "name": "prediction_V_V_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "prediction_V_V", "role": "TDATA" }} , 
+ 	{ "name": "prediction_V_V_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "prediction_V_V", "role": "TVALID" }} , 
+ 	{ "name": "prediction_V_V_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "prediction_V_V", "role": "TREADY" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4", "9", "10"],
@@ -67,18 +65,18 @@ set RtlHierarchyInfo {[
 		"InDataflowNetwork" : "0",
 		"HasNonBlockingOperation" : "0",
 		"WaitState" : [
-			{"State" : "ap_ST_fsm_state21", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_soft_max_fu_242"}],
+			{"State" : "ap_ST_fsm_state21", "FSM" : "ap_CS_fsm", "SubInstance" : "grp_soft_max_fu_252"}],
 		"Port" : [
 			{"Name" : "flat_array_V", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "prediction_V", "Type" : "Memory", "Direction" : "O",
+			{"Name" : "prediction_V_V", "Type" : "Axis", "Direction" : "O",
 				"SubConnect" : [
-					{"ID" : "4", "SubInstance" : "grp_soft_max_fu_242", "Port" : "pred_V"}]},
+					{"ID" : "4", "SubInstance" : "grp_soft_max_fu_252", "Port" : "pred_V_V"}]},
 			{"Name" : "dense_weights_V", "Type" : "Memory", "Direction" : "I"},
 			{"Name" : "dense_biases_V", "Type" : "Memory", "Direction" : "I"}]},
 	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dense_weights_V_U", "Parent" : "0"},
 	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dense_biases_V_U", "Parent" : "0"},
 	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.dense_array_U", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_242", "Parent" : "0", "Child" : ["5", "6", "7", "8"],
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_252", "Parent" : "0", "Child" : ["5", "6", "7", "8"],
 		"CDFG" : "soft_max",
 		"Protocol" : "ap_ctrl_hs",
 		"ControlExist" : "1", "ap_start" : "1", "ap_ready" : "1", "ap_done" : "1", "ap_continue" : "0", "ap_idle" : "1",
@@ -93,24 +91,26 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "dense_array", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "pred_V", "Type" : "Memory", "Direction" : "O"}]},
-	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_242.cnn_fadd_32ns_32ndEe_U44", "Parent" : "4"},
-	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_242.cnn_fdiv_32ns_32neOg_U45", "Parent" : "4"},
-	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_242.cnn_fpext_32ns_64bkb_U46", "Parent" : "4"},
-	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_242.cnn_fexp_32ns_32nfYi_U47", "Parent" : "4"},
-	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fadd_32ns_32ndEe_U53", "Parent" : "0"},
-	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_mul_mul_13ns_jbC_U54", "Parent" : "0"}]}
+			{"Name" : "pred_V_V", "Type" : "Axis", "Direction" : "O",
+				"BlockSignal" : [
+					{"Name" : "pred_V_V_TDATA_blk_n", "Type" : "RtlSignal"}]}]},
+	{"ID" : "5", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_252.cnn_fadd_32ns_32nbkb_U38", "Parent" : "4"},
+	{"ID" : "6", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_252.cnn_fdiv_32ns_32ncud_U39", "Parent" : "4"},
+	{"ID" : "7", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_252.cnn_fpext_32ns_64dEe_U40", "Parent" : "4"},
+	{"ID" : "8", "Level" : "2", "Path" : "`AUTOTB_DUT_INST.grp_soft_max_fu_252.cnn_fexp_32ns_32neOg_U41", "Parent" : "4"},
+	{"ID" : "9", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fadd_32ns_32nbkb_U48", "Parent" : "0"},
+	{"ID" : "10", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_mul_mul_14ns_ibs_U49", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	dense_layer {
 		flat_array_V {Type I LastRead 3 FirstWrite -1}
-		prediction_V {Type O LastRead -1 FirstWrite 23}
+		prediction_V_V {Type O LastRead -1 FirstWrite 23}
 		dense_weights_V {Type I LastRead -1 FirstWrite -1}
 		dense_biases_V {Type I LastRead -1 FirstWrite -1}}
 	soft_max {
 		dense_array {Type I LastRead 2 FirstWrite -1}
-		pred_V {Type O LastRead -1 FirstWrite 23}}}
+		pred_V_V {Type O LastRead -1 FirstWrite 23}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -123,6 +123,6 @@ set PipelineEnableSignalInfo {[
 ]}
 
 set Spec2ImplPortList { 
-	flat_array_V { ap_memory {  { flat_array_V_address0 mem_address 1 8 }  { flat_array_V_ce0 mem_ce 1 1 }  { flat_array_V_q0 mem_dout 0 13 } } }
-	prediction_V { ap_memory {  { prediction_V_address0 mem_address 1 4 }  { prediction_V_ce0 mem_ce 1 1 }  { prediction_V_we0 mem_we 1 1 }  { prediction_V_d0 mem_din 1 14 } } }
+	flat_array_V { ap_memory {  { flat_array_V_address0 mem_address 1 8 }  { flat_array_V_ce0 mem_ce 1 1 }  { flat_array_V_q0 mem_dout 0 14 } } }
+	prediction_V_V { axis {  { prediction_V_V_TDATA out_data 1 16 }  { prediction_V_V_TVALID out_vld 1 1 }  { prediction_V_V_TREADY out_acc 0 1 } } }
 }

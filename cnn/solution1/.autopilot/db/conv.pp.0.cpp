@@ -6356,7 +6356,7 @@ inline bool operator!=(
 }
 # 399 "E:/Xilinx/Vivado/2019.1/common/technology/autopilot\\ap_fixed.h" 2
 # 4 "lib/definitions.h" 2
-typedef ap_fixed<14, 6> T;
+typedef ap_fixed<15, 6> T;
 typedef float T2;
 # 4 "lib/conv.h" 2
 # 1 "lib/activ_fun.h" 1
@@ -6935,11 +6935,6 @@ __extension__ long long llrintl (long double);
 
 #pragma pack(pop)
 # 5 "lib/activ_fun.h" 2
-
-T relu (T x);
-
-void soft_max(T2 dense_array [10], T pred[10]);
-# 5 "lib/conv.h" 2
 # 1 "E:/Xilinx/Vivado/2019.1/common/technology/autopilot\\hls_stream.h" 1
 # 66 "E:/Xilinx/Vivado/2019.1/common/technology/autopilot\\hls_stream.h"
 # 1 "E:/Xilinx/Vivado/2019.1/common/technology/autopilot/etc/autopilot_enum.h" 1
@@ -7137,7 +7132,13 @@ class stream
 
 
 }
-# 6 "lib/conv.h" 2
+# 6 "lib/activ_fun.h" 2
+
+T relu (T x);
+
+void soft_max(T2 dense_array [10], hls::stream<T> &pred);
+# 5 "lib/conv.h" 2
+
 
 void convolutional_layer1
 (
@@ -7211,58 +7212,38 @@ void convolutional_layer1
 {_ssdm_SpecArrayDimSize(dst, 6);
 #pragma HLS ARRAY_PARTITION variable=&dst dim=1 complete
 
+ static T buf[5*28];
 
-
-
- static T linebuf[5*28];
-
-
-#pragma HLS ARRAY_PARTITION variable=&linebuf dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=&buf dim=1 complete
 #pragma HLS INLINE
 
  T in_val;
-    T out_val[6];
-    T win_val;
-    conv1:for(int row = 0; row < 28; row++) {
-        conv2:for(int col = 0; col < 28; col++) {
-#pragma HLS DEPENDENCE variable=&linebuf inter false
+  T out_val[6];
+  T win_val;
+  conv1_1:for(int row = 0; row < 28; row++) {
+    conv1_2:for(int col = 0; col < 28; col++) {
+#pragma HLS DEPENDENCE variable=&buf inter false
 #pragma HLS PIPELINE
  in_val = src.read();
-            conv3:for(int i = 0; i < 5; i++) {
-                conv4:for (int j = 0; j < 28; j++)
-                {
-                    win_val = (i < 5 - 1 || j < 28 - 1) ? linebuf[i*28 + j] : in_val;
-                    if (j>=28 -5)
-                    {
-                        for (int f = 0; f < 6; f++)
-                        {
-                          if (i==0 && j == (28 -5))
-                            out_val[f] = win_val * conv1_weights[f][i][j-(28 -5)];
-                          else
-                            out_val[f] += win_val * conv1_weights[f][i][j-(28 -5)];
-                        }
-                    }
+      conv1_3:for(int i = 0; i < 5; i++)
+        conv1_4:for (int j = 0; j < 28; j++)
+        {
+          win_val = (i < 5 - 1 || j < 28 - 1) ? buf[i*28 + j] : in_val;
+          if (j>=28 -5)
+            conv1_mul:for (int f = 0; f < 6; f++)
+              if (i==0 && j == (28 -5))
+                out_val[f] = win_val * conv1_weights[f][i][j-(28 -5)];
+              else
+                out_val[f] += win_val * conv1_weights[f][i][j-(28 -5)];
 
-                    if (j > 0 || i>0){
-                        linebuf[i*28 + j-1] = win_val;
-                    }
-
-
-
-                }
-            }
-            if (row >= 5 -1 && col >= 5 -1){
-              for (int f = 0; f < 6; f++)
-              {
-
-
-
-
-                dst[f][row-(5 -1)][col - (5 -1)] = relu(out_val[f] + conv1_biases[f]);
-              }
-            }
+          if (j > 0 || i>0)
+            buf[i*28 + j-1] = win_val;
         }
+      if (row >= 5 -1 && col >= 5 -1)
+        for (int f = 0; f < 6; f++)
+          dst[f][row-(5 -1)][col - (5 -1)] = relu(out_val[f] + conv1_biases[f]);
     }
+  }
 }
 
 void convolutional_layer2
@@ -7272,58 +7253,45 @@ void convolutional_layer2
   const T weights[10][5][5]
 )
 {_ssdm_SpecArrayDimSize(src, 12);_ssdm_SpecArrayDimSize(dst, 10);_ssdm_SpecArrayDimSize(weights, 10);
-
-
-
 #pragma HLS ARRAY_PARTITION variable=&dst dim=1 complete
 
- static T linebuf[5*((28 - (5 - 1)) / 2)];
+ static T buf[5*((28 - (5 - 1)) / 2)];
 
-
-#pragma HLS ARRAY_PARTITION variable=&linebuf dim=1 complete
+#pragma HLS ARRAY_PARTITION variable=&buf dim=1 complete
 #pragma HLS INLINE
 
  T in_val;
-    T out_val[10];
-    T win_val;
-    conv1:for(int row = 0; row < ((28 - (5 - 1)) / 2); row++) {
-        conv2:for(int col = 0; col < ((28 - (5 - 1)) / 2); col++) {
-#pragma HLS DEPENDENCE variable=&linebuf inter false
+  T out_val[10];
+  T win_val;
+  conv2_1:for(int row = 0; row < ((28 - (5 - 1)) / 2); row++) {
+    conv2_2:for(int col = 0; col < ((28 - (5 - 1)) / 2); col++) {
+#pragma HLS DEPENDENCE variable=&buf inter false
 #pragma HLS PIPELINE
  in_val = src[row][col];
-            conv3:for(int i = 0; i < 5; i++) {
-                conv4:for (int j = 0; j < ((28 - (5 - 1)) / 2); j++)
-                {
-                    win_val = (i < 5 - 1 || j < ((28 - (5 - 1)) / 2) - 1) ? linebuf[i*((28 - (5 - 1)) / 2) + j] : in_val;
-                    if (j>=((28 - (5 - 1)) / 2)-5)
-                    {
-                        for (int f = 0; f < 10; f++)
-                        {
-                          if (i==0 && j == (((28 - (5 - 1)) / 2)-5))
-                            out_val[f] = win_val * weights[f][i][j-(((28 - (5 - 1)) / 2)-5)];
-                          else
-                            out_val[f] += win_val * weights[f][i][j-(((28 - (5 - 1)) / 2)-5)];
-                        }
-                    }
-
-                    if (j > 0 || i>0){
-                        linebuf[i*((28 - (5 - 1)) / 2) + j-1] = win_val;
-                    }
-
-
-
-                }
+      conv2_3:for(int i = 0; i < 5; i++) {
+        conv2_4:for (int j = 0; j < ((28 - (5 - 1)) / 2); j++)
+        {
+          win_val = (i < 5 - 1 || j < ((28 - (5 - 1)) / 2) - 1) ? buf[i*((28 - (5 - 1)) / 2) + j] : in_val;
+          if (j>=((28 - (5 - 1)) / 2)-5)
+          {
+#pragma HLS ALLOCATION instances=mul limit=40 operation
+ conv2_mul:for (int f = 0; f < 10; f++)
+            {
+              if (i==0 && j == (((28 - (5 - 1)) / 2)-5))
+                out_val[f] = win_val * weights[f][i][j-(((28 - (5 - 1)) / 2)-5)];
+              else
+                out_val[f] += win_val * weights[f][i][j-(((28 - (5 - 1)) / 2)-5)];
             }
-            if (row >= 5 -1 && col >= 5 -1){
-              for (int f = 0; f < 10; f++)
-              {
+          }
 
-
-
-
-                dst[f][row-(5 -1)][col - ( 5 -1)] += out_val[f];
-              }
-            }
+          if (j > 0 || i>0)
+            buf[i*((28 - (5 - 1)) / 2) + j-1] = win_val;
         }
+      }
+      if (row >= 5 -1 && col >= 5 -1){
+        for (int f = 0; f < 10; f++)
+          dst[f][row-(5 -1)][col - ( 5 -1)] += out_val[f];
+      }
     }
+  }
 }

@@ -6356,7 +6356,7 @@ inline bool operator!=(
 }
 # 399 "E:/Xilinx/Vivado/2019.1/common/technology/autopilot\\ap_fixed.h" 2
 # 4 "lib/definitions.h" 2
-typedef ap_fixed<14, 6> T;
+typedef ap_fixed<15, 6> T;
 typedef float T2;
 # 4 "lib/utils.h" 2
 # 1 "E:/Xilinx/Vivado/2019.1/win64/tools/clang/bin/../lib/clang/3.1/../../../x86_64-w64-mingw32/include\\stdio.h" 1 3
@@ -7058,13 +7058,6 @@ class stream
 # 6 "lib/utils.h" 2
 
 void makeItZero(T A[10][(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) - (5 - 1))]);
-
-void
-normalization
-(
-  hls::stream<T2> &img_in ,
-  hls::stream<T> &img_out
-);
 # 2 "lib/utils.cpp" 2
 
 void makeItZero(T A[10][(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) - (5 - 1))])
@@ -7073,19 +7066,4 @@ void makeItZero(T A[10][(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) 
     for(int row = 0; row < (((28 - (5 - 1)) / 2) - (5 - 1)); row++)
       for(int col = 0; col < (((28 - (5 - 1)) / 2) - (5 - 1)); col++)
         A[f][row][col] = 0;
-}
-
-void
-normalization
-(
-  hls::stream<T2> &img_in ,
-  hls::stream<T> & img_out
-)
-{
-  for(int r = 0; r < 28; ++r)
-    for(int c = 0; c < 28; ++c)
-    {
-
-        img_out << img_in.read() / 255.0;
-    }
 }

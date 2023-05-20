@@ -11,7 +11,7 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
-#include "cnn_mux_63_14_1_1.h"
+#include "cnn_mux_63_15_1_1.h"
 
 namespace ap_rtl {
 
@@ -25,27 +25,27 @@ struct max_pool : public sc_module {
     sc_out< sc_logic > ap_ready;
     sc_out< sc_lv<10> > feature_0_V_address0;
     sc_out< sc_logic > feature_0_V_ce0;
-    sc_in< sc_lv<13> > feature_0_V_q0;
+    sc_in< sc_lv<14> > feature_0_V_q0;
     sc_out< sc_lv<10> > feature_1_V_address0;
     sc_out< sc_logic > feature_1_V_ce0;
-    sc_in< sc_lv<13> > feature_1_V_q0;
+    sc_in< sc_lv<14> > feature_1_V_q0;
     sc_out< sc_lv<10> > feature_2_V_address0;
     sc_out< sc_logic > feature_2_V_ce0;
-    sc_in< sc_lv<13> > feature_2_V_q0;
+    sc_in< sc_lv<14> > feature_2_V_q0;
     sc_out< sc_lv<10> > feature_3_V_address0;
     sc_out< sc_logic > feature_3_V_ce0;
-    sc_in< sc_lv<13> > feature_3_V_q0;
+    sc_in< sc_lv<14> > feature_3_V_q0;
     sc_out< sc_lv<10> > feature_4_V_address0;
     sc_out< sc_logic > feature_4_V_ce0;
-    sc_in< sc_lv<13> > feature_4_V_q0;
+    sc_in< sc_lv<14> > feature_4_V_q0;
     sc_out< sc_lv<10> > feature_5_V_address0;
     sc_out< sc_logic > feature_5_V_ce0;
-    sc_in< sc_lv<13> > feature_5_V_q0;
+    sc_in< sc_lv<14> > feature_5_V_q0;
     sc_in< sc_lv<3> > feature_V_offset;
     sc_out< sc_lv<10> > pool_feature_V_address0;
     sc_out< sc_logic > pool_feature_V_ce0;
     sc_out< sc_logic > pool_feature_V_we0;
-    sc_out< sc_lv<14> > pool_feature_V_d0;
+    sc_out< sc_lv<15> > pool_feature_V_d0;
 
 
     // Module declarations
@@ -56,7 +56,7 @@ struct max_pool : public sc_module {
 
     sc_trace_file* mVcdFile;
 
-    cnn_mux_63_14_1_1<1,1,14,14,14,14,14,14,3,14>* cnn_mux_63_14_1_1_U17;
+    cnn_mux_63_15_1_1<1,1,15,15,15,15,15,15,3,15>* cnn_mux_63_15_1_1_U11;
     sc_signal< sc_lv<6> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
     sc_signal< sc_lv<9> > sext_ln203_fu_262_p1;
@@ -79,22 +79,22 @@ struct max_pool : public sc_module {
     sc_signal< sc_lv<2> > pc_reg_554;
     sc_signal< sc_logic > ap_CS_fsm_state5;
     sc_signal< sc_lv<1> > icmp_ln47_fu_415_p2;
-    sc_signal< sc_lv<14> > select_ln49_fu_499_p3;
+    sc_signal< sc_lv<15> > select_ln49_fu_499_p3;
     sc_signal< sc_logic > ap_CS_fsm_state6;
     sc_signal< sc_lv<5> > r_0_reg_161;
     sc_signal< sc_lv<5> > c_0_reg_173;
-    sc_signal< sc_lv<14> > pool_0_reg_185;
+    sc_signal< sc_lv<15> > pool_0_reg_185;
     sc_signal< sc_lv<2> > pr_0_reg_198;
-    sc_signal< sc_lv<14> > pool_1_reg_209;
+    sc_signal< sc_lv<15> > pool_1_reg_209;
     sc_signal< sc_lv<2> > pc_0_reg_221;
     sc_signal< sc_lv<64> > zext_ln203_4_fu_400_p1;
     sc_signal< sc_lv<64> > sext_ln1494_fu_442_p1;
     sc_signal< sc_lv<7> > tmp_fu_232_p3;
-    sc_signal< sc_lv<5> > tmp_3_fu_244_p3;
+    sc_signal< sc_lv<5> > tmp_2_fu_244_p3;
     sc_signal< sc_lv<8> > zext_ln203_fu_240_p1;
     sc_signal< sc_lv<8> > zext_ln203_1_fu_252_p1;
     sc_signal< sc_lv<8> > sub_ln203_fu_256_p2;
-    sc_signal< sc_lv<4> > tmp_10_fu_272_p4;
+    sc_signal< sc_lv<4> > tmp_7_fu_272_p4;
     sc_signal< sc_lv<9> > zext_ln203_2_fu_282_p1;
     sc_signal< sc_lv<9> > add_ln203_fu_286_p2;
     sc_signal< sc_lv<7> > trunc_ln203_fu_291_p1;
@@ -102,24 +102,24 @@ struct max_pool : public sc_module {
     sc_signal< sc_lv<11> > p_shl3_cast_fu_303_p3;
     sc_signal< sc_lv<5> > zext_ln46_fu_329_p1;
     sc_signal< sc_lv<5> > add_ln49_fu_345_p2;
-    sc_signal< sc_lv<10> > tmp_6_fu_351_p3;
-    sc_signal< sc_lv<8> > tmp_7_fu_363_p3;
+    sc_signal< sc_lv<10> > tmp_5_fu_351_p3;
+    sc_signal< sc_lv<8> > tmp_6_fu_363_p3;
     sc_signal< sc_lv<11> > zext_ln1494_fu_359_p1;
     sc_signal< sc_lv<11> > zext_ln1494_2_fu_371_p1;
-    sc_signal< sc_lv<4> > tmp_11_fu_381_p4;
+    sc_signal< sc_lv<4> > tmp_8_fu_381_p4;
     sc_signal< sc_lv<11> > zext_ln203_3_fu_391_p1;
     sc_signal< sc_lv<11> > add_ln203_1_fu_395_p2;
     sc_signal< sc_lv<5> > zext_ln47_fu_411_p1;
     sc_signal< sc_lv<5> > add_ln49_1_fu_427_p2;
     sc_signal< sc_lv<11> > zext_ln1494_3_fu_433_p1;
     sc_signal< sc_lv<11> > add_ln1494_fu_437_p2;
-    sc_signal< sc_lv<14> > pool_V_fu_476_p1;
-    sc_signal< sc_lv<14> > pool_V_fu_476_p2;
-    sc_signal< sc_lv<14> > pool_V_fu_476_p3;
-    sc_signal< sc_lv<14> > pool_V_fu_476_p4;
-    sc_signal< sc_lv<14> > pool_V_fu_476_p5;
-    sc_signal< sc_lv<14> > pool_V_fu_476_p6;
-    sc_signal< sc_lv<14> > pool_V_fu_476_p8;
+    sc_signal< sc_lv<15> > pool_V_fu_476_p1;
+    sc_signal< sc_lv<15> > pool_V_fu_476_p2;
+    sc_signal< sc_lv<15> > pool_V_fu_476_p3;
+    sc_signal< sc_lv<15> > pool_V_fu_476_p4;
+    sc_signal< sc_lv<15> > pool_V_fu_476_p5;
+    sc_signal< sc_lv<15> > pool_V_fu_476_p6;
+    sc_signal< sc_lv<15> > pool_V_fu_476_p8;
     sc_signal< sc_lv<1> > icmp_ln1494_fu_493_p2;
     sc_signal< sc_lv<6> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
@@ -139,7 +139,7 @@ struct max_pool : public sc_module {
     static const sc_lv<32> ap_const_lv32_4;
     static const sc_lv<32> ap_const_lv32_5;
     static const sc_lv<5> ap_const_lv5_0;
-    static const sc_lv<14> ap_const_lv14_0;
+    static const sc_lv<15> ap_const_lv15_0;
     static const sc_lv<2> ap_const_lv2_0;
     static const sc_lv<4> ap_const_lv4_0;
     static const sc_lv<5> ap_const_lv5_18;
@@ -203,11 +203,11 @@ struct max_pool : public sc_module {
     void thread_sub_ln1494_fu_375_p2();
     void thread_sub_ln203_1_fu_311_p2();
     void thread_sub_ln203_fu_256_p2();
-    void thread_tmp_10_fu_272_p4();
-    void thread_tmp_11_fu_381_p4();
-    void thread_tmp_3_fu_244_p3();
-    void thread_tmp_6_fu_351_p3();
-    void thread_tmp_7_fu_363_p3();
+    void thread_tmp_2_fu_244_p3();
+    void thread_tmp_5_fu_351_p3();
+    void thread_tmp_6_fu_363_p3();
+    void thread_tmp_7_fu_272_p4();
+    void thread_tmp_8_fu_381_p4();
     void thread_tmp_fu_232_p3();
     void thread_trunc_ln203_fu_291_p1();
     void thread_zext_ln1494_2_fu_371_p1();

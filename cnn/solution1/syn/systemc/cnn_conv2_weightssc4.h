@@ -36,12 +36,12 @@ sc_lv<DataWidth> ram[AddressRange];
 
 
    SC_CTOR(cnn_conv2_weightssc4_ram) {
-        ram[0] = "0b111100001";
-        ram[1] = "0b111001011";
-        ram[2] = "0b111101011";
-        ram[3] = "0b111100101";
-        ram[4] = "0b111010100";
-        ram[5] = "0b101111111";
+        ram[0] = "0b000101001";
+        ram[1] = "0b111011110";
+        ram[2] = "0b101011000";
+        ram[3] = "0b000110101";
+        ram[4] = "0b110100011";
+        ram[5] = "0b100110111";
 
 
 SC_METHOD(prc_write_0);

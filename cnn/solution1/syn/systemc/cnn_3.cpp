@@ -17,18 +17,17 @@ void cnn::thread_hdltv_gen() {
     while (1) {
         wait();
         const char* mComma = ap_cycleNo == 0 ? " " : ", " ;
-        mHdltvinHandle << mComma << "{"  <<  " \"ap_rst\" :  \"" << ap_rst.read() << "\" ";
+        mHdltvinHandle << mComma << "{"  <<  " \"ap_rst_n\" :  \"" << ap_rst_n.read() << "\" ";
         mHdltvinHandle << " , " <<  " \"ap_start\" :  \"" << ap_start.read() << "\" ";
         mHdltvoutHandle << mComma << "{"  <<  " \"ap_done\" :  \"" << ap_done.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"ap_idle\" :  \"" << ap_idle.read() << "\" ";
         mHdltvoutHandle << " , " <<  " \"ap_ready\" :  \"" << ap_ready.read() << "\" ";
-        mHdltvinHandle << " , " <<  " \"img_in_V_dout\" :  \"" << img_in_V_dout.read() << "\" ";
-        mHdltvinHandle << " , " <<  " \"img_in_V_empty_n\" :  \"" << img_in_V_empty_n.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"img_in_V_read\" :  \"" << img_in_V_read.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_V_address0\" :  \"" << prediction_V_address0.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_V_ce0\" :  \"" << prediction_V_ce0.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_V_we0\" :  \"" << prediction_V_we0.read() << "\" ";
-        mHdltvoutHandle << " , " <<  " \"prediction_V_d0\" :  \"" << prediction_V_d0.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"img_in_V_V_TDATA\" :  \"" << img_in_V_V_TDATA.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"img_in_V_V_TVALID\" :  \"" << img_in_V_V_TVALID.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"img_in_V_V_TREADY\" :  \"" << img_in_V_V_TREADY.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_V_V_TDATA\" :  \"" << prediction_V_V_TDATA.read() << "\" ";
+        mHdltvoutHandle << " , " <<  " \"prediction_V_V_TVALID\" :  \"" << prediction_V_V_TVALID.read() << "\" ";
+        mHdltvinHandle << " , " <<  " \"prediction_V_V_TREADY\" :  \"" << prediction_V_V_TREADY.read() << "\" ";
         mHdltvinHandle << "}" << std::endl;
         mHdltvoutHandle << "}" << std::endl;
         ap_cycleNo++;

@@ -11,8 +11,8 @@ entity cnn_pool_featureseCS_ram is
     generic(
             MEM_TYPE    : string := "block"; 
             DWIDTH     : integer := 14; 
-            AWIDTH     : integer := 10; 
-            MEM_SIZE    : integer := 864
+            AWIDTH     : integer := 8; 
+            MEM_SIZE    : integer := 160
     ); 
     port (
           addr0     : in std_logic_vector(AWIDTH-1 downto 0); 
@@ -72,8 +72,8 @@ use IEEE.std_logic_1164.all;
 entity cnn_pool_featureseCS is
     generic (
         DataWidth : INTEGER := 14;
-        AddressRange : INTEGER := 864;
-        AddressWidth : INTEGER := 10);
+        AddressRange : INTEGER := 160;
+        AddressWidth : INTEGER := 8);
     port (
         reset : IN STD_LOGIC;
         clk : IN STD_LOGIC;

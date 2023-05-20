@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'makeItZero'" level="0">
-<item name = "Date">Thu Apr 13 22:45:11 2023
+<item name = "Date">Fri Apr 14 19:33:00 2023
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">cnn</item>
@@ -124,43 +124,43 @@
 <column name="A_0_V_address0">out, 6, ap_memory, A_0_V, array</column>
 <column name="A_0_V_ce0">out, 1, ap_memory, A_0_V, array</column>
 <column name="A_0_V_we0">out, 1, ap_memory, A_0_V, array</column>
-<column name="A_0_V_d0">out, 14, ap_memory, A_0_V, array</column>
+<column name="A_0_V_d0">out, 15, ap_memory, A_0_V, array</column>
 <column name="A_1_V_address0">out, 6, ap_memory, A_1_V, array</column>
 <column name="A_1_V_ce0">out, 1, ap_memory, A_1_V, array</column>
 <column name="A_1_V_we0">out, 1, ap_memory, A_1_V, array</column>
-<column name="A_1_V_d0">out, 14, ap_memory, A_1_V, array</column>
+<column name="A_1_V_d0">out, 15, ap_memory, A_1_V, array</column>
 <column name="A_2_V_address0">out, 6, ap_memory, A_2_V, array</column>
 <column name="A_2_V_ce0">out, 1, ap_memory, A_2_V, array</column>
 <column name="A_2_V_we0">out, 1, ap_memory, A_2_V, array</column>
-<column name="A_2_V_d0">out, 14, ap_memory, A_2_V, array</column>
+<column name="A_2_V_d0">out, 15, ap_memory, A_2_V, array</column>
 <column name="A_3_V_address0">out, 6, ap_memory, A_3_V, array</column>
 <column name="A_3_V_ce0">out, 1, ap_memory, A_3_V, array</column>
 <column name="A_3_V_we0">out, 1, ap_memory, A_3_V, array</column>
-<column name="A_3_V_d0">out, 14, ap_memory, A_3_V, array</column>
+<column name="A_3_V_d0">out, 15, ap_memory, A_3_V, array</column>
 <column name="A_4_V_address0">out, 6, ap_memory, A_4_V, array</column>
 <column name="A_4_V_ce0">out, 1, ap_memory, A_4_V, array</column>
 <column name="A_4_V_we0">out, 1, ap_memory, A_4_V, array</column>
-<column name="A_4_V_d0">out, 14, ap_memory, A_4_V, array</column>
+<column name="A_4_V_d0">out, 15, ap_memory, A_4_V, array</column>
 <column name="A_5_V_address0">out, 6, ap_memory, A_5_V, array</column>
 <column name="A_5_V_ce0">out, 1, ap_memory, A_5_V, array</column>
 <column name="A_5_V_we0">out, 1, ap_memory, A_5_V, array</column>
-<column name="A_5_V_d0">out, 14, ap_memory, A_5_V, array</column>
+<column name="A_5_V_d0">out, 15, ap_memory, A_5_V, array</column>
 <column name="A_6_V_address0">out, 6, ap_memory, A_6_V, array</column>
 <column name="A_6_V_ce0">out, 1, ap_memory, A_6_V, array</column>
 <column name="A_6_V_we0">out, 1, ap_memory, A_6_V, array</column>
-<column name="A_6_V_d0">out, 14, ap_memory, A_6_V, array</column>
+<column name="A_6_V_d0">out, 15, ap_memory, A_6_V, array</column>
 <column name="A_7_V_address0">out, 6, ap_memory, A_7_V, array</column>
 <column name="A_7_V_ce0">out, 1, ap_memory, A_7_V, array</column>
 <column name="A_7_V_we0">out, 1, ap_memory, A_7_V, array</column>
-<column name="A_7_V_d0">out, 14, ap_memory, A_7_V, array</column>
+<column name="A_7_V_d0">out, 15, ap_memory, A_7_V, array</column>
 <column name="A_8_V_address0">out, 6, ap_memory, A_8_V, array</column>
 <column name="A_8_V_ce0">out, 1, ap_memory, A_8_V, array</column>
 <column name="A_8_V_we0">out, 1, ap_memory, A_8_V, array</column>
-<column name="A_8_V_d0">out, 14, ap_memory, A_8_V, array</column>
+<column name="A_8_V_d0">out, 15, ap_memory, A_8_V, array</column>
 <column name="A_9_V_address0">out, 6, ap_memory, A_9_V, array</column>
 <column name="A_9_V_ce0">out, 1, ap_memory, A_9_V, array</column>
 <column name="A_9_V_we0">out, 1, ap_memory, A_9_V, array</column>
-<column name="A_9_V_d0">out, 14, ap_memory, A_9_V, array</column>
+<column name="A_9_V_d0">out, 15, ap_memory, A_9_V, array</column>
 </table>
 </item>
 </section>

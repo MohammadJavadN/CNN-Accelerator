@@ -6356,7 +6356,7 @@ inline bool operator!=(
 }
 # 399 "E:/Xilinx/Vivado/2019.1/common/technology/autopilot\\ap_fixed.h" 2
 # 4 "lib/definitions.h" 2
-typedef ap_fixed<14, 6> T;
+typedef ap_fixed<15, 6> T;
 typedef float T2;
 # 4 "lib/flat.h" 2
 

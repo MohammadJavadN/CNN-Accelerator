@@ -1,1705 +1,90 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 61
-set name cnn_mul_mul_14s_9eES
-set corename simcore_mul
-set op mul
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 9
-set in1_signed 1
-set out_width 22
-set exp i0*i1
-set arg_lists {i0 {14 1 +} i1 {9 1 +} p {22 1 +} acc {0} }
+# Memory (RAM/ROM)  definition:
+set ID 56
+set hasByteEnable 0
+set MemName cnn_conv2_weightsjbC
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
 set TrueReset 0
+set IsROM 1
+set ROMData { "001011001" "101110010" "110011010" "101010011" "111011101" "000010000" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
 if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
-eval "ap_gen_simcore_mul { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
     reset_level 1 \
     sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
     true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
 } else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
 }
 }
 
 
 if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
+  ::AP::rtl_comp_handler $MemName
 }
 
 
-set op mul
-set corename DSP48
+set CoreName ROM_nP
 if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
     reset_level 1 \
     sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
     true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 62
-set name cnn_mul_mul_14s_7eFT
-set corename simcore_mul
-set op mul
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 7
-set in1_signed 1
-set out_width 21
-set exp i0*i1
-set arg_lists {i0 {14 1 +} i1 {7 1 +} p {21 1 +} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
-eval "ap_gen_simcore_mul { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mul
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 63
-set name cnn_mac_muladd_14eGT
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 9
-set in1_signed 0
-set in2_width 20
-set in2_signed 1
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {9 0 +} m {22 1 +} i2 {20 1 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 64
-set name cnn_mac_muladd_14eHT
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 9
-set in1_signed 1
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {9 1 +} m {22 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 65
-set name cnn_mac_muladd_14eIT
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 6
-set in1_signed 1
-set in2_width 21
-set in2_signed 1
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {6 1 +} m {20 1 +} i2 {21 1 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 66
-set name cnn_mac_muladd_14eJT
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 8
-set in1_signed 0
-set in2_width 19
-set in2_signed 1
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {8 0 +} m {22 1 +} i2 {19 1 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 67
-set name cnn_mac_muladd_14eKT
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 8
-set in1_signed 1
-set in2_width 20
-set in2_signed 1
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {8 1 +} m {22 1 +} i2 {20 1 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 68
-set name cnn_mac_muladd_14eLT
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 6
-set in1_signed 0
-set in2_width 18
-set in2_signed 1
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {6 0 +} m {20 1 +} i2 {18 1 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 69
-set name cnn_mac_muladd_14eMU
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 8
-set in1_signed 1
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {8 1 +} m {22 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 70
-set name cnn_mac_muladd_14eNU
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 9
-set in1_signed 0
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {9 0 +} m {22 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 72
-set name cnn_mac_muladd_14eOU
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 6
-set in1_signed 1
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {6 1 +} m {20 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 73
-set name cnn_mac_muladd_14ePU
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 7
-set in1_signed 1
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {7 1 +} m {21 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 77
-set name cnn_mac_muladd_14eQU
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 8
-set in1_signed 0
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {8 0 +} m {22 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 79
-set name cnn_mac_muladd_14eRU
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 6
-set in1_signed 0
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {6 0 +} m {20 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 94
-set name cnn_mul_mul_14s_6eSV
-set corename simcore_mul
-set op mul
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 6
-set in1_signed 0
-set out_width 20
-set exp i0*i1
-set arg_lists {i0 {14 1 +} i1 {6 0 +} p {20 1 +} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
-eval "ap_gen_simcore_mul { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mul
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 103
-set name cnn_mac_muladd_14eTV
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 5
-set in1_signed 0
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {5 0 +} m {19 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 109
-set name cnn_mac_muladd_14eUV
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 7
-set in1_signed 0
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {7 0 +} m {21 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 154
-set name cnn_mul_mul_14s_8eVV
-set corename simcore_mul
-set op mul
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 8
-set in1_signed 1
-set out_width 22
-set exp i0*i1
-set arg_lists {i0 {14 1 +} i1 {8 1 +} p {22 1 +} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mul] == "ap_gen_simcore_mul"} {
-eval "ap_gen_simcore_mul { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mul, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mul
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 165
-set name cnn_mac_muladd_14eWV
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 10
-set in1_signed 1
-set in2_width 21
-set in2_signed 1
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {10 1 +} m {22 1 +} i2 {21 1 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 170
-set name cnn_mac_muladd_14eXV
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 8
-set in1_signed 1
-set in2_width 21
-set in2_signed 1
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {8 1 +} m {22 1 +} i2 {21 1 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
-}
-
-
-set id 283
-set name cnn_mac_muladd_14eYW
-set corename simcore_mac
-set op mac
-set stage_num 1
-set max_latency -1
-set registered_input 1
-set in0_width 14
-set in0_signed 1
-set in1_width 10
-set in1_signed 1
-set in2_width 22
-set in2_signed 0
-set out_width 22
-set exp i0*i1+i2
-set arg_lists {i0 {14 1 +} i1 {10 1 +} m {22 1 +} i2 {22 0 +} p {22 1 +} c_reg {1} rnd {0} acc {0} }
-set TrueReset 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mac] == "ap_gen_simcore_mac"} {
-eval "ap_gen_simcore_mac { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_mac, check your AutoPilot builtin lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler ${name}
-}
-
-
-set op mac
-set corename DSP48
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_dsp48] == "::AESL_LIB_VIRTEX::xil_gen_dsp48"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_dsp48 { \
-    id ${id} \
-    name ${name} \
-    corename ${corename} \
-    op ${op} \
-    reset_level 1 \
-    sync_rst true \
-    true_reset ${TrueReset} \
-    stage_num ${stage_num} \
-    max_latency ${max_latency} \
-    registered_input ${registered_input} \
-    in0_width ${in0_width} \
-    in0_signed ${in0_signed} \
-    in1_width ${in1_width} \
-    in1_signed ${in1_signed} \
-    in2_width ${in2_width} \
-    in2_signed ${in2_signed} \
-    out_width ${out_width} \
-    exp ${exp} \
-    arg_lists {${arg_lists}} \
-}"
-} else {
-puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_dsp48, check your platform lib"
-}
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
 }
 
 
 # Memory (RAM/ROM)  definition:
-set ID 425
+set ID 57
 set hasByteEnable 0
 set MemName cnn_conv2_weightskbM
 set CoreName ap_simcore_mem
@@ -1709,7 +94,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00101100" "10111001" "11001101" "10101001" "11101110" "00001000" }
+set ROMData { "11100101" "11111011" "11001110" "10110110" "00100110" "10101100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -1782,175 +167,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 426
+set ID 58
 set hasByteEnable 0
 set MemName cnn_conv2_weightslbW
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "1110010" "1111101" "1100111" "1011011" "0010011" "1010110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 427
-set hasByteEnable 0
-set MemName cnn_conv2_weightsmb6
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11111011" "01010010" "00011101" "10000101" "00101000" "11010001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 428
-set hasByteEnable 0
-set MemName cnn_conv2_weightsncg
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -1958,7 +177,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110110000" "001010110" "110111001" "110010010" "000110101" "101010010" }
+set ROMData { "111110110" "010100100" "000111011" "100001011" "001010000" "110100011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2031,7 +250,173 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 429
+set ID 59
+set hasByteEnable 0
+set MemName cnn_conv2_weightsmb6
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1101100000" "0010101100" "1101110010" "1100100101" "0001101010" "1010100101" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 60
+set hasByteEnable 0
+set MemName cnn_conv2_weightsncg
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1100100100" "0001000010" "1011001000" "1000001000" "0001011111" "1101011110" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 61
 set hasByteEnable 0
 set MemName cnn_conv2_weightsocq
 set CoreName ap_simcore_mem
@@ -2041,7 +426,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110010010" "000100001" "101100100" "100000100" "000101111" "110101111" }
+set ROMData { "010010000" "100101110" "111001000" "111101000" "111110011" "011000000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2114,7 +499,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 430
+set ID 62
 set hasByteEnable 0
 set MemName cnn_conv2_weightspcA
 set CoreName ap_simcore_mem
@@ -2124,7 +509,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01001000" "10010111" "11100100" "11110100" "11111001" "01100000" }
+set ROMData { "10010011" "11110101" "01010011" "00111111" "01000111" "11111111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2197,17 +582,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 431
+set ID 63
 set hasByteEnable 0
 set MemName cnn_conv2_weightsqcK
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1001001" "1111010" "0101001" "0011111" "0100011" "1111111" }
+set ROMData { "00111111" "10110100" "00001100" "10110000" "00100110" "01001011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2280,17 +665,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 432
+set ID 64
 set hasByteEnable 0
 set MemName cnn_conv2_weightsrcU
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0011111" "1011010" "0000110" "1011000" "0010011" "0100101" }
+set ROMData { "1111000011" "1110010110" "1111010111" "1111001010" "1110101001" "1011111110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2363,7 +748,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 433
+set ID 65
 set hasByteEnable 0
 set MemName cnn_conv2_weightssc4
 set CoreName ap_simcore_mem
@@ -2373,7 +758,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111100001" "111001011" "111101011" "111100101" "111010100" "101111111" }
+set ROMData { "000101001" "111011110" "101011000" "000110101" "110100011" "100110111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2446,17 +831,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 434
+set ID 66
 set hasByteEnable 0
 set MemName cnn_conv2_weightstde
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 11
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00010100" "11101111" "10101100" "00011010" "11010001" "10011011" }
+set ROMData { "10111111011" "11110111000" "00000110011" "11111001110" "00010000110" "00000100000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2529,7 +914,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 435
+set ID 67
 set hasByteEnable 0
 set MemName cnn_conv2_weightsudo
 set CoreName ap_simcore_mem
@@ -2539,7 +924,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1011111101" "1111011100" "0000011001" "1111100111" "0001000011" "0000010000" }
+set ROMData { "1111100101" "1011101111" "1110010001" "1010100110" "0011000010" "1011110010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2612,17 +997,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 436
+set ID 68
 set hasByteEnable 0
 set MemName cnn_conv2_weightsvdy
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111110010" "101110111" "111001000" "101010011" "001100001" "101111001" }
+set ROMData { "01001010" "10000110" "10101011" "11000000" "00010001" "11110000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2695,17 +1080,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 437
+set ID 69
 set hasByteEnable 0
 set MemName cnn_conv2_weightswdI
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0100101" "1000011" "1010101" "1100000" "0001000" "1111000" }
+set ROMData { "11010111" "01000001" "01111111" "00111011" "01011100" "00011010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2778,17 +1163,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 438
+set ID 70
 set hasByteEnable 0
 set MemName cnn_conv2_weightsxdS
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1101011" "0100000" "0111111" "0011101" "0101110" "0001101" }
+set ROMData { "10100001" "11000000" "10011110" "00111110" "01110011" "01101001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2861,17 +1246,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 439
+set ID 71
 set hasByteEnable 0
 set MemName cnn_conv2_weightsyd2
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1010000" "1100000" "1001111" "0011111" "0111001" "0110100" }
+set ROMData { "10101001" "11011001" "11110001" "10010000" "11001101" "00011101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -2944,17 +1329,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 440
+set ID 72
 set hasByteEnable 0
 set MemName cnn_conv2_weightszec
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1010100" "1101100" "1111000" "1001000" "1100110" "0001110" }
+set ROMData { "11010010" "00000011" "11110010" "11100100" "10110010" "00011001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3027,17 +1412,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 441
+set ID 73
 set hasByteEnable 0
 set MemName cnn_conv2_weightsAem
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1101001" "0000001" "1111001" "1110010" "1011001" "0001100" }
+set ROMData { "10011010" "11001111" "11111111" "01111000" "00011101" "00010011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3110,17 +1495,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 442
+set ID 74
 set hasByteEnable 0
 set MemName cnn_conv2_weightsBew
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1001101" "1100111" "1111111" "0111100" "0001110" "0001001" }
+set ROMData { "11100011" "11000101" "10110000" "01011001" "01001011" "10010000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3193,17 +1578,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 443
+set ID 75
 set hasByteEnable 0
 set MemName cnn_conv2_weightsCeG
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1110001" "1100010" "1011000" "0101100" "0100101" "1001000" }
+set ROMData { "01100000" "10001001" "01000111" "01101110" "10000100" "10001111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3276,17 +1661,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 444
+set ID 76
 set hasByteEnable 0
 set MemName cnn_conv2_weightsDeQ
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0110000" "1000100" "0100011" "0110111" "1000010" "1000111" }
+set ROMData { "11000010" "01100100" "00101101" "10110001" "10000111" "11111101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3359,17 +1744,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 445
+set ID 77
 set hasByteEnable 0
 set MemName cnn_conv2_weightsEe0
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1100001" "0110010" "0010110" "1011000" "1000011" "1111110" }
+set ROMData { "00101011" "01001101" "00101001" "11011100" "10000010" "00100111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3442,17 +1827,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 446
+set ID 78
 set hasByteEnable 0
 set MemName cnn_conv2_weightsFfa
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0010101" "0100110" "0010100" "1101110" "1000001" "0010011" }
+set ROMData { "11111010" "01101000" "00010100" "00111001" "01010110" "01010011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3525,17 +1910,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 447
+set ID 79
 set hasByteEnable 0
 set MemName cnn_conv2_weightsGfk
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1111101" "0110100" "0001010" "0011100" "0101011" "0101001" }
+set ROMData { "01110110" "00100011" "10110111" "01011100" "01111101" "10111011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3608,17 +1993,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 448
+set ID 80
 set hasByteEnable 0
 set MemName cnn_conv2_weightsHfu
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0111011" "0010001" "1011011" "0101110" "0111110" "1011101" }
+set ROMData { "1011011101" "0010010101" "0010000100" "0000111100" "1111101010" "1110000011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3691,17 +2076,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 449
+set ID 81
 set hasByteEnable 0
 set MemName cnn_conv2_weightsIfE
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "101101110" "001001010" "001000010" "000011110" "111110101" "111000001" }
+set ROMData { "00111100" "10001101" "00010111" "10011011" "01101100" "11000011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3774,17 +2159,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 450
+set ID 82
 set hasByteEnable 0
 set MemName cnn_conv2_weightsJfO
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0011110" "1000110" "0001011" "1001101" "0110110" "1100001" }
+set ROMData { "11010101" "11000100" "11011011" "01101101" "11101101" "00011111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3857,17 +2242,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 451
+set ID 83
 set hasByteEnable 0
 set MemName cnn_conv2_weightsKfY
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1101010" "1100010" "1101101" "0110110" "1110110" "0001111" }
+set ROMData { "01111100" "10010101" "11001010" "11111101" "01010000" "00000011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -3940,17 +2325,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 452
+set ID 84
 set hasByteEnable 0
 set MemName cnn_conv2_weightsLf8
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0111110" "1001010" "1100101" "1111110" "0101000" "0000001" }
+set ROMData { "00111100" "00100011" "11111011" "00001110" "10101111" "01100000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -4023,17 +2408,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 453
+set ID 85
 set hasByteEnable 0
 set MemName cnn_conv2_weightsMgi
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0011110" "0010001" "1111101" "0000111" "1010111" "0110000" }
+set ROMData { "01011010" "11000001" "10110011" "11110111" "11000011" "00001111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -4106,17 +2491,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 454
+set ID 86
 set hasByteEnable 0
 set MemName cnn_conv2_weightsNgs
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0101101" "1100000" "1011001" "1111011" "1100001" "0000111" }
+set ROMData { "11101101" "11010101" "11001100" "01101011" "10111011" "00101010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -4189,17 +2574,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 455
+set ID 87
 set hasByteEnable 0
 set MemName cnn_conv2_weightsOgC
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1110110" "1101010" "1100110" "0110101" "1011101" "0010101" }
+set ROMData { "1111100001" "0010110110" "1011011100" "1001100111" "0001010001" "1100110100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -4272,9 +2657,922 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 456
+set ID 88
 set hasByteEnable 0
 set MemName cnn_conv2_weightsPgM
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "10000110" "10110011" "00010101" "00100000" "01110110" "10110110" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 89
+set hasByteEnable 0
+set MemName cnn_conv2_weightsQgW
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "10101011" "10110000" "11011110" "11110011" "00100011" "01001101" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 90
+set hasByteEnable 0
+set MemName cnn_conv2_weightsRg6
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "10001001" "01100000" "11011101" "00010100" "01000001" "00100011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 91
+set hasByteEnable 0
+set MemName cnn_conv2_weightsShg
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 11
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "00000110100" "00000110011" "11101011100" "11110001111" "11101001110" "10100100110" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 92
+set hasByteEnable 0
+set MemName cnn_conv2_weightsThq
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "11100000" "11100010" "01000110" "00100000" "00110111" "01001011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 93
+set hasByteEnable 0
+set MemName cnn_conv2_weightsUhA
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "10110000" "11101111" "00000111" "00010001" "10100010" "11000111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 94
+set hasByteEnable 0
+set MemName cnn_conv2_weightsVhK
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "01001100" "11110000" "01011000" "00011101" "00111101" "01000101" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 95
+set hasByteEnable 0
+set MemName cnn_conv2_weightsWhU
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "01100110" "11111001" "11011101" "11010100" "00001010" "11101111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 96
+set hasByteEnable 0
+set MemName cnn_conv2_weightsXh4
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "00100011" "01001011" "11100001" "10011100" "11101000" "01100111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 97
+set hasByteEnable 0
+set MemName cnn_conv2_weightsYie
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 8
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "00110111" "01001101" "11000001" "00000100" "01000111" "01011110" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 98
+set hasByteEnable 0
+set MemName cnn_conv2_weightsZio
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 11
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "11110111000" "00010101111" "11111000110" "00000111000" "10111011000" "00000100101" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 99
+set hasByteEnable 0
+set MemName cnn_conv2_weights0iy
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -4282,7 +3580,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111110000" "001011011" "101101110" "100110011" "000101000" "110011010" }
+set ROMData { "100000100" "100001110" "010001001" "001101110" "001110011" "000001101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -4355,920 +3653,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 457
-set hasByteEnable 0
-set MemName cnn_conv2_weightsQgW
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "1000011" "1011001" "0001010" "0010000" "0111011" "1011011" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 458
-set hasByteEnable 0
-set MemName cnn_conv2_weightsRg6
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "1010101" "1011000" "1101111" "1111001" "0010001" "0100110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 459
-set hasByteEnable 0
-set MemName cnn_conv2_weightsShg
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "1000100" "0110000" "1101110" "0001010" "0100000" "0010001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 460
-set hasByteEnable 0
-set MemName cnn_conv2_weightsThq
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 10
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "0000011010" "0000011001" "1110101110" "1111000111" "1110100111" "1010010011" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 461
-set hasByteEnable 0
-set MemName cnn_conv2_weightsUhA
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "1110000" "1110001" "0100011" "0010000" "0011011" "0100101" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 462
-set hasByteEnable 0
-set MemName cnn_conv2_weightsVhK
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "1011000" "1110111" "0000011" "0001000" "1010001" "1100011" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 463
-set hasByteEnable 0
-set MemName cnn_conv2_weightsWhU
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "0100110" "1111000" "0101100" "0001110" "0011110" "0100010" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 464
-set hasByteEnable 0
-set MemName cnn_conv2_weightsXh4
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "0110011" "1111100" "1101110" "1101010" "0000101" "1110111" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 465
-set hasByteEnable 0
-set MemName cnn_conv2_weightsYie
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "0010001" "0100101" "1110000" "1001110" "1110100" "0110011" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 466
-set hasByteEnable 0
-set MemName cnn_conv2_weightsZio
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 7
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "0011011" "0100110" "1100000" "0000010" "0100011" "0101111" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 467
-set hasByteEnable 0
-set MemName cnn_conv2_weights0iy
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 10
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "1111011100" "0001010111" "1111100011" "0000011100" "1011101100" "0000010010" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 468
+set ID 100
 set hasByteEnable 0
 set MemName cnn_conv2_weights1iI
 set CoreName ap_simcore_mem
@@ -5278,7 +3663,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10000010" "10000111" "01000100" "00110111" "00111001" "00000110" }
+set ROMData { "10101101" "00000111" "01100011" "10001101" "01011001" "00100101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -5351,17 +3736,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 469
+set ID 101
 set hasByteEnable 0
 set MemName cnn_conv2_weights2iS
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 11
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1010110" "0000011" "0110001" "1000110" "0101100" "0010010" }
+set ROMData { "11111101100" "10110010100" "00000011101" "00001011011" "00001001110" "00010000010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -5434,17 +3819,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 470
+set ID 102
 set hasByteEnable 0
 set MemName cnn_conv2_weights3i2
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 10
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1111110110" "1011001010" "0000001110" "0000101101" "0000100111" "0001000001" }
+set ROMData { "00110100" "00100100" "10001100" "11011001" "11110001" "00110110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -5517,17 +3902,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 471
+set ID 103
 set hasByteEnable 0
 set MemName cnn_conv2_weights4jc
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0011010" "0010010" "1000110" "1101100" "1111000" "0011011" }
+set ROMData { "00011101" "11111000" "01100010" "10001010" "00110010" "00111100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -5600,7 +3985,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 472
+set ID 104
 set hasByteEnable 0
 set MemName cnn_conv2_weights5jm
 set CoreName ap_simcore_mem
@@ -5610,7 +3995,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "0001110" "1111100" "0110001" "1000101" "0011001" "0011110" }
+set ROMData { "1100011" "0010010" "0000000" "1101011" "1010000" "1111000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -5683,17 +4068,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 473
+set ID 105
 set hasByteEnable 0
 set MemName cnn_conv2_weights6jw
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 6
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110001" "001001" "000000" "110101" "101000" "111100" }
+set ROMData { "10111100" "01000011" "01010100" "10001011" "00010101" "00110000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -5766,17 +4151,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 474
+set ID 106
 set hasByteEnable 0
 set MemName cnn_conv2_weights7jG
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 8
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1011110" "0100001" "0101010" "1000101" "0001010" "0011000" }
+set ROMData { "11111000" "10001101" "00100010" "01110111" "10100100" "00101101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -5849,17 +4234,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 475
+set ID 107
 set hasByteEnable 0
 set MemName cnn_conv2_weights8jQ
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 7
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "1111100" "1000110" "0010001" "0111011" "1010010" "0010110" }
+set ROMData { "1011001111" "0001010011" "0001001101" "0001011100" "1111100011" "1110101101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -5932,7 +4317,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 476
+set ID 108
 set hasByteEnable 0
 set MemName cnn_conv2_weights9j0
 set CoreName ap_simcore_mem
@@ -5942,7 +4327,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "101100111" "000101001" "000100110" "000101110" "111110001" "111010110" }
+set ROMData { "001101111" "111110001" "110000001" "101010010" "000001011" "111011000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6015,17 +4400,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 477
+set ID 109
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbak
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00110111" "11111000" "11000000" "10101001" "00000101" "11101100" }
+set ROMData { "010000101" "110101110" "111111000" "000111011" "000110101" "000110101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6098,17 +4483,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 478
+set ID 110
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbbk
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01000010" "11010111" "11111100" "00011101" "00011010" "00011010" }
+set ROMData { "110111010" "011000100" "110000101" "110011010" "111000110" "100101001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6181,17 +4566,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 479
+set ID 111
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbck
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11011101" "01100010" "11000010" "11001101" "11100011" "10010100" }
+set ROMData { "101111111" "111000000" "100111111" "110100010" "010101001" "000011111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6264,17 +4649,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 480
+set ID 112
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbdk
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10111111" "11100000" "10011111" "11010001" "01010100" "00001111" }
+set ROMData { "111010000" "000111111" "010000101" "000100100" "001001000" "101011101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6347,17 +4732,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 481
+set ID 113
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbek
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11101000" "00011111" "01000010" "00010010" "00100100" "10101110" }
+set ROMData { "111001111" "100100010" "000101010" "000101110" "010110101" "001110000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6430,17 +4815,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 482
+set ID 114
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbfk
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11100111" "10010001" "00010101" "00010111" "01011010" "00111000" }
+set ROMData { "110011101" "010000010" "000001001" "111100100" "111001001" "001001100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6513,17 +4898,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 483
+set ID 115
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbgk
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11001110" "01000001" "00000100" "11110010" "11100100" "00100110" }
+set ROMData { "001010101" "010101110" "000011110" "111111111" "000010010" "111000110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6596,17 +4981,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 484
+set ID 116
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbhl
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00101010" "01010111" "00001111" "11111111" "00001001" "11100011" }
+set ROMData { "001011000" "110011001" "110110000" "110111101" "011000010" "000100000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6679,17 +5064,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 485
+set ID 117
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbil
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00101100" "11001100" "11011000" "11011110" "01100001" "00010000" }
+set ROMData { "101001000" "101100101" "000101100" "111110001" "000010011" "000101011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6762,17 +5147,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 486
+set ID 118
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbjl
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10100100" "10110010" "00010110" "11111000" "00001001" "00010101" }
+set ROMData { "001100111" "101110000" "111101010" "010001000" "001100101" "000101100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6845,17 +5230,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 487
+set ID 119
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbkl
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00110011" "10111000" "11110101" "01000100" "00110010" "00010110" }
+set ROMData { "1101110101" "0001011011" "1101000001" "1101010011" "1010110110" "1110110010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -6928,17 +5313,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 488
+set ID 120
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbll
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110111010" "000101101" "110100000" "110101001" "101011011" "111011001" }
+set ROMData { "1110110111" "1111111011" "1111100001" "1101110011" "0100000100" "1111001111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -7011,17 +5396,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 489
+set ID 121
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbml
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111011011" "111111101" "111110000" "110111001" "010000010" "111100111" }
+set ROMData { "0001011101" "0010101000" "1111001101" "1101110110" "1111110111" "0100111000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -7094,17 +5479,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 490
+set ID 122
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbnm
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000101110" "001010100" "111100110" "110111011" "111111011" "010011100" }
+set ROMData { "0000100011" "0100100000" "0010101001" "1110110111" "0011000100" "0001000010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -7177,7 +5562,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 491
+set ID 123
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbom
 set CoreName ap_simcore_mem
@@ -7187,7 +5572,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000010001" "010010000" "001010100" "111011011" "001100010" "000100001" }
+set ROMData { "010011010" "100101100" "111110000" "000010000" "010110011" "001111100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -7260,17 +5645,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 492
+set ID 124
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbpm
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01001101" "10010110" "11111000" "00001000" "01011001" "00111110" }
+set ROMData { "1011101111" "1111110100" "1101010110" "1100001000" "1011101111" "1101000100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -7343,17 +5728,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 493
+set ID 125
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbqm
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "101110111" "111111010" "110101011" "110000100" "101110111" "110100010" }
+set ROMData { "1010011001" "1111010111" "0010011000" "1111110110" "0001110011" "0001101011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -7426,7 +5811,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 494
+set ID 126
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbrm
 set CoreName ap_simcore_mem
@@ -7436,7 +5821,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "101001100" "111101011" "001001100" "111111011" "000111001" "000110101" }
+set ROMData { "100101000" "001001100" "001110101" "110100111" "111110001" "111101101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -7509,507 +5894,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 495
+set ID 127
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbsm
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10010100" "00100110" "00111010" "11010011" "11111000" "11110110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 496
-set hasByteEnable 0
-set MemName cnn_conv2_weightsbtn
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11000111" "11010010" "11101110" "11100001" "10010101" "11111110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 497
-set hasByteEnable 0
-set MemName cnn_conv2_weightsbun
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00110101" "01011011" "11110100" "10111000" "10110110" "01101111" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 498
-set hasByteEnable 0
-set MemName cnn_conv2_weightsbvn
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10010000" "01101010" "01100010" "00101010" "00110010" "11011111" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 499
-set hasByteEnable 0
-set MemName cnn_conv2_weightsbwn
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10101010" "01110011" "00011000" "00000001" "00000100" "01000110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 500
-set hasByteEnable 0
-set MemName cnn_conv2_weightsbxn
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10011111" "00101001" "00101010" "11101001" "11111011" "00101100" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 501
-set hasByteEnable 0
-set MemName cnn_conv2_weightsbyn
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -8017,7 +5904,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110001000" "101110110" "111110001" "000011110" "101111101" "000111010" }
+set ROMData { "110001110" "110100101" "111011100" "111000010" "100101010" "111111100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8090,7 +5977,505 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 502
+set ID 128
+set hasByteEnable 0
+set MemName cnn_conv2_weightsbtn
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "001101010" "010110111" "111101000" "101110000" "101101100" "011011111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 129
+set hasByteEnable 0
+set MemName cnn_conv2_weightsbun
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "100100001" "011010100" "011000101" "001010101" "001100100" "110111111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 130
+set hasByteEnable 0
+set MemName cnn_conv2_weightsbvn
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "101010100" "011100110" "000110000" "000000010" "000001001" "010001100" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 131
+set hasByteEnable 0
+set MemName cnn_conv2_weightsbwn
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "100111110" "001010010" "001010100" "111010010" "111110110" "001011000" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 132
+set hasByteEnable 0
+set MemName cnn_conv2_weightsbxn
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1100010001" "1011101100" "1111100011" "0000111100" "1011111010" "0001110100" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 133
+set hasByteEnable 0
+set MemName cnn_conv2_weightsbyn
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1100011000" "1101011100" "1111010110" "1011000100" "1111001011" "1101110101" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 134
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbzo
 set CoreName ap_simcore_mem
@@ -8100,7 +6485,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110001100" "110101110" "111101011" "101100010" "111100101" "110111010" }
+set ROMData { "100000101" "111010110" "111010101" "000000101" "000001010" "111011011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8173,17 +6558,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 503
+set ID 135
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbAo
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10000010" "11101011" "11101010" "00000010" "00000101" "11101101" }
+set ROMData { "101101010" "111101001" "010011110" "000010111" "111111000" "110100110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8256,17 +6641,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 504
+set ID 136
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbBo
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10110101" "11110100" "01001111" "00001011" "11111100" "11010011" }
+set ROMData { "1100100100" "1111000010" "0001001010" "0010110101" "1011001011" "1110110111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8339,7 +6724,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 505
+set ID 137
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbCo
 set CoreName ap_simcore_mem
@@ -8349,7 +6734,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110010010" "111100001" "000100101" "001011010" "101100101" "111011011" }
+set ROMData { "111111101" "000101111" "101110110" "000001101" "111101101" "111111000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8422,17 +6807,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 506
+set ID 138
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbDo
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11111110" "00010111" "10111011" "00000110" "11110110" "11111100" }
+set ROMData { "011001111" "110010101" "100011000" "100100000" "011011001" "000100011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8505,17 +6890,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 507
+set ID 139
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbEo
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01100111" "11001010" "10001100" "10010000" "01101100" "00010001" }
+set ROMData { "1110011010" "0100100110" "0011011100" "0001110101" "1111100101" "0000100010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8588,7 +6973,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 508
+set ID 140
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbFp
 set CoreName ap_simcore_mem
@@ -8598,7 +6983,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111001101" "010010011" "001101110" "000111010" "111110010" "000010001" }
+set ROMData { "101111110" "001010111" "010010100" "010111101" "000010110" "000100001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8671,17 +7056,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 509
+set ID 141
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbGp
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10111111" "00101011" "01001010" "01011110" "00001011" "00010000" }
+set ROMData { "110111011" "011110011" "001101010" "111001000" "111010010" "100111000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8754,17 +7139,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 510
+set ID 142
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbHp
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11011101" "01111001" "00110101" "11100100" "11101001" "10011100" }
+set ROMData { "111011100" "010110101" "111001101" "111111001" "111101011" "001010100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8837,17 +7222,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 511
+set ID 143
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbIp
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11101110" "01011010" "11100110" "11111100" "11110101" "00101010" }
+set ROMData { "111100010" "010000010" "100011110" "000111001" "111011000" "000101111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -8920,17 +7305,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 512
+set ID 144
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbJp
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11110001" "01000001" "10001111" "00011100" "11101100" "00010111" }
+set ROMData { "1101100101" "1011111101" "1111111010" "0001011100" "0000101010" "1111000100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9003,17 +7388,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 513
+set ID 145
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbKp
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110110010" "101111110" "111111101" "000101110" "000010101" "111100010" }
+set ROMData { "1111011101" "0100000100" "1110011000" "1111101010" "0010100000" "1111000101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9086,17 +7471,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 514
+set ID 146
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbLp
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111101110" "010000010" "111001100" "111110101" "001010000" "111100010" }
+set ROMData { "0011010111" "1010101100" "1110001000" "1101100111" "0011011000" "1011111111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9169,7 +7554,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 515
+set ID 147
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbMq
 set CoreName ap_simcore_mem
@@ -9179,7 +7564,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "001101011" "101010110" "111000100" "110110011" "001101100" "101111111" }
+set ROMData { "011101011" "100011111" "000011111" "110111101" "010010100" "111001101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9252,17 +7637,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 516
+set ID 148
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbNq
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01110101" "10001111" "00001111" "11011110" "01001010" "11100110" }
+set ROMData { "000011101" "111011010" "110011001" "111001101" "010111101" "001000101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9335,17 +7720,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 517
+set ID 149
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbOq
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00001110" "11101101" "11001100" "11100110" "01011110" "00100010" }
+set ROMData { "000010100" "010110010" "000111010" "111110011" "111000101" "111100101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9418,17 +7803,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 518
+set ID 150
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbPq
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00001010" "01011001" "00011101" "11111001" "11100010" "11110010" }
+set ROMData { "111110001" "110000000" "000011010" "001110111" "011011010" "101010111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9501,17 +7886,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 519
+set ID 151
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbQq
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11111000" "11000000" "00001101" "00111011" "01101101" "10101011" }
+set ROMData { "100111011" "010010111" "111111001" "001110000" "111100001" "101101110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9584,17 +7969,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 520
+set ID 152
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbRq
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10011101" "01001011" "11111100" "00111000" "11110000" "10110111" }
+set ROMData { "110001111" "010100101" "010011100" "001100100" "101101101" "000111110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9667,17 +8052,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 521
+set ID 153
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbSr
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11000111" "01010010" "01001110" "00110010" "10110110" "00011111" }
+set ROMData { "0000011001" "1101100111" "0010110100" "0010111101" "0110011010" "0011110111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9750,17 +8135,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 522
+set ID 154
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbTr
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000001100" "110110011" "001011010" "001011110" "011001101" "001111011" }
+set ROMData { "1101110010" "0100001100" "0001011001" "1110010000" "1110101000" "1110000000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9833,17 +8218,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 523
+set ID 155
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbUr
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110111001" "010000110" "000101100" "111001000" "111010100" "111000000" }
+set ROMData { "0000110111" "1011100111" "0000101010" "1111110001" "0010001000" "0001000110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9916,7 +8301,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 524
+set ID 156
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbVr
 set CoreName ap_simcore_mem
@@ -9926,7 +8311,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000011011" "101110011" "000010101" "111111000" "001000100" "000100011" }
+set ROMData { "001110011" "111110100" "001010001" "101111010" "101100011" "011001100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -9999,17 +8384,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 525
+set ID 157
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbWr
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00111001" "11111010" "00101000" "10111101" "10110001" "01100110" }
+set ROMData { "000010000" "010001101" "000111101" "001110011" "000001110" "110110010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -10082,17 +8467,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 526
+set ID 158
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbXr
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00001000" "01000110" "00011110" "00111001" "00000111" "11011001" }
+set ROMData { "111110111" "111000001" "001101110" "000001110" "000110110" "101110001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -10165,17 +8550,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 527
+set ID 159
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbYs
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11111011" "11100000" "00110111" "00000111" "00011011" "10111000" }
+set ROMData { "100111111" "111011101" "011010010" "000010110" "111001111" "110010100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -10248,17 +8633,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 528
+set ID 160
 set hasByteEnable 0
 set MemName cnn_conv2_weightsbZs
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10011111" "11101110" "01101001" "00001011" "11100111" "11001010" }
+set ROMData { "1100110000" "1001100001" "0000111110" "0000100101" "0101101110" "0001000110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -10331,17 +8716,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 529
+set ID 161
 set hasByteEnable 0
 set MemName cnn_conv2_weightsb0s
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110011000" "100110000" "000011111" "000010010" "010110111" "000100011" }
+set ROMData { "1101000111" "0101101000" "0000111000" "1101100110" "1010011011" "0001000110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -10414,17 +8799,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 530
+set ID 162
 set hasByteEnable 0
 set MemName cnn_conv2_weightsb1s
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110100011" "010110100" "000011100" "110110011" "101001101" "000100011" }
+set ROMData { "1101111110" "1111001100" "0000000101" "0000111000" "0101001111" "0001100111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -10497,7 +8882,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 531
+set ID 163
 set hasByteEnable 0
 set MemName cnn_conv2_weightsb2s
 set CoreName ap_simcore_mem
@@ -10507,7 +8892,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110111111" "111100110" "000000010" "000011100" "010100111" "000110011" }
+set ROMData { "010001100" "100110001" "000011011" "010110101" "000100000" "000110101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -10580,590 +8965,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 532
+set ID 164
 set hasByteEnable 0
 set MemName cnn_conv2_weightsb3s
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01000110" "10011000" "00001101" "01011010" "00010000" "00011010" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 533
-set hasByteEnable 0
-set MemName cnn_conv2_weightsb4t
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00100011" "00110101" "11001111" "01001001" "11101100" "00110010" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 534
-set hasByteEnable 0
-set MemName cnn_conv2_weightsb5t
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00001011" "11101001" "11111100" "10101011" "11100010" "10100011" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 535
-set hasByteEnable 0
-set MemName cnn_conv2_weightsb6t
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00101100" "00001111" "11001000" "11010011" "11101001" "01111100" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 536
-set hasByteEnable 0
-set MemName cnn_conv2_weightsb7t
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11000010" "01000100" "00001010" "00111011" "11000111" "11001000" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 537
-set hasByteEnable 0
-set MemName cnn_conv2_weightsb8t
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10010001" "00001110" "01000101" "00100000" "10101000" "11011100" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 538
-set hasByteEnable 0
-set MemName cnn_conv2_weightsb9t
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10101011" "00001000" "01000110" "00111000" "11111001" "01010101" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 539
-set hasByteEnable 0
-set MemName cnn_conv2_weightscau
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -11171,7 +8975,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111010001" "111011110" "101111101" "111001000" "110111100" "111111111" }
+set ROMData { "001000110" "001101010" "110011110" "010010011" "111011000" "001100101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -11244,7 +9048,588 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 540
+set ID 165
+set hasByteEnable 0
+set MemName cnn_conv2_weightsb4t
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "000010110" "111010011" "111111000" "101010110" "111000100" "101000110" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 166
+set hasByteEnable 0
+set MemName cnn_conv2_weightsb5t
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "001011000" "000011111" "110010000" "110100110" "111010011" "011111000" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 167
+set hasByteEnable 0
+set MemName cnn_conv2_weightsb6t
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "110000101" "010001000" "000010100" "001110111" "110001110" "110010001" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 168
+set hasByteEnable 0
+set MemName cnn_conv2_weightsb7t
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "100100010" "000011100" "010001010" "001000001" "101010001" "110111001" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 169
+set hasByteEnable 0
+set MemName cnn_conv2_weightsb8t
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "101010110" "000010000" "010001101" "001110000" "111110011" "010101010" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 170
+set hasByteEnable 0
+set MemName cnn_conv2_weightsb9t
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1110100010" "1110111101" "1011111010" "1110010000" "1101111000" "1111111110" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 171
+set hasByteEnable 0
+set MemName cnn_conv2_weightscau
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1001010011" "0011000100" "1110101010" "1100101010" "1011011101" "0011100100" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 172
 set hasByteEnable 0
 set MemName cnn_conv2_weightscbu
 set CoreName ap_simcore_mem
@@ -11254,7 +9639,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "100101001" "001100010" "111010101" "110010101" "101101110" "001110010" }
+set ROMData { "101100010" "001000000" "111110010" "110110010" "100111010" "001100010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -11327,17 +9712,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 541
+set ID 173
 set hasByteEnable 0
 set MemName cnn_conv2_weightsccu
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10110001" "00100000" "11111001" "11011001" "10011101" "00110001" }
+set ROMData { "0000111110" "0100001110" "0000111110" "1111011100" "1111111001" "0010101001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -11410,7 +9795,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 542
+set ID 174
 set hasByteEnable 0
 set MemName cnn_conv2_weightscdu
 set CoreName ap_simcore_mem
@@ -11420,7 +9805,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000011111" "010000111" "000011111" "111101110" "111111100" "001010100" }
+set ROMData { "110010001" "001001111" "000110011" "110011001" "001001011" "101110010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -11493,1088 +9878,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 543
+set ID 175
 set hasByteEnable 0
 set MemName cnn_conv2_weightsceu
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11001000" "00100111" "00011001" "11001100" "00100101" "10111001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 544
-set hasByteEnable 0
-set MemName cnn_conv2_weightscfu
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01000001" "00010011" "10101010" "11000010" "00110011" "01100000" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 545
-set hasByteEnable 0
-set MemName cnn_conv2_weightscgu
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00110000" "10101101" "11010000" "00010100" "10111011" "10100011" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 546
-set hasByteEnable 0
-set MemName cnn_conv2_weightschv
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00011110" "11000000" "00101100" "01000100" "00011001" "01001101" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 547
-set hasByteEnable 0
-set MemName cnn_conv2_weightsciv
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01010000" "11011000" "11010101" "10011000" "00101101" "00001101" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 548
-set hasByteEnable 0
-set MemName cnn_conv2_weightscjv
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00110101" "01100111" "01011001" "01011010" "11101001" "11000010" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 549
-set hasByteEnable 0
-set MemName cnn_conv2_weightsckv
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10010011" "00111001" "01001001" "01010001" "11110100" "10010101" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 550
-set hasByteEnable 0
-set MemName cnn_conv2_weightsclv
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11101010" "01010111" "00010100" "00001011" "11100010" "11101111" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 551
-set hasByteEnable 0
-set MemName cnn_conv2_weightscmv
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11001010" "01010001" "01000110" "00000001" "00010111" "10110010" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 552
-set hasByteEnable 0
-set MemName cnn_conv2_weightscnw
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10001111" "11110000" "10111010" "11011101" "11100000" "00001110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 553
-set hasByteEnable 0
-set MemName cnn_conv2_weightscow
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10001100" "11111011" "00001000" "11101010" "11000000" "10100101" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 554
-set hasByteEnable 0
-set MemName cnn_conv2_weightscpw
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11000111" "01111100" "11110000" "11010111" "00100110" "10101001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 555
-set hasByteEnable 0
-set MemName cnn_conv2_weightscqw
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01111010" "10010011" "11110011" "00000101" "10111111" "11011111" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 556
-set hasByteEnable 0
-set MemName cnn_conv2_weightscrw
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -12582,7 +9888,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000111001" "111101001" "000110110" "001011101" "010110011" "111111011" }
+set ROMData { "010000010" "000100111" "101010101" "110000101" "001100111" "011000000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -12655,7 +9961,1086 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 557
+set ID 176
+set hasByteEnable 0
+set MemName cnn_conv2_weightscfu
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "001100001" "101011011" "110100001" "000101000" "101110111" "101000111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 177
+set hasByteEnable 0
+set MemName cnn_conv2_weightscgu
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "000111101" "110000001" "001011000" "010001000" "000110010" "010011011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 178
+set hasByteEnable 0
+set MemName cnn_conv2_weightschv
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "010100001" "110110001" "110101011" "100110000" "001011010" "000011011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 179
+set hasByteEnable 0
+set MemName cnn_conv2_weightsciv
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "001101010" "011001111" "010110011" "010110100" "111010010" "110000100" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 180
+set hasByteEnable 0
+set MemName cnn_conv2_weightscjv
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "100100111" "001110011" "010010010" "010100011" "111101001" "100101011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 181
+set hasByteEnable 0
+set MemName cnn_conv2_weightsckv
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "111010101" "010101111" "000101001" "000010110" "111000101" "111011111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 182
+set hasByteEnable 0
+set MemName cnn_conv2_weightsclv
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "110010101" "010100011" "010001100" "000000011" "000101111" "101100101" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 183
+set hasByteEnable 0
+set MemName cnn_conv2_weightscmv
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "100011111" "111100001" "101110100" "110111011" "111000001" "000011100" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 184
+set hasByteEnable 0
+set MemName cnn_conv2_weightscnw
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "100011000" "111110111" "000010000" "111010100" "110000000" "101001010" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 185
+set hasByteEnable 0
+set MemName cnn_conv2_weightscow
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "110001111" "011111001" "111100000" "110101111" "001001101" "101010010" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 186
+set hasByteEnable 0
+set MemName cnn_conv2_weightscpw
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "011110101" "100100111" "111100110" "000001011" "101111111" "110111110" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 187
+set hasByteEnable 0
+set MemName cnn_conv2_weightscqw
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "0001110010" "1111010010" "0001101101" "0010111010" "0101100110" "1111110111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 188
+set hasByteEnable 0
+set MemName cnn_conv2_weightscrw
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1011111000" "0000111000" "0001100111" "0001001000" "1111101000" "1101001011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 189
 set hasByteEnable 0
 set MemName cnn_conv2_weightscsw
 set CoreName ap_simcore_mem
@@ -12665,7 +11050,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "101111100" "000011100" "000110011" "000100100" "111110100" "110100101" }
+set ROMData { "010001101" "101110010" "000110001" "111111011" "001001011" "111110011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -12738,258 +11123,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 558
+set ID 190
 set hasByteEnable 0
 set MemName cnn_conv2_weightsctx
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01000110" "10111001" "00011000" "11111101" "00100101" "11111001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 559
-set hasByteEnable 0
-set MemName cnn_conv2_weightscux
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10010011" "11100001" "01000100" "00100100" "00000110" "11111000" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 560
-set hasByteEnable 0
-set MemName cnn_conv2_weightscvx
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01010101" "01110100" "10110011" "00000011" "10000100" "00110000" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 561
-set hasByteEnable 0
-set MemName cnn_conv2_weightscwx
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -12997,7 +11133,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000110001" "000010010" "000100101" "111111011" "111000001" "101001111" }
+set ROMData { "100100110" "111000010" "010001001" "001001001" "000001100" "111110000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -13070,7 +11206,256 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 562
+set ID 191
+set hasByteEnable 0
+set MemName cnn_conv2_weightscux
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "010101010" "011101001" "101100111" "000000111" "100001000" "001100000" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 192
+set hasByteEnable 0
+set MemName cnn_conv2_weightscvx
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "0001100010" "0000100101" "0001001011" "1111110111" "1110000011" "1010011110" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 193
+set hasByteEnable 0
+set MemName cnn_conv2_weightscwx
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1111101011" "0100001110" "1100100110" "1101011001" "1111010001" "1110010011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 194
 set hasByteEnable 0
 set MemName cnn_conv2_weightscxx
 set CoreName ap_simcore_mem
@@ -13080,7 +11465,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111110101" "010000111" "110010011" "110101100" "111101000" "111001001" }
+set ROMData { "111011110" "110100010" "010011111" "001110100" "110111011" "110100110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -13153,341 +11538,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 563
+set ID 195
 set hasByteEnable 0
 set MemName cnn_conv2_weightscyx
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11101111" "11010001" "01001111" "00111010" "11011101" "11010011" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 564
-set hasByteEnable 0
-set MemName cnn_conv2_weightsczy
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00000011" "01100111" "01100100" "01010011" "10110001" "11010110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 565
-set hasByteEnable 0
-set MemName cnn_conv2_weightscAy
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11010111" "10111111" "10111100" "00011110" "01001110" "00011100" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 566
-set hasByteEnable 0
-set MemName cnn_conv2_weightscBy
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10111010" "01010111" "00101100" "00100100" "01000101" "00110011" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 567
-set hasByteEnable 0
-set MemName cnn_conv2_weightscCy
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -13495,7 +11548,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "001000111" "101101010" "000100010" "111111110" "001000100" "001010101" }
+set ROMData { "000000111" "011001111" "011001000" "010100110" "101100010" "110101100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -13568,7 +11621,339 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 568
+set ID 196
+set hasByteEnable 0
+set MemName cnn_conv2_weightsczy
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "110101111" "101111110" "101111001" "000111101" "010011101" "000111000" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 197
+set hasByteEnable 0
+set MemName cnn_conv2_weightscAy
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "101110100" "010101111" "001011001" "001001001" "010001010" "001100111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 198
+set hasByteEnable 0
+set MemName cnn_conv2_weightscBy
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "0010001110" "1011010101" "0001000101" "1111111101" "0010001000" "0010101010" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 199
+set hasByteEnable 0
+set MemName cnn_conv2_weightscCy
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1110110010" "1011101000" "0000000010" "0001010011" "0011000100" "0000010011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 200
 set hasByteEnable 0
 set MemName cnn_conv2_weightscDy
 set CoreName ap_simcore_mem
@@ -13578,7 +11963,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111011001" "101110100" "000000001" "000101001" "001100010" "000001001" }
+set ROMData { "011111000" "001101011" "111100111" "000000010" "110010000" "001111000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -13651,258 +12036,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 569
+set ID 201
 set hasByteEnable 0
 set MemName cnn_conv2_weightscEy
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01111100" "00110101" "11110011" "00000001" "11001000" "00111100" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 570
-set hasByteEnable 0
-set MemName cnn_conv2_weightscFz
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00111111" "10101110" "00011001" "00010111" "00001110" "00110001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 571
-set hasByteEnable 0
-set MemName cnn_conv2_weightscGz
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10101101" "11000101" "01011001" "00001010" "11010010" "11011001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 572
-set hasByteEnable 0
-set MemName cnn_conv2_weightscHz
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -13910,7 +12046,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110001101" "001011100" "010010100" "001011011" "111110001" "000111101" }
+set ROMData { "001111110" "101011100" "000110010" "000101110" "000011100" "001100010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -13983,7 +12119,256 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 573
+set ID 202
+set hasByteEnable 0
+set MemName cnn_conv2_weightscFz
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "101011011" "110001010" "010110011" "000010100" "110100100" "110110011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 203
+set hasByteEnable 0
+set MemName cnn_conv2_weightscGz
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1100011010" "0010111001" "0100101001" "0010110111" "1111100010" "0001111010" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 204
+set hasByteEnable 0
+set MemName cnn_conv2_weightscHz
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1111111011" "1110000000" "1100100001" "1110011001" "1011110001" "1110000100" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 205
 set hasByteEnable 0
 set MemName cnn_conv2_weightscIz
 set CoreName ap_simcore_mem
@@ -13993,7 +12378,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111111101" "111000000" "110010000" "111001100" "101111000" "111000010" }
+set ROMData { "001100011" "010110110" "111101111" "000011100" "110001011" "010000000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14066,17 +12451,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 574
+set ID 206
 set hasByteEnable 0
 set MemName cnn_conv2_weightscJz
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00110001" "01011011" "11110111" "00001110" "11000101" "01000000" }
+set ROMData { "110100010" "110111001" "000100010" "111110000" "011011001" "010101011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14149,17 +12534,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 575
+set ID 207
 set hasByteEnable 0
 set MemName cnn_conv2_weightscKz
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11010001" "11011100" "00010001" "11111000" "01101100" "01010101" }
+set ROMData { "111011111" "101001011" "101111100" "000000011" "010110001" "010000000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14232,17 +12617,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 576
+set ID 208
 set hasByteEnable 0
 set MemName cnn_conv2_weightscLz
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11101111" "10100101" "10111110" "00000001" "01011000" "01000000" }
+set ROMData { "010010001" "110011010" "000000110" "000110111" "010111110" "101101111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14315,17 +12700,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 577
+set ID 209
 set hasByteEnable 0
 set MemName cnn_conv2_weightscMA
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01001000" "11001101" "00000011" "00011011" "01011111" "10110111" }
+set ROMData { "000001101" "111010001" "000100010" "001000111" "001011111" "100100100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14398,17 +12783,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 578
+set ID 210
 set hasByteEnable 0
 set MemName cnn_conv2_weightscNA
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00000110" "11101000" "00010001" "00100011" "00101111" "10010010" }
+set ROMData { "010011111" "100001100" "110100101" "111110010" "111011101" "000111101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14481,17 +12866,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 579
+set ID 211
 set hasByteEnable 0
 set MemName cnn_conv2_weightscOA
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01001111" "10000110" "11010010" "11111001" "11101110" "00011110" }
+set ROMData { "0000111101" "1110100010" "1110000000" "1111110101" "1101000001" "1010010001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14564,17 +12949,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 580
+set ID 212
 set hasByteEnable 0
 set MemName cnn_conv2_weightscPA
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000011110" "111010001" "111000000" "111111010" "110100000" "101001000" }
+set ROMData { "0000100011" "0011001111" "0001011110" "0010000100" "1010110011" "1111000001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14647,17 +13032,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 581
+set ID 213
 set hasByteEnable 0
 set MemName cnn_conv2_weightscQA
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000010001" "001100111" "000101111" "001000010" "101011001" "111100000" }
+set ROMData { "1010111001" "1101111110" "0001010100" "0100011001" "0010101001" "0001000101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14730,7 +13115,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 582
+set ID 214
 set hasByteEnable 0
 set MemName cnn_conv2_weightscRA
 set CoreName ap_simcore_mem
@@ -14740,7 +13125,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "101011100" "110111111" "000101010" "010001100" "001010100" "000100010" }
+set ROMData { "100110011" "010110110" "111100010" "101101000" "111000110" "100011010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14813,17 +13198,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 583
+set ID 215
 set hasByteEnable 0
 set MemName cnn_conv2_weightscSB
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10011001" "01011011" "11110001" "10110100" "11100011" "10001101" }
+set ROMData { "0110001011" "0000010010" "0000011111" "1111000011" "1100101100" "0011110101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14896,17 +13281,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 584
+set ID 216
 set hasByteEnable 0
 set MemName cnn_conv2_weightscTB
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "011000101" "000001001" "000001111" "111100001" "110010110" "001111010" }
+set ROMData { "1011111010" "0001010011" "0001011100" "1111000101" "1100111110" "0000011011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -14979,7 +13364,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 585
+set ID 217
 set hasByteEnable 0
 set MemName cnn_conv2_weightscUB
 set CoreName ap_simcore_mem
@@ -14989,7 +13374,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "101111101" "000101001" "000101110" "111100010" "110011111" "000001101" }
+set ROMData { "010110101" "110101010" "001110001" "000001000" "000101001" "111010010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15062,17 +13447,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 586
+set ID 218
 set hasByteEnable 0
 set MemName cnn_conv2_weightscVB
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01011010" "11010101" "00111000" "00000100" "00010100" "11101001" }
+set ROMData { "0110001110" "0001111101" "0000011011" "1111001101" "0000101101" "0001000011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15145,7 +13530,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 587
+set ID 219
 set hasByteEnable 0
 set MemName cnn_conv2_weightscWB
 set CoreName ap_simcore_mem
@@ -15155,7 +13540,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "011000111" "000111110" "000001101" "111100110" "000010110" "000100001" }
+set ROMData { "010011011" "110100101" "111011101" "110011001" "111000101" "010011011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15228,258 +13613,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 588
+set ID 220
 set hasByteEnable 0
 set MemName cnn_conv2_weightscXB
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01001101" "11010010" "11101110" "11001100" "11100010" "01001101" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 589
-set hasByteEnable 0
-set MemName cnn_conv2_weightscYC
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "01001111" "11001110" "11000000" "10100110" "11000110" "11111110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 590
-set hasByteEnable 0
-set MemName cnn_conv2_weightscZC
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10100001" "00100010" "01000110" "00101110" "00011011" "01100001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 591
-set hasByteEnable 0
-set MemName cnn_conv2_weightsc0C
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -15487,7 +13623,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000100111" "111000111" "101011110" "110001110" "111010011" "111011001" }
+set ROMData { "010011111" "110011101" "110000000" "101001101" "110001100" "111111100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15560,7 +13696,256 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 592
+set ID 221
+set hasByteEnable 0
+set MemName cnn_conv2_weightscYC
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "101000010" "001000100" "010001101" "001011100" "000110111" "011000010" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 222
+set hasByteEnable 0
+set MemName cnn_conv2_weightscZC
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "0001001111" "1110001110" "1010111100" "1100011100" "1110100110" "1110110011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 223
+set hasByteEnable 0
+set MemName cnn_conv2_weightsc0C
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1100011011" "0100001111" "0010110100" "0010101010" "1110011101" "0000110100" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 224
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc1C
 set CoreName ap_simcore_mem
@@ -15570,7 +13955,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110001101" "010000111" "001011010" "001010101" "111001110" "000011010" }
+set ROMData { "110010010" "100100101" "001000000" "001100001" "001010000" "011011001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15643,17 +14028,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 593
+set ID 225
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc2C
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11001001" "10010010" "00100000" "00110000" "00101000" "01101100" }
+set ROMData { "0010001100" "0001001000" "1111011011" "0001000101" "1111111101" "1010011010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15726,7 +14111,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 594
+set ID 226
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc3C
 set CoreName ap_simcore_mem
@@ -15736,7 +14121,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "001000110" "000100100" "111101101" "000100010" "111111110" "101001101" }
+set ROMData { "101101111" "000100111" "010001101" "010011001" "000000111" "101110010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15809,17 +14194,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 595
+set ID 227
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc4D
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10110111" "00010011" "01000110" "01001100" "00000011" "10111001" }
+set ROMData { "1110010111" "1110101001" "0010001101" "1110101111" "1010100101" "1111101011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15892,7 +14277,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 596
+set ID 228
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc5D
 set CoreName ap_simcore_mem
@@ -15902,7 +14287,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111001011" "111010100" "001000110" "111010111" "101010010" "111110101" }
+set ROMData { "000100001" "011110110" "111111110" "111011000" "110100010" "101100111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -15975,17 +14360,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 597
+set ID 229
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc6D
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00010000" "01111011" "11111111" "11101100" "11010001" "10110011" }
+set ROMData { "1111011011" "0101000010" "1111111110" "1010100111" "1101100000" "1111100110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16058,17 +14443,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 598
+set ID 230
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc7D
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111101101" "010100001" "111111111" "101010011" "110110000" "111110011" }
+set ROMData { "0011111100" "0101101000" "1100001101" "1101100111" "0000110000" "1111010101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16141,7 +14526,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 599
+set ID 231
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc8D
 set CoreName ap_simcore_mem
@@ -16151,7 +14536,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "001111110" "010110100" "110000110" "110110011" "000011000" "111101010" }
+set ROMData { "110000010" "010010101" "101011100" "101101011" "100110111" "101110000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16224,17 +14609,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 600
+set ID 232
 set hasByteEnable 0
 set MemName cnn_conv2_weightsc9D
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11000001" "01001010" "10101110" "10110101" "10011011" "10111000" }
+set ROMData { "000100010" "100010110" "110100000" "010001001" "111000000" "111001111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16307,17 +14692,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 601
+set ID 233
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdaE
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00010001" "10001011" "11010000" "01000100" "11100000" "11100111" }
+set ROMData { "0001100000" "1001010111" "1110111001" "0001011110" "0001011110" "1111100001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16390,7 +14775,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 602
+set ID 234
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdbE
 set CoreName ap_simcore_mem
@@ -16400,7 +14785,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000110000" "100101011" "111011100" "000101111" "000101111" "111110000" }
+set ROMData { "110001001" "110111100" "111010010" "000011111" "111110110" "011100111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16473,17 +14858,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 603
+set ID 235
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdcE
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11000100" "11011110" "11101001" "00001111" "11111011" "01110011" }
+set ROMData { "0001011000" "0001000010" "0000010011" "1111101001" "1011001000" "1110111010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16556,7 +14941,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 604
+set ID 236
 set hasByteEnable 0
 set MemName cnn_conv2_weightsddE
 set CoreName ap_simcore_mem
@@ -16566,7 +14951,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000101100" "000100001" "000001001" "111110100" "101100100" "111011101" }
+set ROMData { "100110110" "000101110" "010101011" "001000000" "101010001" "001110111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16639,17 +15024,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 605
+set ID 237
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdeE
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10011011" "00010111" "01010101" "00100000" "10101000" "00111011" }
+set ROMData { "0000001000" "0011001010" "0010001101" "0001111101" "1110110011" "1010010001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16722,17 +15107,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 606
+set ID 238
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdfE
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000000100" "001100101" "001000110" "000111110" "111011001" "101001000" }
+set ROMData { "1111011000" "0100001100" "1110000010" "1110001110" "1110001000" "1101011100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16805,7 +15190,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 607
+set ID 239
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdgE
 set CoreName ap_simcore_mem
@@ -16815,7 +15200,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111101100" "010000110" "111000001" "111000111" "111000100" "110101110" }
+set ROMData { "000011010" "011100101" "000000000" "010001010" "111110011" "110101000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16888,17 +15273,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 608
+set ID 240
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdhF
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00001101" "01110010" "00000000" "01000101" "11111001" "11010100" }
+set ROMData { "1111100101" "0010110111" "1110101110" "0001011110" "0001111001" "1011110110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -16971,17 +15356,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 609
+set ID 241
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdiF
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111110010" "001011011" "111010111" "000101111" "000111100" "101111011" }
+set ROMData { "1100010101" "0001111000" "1101000001" "1100000001" "1100100001" "1010001111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17054,17 +15439,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 610
+set ID 242
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdjF
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110001010" "000111100" "110100000" "110000000" "110010000" "101000111" }
+set ROMData { "0001101010" "1001110110" "1110100100" "0000100010" "0001110011" "0001000100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17137,7 +15522,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 611
+set ID 243
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdkF
 set CoreName ap_simcore_mem
@@ -17147,7 +15532,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000110101" "100111011" "111010010" "000010001" "000111001" "000100010" }
+set ROMData { "000000100" "101110111" "110011100" "110010010" "011000000" "000001011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17220,17 +15605,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 612
+set ID 244
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdlF
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00000010" "10111011" "11001110" "11001001" "01100000" "00000101" }
+set ROMData { "1111010011" "1111100010" "0011101110" "0100000110" "0000110100" "1100111100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17303,17 +15688,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 613
+set ID 245
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdmF
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111101001" "111110001" "001110111" "010000011" "000011010" "110011110" }
+set ROMData { "0001110101" "0000011011" "0010001100" "1111001101" "0000001010" "1001100000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17386,17 +15771,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 614
+set ID 246
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdnG
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000111010" "000001101" "001000110" "111100110" "000000101" "100110000" }
+set ROMData { "0000010001" "0100001101" "0000001011" "0000010000" "1000000101" "0001010001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17469,7 +15854,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 615
+set ID 247
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdoG
 set CoreName ap_simcore_mem
@@ -17479,7 +15864,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000001000" "010000110" "000000101" "000001000" "100000010" "000101000" }
+set ROMData { "111011001" "001010010" "111101110" "000101100" "100101011" "100100010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17552,17 +15937,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 616
+set ID 248
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdpG
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11101100" "00101001" "11110111" "00010110" "10010101" "10010001" }
+set ROMData { "1101010001" "1101100100" "1111111111" "1110100011" "0001000011" "1010111100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17635,7 +16020,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 617
+set ID 249
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdqG
 set CoreName ap_simcore_mem
@@ -17645,7 +16030,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110101000" "110110010" "111111111" "111010001" "000100001" "101011110" }
+set ROMData { "010100010" "010111111" "110011110" "000101001" "001011100" "010001100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17718,17 +16103,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 618
+set ID 250
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdrG
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01010001" "01011111" "11001111" "00010100" "00101110" "01000110" }
+set ROMData { "1110111100" "1110101111" "1110011100" "0000001000" "0100010010" "0001100001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17801,7 +16186,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 619
+set ID 251
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdsG
 set CoreName ap_simcore_mem
@@ -17811,7 +16196,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111011110" "111010111" "111001110" "000000100" "010001001" "000110000" }
+set ROMData { "011101010" "000010101" "000000110" "111011100" "000011100" "111011011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17884,17 +16269,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 620
+set ID 252
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdtH
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01110101" "00001010" "00000011" "11101110" "00001110" "11101101" }
+set ROMData { "101010010" "110100010" "111001101" "110001100" "111000110" "101011011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -17967,17 +16352,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 621
+set ID 253
 set hasByteEnable 0
 set MemName cnn_conv2_weightsduH
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10101001" "11010001" "11100110" "11000110" "11100011" "10101101" }
+set ROMData { "101010001" "001101000" "011010011" "000111011" "001000110" "110110111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18050,17 +16435,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 622
+set ID 254
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdvH
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10101000" "00110100" "01101001" "00011101" "00100011" "11011011" }
+set ROMData { "1110011010" "1010001100" "0001000110" "0100100110" "0001100100" "0000110111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18133,7 +16518,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 623
+set ID 255
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdwH
 set CoreName ap_simcore_mem
@@ -18143,7 +16528,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111001101" "101000110" "000100011" "010010011" "000110010" "000011011" }
+set ROMData { "111001100" "101000000" "001111110" "001000010" "011010101" "110011110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18216,17 +16601,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 624
+set ID 256
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdxH
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11100110" "10100000" "00111111" "00100001" "01101010" "11001111" }
+set ROMData { "000111111" "010011100" "000110011" "001101110" "110000011" "001000000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18299,17 +16684,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 625
+set ID 257
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdyH
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00011111" "01001110" "00011001" "00110111" "11000001" "00100000" }
+set ROMData { "1100101000" "1101001101" "1101110110" "1101101101" "1011001000" "1101110111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18382,7 +16767,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 626
+set ID 258
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdzI
 set CoreName ap_simcore_mem
@@ -18392,7 +16777,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110010100" "110100110" "110111011" "110110110" "101100100" "110111011" }
+set ROMData { "100001010" "110111000" "000000111" "101010000" "000001110" "100101011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18465,17 +16850,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 627
+set ID 259
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdAI
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10000101" "11011100" "00000011" "10101000" "00000111" "10010101" }
+set ROMData { "0100000101" "0001000110" "1111001101" "0000010101" "0001001010" "0000001111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18548,7 +16933,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 628
+set ID 260
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdBI
 set CoreName ap_simcore_mem
@@ -18558,7 +16943,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "010000010" "000100011" "111100110" "000001010" "000100101" "000000111" }
+set ROMData { "000111110" "111001011" "111011101" "101011010" "000000010" "111001011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18631,17 +17016,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 629
+set ID 261
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdCI
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00011111" "11100101" "11101110" "10101101" "00000001" "11100101" }
+set ROMData { "1011000000" "0001100011" "0011000010" "0010100000" "1101100111" "0010010101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18714,17 +17099,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 630
+set ID 262
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdDI
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "101100000" "000110001" "001100001" "001010000" "110110011" "001001010" }
+set ROMData { "1100000000" "1000011001" "1111011111" "0001110011" "0000010110" "0100001100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18797,7 +17182,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 631
+set ID 263
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdEI
 set CoreName ap_simcore_mem
@@ -18807,7 +17192,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110000000" "100001100" "111101111" "000111001" "000001011" "010000110" }
+set ROMData { "111110010" "101000010" "001011100" "001010011" "000100111" "000011010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18880,17 +17265,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 632
+set ID 264
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdFJ
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11111001" "10100001" "00101110" "00101001" "00010011" "00001101" }
+set ROMData { "0001011000" "1110101010" "0000101001" "0000011010" "0001111011" "1011111101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -18963,17 +17348,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 633
+set ID 265
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdGJ
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000101100" "111010101" "000010100" "000001101" "000111101" "101111110" }
+set ROMData { "0001010101" "0100101100" "1100010011" "1101010111" "1101101101" "1110111010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19046,7 +17431,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 634
+set ID 266
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdHJ
 set CoreName ap_simcore_mem
@@ -19056,7 +17441,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000101010" "010010110" "110001001" "110101011" "110110110" "111011101" }
+set ROMData { "101101100" "000111011" "101000100" "000011111" "110000000" "000010101" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19129,175 +17514,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 635
+set ID 267
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdIJ
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "10110110" "00011101" "10100010" "00001111" "11000000" "00001010" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 636
-set hasByteEnable 0
-set MemName cnn_conv2_weightsdJJ
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11010100" "10010001" "11101011" "11000000" "01110011" "00101000" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 637
-set hasByteEnable 0
-set MemName cnn_conv2_weightsdKJ
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -19305,7 +17524,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000110110" "000000010" "000110010" "111011000" "010010000" "110100111" }
+set ROMData { "110101001" "100100010" "111010111" "110000001" "011100111" "001010000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19378,7 +17597,173 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 638
+set ID 268
+set hasByteEnable 0
+set MemName cnn_conv2_weightsdJJ
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "0001101101" "0000000100" "0001100100" "1110110001" "0100100000" "1101001111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 269
+set hasByteEnable 0
+set MemName cnn_conv2_weightsdKJ
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "0001111000" "0000110001" "1110001000" "1111110001" "1011101001" "1111010000" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 270
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdLJ
 set CoreName ap_simcore_mem
@@ -19388,7 +17773,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000111100" "000011000" "111000100" "111111000" "101110100" "111101000" }
+set ROMData { "010111010" "001001111" "000001010" "010000101" "110011100" "101110111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19461,17 +17846,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 639
+set ID 271
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdMK
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01011101" "00100111" "00000101" "01000010" "11001110" "10111011" }
+set ROMData { "000111100" "011101111" "110100100" "111000011" "000001110" "100101001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19544,17 +17929,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 640
+set ID 272
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdNK
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00011110" "01110111" "11010010" "11100001" "00000111" "10010100" }
+set ROMData { "101101010" "000110001" "111101000" "111101101" "111111100" "001011110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19627,17 +18012,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 641
+set ID 273
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdOK
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10110101" "00011000" "11110100" "11110110" "11111110" "00101111" }
+set ROMData { "101100000" "101110000" "111001000" "001010110" "000101000" "000101100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19710,17 +18095,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 642
+set ID 274
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdPK
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10110000" "10111000" "11100100" "00101011" "00010100" "00010110" }
+set ROMData { "000100101" "010001001" "100000001" "101111111" "110000111" "101100111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19793,17 +18178,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 643
+set ID 275
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdQK
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00010010" "01000100" "10000000" "10111111" "11000011" "10110011" }
+set ROMData { "1101111100" "0100010100" "1110100101" "1011000110" "1100010001" "1110101011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19876,7 +18261,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 644
+set ID 276
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdRK
 set CoreName ap_simcore_mem
@@ -19886,7 +18271,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110111110" "010001010" "111010010" "101100011" "110001000" "111010101" }
+set ROMData { "110110011" "101111101" "000010000" "001001011" "101111111" "110001010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -19959,17 +18344,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 645
+set ID 277
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdSL
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11011001" "10111110" "00001000" "00100101" "10111111" "11000101" }
+set ROMData { "010000111" "001001001" "001000100" "110100010" "101110010" "111001000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20042,17 +18427,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 646
+set ID 278
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdTL
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01000011" "00100100" "00100010" "11010001" "10111001" "11100100" }
+set ROMData { "0011000011" "0110100111" "0010001010" "0010001010" "1100011001" "1110100010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20125,7 +18510,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 647
+set ID 279
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdUL
 set CoreName ap_simcore_mem
@@ -20135,7 +18520,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "001100001" "011010011" "001000101" "001000101" "110001100" "111010001" }
+set ROMData { "110000011" "000110100" "010001100" "111111011" "110100110" "111110010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20208,258 +18593,9 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 648
+set ID 280
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdVL
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "11000001" "00011010" "01000110" "11111101" "11010011" "11111001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 649
-set hasByteEnable 0
-set MemName cnn_conv2_weightsdWL
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00010010" "11100110" "01001100" "10110001" "00101101" "11000001" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 650
-set hasByteEnable 0
-set MemName cnn_conv2_weightsdXL
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00000100" "00101001" "10011011" "11111001" "10000111" "11111101" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 651
-set hasByteEnable 0
-set MemName cnn_conv2_weightsdYM
 set CoreName ap_simcore_mem
 set PortList { 1 }
 set DataWd 9
@@ -20467,7 +18603,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111011000" "000011111" "101000111" "110100000" "111111111" "111000011" }
+set ROMData { "000100101" "111001100" "010011001" "101100011" "001011010" "110000011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20540,7 +18676,256 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 652
+set ID 281
+set hasByteEnable 0
+set MemName cnn_conv2_weightsdWL
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 9
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "000001000" "001010010" "100110111" "111110010" "100001110" "111111010" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 282
+set hasByteEnable 0
+set MemName cnn_conv2_weightsdXL
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1110110001" "0000111110" "1010001111" "1101000001" "1111111110" "1110000111" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 283
+set hasByteEnable 0
+set MemName cnn_conv2_weightsdYM
+set CoreName ap_simcore_mem
+set PortList { 1 }
+set DataWd 10
+set AddrRange 6
+set AddrWd 3
+set TrueReset 0
+set IsROM 1
+set ROMData { "1110110000" "1000011011" "0000110000" "0000001000" "1111111111" "0000011011" }
+set HasInitializer 1
+set Initializer $ROMData
+set NumOfStage 2
+set MaxLatency -1
+set DelayBudget 2.417
+set ClkPeriod 10
+set RegisteredInput 0
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
+    eval "ap_gen_simcore_mem { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+} else {
+    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+  ::AP::rtl_comp_handler $MemName
+}
+
+
+set CoreName ROM_nP
+if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
+if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
+    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
+    id ${ID} \
+    name ${MemName} \
+    corename ${CoreName}  \
+    op mem \
+    hasByteEnable ${hasByteEnable} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${NumOfStage}  \
+    registered_input ${RegisteredInput} \
+    port_num 1 \
+    port_list \{${PortList}\} \
+    data_wd ${DataWd} \
+    addr_wd ${AddrWd} \
+    addr_range ${AddrRange} \
+    true_reset ${TrueReset} \
+    delay_budget ${DelayBudget} \
+    clk_period ${ClkPeriod} \
+    HasInitializer ${HasInitializer} \
+    rom_data \{${ROMData}\} \
+ } "
+  } else {
+    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
+  }
+}
+
+
+# Memory (RAM/ROM)  definition:
+set ID 284
 set hasByteEnable 0
 set MemName cnn_conv2_weightsdZM
 set CoreName ap_simcore_mem
@@ -20550,7 +18935,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "111011000" "100001101" "000011000" "000000100" "111111111" "000001101" }
+set ROMData { "000101011" "001101000" "111110001" "110111110" "101110100" "110001010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20623,17 +19008,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 653
+set ID 285
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd0M
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00010101" "00110100" "11111000" "11011111" "10111010" "11000101" }
+set ROMData { "0000001001" "0011011101" "0010010001" "1111101101" "0000110000" "1011010011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20706,17 +19091,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 654
+set ID 286
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd1M
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000000100" "001101110" "001001000" "111110110" "000011000" "101101001" }
+set ROMData { "1101110000" "1111000110" "0000100000" "0010001010" "0000001110" "1010101010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20789,7 +19174,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 655
+set ID 287
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd2M
 set CoreName ap_simcore_mem
@@ -20799,7 +19184,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110111000" "111100011" "000010000" "001000101" "000000111" "101010101" }
+set ROMData { "100110001" "110110110" "001110100" "010000101" "000111110" "111111110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20872,17 +19257,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 656
+set ID 288
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd3M
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10011000" "11011011" "00111010" "01000010" "00011111" "11111111" }
+set ROMData { "010010000" "011011000" "100000100" "110001111" "110101110" "001110011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -20955,17 +19340,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 657
+set ID 289
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd4N
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01001000" "01101100" "10000010" "11000111" "11010111" "00111001" }
+set ROMData { "0001001010" "0010100101" "1101011110" "1011011011" "1111111111" "1101100001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21038,7 +19423,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 658
+set ID 290
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd5N
 set CoreName ap_simcore_mem
@@ -21048,7 +19433,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "000100101" "001010010" "110101111" "101101101" "111111111" "110110000" }
+set ROMData { "111001001" "100010011" "011111001" "101001111" "010010110" "011000111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21121,17 +19506,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 659
+set ID 291
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd6N
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11100100" "10001001" "01111100" "10100111" "01001011" "01100011" }
+set ROMData { "001100001" "000110001" "000001111" "000001001" "101111110" "001101110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21204,17 +19589,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 660
+set ID 292
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd7N
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00110000" "00011000" "00000111" "00000100" "10111111" "00110111" }
+set ROMData { "100110010" "101111011" "111001010" "001001110" "000000010" "001000100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21287,17 +19672,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 661
+set ID 293
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd8N
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10011001" "10111101" "11100101" "00100111" "00000001" "00100010" }
+set ROMData { "011110010" "001010010" "111011101" "110000010" "101001100" "000000000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21370,17 +19755,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 662
+set ID 294
 set hasByteEnable 0
 set MemName cnn_conv2_weightsd9N
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 10
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01111001" "00101001" "11101110" "11000001" "10100110" "00000000" }
+set ROMData { "1100011111" "0100101110" "0000101101" "0010111100" "1101000101" "1110000001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21453,7 +19838,7 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 663
+set ID 295
 set hasByteEnable 0
 set MemName cnn_conv2_weightseaO
 set CoreName ap_simcore_mem
@@ -21463,7 +19848,7 @@ set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "110001111" "010010111" "000010110" "001011110" "110100010" "111000000" }
+set ROMData { "111111000" "110111100" "001100101" "001110001" "100110111" "111000110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21536,17 +19921,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 664
+set ID 296
 set hasByteEnable 0
 set MemName cnn_conv2_weightsebO
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11111100" "11011110" "00110010" "00111000" "10011011" "11100011" }
+set ROMData { "101100110" "000001010" "000010111" "111110111" "000000000" "110100000" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21619,17 +20004,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 665
+set ID 297
 set hasByteEnable 0
 set MemName cnn_conv2_weightsecO
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10110011" "00000101" "00001011" "11111011" "00000000" "11010000" }
+set ROMData { "101010111" "111011000" "001101111" "010100101" "010101111" "011001001" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21702,17 +20087,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 666
+set ID 298
 set hasByteEnable 0
 set MemName cnn_conv2_weightsedO
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10101011" "11101100" "00110111" "01010010" "01010111" "01100100" }
+set ROMData { "011001011" "110100011" "100001110" "110000111" "100100010" "100010110" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21785,17 +20170,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 667
+set ID 299
 set hasByteEnable 0
 set MemName cnn_conv2_weightseeO
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01100101" "11010001" "10000111" "11000011" "10010001" "10001011" }
+set ROMData { "100111001" "001101111" "101101000" "101011101" "100001000" "110010100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21868,17 +20253,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 668
+set ID 300
 set hasByteEnable 0
 set MemName cnn_conv2_weightsefO
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10011100" "00110111" "10110100" "10101110" "10000100" "11001010" }
+set ROMData { "101110001" "110011111" "111011011" "111110110" "110101101" "110101010" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -21951,17 +20336,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 669
+set ID 301
 set hasByteEnable 0
 set MemName cnn_conv2_weightsegO
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "10111000" "11001111" "11101101" "11111011" "11010110" "11010101" }
+set ROMData { "111100101" "111011000" "101000000" "000011011" "100111001" "111100111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -22034,17 +20419,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 670
+set ID 302
 set hasByteEnable 0
 set MemName cnn_conv2_weightsehP
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11110010" "11101100" "10100000" "00001101" "10011100" "11110011" }
+set ROMData { "010101011" "111010111" "111010010" "111100000" "100001011" "111000011" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -22117,17 +20502,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 671
+set ID 303
 set hasByteEnable 0
 set MemName cnn_conv2_weightseiP
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "01010101" "11101011" "11101001" "11110000" "10000101" "11100001" }
+set ROMData { "000011010" "101011011" "110000101" "000100101" "000000101" "111111111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -22200,17 +20585,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 672
+set ID 304
 set hasByteEnable 0
 set MemName cnn_conv2_weightsejP
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "00001101" "10101101" "11000010" "00010010" "00000010" "11111111" }
+set ROMData { "110000101" "110000010" "001101000" "111101010" "010100110" "010011111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -22283,17 +20668,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 673
+set ID 305
 set hasByteEnable 0
 set MemName cnn_conv2_weightsekP
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 8
+set DataWd 9
 set AddrRange 6
 set AddrWd 3
 set TrueReset 0
 set IsROM 1
-set ROMData { "11000010" "11000001" "00110100" "11110101" "01010011" "01001111" }
+set ROMData { "000010110" "101110001" "111100001" "010110000" "001000110" "011001100" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -22366,100 +20751,17 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 674
-set hasByteEnable 0
-set MemName cnn_conv2_weightselP
-set CoreName ap_simcore_mem
-set PortList { 1 }
-set DataWd 8
-set AddrRange 6
-set AddrWd 3
-set TrueReset 0
-set IsROM 1
-set ROMData { "00001011" "10111000" "11110000" "01011000" "00100011" "01100110" }
-set HasInitializer 1
-set Initializer $ROMData
-set NumOfStage 2
-set MaxLatency -1
-set DelayBudget 2.417
-set ClkPeriod 10
-set RegisteredInput 0
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_mem] == "ap_gen_simcore_mem"} {
-    eval "ap_gen_simcore_mem { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-} else {
-    puts "@W \[IMPL-102\] Cannot find ap_gen_simcore_mem, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-  ::AP::rtl_comp_handler $MemName
-}
-
-
-set CoreName ROM_nP
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_ROM"} {
-    eval "::AESL_LIB_VIRTEX::xil_gen_ROM { \
-    id ${ID} \
-    name ${MemName} \
-    corename ${CoreName}  \
-    op mem \
-    hasByteEnable ${hasByteEnable} \
-    reset_level 1 \
-    sync_rst true \
-    stage_num ${NumOfStage}  \
-    registered_input ${RegisteredInput} \
-    port_num 1 \
-    port_list \{${PortList}\} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    addr_range ${AddrRange} \
-    true_reset ${TrueReset} \
-    delay_budget ${DelayBudget} \
-    clk_period ${ClkPeriod} \
-    HasInitializer ${HasInitializer} \
-    rom_data \{${ROMData}\} \
- } "
-  } else {
-    puts "@W \[IMPL-104\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_ROM, check your platform lib"
-  }
-}
-
-
-# Memory (RAM/ROM)  definition:
-set ID 675
+set ID 306
 set hasByteEnable 0
 set MemName cnn_conv2_biases_V
 set CoreName ap_simcore_mem
 set PortList { 1 }
-set DataWd 9
+set DataWd 10
 set AddrRange 10
 set AddrWd 4
 set TrueReset 0
 set IsROM 1
-set ROMData { "111011101" "000010000" "000101010" "000110100" "000001110" "110111010" "111101000" "110111010" "101110010" "110110011" }
+set ROMData { "1110111011" "0000100000" "0001010100" "0001101001" "0000011100" "1101110100" "1111010000" "1101110101" "1011100100" "1101100111" }
 set HasInitializer 1
 set Initializer $ROMData
 set NumOfStage 2
@@ -22532,12 +20834,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_ROM] == "::AESL_LIB_VIRTEX::xil_gen_RO
 
 
 # Memory (RAM/ROM)  definition:
-set ID 676
+set ID 307
 set hasByteEnable 0
-set MemName cnn_features_convemP
+set MemName cnn_features_convelP
 set CoreName ap_simcore_mem
-set PortList { 2 0 }
-set DataWd 14
+set PortList { 2 3 }
+set DataWd 15
 set AddrRange 64
 set AddrWd 6
 set impl_style block
@@ -22617,12 +20919,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 677
+set ID 308
 set hasByteEnable 0
-set MemName cnn_features_convewR
+set MemName cnn_features_convevR
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
-set DataWd 13
+set DataWd 14
 set AddrRange 576
 set AddrWd 10
 set impl_style block
@@ -22702,12 +21004,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 678
+set ID 309
 set hasByteEnable 0
-set MemName cnn_pool_featureseCS
+set MemName cnn_pool_featureseBS
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
-set DataWd 14
+set DataWd 15
 set AddrRange 864
 set AddrWd 10
 set impl_style block
@@ -22787,12 +21089,12 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 
 
 # Memory (RAM/ROM)  definition:
-set ID 679
+set ID 310
 set hasByteEnable 0
-set MemName cnn_pool_featureseDS
+set MemName cnn_pool_featureseCS
 set CoreName ap_simcore_mem
 set PortList { 2 3 }
-set DataWd 13
+set DataWd 14
 set AddrRange 160
 set AddrWd 8
 set impl_style block
@@ -22871,75 +21173,6 @@ if {[info proc ::AESL_LIB_VIRTEX::xil_gen_RAM] == "::AESL_LIB_VIRTEX::xil_gen_RA
 }
 
 
-# FIFO definition:
-set ID 680
-set FifoName fifo_w14_d784_A
-set InstName norm_img_V_V_U
-set CoreName ap_simcore_fifo
-set NumOfStage 2
-set RegisteredInput 0
-set DualClock 0
-set Depth 784
-set DataWd 14
-set AddrWd 10
-set FullThresh 0
-set EmptyThresh 0
-set impl_style auto
-if {${::AESL::PGuard_simmodel_gen}} {
-if {[info proc ap_gen_simcore_fifo] == "ap_gen_simcore_fifo"} {
-eval "ap_gen_simcore_fifo { \
-    id ${ID} \
-    name ${FifoName} \
-    instname ${InstName}    corename ${CoreName} \
-    op fifo \
-    stage_num ${NumOfStage} \
-    registered_input ${RegisteredInput} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    reset_level 1 \
-    sync_rst true \
-    dual_clk 0\
-    depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
-    full_thresh ${FullThresh} \
-}"
-} else {
-puts "@W \[IMPL-106\] Cannot find ap_gen_simcore_fifo, check your platform lib"
-}
-}
-
-
-if {${::AESL::PGuard_rtl_comp_handler}} {
-	::AP::rtl_comp_handler $FifoName
-}
-
-
-if {${::AESL::PGuard_autocg_gen} && ${::AESL::PGuard_autocg_ipmgen}} {
-if {[info proc ::AESL_LIB_VIRTEX::xil_gen_FIFO] == "::AESL_LIB_VIRTEX::xil_gen_FIFO"} {
-eval "::AESL_LIB_VIRTEX::xil_gen_FIFO { \
-    id ${ID} \
-    name ${FifoName} \
-    instname ${InstName}
-    corename FIFO \
-    op fifo \
-    stage_num ${NumOfStage} \
-    registered_input ${RegisteredInput} \
-    data_wd ${DataWd} \
-    addr_wd ${AddrWd} \
-    reset_level 1 \
-    sync_rst true \
-    dual_clk 0 \
-    depth ${Depth} \
-    empty_thresh ${EmptyThresh} \
-    full_thresh ${FullThresh} \
-    style ${impl_style} \
-}"
-} else {
-puts "@W \[IMPL-107\] Cannot find ::AESL_LIB_VIRTEX::xil_gen_FIFO, check your platform lib"
-}
-}
-
-
 # clear list
 if {${::AESL::PGuard_autoexp_gen}} {
     cg_default_interface_gen_dc_begin
@@ -22948,39 +21181,43 @@ if {${::AESL::PGuard_autoexp_gen}} {
 }
 
 set axilite_register_dict [dict create]
-# XIL_BRAM:
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 682 \
-    name prediction_V \
-    reset_level 1 \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 311 \
+    name img_in_V_V \
+    reset_level 0 \
     sync_rst true \
-    dir O \
-    corename prediction_V \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { prediction_V_address0 { O 4 vector } prediction_V_ce0 { O 1 bit } prediction_V_we0 { O 1 bit } prediction_V_d0 { O 14 vector } } \
+    ports { img_in_V_V_TDATA { I 16 vector } img_in_V_V_TVALID { I 1 bit } img_in_V_V_TREADY { O 1 bit } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'prediction_V'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'img_in_V_V'"
 }
 }
 
 
-# Direct connection:
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-eval "cg_default_interface_gen_dc { \
-    id 681 \
-    name img_in_V \
-    type fifo \
-    dir I \
-    reset_level 1 \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 312 \
+    name prediction_V_V \
+    reset_level 0 \
     sync_rst true \
-    corename dc_img_in_V \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { img_in_V_dout { I 32 vector } img_in_V_empty_n { I 1 bit } img_in_V_read { O 1 bit } } \
+    ports { prediction_V_V_TDATA { O 16 vector } prediction_V_V_TVALID { O 1 bit } prediction_V_V_TREADY { I 1 bit } } \
 } "
+} else {
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'prediction_V_V'"
 }
+}
+
 
 # Direct connection:
 if {${::AESL::PGuard_autoexp_gen}} {
@@ -22988,7 +21225,7 @@ eval "cg_default_interface_gen_dc { \
     id -1 \
     name ap_ctrl \
     type ap_ctrl \
-    reset_level 1 \
+    reset_level 0 \
     sync_rst true \
     corename ap_ctrl \
     op interface \
@@ -23005,7 +21242,7 @@ if {[info proc cg_default_interface_gen_clock] == "cg_default_interface_gen_cloc
 eval "cg_default_interface_gen_clock { \
     id -2 \
     name ${PortName} \
-    reset_level 1 \
+    reset_level 0 \
     sync_rst true \
     corename apif_ap_clk \
     data_wd ${DataWd} \
@@ -23018,16 +21255,16 @@ puts "@W \[IMPL-113\] Cannot find bus interface model in the library. Ignored ge
 
 
 # Adapter definition:
-set PortName ap_rst
+set PortName ap_rst_n
 set DataWd 1 
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc cg_default_interface_gen_reset] == "cg_default_interface_gen_reset"} {
 eval "cg_default_interface_gen_reset { \
     id -3 \
     name ${PortName} \
-    reset_level 1 \
+    reset_level 0 \
     sync_rst true \
-    corename apif_ap_rst \
+    corename apif_ap_rst_n \
     data_wd ${DataWd} \
     op interface \
 }"

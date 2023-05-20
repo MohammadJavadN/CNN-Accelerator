@@ -24,11 +24,11 @@ struct flattening_layer : public sc_module {
     sc_out< sc_logic > ap_ready;
     sc_out< sc_lv<8> > pool_features_V_address0;
     sc_out< sc_logic > pool_features_V_ce0;
-    sc_in< sc_lv<13> > pool_features_V_q0;
+    sc_in< sc_lv<14> > pool_features_V_q0;
     sc_out< sc_lv<8> > flat_array_V_address0;
     sc_out< sc_logic > flat_array_V_ce0;
     sc_out< sc_logic > flat_array_V_we0;
-    sc_out< sc_lv<13> > flat_array_V_d0;
+    sc_out< sc_lv<14> > flat_array_V_d0;
 
 
     // Module declarations
@@ -55,8 +55,8 @@ struct flattening_layer : public sc_module {
     sc_signal< sc_lv<8> > add_ln17_fu_174_p2;
     sc_signal< sc_lv<8> > add_ln17_reg_260;
     sc_signal< sc_lv<1> > icmp_ln13_fu_162_p2;
-    sc_signal< sc_lv<9> > tmp_9_cast_fu_189_p3;
-    sc_signal< sc_lv<9> > tmp_9_cast_reg_265;
+    sc_signal< sc_lv<9> > tmp_8_cast_fu_189_p3;
+    sc_signal< sc_lv<9> > tmp_8_cast_reg_265;
     sc_signal< sc_lv<3> > c_fu_203_p2;
     sc_signal< sc_lv<3> > c_reg_273;
     sc_signal< sc_logic > ap_CS_fsm_state4;
@@ -130,7 +130,7 @@ struct flattening_layer : public sc_module {
     void thread_pool_features_V_address0();
     void thread_pool_features_V_ce0();
     void thread_r_fu_168_p2();
-    void thread_tmp_9_cast_fu_189_p3();
+    void thread_tmp_8_cast_fu_189_p3();
     void thread_tmp_fu_150_p3();
     void thread_zext_ln13_fu_158_p1();
     void thread_zext_ln16_fu_223_p1();

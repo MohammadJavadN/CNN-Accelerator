@@ -8,7 +8,7 @@ use ieee.std_logic_unsigned.all;
 
 entity cnn_conv2_weightsceu_rom is 
     generic(
-             DWIDTH     : integer := 8; 
+             DWIDTH     : integer := 9; 
              AWIDTH     : integer := 3; 
              MEM_SIZE    : integer := 6
     ); 
@@ -26,8 +26,8 @@ architecture rtl of cnn_conv2_weightsceu_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "11001000", 1 => "00100111", 2 => "00011001", 3 => "11001100", 
-    4 => "00100101", 5 => "10111001" );
+    0 => "010000010", 1 => "000100111", 2 => "101010101", 3 => "110000101", 
+    4 => "001100111", 5 => "011000000" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -65,7 +65,7 @@ use IEEE.std_logic_1164.all;
 
 entity cnn_conv2_weightsceu is
     generic (
-        DataWidth : INTEGER := 8;
+        DataWidth : INTEGER := 9;
         AddressRange : INTEGER := 6;
         AddressWidth : INTEGER := 3);
     port (

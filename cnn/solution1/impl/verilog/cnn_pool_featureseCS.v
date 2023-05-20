@@ -6,8 +6,8 @@
 module cnn_pool_featureseCS_ram (addr0, ce0, d0, we0, q0,  clk);
 
 parameter DWIDTH = 14;
-parameter AWIDTH = 10;
-parameter MEM_SIZE = 864;
+parameter AWIDTH = 8;
+parameter MEM_SIZE = 160;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
@@ -47,8 +47,8 @@ module cnn_pool_featureseCS(
     q0);
 
 parameter DataWidth = 32'd14;
-parameter AddressRange = 32'd864;
-parameter AddressWidth = 32'd10;
+parameter AddressRange = 32'd160;
+parameter AddressWidth = 32'd8;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

@@ -19,8 +19,8 @@ using namespace sc_dt;
 struct cnn_pool_featureseCS_ram : public sc_core::sc_module {
 
   static const unsigned DataWidth = 14;
-  static const unsigned AddressRange = 864;
-  static const unsigned AddressWidth = 10;
+  static const unsigned AddressRange = 160;
+  static const unsigned AddressWidth = 8;
 
 //latency = 1
 //input_reg = 1
@@ -76,8 +76,8 @@ SC_MODULE(cnn_pool_featureseCS) {
 
 
 static const unsigned DataWidth = 14;
-static const unsigned AddressRange = 864;
-static const unsigned AddressWidth = 10;
+static const unsigned AddressRange = 160;
+static const unsigned AddressWidth = 8;
 
 sc_core::sc_in <sc_lv<AddressWidth> > address0;
 sc_core::sc_in<sc_logic> ce0;

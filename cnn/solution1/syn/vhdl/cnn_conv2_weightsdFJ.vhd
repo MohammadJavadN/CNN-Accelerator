@@ -8,7 +8,7 @@ use ieee.std_logic_unsigned.all;
 
 entity cnn_conv2_weightsdFJ_rom is 
     generic(
-             DWIDTH     : integer := 8; 
+             DWIDTH     : integer := 10; 
              AWIDTH     : integer := 3; 
              MEM_SIZE    : integer := 6
     ); 
@@ -26,8 +26,8 @@ architecture rtl of cnn_conv2_weightsdFJ_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "11111001", 1 => "10100001", 2 => "00101110", 3 => "00101001", 
-    4 => "00010011", 5 => "00001101" );
+    0 => "0001011000", 1 => "1110101010", 2 => "0000101001", 3 => "0000011010", 
+    4 => "0001111011", 5 => "1011111101" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -65,7 +65,7 @@ use IEEE.std_logic_1164.all;
 
 entity cnn_conv2_weightsdFJ is
     generic (
-        DataWidth : INTEGER := 8;
+        DataWidth : INTEGER := 10;
         AddressRange : INTEGER := 6;
         AddressWidth : INTEGER := 3);
     port (

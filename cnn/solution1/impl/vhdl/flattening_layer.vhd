@@ -19,11 +19,11 @@ port (
     ap_ready : OUT STD_LOGIC;
     pool_features_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     pool_features_V_ce0 : OUT STD_LOGIC;
-    pool_features_V_q0 : IN STD_LOGIC_VECTOR (12 downto 0);
+    pool_features_V_q0 : IN STD_LOGIC_VECTOR (13 downto 0);
     flat_array_V_address0 : OUT STD_LOGIC_VECTOR (7 downto 0);
     flat_array_V_ce0 : OUT STD_LOGIC;
     flat_array_V_we0 : OUT STD_LOGIC;
-    flat_array_V_d0 : OUT STD_LOGIC_VECTOR (12 downto 0) );
+    flat_array_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0) );
 end;
 
 
@@ -76,8 +76,8 @@ architecture behav of flattening_layer is
     signal add_ln17_fu_174_p2 : STD_LOGIC_VECTOR (7 downto 0);
     signal add_ln17_reg_260 : STD_LOGIC_VECTOR (7 downto 0);
     signal icmp_ln13_fu_162_p2 : STD_LOGIC_VECTOR (0 downto 0);
-    signal tmp_9_cast_fu_189_p3 : STD_LOGIC_VECTOR (8 downto 0);
-    signal tmp_9_cast_reg_265 : STD_LOGIC_VECTOR (8 downto 0);
+    signal tmp_8_cast_fu_189_p3 : STD_LOGIC_VECTOR (8 downto 0);
+    signal tmp_8_cast_reg_265 : STD_LOGIC_VECTOR (8 downto 0);
     signal c_fu_203_p2 : STD_LOGIC_VECTOR (2 downto 0);
     signal c_reg_273 : STD_LOGIC_VECTOR (2 downto 0);
     signal ap_CS_fsm_state4 : STD_LOGIC;
@@ -189,7 +189,7 @@ begin
         if (ap_clk'event and ap_clk = '1') then
             if (((icmp_ln13_fu_162_p2 = ap_const_lv1_0) and (ap_const_logic_1 = ap_CS_fsm_state3))) then
                 add_ln17_reg_260 <= add_ln17_fu_174_p2;
-                    tmp_9_cast_reg_265(8 downto 2) <= tmp_9_cast_fu_189_p3(8 downto 2);
+                    tmp_8_cast_reg_265(8 downto 2) <= tmp_8_cast_fu_189_p3(8 downto 2);
             end if;
         end if;
     end process;
@@ -228,7 +228,7 @@ begin
     end process;
     zext_ln13_reg_247(1 downto 0) <= "00";
     zext_ln13_reg_247(6) <= '0';
-    tmp_9_cast_reg_265(1 downto 0) <= "00";
+    tmp_8_cast_reg_265(1 downto 0) <= "00";
 
     ap_NS_fsm_assign_proc : process (ap_start, ap_CS_fsm, ap_CS_fsm_state1, ap_CS_fsm_state2, icmp_ln12_fu_132_p2, ap_CS_fsm_state3, icmp_ln13_fu_162_p2, ap_CS_fsm_state4, icmp_ln14_fu_197_p2)
     begin
@@ -265,7 +265,7 @@ begin
     end process;
     add_ln17_1_fu_228_p2 <= std_logic_vector(unsigned(index_2_reg_110) + unsigned(ap_const_lv8_1));
     add_ln17_fu_174_p2 <= std_logic_vector(unsigned(index_1_reg_88) + unsigned(ap_const_lv8_4));
-    add_ln203_2_fu_213_p2 <= std_logic_vector(unsigned(tmp_9_cast_reg_265) + unsigned(zext_ln203_6_fu_209_p1));
+    add_ln203_2_fu_213_p2 <= std_logic_vector(unsigned(tmp_8_cast_reg_265) + unsigned(zext_ln203_6_fu_209_p1));
     add_ln203_fu_184_p2 <= std_logic_vector(unsigned(zext_ln203_fu_180_p1) + unsigned(zext_ln13_reg_247));
     ap_CS_fsm_state1 <= ap_CS_fsm(0);
     ap_CS_fsm_state2 <= ap_CS_fsm(1);
@@ -342,7 +342,7 @@ begin
     end process;
 
     r_fu_168_p2 <= std_logic_vector(unsigned(r_0_reg_99) + unsigned(ap_const_lv3_1));
-    tmp_9_cast_fu_189_p3 <= (add_ln203_fu_184_p2 & ap_const_lv2_0);
+    tmp_8_cast_fu_189_p3 <= (add_ln203_fu_184_p2 & ap_const_lv2_0);
     tmp_fu_150_p3 <= (f_0_reg_77 & ap_const_lv2_0);
     zext_ln13_fu_158_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(tmp_fu_150_p3),7));
     zext_ln16_fu_223_p1 <= std_logic_vector(IEEE.numeric_std.resize(unsigned(index_2_reg_110),64));

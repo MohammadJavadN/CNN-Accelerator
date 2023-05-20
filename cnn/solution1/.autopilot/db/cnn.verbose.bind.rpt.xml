@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'cnn'" level="0">
-<item name = "Date">Thu Apr 13 22:44:49 2023
+<item name = "Date">Fri Apr 14 19:32:49 2023
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">cnn</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 10.502, 1.25</column>
+<column name="ap_clk">10.00, 8.665, 1.25</column>
 </table>
 </item>
 </section>
@@ -24,26 +24,25 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="6">, min, max, min, max, Type</keys>
-<column name="">52018, 52018, 52018, 52018, none</column>
+<column name="">39140, 39140, 39140, 39140, none</column>
 </table>
 </item>
 <item name = "Detail">
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_dense_layer_fu_4998">dense_layer, 14864, 14864, 14864, 14864, none</column>
-<column name="grp_normalization_fu_5009">normalization, 20441, 20441, 20441, 20441, none</column>
-<column name="grp_max_pool_fu_5016">max_pool, 2041, 2041, 2041, 2041, none</column>
-<column name="grp_max_pool2_fu_5029">max_pool2, 233, 233, 233, 233, none</column>
-<column name="grp_flattening_layer_fu_5048">flattening_layer, 421, 421, 421, 421, none</column>
-<column name="grp_makeItZero_fu_5054">makeItZero, 821, 821, 821, 821, none</column>
+<column name="grp_dense_layer_fu_30480">dense_layer, 14864, 14864, 14864, 14864, none</column>
+<column name="grp_max_pool_fu_30491">max_pool, 2041, 2041, 2041, 2041, none</column>
+<column name="grp_max_pool2_fu_30504">max_pool2, 233, 233, 233, 233, none</column>
+<column name="grp_flattening_layer_fu_30523">flattening_layer, 421, 421, 421, 421, none</column>
+<column name="grp_makeItZero_fu_30529">makeItZero, 821, 821, 821, 821, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">
 <keys size="8">Loop Name, min, max, Latency, achieved, target, Count, Pipelined</keys>
-<column name="- conv1_conv2">791, 791, 9, 1, 1, 784, yes</column>
+<column name="- conv1_1_conv1_2">2356, 2356, 8, 3, 1, 784, yes</column>
 <column name="- Loop 2">12258, 12258, 2043, -, -, 6, no</column>
-<column name="- L_conv1_conv2">873, 873, 11, 1, 1, 864, yes</column>
+<column name="- L_conv2_1_conv2_2">6049, 6049, 9, 7, 1, 864, yes</column>
 <column name="- Loop 4">2360, 2360, 236, -, -, 10, no</column>
 </table>
 </item>

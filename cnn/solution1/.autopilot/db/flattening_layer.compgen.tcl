@@ -11,14 +11,14 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 42 \
+    id 36 \
     name pool_features_V \
     reset_level 1 \
     sync_rst true \
     dir I \
     corename pool_features_V \
     op interface \
-    ports { pool_features_V_address0 { O 8 vector } pool_features_V_ce0 { O 1 bit } pool_features_V_q0 { I 13 vector } } \
+    ports { pool_features_V_address0 { O 8 vector } pool_features_V_ce0 { O 1 bit } pool_features_V_q0 { I 14 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'pool_features_V'"
@@ -30,14 +30,14 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 43 \
+    id 37 \
     name flat_array_V \
     reset_level 1 \
     sync_rst true \
     dir O \
     corename flat_array_V \
     op interface \
-    ports { flat_array_V_address0 { O 8 vector } flat_array_V_ce0 { O 1 bit } flat_array_V_we0 { O 1 bit } flat_array_V_d0 { O 13 vector } } \
+    ports { flat_array_V_address0 { O 8 vector } flat_array_V_ce0 { O 1 bit } flat_array_V_we0 { O 1 bit } flat_array_V_d0 { O 14 vector } } \
 } "
 } else {
 puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'flat_array_V'"

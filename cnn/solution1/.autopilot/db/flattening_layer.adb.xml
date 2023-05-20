@@ -302,10 +302,10 @@
 
 <Node id="20" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-.loopexit:3  %empty_44 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
+.loopexit:3  %empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
 
 ]]></Node>
-<StgValue><ssdm name="empty_44"/></StgValue>
+<StgValue><ssdm name="empty_40"/></StgValue>
 </operation>
 
 <operation id="22" st_id="3" stage="1" lat="1">
@@ -396,10 +396,10 @@
 
 <Node id="27" bw="9" op_0_bw="9" op_1_bw="7" op_2_bw="2">
 <![CDATA[
-:3  %tmp_9_cast = call i9 @_ssdm_op_BitConcatenate.i9.i7.i2(i7 %add_ln203, i2 0)
+:3  %tmp_8_cast = call i9 @_ssdm_op_BitConcatenate.i9.i7.i2(i7 %add_ln203, i2 0)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_9_cast"/></StgValue>
+<StgValue><ssdm name="tmp_8_cast"/></StgValue>
 </operation>
 
 <operation id="28" st_id="3" stage="1" lat="1">
@@ -491,10 +491,10 @@
 
 <Node id="33" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-:3  %empty_45 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
+:3  %empty_41 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 4, i64 4, i64 4)
 
 ]]></Node>
-<StgValue><ssdm name="empty_45"/></StgValue>
+<StgValue><ssdm name="empty_41"/></StgValue>
 </operation>
 
 <operation id="34" st_id="4" stage="1" lat="1">
@@ -553,7 +553,7 @@
 
 <Node id="39" bw="9" op_0_bw="9" op_1_bw="9">
 <![CDATA[
-:2  %add_ln203_2 = add i9 %tmp_9_cast, %zext_ln203_6
+:2  %add_ln203_2 = add i9 %tmp_8_cast, %zext_ln203_6
 
 ]]></Node>
 <StgValue><ssdm name="add_ln203_2"/></StgValue>
@@ -583,9 +583,9 @@
 </and_exp></or_exp>
 </condition>
 
-<Node id="41" bw="8" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="41" bw="8" op_0_bw="14" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-:4  %pool_features_V_addr = getelementptr [160 x i13]* %pool_features_V, i64 0, i64 %zext_ln203_7
+:4  %pool_features_V_addr = getelementptr [160 x i14]* %pool_features_V, i64 0, i64 %zext_ln203_7
 
 ]]></Node>
 <StgValue><ssdm name="pool_features_V_addr"/></StgValue>
@@ -599,9 +599,9 @@
 </and_exp></or_exp>
 </condition>
 
-<Node id="42" bw="13" op_0_bw="8">
+<Node id="42" bw="14" op_0_bw="8">
 <![CDATA[
-:5  %pool_features_V_load = load i13* %pool_features_V_addr, align 2
+:5  %pool_features_V_load = load i14* %pool_features_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="pool_features_V_load"/></StgValue>
@@ -648,9 +648,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="42" bw="13" op_0_bw="8">
+<Node id="42" bw="14" op_0_bw="8">
 <![CDATA[
-:5  %pool_features_V_load = load i13* %pool_features_V_addr, align 2
+:5  %pool_features_V_load = load i14* %pool_features_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="pool_features_V_load"/></StgValue>
@@ -663,9 +663,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="43" bw="8" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="43" bw="8" op_0_bw="14" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-:6  %flat_array_V_addr = getelementptr [160 x i13]* %flat_array_V, i64 0, i64 %zext_ln16
+:6  %flat_array_V_addr = getelementptr [160 x i14]* %flat_array_V, i64 0, i64 %zext_ln16
 
 ]]></Node>
 <StgValue><ssdm name="flat_array_V_addr"/></StgValue>
@@ -678,9 +678,9 @@
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="44" bw="0" op_0_bw="13" op_1_bw="8">
+<Node id="44" bw="0" op_0_bw="14" op_1_bw="8">
 <![CDATA[
-:7  store i13 %pool_features_V_load, i13* %flat_array_V_addr, align 2
+:7  store i14 %pool_features_V_load, i14* %flat_array_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="store_ln16"/></StgValue>
@@ -836,13 +836,13 @@
 </dataflow>
 <dataflow id="101" from="StgValue_100" to="icmp_ln13" fromId="100" toId="20">
 </dataflow>
-<dataflow id="102" from="_ssdm_op_SpecLoopTripCount" to="empty_44" fromId="71" toId="21">
+<dataflow id="102" from="_ssdm_op_SpecLoopTripCount" to="empty_40" fromId="71" toId="21">
 </dataflow>
-<dataflow id="104" from="StgValue_103" to="empty_44" fromId="103" toId="21">
+<dataflow id="104" from="StgValue_103" to="empty_40" fromId="103" toId="21">
 </dataflow>
-<dataflow id="105" from="StgValue_103" to="empty_44" fromId="103" toId="21">
+<dataflow id="105" from="StgValue_103" to="empty_40" fromId="103" toId="21">
 </dataflow>
-<dataflow id="106" from="StgValue_103" to="empty_44" fromId="103" toId="21">
+<dataflow id="106" from="StgValue_103" to="empty_40" fromId="103" toId="21">
 </dataflow>
 <dataflow id="107" from="r_0" to="r" fromId="19" toId="22">
 </dataflow>
@@ -860,11 +860,11 @@
 </dataflow>
 <dataflow id="116" from="zext_ln13" to="add_ln203" fromId="15" toId="26">
 </dataflow>
-<dataflow id="118" from="_ssdm_op_BitConcatenate.i9.i7.i2" to="tmp_9_cast" fromId="117" toId="27">
+<dataflow id="118" from="_ssdm_op_BitConcatenate.i9.i7.i2" to="tmp_8_cast" fromId="117" toId="27">
 </dataflow>
-<dataflow id="119" from="add_ln203" to="tmp_9_cast" fromId="26" toId="27">
+<dataflow id="119" from="add_ln203" to="tmp_8_cast" fromId="26" toId="27">
 </dataflow>
-<dataflow id="120" from="StgValue_87" to="tmp_9_cast" fromId="87" toId="27">
+<dataflow id="120" from="StgValue_87" to="tmp_8_cast" fromId="87" toId="27">
 </dataflow>
 <dataflow id="121" from="index_1" to="index_2" fromId="18" toId="30">
 <condition id="-1">
@@ -904,13 +904,13 @@
 </dataflow>
 <dataflow id="130" from="StgValue_100" to="icmp_ln14" fromId="100" toId="32">
 </dataflow>
-<dataflow id="131" from="_ssdm_op_SpecLoopTripCount" to="empty_45" fromId="71" toId="33">
+<dataflow id="131" from="_ssdm_op_SpecLoopTripCount" to="empty_41" fromId="71" toId="33">
 </dataflow>
-<dataflow id="132" from="StgValue_103" to="empty_45" fromId="103" toId="33">
+<dataflow id="132" from="StgValue_103" to="empty_41" fromId="103" toId="33">
 </dataflow>
-<dataflow id="133" from="StgValue_103" to="empty_45" fromId="103" toId="33">
+<dataflow id="133" from="StgValue_103" to="empty_41" fromId="103" toId="33">
 </dataflow>
-<dataflow id="134" from="StgValue_103" to="empty_45" fromId="103" toId="33">
+<dataflow id="134" from="StgValue_103" to="empty_41" fromId="103" toId="33">
 </dataflow>
 <dataflow id="135" from="c_0" to="c" fromId="31" toId="34">
 </dataflow>
@@ -920,7 +920,7 @@
 </dataflow>
 <dataflow id="138" from="c_0" to="zext_ln203_6" fromId="31" toId="36">
 </dataflow>
-<dataflow id="139" from="tmp_9_cast" to="add_ln203_2" fromId="27" toId="37">
+<dataflow id="139" from="tmp_8_cast" to="add_ln203_2" fromId="27" toId="37">
 </dataflow>
 <dataflow id="140" from="zext_ln203_6" to="add_ln203_2" fromId="36" toId="37">
 </dataflow>

@@ -18,4 +18,4 @@ obj/pool.o: ../../../../lib/pool.cpp ../../../../lib/pool.h \
  E:/Xilinx/Vivado/2019.1/include/ap_int_special.h \
  E:/Xilinx/Vivado/2019.1/include/ap_fixed_ref.h \
  E:/Xilinx/Vivado/2019.1/include/ap_fixed_special.h \
- ../../../../lib/activ_fun.h
+ ../../../../lib/activ_fun.h E:/Xilinx/Vivado/2019.1/include/hls_stream.h

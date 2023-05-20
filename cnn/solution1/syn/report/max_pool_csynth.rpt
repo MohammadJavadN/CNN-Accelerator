@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'max_pool'
 ================================================================
-* Date:           Thu Apr 13 22:45:15 2023
+* Date:           Fri Apr 14 19:33:01 2023
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        cnn
@@ -20,7 +20,7 @@
     +--------+-------+----------+------------+
     |  Clock | Target| Estimated| Uncertainty|
     +--------+-------+----------+------------+
-    |ap_clk  |  10.00|     5.085|        1.25|
+    |ap_clk  |  10.00|     5.121|        1.25|
     +--------+-------+----------+------------+
 
 + Latency (clock cycles): 
@@ -57,14 +57,14 @@
 |       Name      | BRAM_18K| DSP48E|   FF   |  LUT  | URAM|
 +-----------------+---------+-------+--------+-------+-----+
 |DSP              |        -|      -|       -|      -|    -|
-|Expression       |        -|      -|       0|    250|    -|
+|Expression       |        -|      -|       0|    251|    -|
 |FIFO             |        -|      -|       -|      -|    -|
 |Instance         |        -|      -|       0|     47|    -|
 |Memory           |        -|      -|       -|      -|    -|
 |Multiplexer      |        -|      -|       -|     92|    -|
-|Register         |        -|      -|      76|      -|    -|
+|Register         |        -|      -|      78|      -|    -|
 +-----------------+---------+-------+--------+-------+-----+
-|Total            |        0|      0|      76|    389|    0|
+|Total            |        0|      0|      78|    390|    0|
 +-----------------+---------+-------+--------+-------+-----+
 |Available        |      280|    220|  106400|  53200|    0|
 +-----------------+---------+-------+--------+-------+-----+
@@ -76,7 +76,7 @@
     +-----------------------+-------------------+---------+-------+---+----+-----+
     |        Instance       |       Module      | BRAM_18K| DSP48E| FF| LUT| URAM|
     +-----------------------+-------------------+---------+-------+---+----+-----+
-    |cnn_mux_63_14_1_1_U17  |cnn_mux_63_14_1_1  |        0|      0|  0|  47|    0|
+    |cnn_mux_63_15_1_1_U11  |cnn_mux_63_15_1_1  |        0|      0|  0|  47|    0|
     +-----------------------+-------------------+---------+-------+---+----+-----+
     |Total                  |                   |        0|      0|  0|  47|    0|
     +-----------------------+-------------------+---------+-------+---+----+-----+
@@ -106,14 +106,14 @@
     |sub_ln1494_fu_375_p2   |     -    |      0|  0|  18|          11|          11|
     |sub_ln203_1_fu_311_p2  |     -    |      0|  0|  18|          11|          11|
     |sub_ln203_fu_256_p2    |     -    |      0|  0|  15|           8|           8|
-    |icmp_ln1494_fu_493_p2  |   icmp   |      0|  0|  13|          14|          14|
+    |icmp_ln1494_fu_493_p2  |   icmp   |      0|  0|  13|          15|          15|
     |icmp_ln40_fu_266_p2    |   icmp   |      0|  0|  11|           5|           5|
     |icmp_ln42_fu_317_p2    |   icmp   |      0|  0|  11|           5|           5|
     |icmp_ln46_fu_333_p2    |   icmp   |      0|  0|   9|           2|           3|
     |icmp_ln47_fu_415_p2    |   icmp   |      0|  0|   9|           2|           3|
-    |select_ln49_fu_499_p3  |  select  |      0|  0|  14|           1|          14|
+    |select_ln49_fu_499_p3  |  select  |      0|  0|  15|           1|          15|
     +-----------------------+----------+-------+---+----+------------+------------+
-    |Total                  |          |      0|  0| 250|         114|         121|
+    |Total                  |          |      0|  0| 251|         115|         123|
     +-----------------------+----------+-------+---+----+------------+------------+
 
     * Multiplexer: 
@@ -123,12 +123,12 @@
     |ap_NS_fsm       |  38|          7|    1|          7|
     |c_0_reg_173     |   9|          2|    5|         10|
     |pc_0_reg_221    |   9|          2|    2|          4|
-    |pool_0_reg_185  |   9|          2|   14|         28|
-    |pool_1_reg_209  |   9|          2|   14|         28|
+    |pool_0_reg_185  |   9|          2|   15|         30|
+    |pool_1_reg_209  |   9|          2|   15|         30|
     |pr_0_reg_198    |   9|          2|    2|          4|
     |r_0_reg_161     |   9|          2|    5|         10|
     +----------------+----+-----------+-----+-----------+
-    |Total           |  92|         19|   43|         91|
+    |Total           |  92|         19|   45|         95|
     +----------------+----+-----------+-----+-----------+
 
     * Register: 
@@ -139,8 +139,8 @@
     |c_0_reg_173          |   5|   0|    5|          0|
     |pc_0_reg_221         |   2|   0|    2|          0|
     |pc_reg_554           |   2|   0|    2|          0|
-    |pool_0_reg_185       |  14|   0|   14|          0|
-    |pool_1_reg_209       |  14|   0|   14|          0|
+    |pool_0_reg_185       |  15|   0|   15|          0|
+    |pool_1_reg_209       |  15|   0|   15|          0|
     |pr_0_reg_198         |   2|   0|    2|          0|
     |pr_reg_536           |   2|   0|    2|          0|
     |r_0_reg_161          |   5|   0|    5|          0|
@@ -148,7 +148,7 @@
     |sub_ln1494_reg_541   |   8|   0|   11|          3|
     |sub_ln203_1_reg_520  |   9|   0|   11|          2|
     +---------------------+----+----+-----+-----------+
-    |Total                |  76|   0|   83|          7|
+    |Total                |  78|   0|   85|          7|
     +---------------------+----+----+-----+-----------+
 
 
@@ -168,26 +168,26 @@
 |ap_ready                 | out |    1| ap_ctrl_hs |     max_pool     | return value |
 |feature_0_V_address0     | out |   10|  ap_memory |    feature_0_V   |     array    |
 |feature_0_V_ce0          | out |    1|  ap_memory |    feature_0_V   |     array    |
-|feature_0_V_q0           |  in |   13|  ap_memory |    feature_0_V   |     array    |
+|feature_0_V_q0           |  in |   14|  ap_memory |    feature_0_V   |     array    |
 |feature_1_V_address0     | out |   10|  ap_memory |    feature_1_V   |     array    |
 |feature_1_V_ce0          | out |    1|  ap_memory |    feature_1_V   |     array    |
-|feature_1_V_q0           |  in |   13|  ap_memory |    feature_1_V   |     array    |
+|feature_1_V_q0           |  in |   14|  ap_memory |    feature_1_V   |     array    |
 |feature_2_V_address0     | out |   10|  ap_memory |    feature_2_V   |     array    |
 |feature_2_V_ce0          | out |    1|  ap_memory |    feature_2_V   |     array    |
-|feature_2_V_q0           |  in |   13|  ap_memory |    feature_2_V   |     array    |
+|feature_2_V_q0           |  in |   14|  ap_memory |    feature_2_V   |     array    |
 |feature_3_V_address0     | out |   10|  ap_memory |    feature_3_V   |     array    |
 |feature_3_V_ce0          | out |    1|  ap_memory |    feature_3_V   |     array    |
-|feature_3_V_q0           |  in |   13|  ap_memory |    feature_3_V   |     array    |
+|feature_3_V_q0           |  in |   14|  ap_memory |    feature_3_V   |     array    |
 |feature_4_V_address0     | out |   10|  ap_memory |    feature_4_V   |     array    |
 |feature_4_V_ce0          | out |    1|  ap_memory |    feature_4_V   |     array    |
-|feature_4_V_q0           |  in |   13|  ap_memory |    feature_4_V   |     array    |
+|feature_4_V_q0           |  in |   14|  ap_memory |    feature_4_V   |     array    |
 |feature_5_V_address0     | out |   10|  ap_memory |    feature_5_V   |     array    |
 |feature_5_V_ce0          | out |    1|  ap_memory |    feature_5_V   |     array    |
-|feature_5_V_q0           |  in |   13|  ap_memory |    feature_5_V   |     array    |
+|feature_5_V_q0           |  in |   14|  ap_memory |    feature_5_V   |     array    |
 |feature_V_offset         |  in |    3|   ap_none  | feature_V_offset |    scalar    |
 |pool_feature_V_address0  | out |   10|  ap_memory |  pool_feature_V  |     array    |
 |pool_feature_V_ce0       | out |    1|  ap_memory |  pool_feature_V  |     array    |
 |pool_feature_V_we0       | out |    1|  ap_memory |  pool_feature_V  |     array    |
-|pool_feature_V_d0        | out |   14|  ap_memory |  pool_feature_V  |     array    |
+|pool_feature_V_d0        | out |   15|  ap_memory |  pool_feature_V  |     array    |
 +-------------------------+-----+-----+------------+------------------+--------------+
 

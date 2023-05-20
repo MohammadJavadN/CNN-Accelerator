@@ -28,7 +28,7 @@
               <rtlName/>
               <coreName>RAM</coreName>
             </Obj>
-            <bitwidth>13</bitwidth>
+            <bitwidth>14</bitwidth>
           </Value>
           <direction>0</direction>
           <if_type>1</if_type>
@@ -56,7 +56,7 @@
               <rtlName/>
               <coreName>RAM</coreName>
             </Obj>
-            <bitwidth>13</bitwidth>
+            <bitwidth>14</bitwidth>
           </Value>
           <direction>1</direction>
           <if_type>1</if_type>
@@ -922,7 +922,7 @@
             <Obj>
               <type>0</type>
               <id>27</id>
-              <name>tmp_9_cast</name>
+              <name>tmp_8_cast</name>
               <fileName>lib/flat.cpp</fileName>
               <fileDirectory>..</fileDirectory>
               <lineNumber>14</lineNumber>
@@ -946,7 +946,7 @@
                 </item>
               </inlineStackInfo>
               <originalName/>
-              <rtlName>tmp_9_cast_fu_189_p3</rtlName>
+              <rtlName>tmp_8_cast_fu_189_p3</rtlName>
               <coreName/>
             </Obj>
             <bitwidth>9</bitwidth>
@@ -1526,7 +1526,7 @@
               <rtlName/>
               <coreName/>
             </Obj>
-            <bitwidth>13</bitwidth>
+            <bitwidth>14</bitwidth>
           </Value>
           <oprand_edges>
             <count>1</count>
@@ -4333,7 +4333,7 @@
           </second>
         </item>
         <item>
-          <first>tmp_9_cast_reg_265</first>
+          <first>tmp_8_cast_reg_265</first>
           <second>
             <count>3</count>
             <item_version>0</item_version>
@@ -5213,7 +5213,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_9_cast_fu_189</first>
+        <first>tmp_8_cast_fu_189</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>
@@ -5540,7 +5540,7 @@
         </second>
       </item>
       <item>
-        <first>tmp_9_cast_reg_265</first>
+        <first>tmp_8_cast_reg_265</first>
         <second>
           <count>1</count>
           <item_version>0</item_version>

@@ -26,7 +26,7 @@ const sc_lv<32> makeItZero::ap_const_lv32_3 = "11";
 const sc_lv<4> makeItZero::ap_const_lv4_0 = "0000";
 const sc_lv<1> makeItZero::ap_const_lv1_1 = "1";
 const sc_lv<4> makeItZero::ap_const_lv4_8 = "1000";
-const sc_lv<14> makeItZero::ap_const_lv14_0 = "00000000000000";
+const sc_lv<15> makeItZero::ap_const_lv15_0 = "000000000000000";
 const sc_lv<4> makeItZero::ap_const_lv4_7 = "111";
 const sc_lv<4> makeItZero::ap_const_lv4_6 = "110";
 const sc_lv<4> makeItZero::ap_const_lv4_5 = "101";
@@ -410,7 +410,7 @@ void makeItZero::thread_A_0_V_ce0() {
 }
 
 void makeItZero::thread_A_0_V_d0() {
-    A_0_V_d0 = ap_const_lv14_0;
+    A_0_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_0_V_we0() {
@@ -436,7 +436,7 @@ void makeItZero::thread_A_1_V_ce0() {
 }
 
 void makeItZero::thread_A_1_V_d0() {
-    A_1_V_d0 = ap_const_lv14_0;
+    A_1_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_1_V_we0() {
@@ -462,7 +462,7 @@ void makeItZero::thread_A_2_V_ce0() {
 }
 
 void makeItZero::thread_A_2_V_d0() {
-    A_2_V_d0 = ap_const_lv14_0;
+    A_2_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_2_V_we0() {
@@ -488,7 +488,7 @@ void makeItZero::thread_A_3_V_ce0() {
 }
 
 void makeItZero::thread_A_3_V_d0() {
-    A_3_V_d0 = ap_const_lv14_0;
+    A_3_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_3_V_we0() {
@@ -514,7 +514,7 @@ void makeItZero::thread_A_4_V_ce0() {
 }
 
 void makeItZero::thread_A_4_V_d0() {
-    A_4_V_d0 = ap_const_lv14_0;
+    A_4_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_4_V_we0() {
@@ -540,7 +540,7 @@ void makeItZero::thread_A_5_V_ce0() {
 }
 
 void makeItZero::thread_A_5_V_d0() {
-    A_5_V_d0 = ap_const_lv14_0;
+    A_5_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_5_V_we0() {
@@ -566,7 +566,7 @@ void makeItZero::thread_A_6_V_ce0() {
 }
 
 void makeItZero::thread_A_6_V_d0() {
-    A_6_V_d0 = ap_const_lv14_0;
+    A_6_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_6_V_we0() {
@@ -592,7 +592,7 @@ void makeItZero::thread_A_7_V_ce0() {
 }
 
 void makeItZero::thread_A_7_V_d0() {
-    A_7_V_d0 = ap_const_lv14_0;
+    A_7_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_7_V_we0() {
@@ -618,7 +618,7 @@ void makeItZero::thread_A_8_V_ce0() {
 }
 
 void makeItZero::thread_A_8_V_d0() {
-    A_8_V_d0 = ap_const_lv14_0;
+    A_8_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_8_V_we0() {
@@ -644,7 +644,7 @@ void makeItZero::thread_A_9_V_ce0() {
 }
 
 void makeItZero::thread_A_9_V_d0() {
-    A_9_V_d0 = ap_const_lv14_0;
+    A_9_V_d0 = ap_const_lv15_0;
 }
 
 void makeItZero::thread_A_9_V_we0() {

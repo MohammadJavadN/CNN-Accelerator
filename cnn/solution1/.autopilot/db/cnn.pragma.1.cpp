@@ -6356,7 +6356,7 @@ inline bool operator!=(
 }
 # 399 "E:/Xilinx/Vivado/2019.1/common/technology/autopilot\\ap_fixed.h" 2
 # 4 "./lib/definitions.h" 2
-typedef ap_fixed<14, 6> T;
+typedef ap_fixed<15, 6> T;
 typedef float T2;
 # 4 "./lib/cnn.h" 2
 # 1 "./lib/utils.h" 1
@@ -7062,13 +7062,6 @@ class stream
 # 6 "./lib/utils.h" 2
 
 void makeItZero(T A[10][(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) - (5 - 1))]);
-
-void
-normalization
-(
-  hls::stream<T2> &img_in ,
-  hls::stream<T> &img_out
-);
 # 5 "./lib/cnn.h" 2
 # 1 "./lib/activ_fun.h" 1
 
@@ -7510,9 +7503,10 @@ __extension__ long long llrintl (long double);
 #pragma pack(pop)
 # 5 "./lib/activ_fun.h" 2
 
+
 T relu (T x);
 
-void soft_max(T2 dense_array [10], T pred[10]);
+void soft_max(T2 dense_array [10], hls::stream<T> &pred);
 # 6 "./lib/cnn.h" 2
 # 1 "./lib/conv.h" 1
 
@@ -7600,18 +7594,19 @@ flattening_layer
 
 
 
+
 void
 dense_layer
 (
   T flat_array [(10 * ((((28 - (5 - 1)) / 2) - (5 - 1)) / 2) * ((((28 - (5 - 1)) / 2) - (5 - 1)) / 2))],
-  T dense_array [10]
+  hls::stream<T> &dense_array
 );
 # 10 "./lib/cnn.h" 2
 
 void cnn
 (
-  hls::stream<T2> &img_in ,
-  T pred [10]
+  hls::stream<T> &img_in ,
+  hls::stream<T> &pred
 );
 # 2 "cnn.cpp" 2
 # 1 "./lib/conv2_weights.h" 1
@@ -8056,26 +8051,23 @@ const T conv2_weights [6][10][5][5]
 const T conv2_biases [10] = { -0.1334264725446701, 0.06422898173332214, 0.1658838838338852, 0.20563754439353943, 0.055969253182411194, -0.2720441222190857, -0.09357191622257233, -0.27080610394477844, -0.5539485812187195, -0.29710203409194946 };
 # 3 "cnn.cpp" 2
 
-void cnn(hls::stream<T2> &img_in , T prediction[10])
-{_ssdm_SpecArrayDimSize(prediction, 10);
-  T features_conv2 [10][(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) - (5 - 1))];
+void cnn(hls::stream<T> &img_in , hls::stream<T> &prediction)
+{
+_ssdm_op_SpecInterface(&img_in, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+_ssdm_op_SpecInterface(&prediction, "axis", 1, 1, "both", 0, 0, "", "", "", 0, 0, 0, 0, "", "");
+ T features_conv2 [10][(((28 - (5 - 1)) / 2) - (5 - 1))][(((28 - (5 - 1)) / 2) - (5 - 1))];
   makeItZero(features_conv2);
-
-  hls::stream<T> norm_img("norm_img");
-_ssdm_SpecStream( &norm_img, 0, 784, "");
- normalization(img_in, norm_img);
 
 
   T features_conv1 [6][(28 - (5 - 1))][(28 - (5 - 1))];
-  convolutional_layer1(norm_img, features_conv1);
+  convolutional_layer1(img_in, features_conv1);
 
 
   T pool_features1 [6][((28 - (5 - 1)) / 2)][((28 - (5 - 1)) / 2)];
   max_pooling_layer1(features_conv1, pool_features1);
 
 
-#pragma unroll(1)
- for (int f = 0; f < 6; f++)
+  for (int f = 0; f < 6; f++)
     convolutional_layer2(pool_features1[f], features_conv2, conv2_weights[f]);
 
 

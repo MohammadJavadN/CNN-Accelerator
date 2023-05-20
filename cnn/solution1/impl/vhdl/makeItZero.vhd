@@ -20,43 +20,43 @@ port (
     A_0_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_0_V_ce0 : OUT STD_LOGIC;
     A_0_V_we0 : OUT STD_LOGIC;
-    A_0_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_0_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_1_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_1_V_ce0 : OUT STD_LOGIC;
     A_1_V_we0 : OUT STD_LOGIC;
-    A_1_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_1_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_2_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_2_V_ce0 : OUT STD_LOGIC;
     A_2_V_we0 : OUT STD_LOGIC;
-    A_2_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_2_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_3_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_3_V_ce0 : OUT STD_LOGIC;
     A_3_V_we0 : OUT STD_LOGIC;
-    A_3_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_3_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_4_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_4_V_ce0 : OUT STD_LOGIC;
     A_4_V_we0 : OUT STD_LOGIC;
-    A_4_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_4_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_5_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_5_V_ce0 : OUT STD_LOGIC;
     A_5_V_we0 : OUT STD_LOGIC;
-    A_5_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_5_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_6_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_6_V_ce0 : OUT STD_LOGIC;
     A_6_V_we0 : OUT STD_LOGIC;
-    A_6_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_6_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_7_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_7_V_ce0 : OUT STD_LOGIC;
     A_7_V_we0 : OUT STD_LOGIC;
-    A_7_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_7_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_8_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_8_V_ce0 : OUT STD_LOGIC;
     A_8_V_we0 : OUT STD_LOGIC;
-    A_8_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0);
+    A_8_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0);
     A_9_V_address0 : OUT STD_LOGIC_VECTOR (5 downto 0);
     A_9_V_ce0 : OUT STD_LOGIC;
     A_9_V_we0 : OUT STD_LOGIC;
-    A_9_V_d0 : OUT STD_LOGIC_VECTOR (13 downto 0) );
+    A_9_V_d0 : OUT STD_LOGIC_VECTOR (14 downto 0) );
 end;
 
 
@@ -75,7 +75,7 @@ architecture behav of makeItZero is
     constant ap_const_lv4_0 : STD_LOGIC_VECTOR (3 downto 0) := "0000";
     constant ap_const_lv1_1 : STD_LOGIC_VECTOR (0 downto 0) := "1";
     constant ap_const_lv4_8 : STD_LOGIC_VECTOR (3 downto 0) := "1000";
-    constant ap_const_lv14_0 : STD_LOGIC_VECTOR (13 downto 0) := "00000000000000";
+    constant ap_const_lv15_0 : STD_LOGIC_VECTOR (14 downto 0) := "000000000000000";
     constant ap_const_lv4_7 : STD_LOGIC_VECTOR (3 downto 0) := "0111";
     constant ap_const_lv4_6 : STD_LOGIC_VECTOR (3 downto 0) := "0110";
     constant ap_const_lv4_5 : STD_LOGIC_VECTOR (3 downto 0) := "0101";
@@ -236,7 +236,7 @@ begin
         end if; 
     end process;
 
-    A_0_V_d0 <= ap_const_lv14_0;
+    A_0_V_d0 <= ap_const_lv15_0;
 
     A_0_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -258,7 +258,7 @@ begin
         end if; 
     end process;
 
-    A_1_V_d0 <= ap_const_lv14_0;
+    A_1_V_d0 <= ap_const_lv15_0;
 
     A_1_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -280,7 +280,7 @@ begin
         end if; 
     end process;
 
-    A_2_V_d0 <= ap_const_lv14_0;
+    A_2_V_d0 <= ap_const_lv15_0;
 
     A_2_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -302,7 +302,7 @@ begin
         end if; 
     end process;
 
-    A_3_V_d0 <= ap_const_lv14_0;
+    A_3_V_d0 <= ap_const_lv15_0;
 
     A_3_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -324,7 +324,7 @@ begin
         end if; 
     end process;
 
-    A_4_V_d0 <= ap_const_lv14_0;
+    A_4_V_d0 <= ap_const_lv15_0;
 
     A_4_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -346,7 +346,7 @@ begin
         end if; 
     end process;
 
-    A_5_V_d0 <= ap_const_lv14_0;
+    A_5_V_d0 <= ap_const_lv15_0;
 
     A_5_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -368,7 +368,7 @@ begin
         end if; 
     end process;
 
-    A_6_V_d0 <= ap_const_lv14_0;
+    A_6_V_d0 <= ap_const_lv15_0;
 
     A_6_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -390,7 +390,7 @@ begin
         end if; 
     end process;
 
-    A_7_V_d0 <= ap_const_lv14_0;
+    A_7_V_d0 <= ap_const_lv15_0;
 
     A_7_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -412,7 +412,7 @@ begin
         end if; 
     end process;
 
-    A_8_V_d0 <= ap_const_lv14_0;
+    A_8_V_d0 <= ap_const_lv15_0;
 
     A_8_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin
@@ -434,7 +434,7 @@ begin
         end if; 
     end process;
 
-    A_9_V_d0 <= ap_const_lv14_0;
+    A_9_V_d0 <= ap_const_lv15_0;
 
     A_9_V_we0_assign_proc : process(ap_CS_fsm_state4, f_0_reg_194, icmp_ln7_fu_264_p2)
     begin

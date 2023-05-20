@@ -28,7 +28,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -56,7 +56,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -84,7 +84,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -112,7 +112,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -140,7 +140,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -168,7 +168,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -196,7 +196,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -224,7 +224,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -252,7 +252,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -280,7 +280,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -336,7 +336,7 @@
 						<rtlName></rtlName>
 						<coreName>RAM</coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
@@ -364,7 +364,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>10</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>0</if_type>
@@ -396,7 +396,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>9</bitwidth>
+					<bitwidth>10</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -466,7 +466,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -514,7 +514,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -620,7 +620,7 @@
 					<Obj>
 						<type>0</type>
 						<id>21</id>
-						<name>tmp_8</name>
+						<name>tmp_5</name>
 						<fileName>lib/pool.cpp</fileName>
 						<fileDirectory>E:\code\hls\2</fileDirectory>
 						<lineNumber>13</lineNumber>
@@ -856,7 +856,7 @@
 					<Obj>
 						<type>0</type>
 						<id>29</id>
-						<name>tmp_9</name>
+						<name>tmp_6</name>
 						<fileName>lib/pool.cpp</fileName>
 						<fileDirectory>E:\code\hls\2</fileDirectory>
 						<lineNumber>15</lineNumber>
@@ -1031,7 +1031,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -1337,7 +1337,7 @@
 					<Obj>
 						<type>0</type>
 						<id>44</id>
-						<name>tmp_2</name>
+						<name>tmp_1</name>
 						<fileName>lib/pool.cpp</fileName>
 						<fileDirectory>E:\code\hls\2</fileDirectory>
 						<lineNumber>22</lineNumber>
@@ -1496,7 +1496,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>4</count>
@@ -2474,7 +2474,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2522,7 +2522,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2570,7 +2570,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2618,7 +2618,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2666,7 +2666,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2714,7 +2714,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2762,7 +2762,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2810,7 +2810,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2858,7 +2858,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2906,7 +2906,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -2954,7 +2954,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>12</count>
@@ -3026,7 +3026,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.66</m_delay>
+				<m_delay>1.71</m_delay>
 				<m_topoIndex>72</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -3062,7 +3062,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -3076,7 +3076,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.55</m_delay>
+				<m_delay>0.53</m_delay>
 				<m_topoIndex>73</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -3394,7 +3394,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>
@@ -3442,7 +3442,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -3498,7 +3498,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>2</count>
@@ -3567,7 +3567,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>1.66</m_delay>
+				<m_delay>1.71</m_delay>
 				<m_topoIndex>35</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -3610,7 +3610,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>3</count>
@@ -3624,7 +3624,7 @@
 				<m_isOnCriticalPath>0</m_isOnCriticalPath>
 				<m_isLCDNode>0</m_isLCDNode>
 				<m_isStartOfPath>0</m_isStartOfPath>
-				<m_delay>0.53</m_delay>
+				<m_delay>0.55</m_delay>
 				<m_topoIndex>36</m_topoIndex>
 				<m_clusterGroupNumber>-1</m_clusterGroupNumber>
 			</item>
@@ -4032,7 +4032,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>14</bitwidth>
+					<bitwidth>15</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -4170,7 +4170,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<const_type>0</const_type>
 				<content>0</content>
@@ -4307,7 +4307,7 @@
 				<Obj>
 					<type>3</type>
 					<id>34</id>
-					<name>ap_fixed_base.1.exit.preheader</name>
+					<name>ap_fixed_base.exit.preheader</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -4330,7 +4330,7 @@
 				<Obj>
 					<type>3</type>
 					<id>42</id>
-					<name>ap_fixed_base.1.exit</name>
+					<name>ap_fixed_base.exit</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -4462,7 +4462,7 @@
 				<Obj>
 					<type>3</type>
 					<id>86</id>
-					<name>ap_fixed_base.1.exit.loopexit</name>
+					<name>ap_fixed_base.exit.loopexit</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -4485,7 +4485,7 @@
 				<Obj>
 					<type>3</type>
 					<id>99</id>
-					<name>_ZN13ap_fixed_baseILi15ELi7ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi14ELi6ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit9.i</name>
+					<name>_ZN13ap_fixed_baseILi16ELi7ELb1EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1ILi15ELi6ELb1ELS0_5ELS1_3ELi0EEERKS_IXT_EXT0_EXT1_EXT2_EXT3_EXT4_EE.exit9.i</name>
 					<fileName></fileName>
 					<fileDirectory></fileDirectory>
 					<lineNumber>0</lineNumber>
@@ -8172,7 +8172,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_2_fu_357</first>
+			<first>tmp_1_fu_357</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8180,7 +8180,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_8_fu_303</first>
+			<first>tmp_5_fu_303</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>
@@ -8188,7 +8188,7 @@
 			</second>
 		</item>
 		<item>
-			<first>tmp_9_fu_321</first>
+			<first>tmp_6_fu_321</first>
 			<second>
 				<count>1</count>
 				<item_version>0</item_version>

@@ -16,6 +16,7 @@ void convolutional_layer1
   // convolution - consumes each pixel in source image
   T in_val;
   T out_val[FILTERS1];
+  #pragma HLS ARRAY_PARTITION variable=out_val dim=1 complete
   T win_val;
   conv1_1:for(int row = 0; row < IMG_ROWS; row++) {
     conv1_2:for(int col = 0; col < IMG_COLS; col++) {
@@ -59,6 +60,7 @@ void convolutional_layer2
   // convolution - consumes each pixel in source image
   T in_val;
   T out_val[FILTERS2];
+#pragma HLS ARRAY_PARTITION variable=out_val dim=1 complete
   T win_val;
   conv2_1:for(int row = 0; row < POOL_IMG1_ROWS; row++) {
     conv2_2:for(int col = 0; col < POOL_IMG1_COLS; col++) {

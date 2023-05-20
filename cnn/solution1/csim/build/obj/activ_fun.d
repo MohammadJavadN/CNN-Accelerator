@@ -18,4 +18,5 @@ obj/activ_fun.o: ../../../../lib/activ_fun.cpp \
  E:/Xilinx/Vivado/2019.1/include/ap_int_ref.h \
  E:/Xilinx/Vivado/2019.1/include/ap_int_special.h \
  E:/Xilinx/Vivado/2019.1/include/ap_fixed_ref.h \
- E:/Xilinx/Vivado/2019.1/include/ap_fixed_special.h
+ E:/Xilinx/Vivado/2019.1/include/ap_fixed_special.h \
+ E:/Xilinx/Vivado/2019.1/include/hls_stream.h

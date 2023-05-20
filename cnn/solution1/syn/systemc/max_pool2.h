@@ -11,7 +11,7 @@
 #include "systemc.h"
 #include "AESL_pkg.h"
 
-#include "cnn_mux_104_14_1_1.h"
+#include "cnn_mux_104_15_1_1.h"
 
 namespace ap_rtl {
 
@@ -25,40 +25,40 @@ struct max_pool2 : public sc_module {
     sc_out< sc_logic > ap_ready;
     sc_out< sc_lv<6> > feature_0_V_address0;
     sc_out< sc_logic > feature_0_V_ce0;
-    sc_in< sc_lv<14> > feature_0_V_q0;
+    sc_in< sc_lv<15> > feature_0_V_q0;
     sc_out< sc_lv<6> > feature_1_V_address0;
     sc_out< sc_logic > feature_1_V_ce0;
-    sc_in< sc_lv<14> > feature_1_V_q0;
+    sc_in< sc_lv<15> > feature_1_V_q0;
     sc_out< sc_lv<6> > feature_2_V_address0;
     sc_out< sc_logic > feature_2_V_ce0;
-    sc_in< sc_lv<14> > feature_2_V_q0;
+    sc_in< sc_lv<15> > feature_2_V_q0;
     sc_out< sc_lv<6> > feature_3_V_address0;
     sc_out< sc_logic > feature_3_V_ce0;
-    sc_in< sc_lv<14> > feature_3_V_q0;
+    sc_in< sc_lv<15> > feature_3_V_q0;
     sc_out< sc_lv<6> > feature_4_V_address0;
     sc_out< sc_logic > feature_4_V_ce0;
-    sc_in< sc_lv<14> > feature_4_V_q0;
+    sc_in< sc_lv<15> > feature_4_V_q0;
     sc_out< sc_lv<6> > feature_5_V_address0;
     sc_out< sc_logic > feature_5_V_ce0;
-    sc_in< sc_lv<14> > feature_5_V_q0;
+    sc_in< sc_lv<15> > feature_5_V_q0;
     sc_out< sc_lv<6> > feature_6_V_address0;
     sc_out< sc_logic > feature_6_V_ce0;
-    sc_in< sc_lv<14> > feature_6_V_q0;
+    sc_in< sc_lv<15> > feature_6_V_q0;
     sc_out< sc_lv<6> > feature_7_V_address0;
     sc_out< sc_logic > feature_7_V_ce0;
-    sc_in< sc_lv<14> > feature_7_V_q0;
+    sc_in< sc_lv<15> > feature_7_V_q0;
     sc_out< sc_lv<6> > feature_8_V_address0;
     sc_out< sc_logic > feature_8_V_ce0;
-    sc_in< sc_lv<14> > feature_8_V_q0;
+    sc_in< sc_lv<15> > feature_8_V_q0;
     sc_out< sc_lv<6> > feature_9_V_address0;
     sc_out< sc_logic > feature_9_V_ce0;
-    sc_in< sc_lv<14> > feature_9_V_q0;
+    sc_in< sc_lv<15> > feature_9_V_q0;
     sc_in< sc_lv<4> > feature_V_offset;
     sc_out< sc_lv<8> > pool_feature_V_address0;
     sc_out< sc_logic > pool_feature_V_ce0;
     sc_out< sc_logic > pool_feature_V_we0;
-    sc_out< sc_lv<13> > pool_feature_V_d0;
-    sc_in< sc_lv<9> > b_V;
+    sc_out< sc_lv<14> > pool_feature_V_d0;
+    sc_in< sc_lv<10> > b_V;
 
 
     // Module declarations
@@ -69,19 +69,19 @@ struct max_pool2 : public sc_module {
 
     sc_trace_file* mVcdFile;
 
-    cnn_mux_104_14_1_1<1,1,14,14,14,14,14,14,14,14,14,14,4,14>* cnn_mux_104_14_1_1_U27;
+    cnn_mux_104_15_1_1<1,1,15,15,15,15,15,15,15,15,15,15,4,15>* cnn_mux_104_15_1_1_U21;
     sc_signal< sc_lv<6> > ap_CS_fsm;
     sc_signal< sc_logic > ap_CS_fsm_state1;
-    sc_signal< sc_lv<14> > b_V_cast_fu_295_p1;
-    sc_signal< sc_lv<14> > b_V_cast_reg_517;
-    sc_signal< sc_lv<13> > sext_ln703_fu_299_p1;
-    sc_signal< sc_lv<13> > sext_ln703_reg_522;
+    sc_signal< sc_lv<15> > b_V_cast_fu_295_p1;
+    sc_signal< sc_lv<15> > b_V_cast_reg_517;
+    sc_signal< sc_lv<14> > sext_ln703_fu_299_p1;
+    sc_signal< sc_lv<14> > sext_ln703_reg_522;
     sc_signal< sc_lv<2> > trunc_ln26_1_reg_530;
     sc_signal< sc_logic > ap_CS_fsm_state2;
-    sc_signal< sc_lv<1> > tmp_8_fu_303_p3;
+    sc_signal< sc_lv<1> > tmp_5_fu_303_p3;
     sc_signal< sc_lv<4> > r_fu_329_p2;
     sc_signal< sc_logic > ap_CS_fsm_state3;
-    sc_signal< sc_lv<1> > tmp_9_fu_321_p3;
+    sc_signal< sc_lv<1> > tmp_6_fu_321_p3;
     sc_signal< sc_lv<2> > pr_fu_345_p2;
     sc_signal< sc_lv<2> > pr_reg_546;
     sc_signal< sc_logic > ap_CS_fsm_state4;
@@ -93,32 +93,32 @@ struct max_pool2 : public sc_module {
     sc_signal< sc_lv<2> > pc_reg_564;
     sc_signal< sc_logic > ap_CS_fsm_state5;
     sc_signal< sc_lv<1> > icmp_ln20_fu_431_p2;
-    sc_signal< sc_lv<14> > select_ln22_fu_503_p3;
+    sc_signal< sc_lv<15> > select_ln22_fu_503_p3;
     sc_signal< sc_logic > ap_CS_fsm_state6;
     sc_signal< sc_lv<4> > r_0_reg_225;
     sc_signal< sc_lv<4> > c_0_reg_237;
-    sc_signal< sc_lv<14> > p_Val2_s_reg_249;
+    sc_signal< sc_lv<15> > p_Val2_s_reg_249;
     sc_signal< sc_lv<2> > pr_0_reg_261;
-    sc_signal< sc_lv<14> > pool_1_reg_272;
+    sc_signal< sc_lv<15> > pool_1_reg_272;
     sc_signal< sc_lv<2> > pc_0_reg_284;
     sc_signal< sc_lv<64> > zext_ln203_fu_387_p1;
     sc_signal< sc_lv<64> > zext_ln1494_1_fu_458_p1;
-    sc_signal< sc_lv<9> > b_V_cast_fu_295_p0;
-    sc_signal< sc_lv<9> > sext_ln703_fu_299_p0;
+    sc_signal< sc_lv<10> > b_V_cast_fu_295_p0;
+    sc_signal< sc_lv<10> > sext_ln703_fu_299_p0;
     sc_signal< sc_lv<4> > zext_ln19_fu_335_p1;
     sc_signal< sc_lv<4> > add_ln22_fu_351_p2;
-    sc_signal< sc_lv<7> > tmp_2_fu_357_p3;
+    sc_signal< sc_lv<7> > tmp_1_fu_357_p3;
     sc_signal< sc_lv<2> > trunc_ln26_3_fu_369_p4;
     sc_signal< sc_lv<8> > tmp_fu_379_p4;
-    sc_signal< sc_lv<13> > trunc_ln703_fu_392_p1;
-    sc_signal< sc_lv<14> > add_ln703_fu_396_p2;
+    sc_signal< sc_lv<14> > trunc_ln703_fu_392_p1;
+    sc_signal< sc_lv<15> > add_ln703_fu_396_p2;
     sc_signal< sc_lv<1> > icmp_ln1494_1_fu_406_p2;
-    sc_signal< sc_lv<13> > add_ln1494_fu_401_p2;
+    sc_signal< sc_lv<14> > add_ln1494_fu_401_p2;
     sc_signal< sc_lv<4> > zext_ln20_fu_427_p1;
     sc_signal< sc_lv<4> > add_ln22_1_fu_443_p2;
     sc_signal< sc_lv<8> > zext_ln1494_fu_449_p1;
     sc_signal< sc_lv<8> > add_ln1494_1_fu_453_p2;
-    sc_signal< sc_lv<14> > pool_V_fu_472_p12;
+    sc_signal< sc_lv<15> > pool_V_fu_472_p12;
     sc_signal< sc_lv<1> > icmp_ln1494_fu_497_p2;
     sc_signal< sc_lv<6> > ap_NS_fsm;
     static const sc_logic ap_const_logic_1;
@@ -138,13 +138,13 @@ struct max_pool2 : public sc_module {
     static const sc_lv<32> ap_const_lv32_4;
     static const sc_lv<32> ap_const_lv32_5;
     static const sc_lv<4> ap_const_lv4_0;
-    static const sc_lv<14> ap_const_lv14_0;
+    static const sc_lv<15> ap_const_lv15_0;
     static const sc_lv<2> ap_const_lv2_0;
     static const sc_lv<4> ap_const_lv4_2;
     static const sc_lv<2> ap_const_lv2_2;
     static const sc_lv<2> ap_const_lv2_1;
     static const sc_lv<3> ap_const_lv3_0;
-    static const sc_lv<13> ap_const_lv13_0;
+    static const sc_lv<14> ap_const_lv14_0;
     static const bool ap_const_boolean_1;
     // Thread declarations
     void thread_ap_clk_no_reset_();
@@ -199,9 +199,9 @@ struct max_pool2 : public sc_module {
     void thread_select_ln22_fu_503_p3();
     void thread_sext_ln703_fu_299_p0();
     void thread_sext_ln703_fu_299_p1();
-    void thread_tmp_2_fu_357_p3();
-    void thread_tmp_8_fu_303_p3();
-    void thread_tmp_9_fu_321_p3();
+    void thread_tmp_1_fu_357_p3();
+    void thread_tmp_5_fu_303_p3();
+    void thread_tmp_6_fu_321_p3();
     void thread_tmp_fu_379_p4();
     void thread_trunc_ln26_3_fu_369_p4();
     void thread_trunc_ln703_fu_392_p1();

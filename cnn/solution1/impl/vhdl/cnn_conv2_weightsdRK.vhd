@@ -26,8 +26,8 @@ architecture rtl of cnn_conv2_weightsdRK_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "110111110", 1 => "010001010", 2 => "111010010", 3 => "101100011", 
-    4 => "110001000", 5 => "111010101" );
+    0 => "110110011", 1 => "101111101", 2 => "000010000", 3 => "001001011", 
+    4 => "101111111", 5 => "110001010" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";

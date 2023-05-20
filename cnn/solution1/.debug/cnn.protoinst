@@ -9,11 +9,11 @@
 						"AP_CLK": { "actual": "ap_clk"},
 						"AP_DONE": { "actual": "ap_done"},
 						"AP_READY": { "actual": "ap_ready"},
-						"AP_RESET": { "actual": "ap_rst"},
+						"AP_RESET": { "actual": "ap_rst_n"},
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_dense_layer_fu_4998/grp_dense_layer_fu_4998_activity": {
+				"grp_dense_layer_fu_30480/grp_dense_layer_fu_30480_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -23,7 +23,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_dense_layer_fu_4998/grp_soft_max_fu_242/grp_soft_max_fu_242_activity": {
+				"grp_dense_layer_fu_30480/grp_soft_max_fu_252/grp_soft_max_fu_252_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -33,7 +33,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_flattening_layer_fu_5048/grp_flattening_layer_fu_5048_activity": {
+				"grp_flattening_layer_fu_30523/grp_flattening_layer_fu_30523_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -43,7 +43,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_makeItZero_fu_5054/grp_makeItZero_fu_5054_activity": {
+				"grp_makeItZero_fu_30529/grp_makeItZero_fu_30529_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -53,7 +53,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_max_pool2_fu_5029/grp_max_pool2_fu_5029_activity": {
+				"grp_max_pool2_fu_30504/grp_max_pool2_fu_30504_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},
@@ -63,17 +63,7 @@
 						"AP_START": { "actual": "ap_start"}
 					}
 				},
-				"grp_max_pool_fu_5016/grp_max_pool_fu_5016_activity": {
-					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
-					"ports": {
-						"AP_CLK": { "actual": "ap_clk"},
-						"AP_DONE": { "actual": "ap_done"},
-						"AP_READY": { "actual": "ap_ready"},
-						"AP_RESET": { "actual": "ap_rst"},
-						"AP_START": { "actual": "ap_start"}
-					}
-				},
-				"grp_normalization_fu_5009/grp_normalization_fu_5009_activity": {
+				"grp_max_pool_fu_30491/grp_max_pool_fu_30491_activity": {
 					"interface": "xilinx.com:interface:internal_hls_dataflow:1.0",
 					"ports": {
 						"AP_CLK": { "actual": "ap_clk"},

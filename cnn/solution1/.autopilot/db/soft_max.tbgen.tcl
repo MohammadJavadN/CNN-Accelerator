@@ -15,13 +15,13 @@ set C_modelName {soft_max}
 set C_modelType { void 0 }
 set C_modelArgList {
 	{ dense_array float 32 regular {array 10 { 1 3 } 1 1 }  }
-	{ pred_V int 14 regular {array 10 { 0 3 } 0 1 }  }
+	{ pred_V_V int 16 regular {axi_s 1 volatile  { pred_V_V Data } }  }
 }
 set C_modelArgMapList {[ 
 	{ "Name" : "dense_array", "interface" : "memory", "bitwidth" : 32, "direction" : "READONLY"} , 
- 	{ "Name" : "pred_V", "interface" : "memory", "bitwidth" : 14, "direction" : "WRITEONLY"} ]}
+ 	{ "Name" : "pred_V_V", "interface" : "axis", "bitwidth" : 16, "direction" : "WRITEONLY"} ]}
 # RTL Port declarations: 
-set portNum 13
+set portNum 12
 set portList { 
 	{ ap_clk sc_in sc_logic 1 clock -1 } 
 	{ ap_rst sc_in sc_logic 1 reset -1 active_high_sync } 
@@ -32,10 +32,9 @@ set portList {
 	{ dense_array_address0 sc_out sc_lv 4 signal 0 } 
 	{ dense_array_ce0 sc_out sc_logic 1 signal 0 } 
 	{ dense_array_q0 sc_in sc_lv 32 signal 0 } 
-	{ pred_V_address0 sc_out sc_lv 4 signal 1 } 
-	{ pred_V_ce0 sc_out sc_logic 1 signal 1 } 
-	{ pred_V_we0 sc_out sc_logic 1 signal 1 } 
-	{ pred_V_d0 sc_out sc_lv 14 signal 1 } 
+	{ pred_V_V_TDATA sc_out sc_lv 16 signal 1 } 
+	{ pred_V_V_TVALID sc_out sc_logic 1 outvld 1 } 
+	{ pred_V_V_TREADY sc_in sc_logic 1 outacc 1 } 
 }
 set NewPortList {[ 
 	{ "name": "ap_clk", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "clock", "bundle":{"name": "ap_clk", "role": "default" }} , 
@@ -47,10 +46,9 @@ set NewPortList {[
  	{ "name": "dense_array_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "dense_array", "role": "address0" }} , 
  	{ "name": "dense_array_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "dense_array", "role": "ce0" }} , 
  	{ "name": "dense_array_q0", "direction": "in", "datatype": "sc_lv", "bitwidth":32, "type": "signal", "bundle":{"name": "dense_array", "role": "q0" }} , 
- 	{ "name": "pred_V_address0", "direction": "out", "datatype": "sc_lv", "bitwidth":4, "type": "signal", "bundle":{"name": "pred_V", "role": "address0" }} , 
- 	{ "name": "pred_V_ce0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pred_V", "role": "ce0" }} , 
- 	{ "name": "pred_V_we0", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "signal", "bundle":{"name": "pred_V", "role": "we0" }} , 
- 	{ "name": "pred_V_d0", "direction": "out", "datatype": "sc_lv", "bitwidth":14, "type": "signal", "bundle":{"name": "pred_V", "role": "d0" }}  ]}
+ 	{ "name": "pred_V_V_TDATA", "direction": "out", "datatype": "sc_lv", "bitwidth":16, "type": "signal", "bundle":{"name": "pred_V_V", "role": "TDATA" }} , 
+ 	{ "name": "pred_V_V_TVALID", "direction": "out", "datatype": "sc_logic", "bitwidth":1, "type": "outvld", "bundle":{"name": "pred_V_V", "role": "TVALID" }} , 
+ 	{ "name": "pred_V_V_TREADY", "direction": "in", "datatype": "sc_logic", "bitwidth":1, "type": "outacc", "bundle":{"name": "pred_V_V", "role": "TREADY" }}  ]}
 
 set RtlHierarchyInfo {[
 	{"ID" : "0", "Level" : "0", "Path" : "`AUTOTB_DUT_INST", "Parent" : "", "Child" : ["1", "2", "3", "4"],
@@ -68,17 +66,19 @@ set RtlHierarchyInfo {[
 		"HasNonBlockingOperation" : "0",
 		"Port" : [
 			{"Name" : "dense_array", "Type" : "Memory", "Direction" : "I"},
-			{"Name" : "pred_V", "Type" : "Memory", "Direction" : "O"}]},
-	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fadd_32ns_32ndEe_U44", "Parent" : "0"},
-	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fdiv_32ns_32neOg_U45", "Parent" : "0"},
-	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fpext_32ns_64bkb_U46", "Parent" : "0"},
-	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fexp_32ns_32nfYi_U47", "Parent" : "0"}]}
+			{"Name" : "pred_V_V", "Type" : "Axis", "Direction" : "O",
+				"BlockSignal" : [
+					{"Name" : "pred_V_V_TDATA_blk_n", "Type" : "RtlSignal"}]}]},
+	{"ID" : "1", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fadd_32ns_32nbkb_U38", "Parent" : "0"},
+	{"ID" : "2", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fdiv_32ns_32ncud_U39", "Parent" : "0"},
+	{"ID" : "3", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fpext_32ns_64dEe_U40", "Parent" : "0"},
+	{"ID" : "4", "Level" : "1", "Path" : "`AUTOTB_DUT_INST.cnn_fexp_32ns_32neOg_U41", "Parent" : "0"}]}
 
 
 set ArgLastReadFirstWriteLatency {
 	soft_max {
 		dense_array {Type I LastRead 2 FirstWrite -1}
-		pred_V {Type O LastRead -1 FirstWrite 23}}}
+		pred_V_V {Type O LastRead -1 FirstWrite 23}}}
 
 set hasDtUnsupportedChannel 0
 
@@ -92,5 +92,5 @@ set PipelineEnableSignalInfo {[
 
 set Spec2ImplPortList { 
 	dense_array { ap_memory {  { dense_array_address0 mem_address 1 4 }  { dense_array_ce0 mem_ce 1 1 }  { dense_array_q0 mem_dout 0 32 } } }
-	pred_V { ap_memory {  { pred_V_address0 mem_address 1 4 }  { pred_V_ce0 mem_ce 1 1 }  { pred_V_we0 mem_we 1 1 }  { pred_V_d0 mem_din 1 14 } } }
+	pred_V_V { axis {  { pred_V_V_TDATA out_data 1 16 }  { pred_V_V_TVALID out_vld 1 1 }  { pred_V_V_TREADY out_acc 0 1 } } }
 }

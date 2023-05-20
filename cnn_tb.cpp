@@ -15,7 +15,7 @@ ifstream fpm;
 ifstream fpl; 
 
 int
-read_images (const char * file, T2 images [N][IMG_ROWS][IMG_COLS])
+read_images ( T2 images [N][IMG_ROWS][IMG_COLS])
 {
   for (int i = 0; i <  N; ++i)
       for (int x = 0; x < IMG_ROWS; ++x)
@@ -25,17 +25,16 @@ read_images (const char * file, T2 images [N][IMG_ROWS][IMG_COLS])
 }
 
 int
-read_labels(const char * file, int labels[N])
+read_labels( int labels[N])
 {
   for (int i = 0; i <  N; ++i)
     fpl>>labels[i];
   return 0;
 }
 
-int
-get_max_prediction (hls::stream<T> &pred)
+int get_max_prediction (hls::stream<T> &pred, T prediction [DIGITS])
 {
-  T prediction [DIGITS];
+  
   for (int i = 0; i < DIGITS; ++i)
   {
     prediction[i]  = pred.read();
@@ -61,7 +60,7 @@ int main ()
   }
   T2 images[N][IMG_ROWS][IMG_COLS];
   hls::stream<T> src_img_strm("src_img_strm");
-  hls::stream<T> prediction("prediction");
+  hls::stream<T> pred("pred");
   int labels[N];
   T2 norm_img [IMG_ROWS][IMG_COLS];
 
@@ -73,10 +72,10 @@ int correct_predictions = 0;
   /**** Do TOT predictions. ****/
 for(OFSET = 0; OFSET < TOT; OFSET+=N){
     /**** Read the images. ****/
-    read_images("in.dat", images);
+    read_images( images);
 
   //  /**** Read expected labels. ****/
-    read_labels("out.dat", labels);
+    read_labels( labels);
 
   /**** Do N predictions. ****/
   for (int i = 0; i < N; ++i)
@@ -87,10 +86,10 @@ for(OFSET = 0; OFSET < TOT; OFSET+=N){
     
     // CNN execution, obtain a prediction.
     clock_t begin = clock();
-    cnn(src_img_strm, prediction);
+    cnn(src_img_strm, pred);
     clock_t end = clock();
-
-    if (get_max_prediction(prediction) == labels[i])
+    T prediction [DIGITS];
+    if (get_max_prediction(pred, prediction) == labels[i])
     {
       ++correct_predictions;
     }

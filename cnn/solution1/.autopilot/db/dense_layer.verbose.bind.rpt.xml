@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'dense_layer'" level="0">
-<item name = "Date">Thu Apr 13 22:44:21 2023
+<item name = "Date">Fri Apr 14 19:32:21 2023
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">cnn</item>
@@ -15,7 +15,7 @@
 <section name = "" level="1">
 <item name = "Summary"><table name="" hasTotal="0">
 <keys size="4">Clock, Target, Estimated, Uncertainty</keys>
-<column name="ap_clk">10.00, 8.510, 1.25</column>
+<column name="ap_clk">10.00, 8.113, 1.25</column>
 </table>
 </item>
 </section>
@@ -31,7 +31,7 @@
 <section name = "" level="1">
 <item name = "Instance"><table name="" hasTotal="0">
 <keys size="7">Instance, Module, min, max, min, max, Type</keys>
-<column name="grp_soft_max_fu_242">soft_max, 352, 352, 352, 352, none</column>
+<column name="grp_soft_max_fu_252">soft_max, 352, 352, 352, 352, none</column>
 </table>
 </item>
 <item name = "Loop"><table name="" hasTotal="0">

@@ -14,7 +14,7 @@ set NbRWValue 0
 set intNbAccess 0
 set NewDSPMapping 1
 set HasDSPModule 1
-set ResetLevelFlag 1
+set ResetLevelFlag 0
 set ResetStyle control
 set ResetSyncFlag 1
 set ResetRegisterFlag 0
@@ -40,10 +40,10 @@ set SCTraceFileName mytrace
 set SCTraceFileFormat vcd
 set SCTraceOption all
 set TargetInfo xc7z020:-clg484:-3
-set SourceFiles {sc {} c {../../lib/utils.cpp ../../lib/pool.cpp ../../lib/flat.cpp ../../lib/dense.cpp ../../lib/conv.cpp ../../cnn.cpp ../../lib/activ_fun.cpp}}
+set SourceFiles {sc {} c {../../lib/activ_fun.cpp ../../cnn.cpp ../../lib/conv.cpp ../../lib/dense.cpp ../../lib/flat.cpp ../../lib/pool.cpp ../../lib/utils.cpp}}
 set SourceFlags {sc {} c {{} {} {} {} {} {} {}}}
 set DirectiveFile E:/code/hls/2/cnn/solution1/solution1.directive
-set TBFiles {verilog {../../tb/out.dat ../../tb/in.dat ../../cnn_tb.cpp} bc {../../tb/out.dat ../../tb/in.dat ../../cnn_tb.cpp} vhdl {../../tb/out.dat ../../tb/in.dat ../../cnn_tb.cpp} sc {../../tb/out.dat ../../tb/in.dat ../../cnn_tb.cpp} cas {../../tb/out.dat ../../tb/in.dat ../../cnn_tb.cpp} c {}}
+set TBFiles {verilog {../../cnn_tb.cpp ../../tb/in.dat ../../tb/out.dat} bc {../../cnn_tb.cpp ../../tb/in.dat ../../tb/out.dat} vhdl {../../cnn_tb.cpp ../../tb/in.dat ../../tb/out.dat} sc {../../cnn_tb.cpp ../../tb/in.dat ../../tb/out.dat} cas {../../cnn_tb.cpp ../../tb/in.dat ../../tb/out.dat} c {}}
 set SpecLanguage C
 set TVInFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}
 set TVOutFiles {bc {} c {} sc {} cas {} vhdl {} verilog {}}

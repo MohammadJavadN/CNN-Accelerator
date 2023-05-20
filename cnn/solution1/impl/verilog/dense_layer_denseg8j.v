@@ -3,19 +3,19 @@
 // Copyright 1986-2019 Xilinx, Inc. All Rights Reserved.
 // ==============================================================
 `timescale 1 ns / 1 ps
-module dense_layer_denseg8j_rom (
+(* rom_style = "distributed" *) module dense_layer_denseg8j_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 10;
-parameter AWIDTH = 11;
-parameter MEM_SIZE = 1600;
+parameter DWIDTH = 9;
+parameter AWIDTH = 4;
+parameter MEM_SIZE = 10;
 
 input[AWIDTH-1:0] addr0;
 input ce0;
 output reg[DWIDTH-1:0] q0;
 input clk;
 
-reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
+(* ram_style = "distributed" *)reg [DWIDTH-1:0] ram[0:MEM_SIZE-1];
 
 initial begin
     $readmemh("./dense_layer_denseg8j_rom.dat", ram);
@@ -43,9 +43,9 @@ module dense_layer_denseg8j(
     ce0,
     q0);
 
-parameter DataWidth = 32'd10;
-parameter AddressRange = 32'd1600;
-parameter AddressWidth = 32'd11;
+parameter DataWidth = 32'd9;
+parameter AddressRange = 32'd10;
+parameter AddressWidth = 32'd4;
 input reset;
 input clk;
 input[AddressWidth - 1:0] address0;

@@ -28,7 +28,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<direction>0</direction>
 				<if_type>1</if_type>
@@ -56,7 +56,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<direction>1</direction>
 				<if_type>1</if_type>
@@ -922,7 +922,7 @@
 					<Obj>
 						<type>0</type>
 						<id>27</id>
-						<name>tmp_9_cast</name>
+						<name>tmp_8_cast</name>
 						<fileName>lib/flat.cpp</fileName>
 						<fileDirectory>E:\code\hls\2</fileDirectory>
 						<lineNumber>14</lineNumber>
@@ -1526,7 +1526,7 @@
 						<rtlName></rtlName>
 						<coreName></coreName>
 					</Obj>
-					<bitwidth>13</bitwidth>
+					<bitwidth>14</bitwidth>
 				</Value>
 				<oprand_edges>
 					<count>1</count>

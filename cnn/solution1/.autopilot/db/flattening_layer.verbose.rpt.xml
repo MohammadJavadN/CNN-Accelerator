@@ -1,7 +1,7 @@
 <profile>
 
 <section name = "Vivado HLS Report for 'flattening_layer'" level="0">
-<item name = "Date">Thu Apr 13 22:45:23 2023
+<item name = "Date">Fri Apr 14 19:33:04 2023
 </item>
 <item name = "Version">2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)</item>
 <item name = "Project">cnn</item>
@@ -118,7 +118,7 @@
 <column name="index_reg_242">8, 0, 8, 0</column>
 <column name="r_0_reg_99">3, 0, 3, 0</column>
 <column name="r_reg_255">3, 0, 3, 0</column>
-<column name="tmp_9_cast_reg_265">7, 0, 9, 2</column>
+<column name="tmp_8_cast_reg_265">7, 0, 9, 2</column>
 <column name="zext_ln13_reg_247">4, 0, 7, 3</column>
 </table>
 </item>
@@ -137,11 +137,11 @@
 <column name="ap_ready">out, 1, ap_ctrl_hs, flattening_layer, return value</column>
 <column name="pool_features_V_address0">out, 8, ap_memory, pool_features_V, array</column>
 <column name="pool_features_V_ce0">out, 1, ap_memory, pool_features_V, array</column>
-<column name="pool_features_V_q0">in, 13, ap_memory, pool_features_V, array</column>
+<column name="pool_features_V_q0">in, 14, ap_memory, pool_features_V, array</column>
 <column name="flat_array_V_address0">out, 8, ap_memory, flat_array_V, array</column>
 <column name="flat_array_V_ce0">out, 1, ap_memory, flat_array_V, array</column>
 <column name="flat_array_V_we0">out, 1, ap_memory, flat_array_V, array</column>
-<column name="flat_array_V_d0">out, 13, ap_memory, flat_array_V, array</column>
+<column name="flat_array_V_d0">out, 14, ap_memory, flat_array_V, array</column>
 </table>
 </item>
 </section>

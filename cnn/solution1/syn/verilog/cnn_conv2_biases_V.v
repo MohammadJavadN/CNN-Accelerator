@@ -6,7 +6,7 @@
 (* rom_style = "distributed" *) module cnn_conv2_biases_V_rom (
 addr0, ce0, q0, clk);
 
-parameter DWIDTH = 9;
+parameter DWIDTH = 10;
 parameter AWIDTH = 4;
 parameter MEM_SIZE = 10;
 
@@ -43,7 +43,7 @@ module cnn_conv2_biases_V(
     ce0,
     q0);
 
-parameter DataWidth = 32'd9;
+parameter DataWidth = 32'd10;
 parameter AddressRange = 32'd10;
 parameter AddressWidth = 32'd4;
 input reset;

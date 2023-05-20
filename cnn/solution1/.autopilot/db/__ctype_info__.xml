@@ -1,22 +1,22 @@
 <InterfaceSummary>
 <RtlPorts>
-<name>img_in_V</name>
+<name>img_in_V_V</name>
 <CType>
-<TypeName>float</TypeName>
-<TypeWidth>32</TypeWidth>
-<PhysicalWidth>32</PhysicalWidth>
+<TypeName>ap_fixed 15 6 5 3 0</TypeName>
+<TypeWidth>15</TypeWidth>
+<PhysicalWidth>16</PhysicalWidth>
 </CType>
-<CFractionWidth>24</CFractionWidth>
+<CFractionWidth>9</CFractionWidth>
 <InvalidType>0</InvalidType>
 </RtlPorts>
 <RtlPorts>
-<name>prediction_V</name>
+<name>prediction_V_V</name>
 <CType>
-<TypeName>ap_fixed 14 6 5 3 0</TypeName>
-<TypeWidth>14</TypeWidth>
-<PhysicalWidth>14</PhysicalWidth>
+<TypeName>ap_fixed 15 6 5 3 0</TypeName>
+<TypeWidth>15</TypeWidth>
+<PhysicalWidth>16</PhysicalWidth>
 </CType>
-<CFractionWidth>8</CFractionWidth>
+<CFractionWidth>9</CFractionWidth>
 <InvalidType>0</InvalidType>
 </RtlPorts>
 </InterfaceSummary>

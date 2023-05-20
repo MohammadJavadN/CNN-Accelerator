@@ -3,7 +3,7 @@
 ================================================================
 == Vivado HLS Report for 'makeItZero'
 ================================================================
-* Date:           Thu Apr 13 22:43:46 2023
+* Date:           Fri Apr 14 19:32:14 2023
 
 * Version:        2019.1 (Build 2552052 on Fri May 24 15:28:33 MDT 2019)
 * Project:        cnn
@@ -99,7 +99,7 @@ ST_2 : Operation 12 [1/1] (0.00ns)   --->   "ret void" [lib/utils.cpp:9]   ---> 
 State 3 <SV = 2> <Delay = 1.40>
 ST_3 : Operation 13 [1/1] (0.00ns)   --->   "%row_0 = phi i4 [ %row, %.preheader19.loopexit ], [ 0, %.preheader19.preheader ]"   --->   Operation 13 'phi' 'row_0' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 14 [1/1] (1.08ns)   --->   "%icmp_ln6 = icmp eq i4 %row_0, -8" [lib/utils.cpp:6]   --->   Operation 14 'icmp' 'icmp_ln6' <Predicate = true> <Delay = 1.08> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%empty_42 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 15 'speclooptripcount' 'empty_42' <Predicate = true> <Delay = 0.00>
+ST_3 : Operation 15 [1/1] (0.00ns)   --->   "%empty_38 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 15 'speclooptripcount' 'empty_38' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 16 [1/1] (1.40ns)   --->   "%row = add i4 %row_0, 1" [lib/utils.cpp:6]   --->   Operation 16 'add' 'row' <Predicate = true> <Delay = 1.40> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_3 : Operation 17 [1/1] (0.00ns)   --->   "br i1 %icmp_ln6, label %.loopexit.loopexit, label %.preheader.preheader" [lib/utils.cpp:6]   --->   Operation 17 'br' <Predicate = true> <Delay = 0.00>
 ST_3 : Operation 18 [1/1] (0.00ns)   --->   "%tmp = call i7 @_ssdm_op_BitConcatenate.i7.i4.i3(i4 %row_0, i3 0)" [lib/utils.cpp:8]   --->   Operation 18 'bitconcatenate' 'tmp' <Predicate = (!icmp_ln6)> <Delay = 0.00>
@@ -108,24 +108,24 @@ ST_3 : Operation 20 [1/1] (1.17ns)   --->   "br label %.preheader" [lib/utils.cp
 ST_3 : Operation 21 [1/1] (0.00ns)   --->   "br label %.loopexit"   --->   Operation 21 'br' <Predicate = (icmp_ln6)> <Delay = 0.00>
 
 State 4 <SV = 3> <Delay = 3.13>
-ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%col_0 = phi i4 [ %col, %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19 ], [ 0, %.preheader.preheader ]"   --->   Operation 22 'phi' 'col_0' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 22 [1/1] (0.00ns)   --->   "%col_0 = phi i4 [ %col, %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19 ], [ 0, %.preheader.preheader ]"   --->   Operation 22 'phi' 'col_0' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 23 [1/1] (1.08ns)   --->   "%icmp_ln7 = icmp eq i4 %col_0, -8" [lib/utils.cpp:7]   --->   Operation 23 'icmp' 'icmp_ln7' <Predicate = true> <Delay = 1.08> <Core = "Cmp">   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.08> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%empty_43 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 24 'speclooptripcount' 'empty_43' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 24 [1/1] (0.00ns)   --->   "%empty_39 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 8, i64 8, i64 8)"   --->   Operation 24 'speclooptripcount' 'empty_39' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 25 [1/1] (1.40ns)   --->   "%col = add i4 %col_0, 1" [lib/utils.cpp:7]   --->   Operation 25 'add' 'col' <Predicate = true> <Delay = 1.40> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
-ST_4 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %icmp_ln7, label %.preheader19.loopexit, label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit" [lib/utils.cpp:7]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
+ST_4 : Operation 26 [1/1] (0.00ns)   --->   "br i1 %icmp_ln7, label %.preheader19.loopexit, label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit" [lib/utils.cpp:7]   --->   Operation 26 'br' <Predicate = true> <Delay = 0.00>
 ST_4 : Operation 27 [1/1] (0.00ns)   --->   "%zext_ln203 = zext i4 %col_0 to i8" [lib/utils.cpp:8]   --->   Operation 27 'zext' 'zext_ln203' <Predicate = (!icmp_ln7)> <Delay = 0.00>
 ST_4 : Operation 28 [1/1] (1.57ns)   --->   "%add_ln203 = add i8 %zext_ln7, %zext_ln203" [lib/utils.cpp:8]   --->   Operation 28 'add' 'add_ln203' <Predicate = (!icmp_ln7)> <Delay = 1.57> <Core = "AddSub">   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.57> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
 ST_4 : Operation 29 [1/1] (0.00ns)   --->   "%zext_ln203_5 = zext i8 %add_ln203 to i64" [lib/utils.cpp:8]   --->   Operation 29 'zext' 'zext_ln203_5' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%A_0_V_addr = getelementptr [64 x i14]* %A_0_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 30 'getelementptr' 'A_0_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%A_1_V_addr = getelementptr [64 x i14]* %A_1_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 31 'getelementptr' 'A_1_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%A_2_V_addr = getelementptr [64 x i14]* %A_2_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 32 'getelementptr' 'A_2_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%A_3_V_addr = getelementptr [64 x i14]* %A_3_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 33 'getelementptr' 'A_3_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%A_4_V_addr = getelementptr [64 x i14]* %A_4_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 34 'getelementptr' 'A_4_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%A_5_V_addr = getelementptr [64 x i14]* %A_5_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 35 'getelementptr' 'A_5_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%A_6_V_addr = getelementptr [64 x i14]* %A_6_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 36 'getelementptr' 'A_6_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%A_7_V_addr = getelementptr [64 x i14]* %A_7_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 37 'getelementptr' 'A_7_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%A_8_V_addr = getelementptr [64 x i14]* %A_8_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 38 'getelementptr' 'A_8_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
-ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%A_9_V_addr = getelementptr [64 x i14]* %A_9_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 39 'getelementptr' 'A_9_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 30 [1/1] (0.00ns)   --->   "%A_0_V_addr = getelementptr [64 x i15]* %A_0_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 30 'getelementptr' 'A_0_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 31 [1/1] (0.00ns)   --->   "%A_1_V_addr = getelementptr [64 x i15]* %A_1_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 31 'getelementptr' 'A_1_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 32 [1/1] (0.00ns)   --->   "%A_2_V_addr = getelementptr [64 x i15]* %A_2_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 32 'getelementptr' 'A_2_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 33 [1/1] (0.00ns)   --->   "%A_3_V_addr = getelementptr [64 x i15]* %A_3_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 33 'getelementptr' 'A_3_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 34 [1/1] (0.00ns)   --->   "%A_4_V_addr = getelementptr [64 x i15]* %A_4_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 34 'getelementptr' 'A_4_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 35 [1/1] (0.00ns)   --->   "%A_5_V_addr = getelementptr [64 x i15]* %A_5_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 35 'getelementptr' 'A_5_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 36 [1/1] (0.00ns)   --->   "%A_6_V_addr = getelementptr [64 x i15]* %A_6_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 36 'getelementptr' 'A_6_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 37 [1/1] (0.00ns)   --->   "%A_7_V_addr = getelementptr [64 x i15]* %A_7_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 37 'getelementptr' 'A_7_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 38 [1/1] (0.00ns)   --->   "%A_8_V_addr = getelementptr [64 x i15]* %A_8_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 38 'getelementptr' 'A_8_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
+ST_4 : Operation 39 [1/1] (0.00ns)   --->   "%A_9_V_addr = getelementptr [64 x i15]* %A_9_V, i64 0, i64 %zext_ln203_5" [lib/utils.cpp:8]   --->   Operation 39 'getelementptr' 'A_9_V_addr' <Predicate = (!icmp_ln7)> <Delay = 0.00>
 ST_4 : Operation 40 [1/1] (1.14ns)   --->   "switch i4 %f_0, label %branch9 [
     i4 0, label %branch0
     i4 1, label %branch1
@@ -137,26 +137,26 @@ ST_4 : Operation 40 [1/1] (1.14ns)   --->   "switch i4 %f_0, label %branch9 [
     i4 7, label %branch7
     i4 -8, label %branch8
   ]" [lib/utils.cpp:8]   --->   Operation 40 'switch' <Predicate = (!icmp_ln7)> <Delay = 1.14>
-ST_4 : Operation 41 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_8_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 41 'store' <Predicate = (!icmp_ln7 & f_0 == 8)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 42 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 42 'br' <Predicate = (!icmp_ln7 & f_0 == 8)> <Delay = 0.00>
-ST_4 : Operation 43 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_7_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 43 'store' <Predicate = (!icmp_ln7 & f_0 == 7)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 44 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 44 'br' <Predicate = (!icmp_ln7 & f_0 == 7)> <Delay = 0.00>
-ST_4 : Operation 45 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_6_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 45 'store' <Predicate = (!icmp_ln7 & f_0 == 6)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 46 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 46 'br' <Predicate = (!icmp_ln7 & f_0 == 6)> <Delay = 0.00>
-ST_4 : Operation 47 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_5_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 47 'store' <Predicate = (!icmp_ln7 & f_0 == 5)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 48 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 48 'br' <Predicate = (!icmp_ln7 & f_0 == 5)> <Delay = 0.00>
-ST_4 : Operation 49 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_4_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 49 'store' <Predicate = (!icmp_ln7 & f_0 == 4)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 50 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 50 'br' <Predicate = (!icmp_ln7 & f_0 == 4)> <Delay = 0.00>
-ST_4 : Operation 51 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_3_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 51 'store' <Predicate = (!icmp_ln7 & f_0 == 3)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 52 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 52 'br' <Predicate = (!icmp_ln7 & f_0 == 3)> <Delay = 0.00>
-ST_4 : Operation 53 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_2_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 53 'store' <Predicate = (!icmp_ln7 & f_0 == 2)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 54 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 54 'br' <Predicate = (!icmp_ln7 & f_0 == 2)> <Delay = 0.00>
-ST_4 : Operation 55 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_1_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 55 'store' <Predicate = (!icmp_ln7 & f_0 == 1)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 56 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 56 'br' <Predicate = (!icmp_ln7 & f_0 == 1)> <Delay = 0.00>
-ST_4 : Operation 57 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_0_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 57 'store' <Predicate = (!icmp_ln7 & f_0 == 0)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 58 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 58 'br' <Predicate = (!icmp_ln7 & f_0 == 0)> <Delay = 0.00>
-ST_4 : Operation 59 [1/1] (1.56ns)   --->   "store i14 0, i14* %A_9_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 59 'store' <Predicate = (!icmp_ln7 & f_0 != 0 & f_0 != 1 & f_0 != 2 & f_0 != 3 & f_0 != 4 & f_0 != 5 & f_0 != 6 & f_0 != 7 & f_0 != 8)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 14> <Depth = 64> <RAM>
-ST_4 : Operation 60 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi14ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 60 'br' <Predicate = (!icmp_ln7 & f_0 != 0 & f_0 != 1 & f_0 != 2 & f_0 != 3 & f_0 != 4 & f_0 != 5 & f_0 != 6 & f_0 != 7 & f_0 != 8)> <Delay = 0.00>
+ST_4 : Operation 41 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_8_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 41 'store' <Predicate = (!icmp_ln7 & f_0 == 8)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 42 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 42 'br' <Predicate = (!icmp_ln7 & f_0 == 8)> <Delay = 0.00>
+ST_4 : Operation 43 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_7_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 43 'store' <Predicate = (!icmp_ln7 & f_0 == 7)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 44 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 44 'br' <Predicate = (!icmp_ln7 & f_0 == 7)> <Delay = 0.00>
+ST_4 : Operation 45 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_6_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 45 'store' <Predicate = (!icmp_ln7 & f_0 == 6)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 46 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 46 'br' <Predicate = (!icmp_ln7 & f_0 == 6)> <Delay = 0.00>
+ST_4 : Operation 47 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_5_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 47 'store' <Predicate = (!icmp_ln7 & f_0 == 5)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 48 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 48 'br' <Predicate = (!icmp_ln7 & f_0 == 5)> <Delay = 0.00>
+ST_4 : Operation 49 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_4_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 49 'store' <Predicate = (!icmp_ln7 & f_0 == 4)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 50 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 50 'br' <Predicate = (!icmp_ln7 & f_0 == 4)> <Delay = 0.00>
+ST_4 : Operation 51 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_3_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 51 'store' <Predicate = (!icmp_ln7 & f_0 == 3)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 52 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 52 'br' <Predicate = (!icmp_ln7 & f_0 == 3)> <Delay = 0.00>
+ST_4 : Operation 53 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_2_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 53 'store' <Predicate = (!icmp_ln7 & f_0 == 2)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 54 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 54 'br' <Predicate = (!icmp_ln7 & f_0 == 2)> <Delay = 0.00>
+ST_4 : Operation 55 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_1_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 55 'store' <Predicate = (!icmp_ln7 & f_0 == 1)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 56 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 56 'br' <Predicate = (!icmp_ln7 & f_0 == 1)> <Delay = 0.00>
+ST_4 : Operation 57 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_0_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 57 'store' <Predicate = (!icmp_ln7 & f_0 == 0)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 58 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 58 'br' <Predicate = (!icmp_ln7 & f_0 == 0)> <Delay = 0.00>
+ST_4 : Operation 59 [1/1] (1.56ns)   --->   "store i15 0, i15* %A_9_V_addr, align 2" [lib/utils.cpp:8]   --->   Operation 59 'store' <Predicate = (!icmp_ln7 & f_0 != 0 & f_0 != 1 & f_0 != 2 & f_0 != 3 & f_0 != 4 & f_0 != 5 & f_0 != 6 & f_0 != 7 & f_0 != 8)> <Delay = 1.56> <Core = "RAM">   --->   Core 37 'RAM' <Latency = 1> <II = 1> <Delay = 1.56> <Storage> <Opcode : 'load' 'store'> <Ports = 2> <Width = 15> <Depth = 64> <RAM>
+ST_4 : Operation 60 [1/1] (0.00ns)   --->   "br label %_ZN8ap_fixedILi15ELi6EL9ap_q_mode5EL9ap_o_mode3ELi0EEC1Ei.exit19" [lib/utils.cpp:8]   --->   Operation 60 'br' <Predicate = (!icmp_ln7 & f_0 != 0 & f_0 != 1 & f_0 != 2 & f_0 != 3 & f_0 != 4 & f_0 != 5 & f_0 != 6 & f_0 != 7 & f_0 != 8)> <Delay = 0.00>
 ST_4 : Operation 61 [1/1] (0.00ns)   --->   "br label %.preheader" [lib/utils.cpp:7]   --->   Operation 61 'br' <Predicate = (!icmp_ln7)> <Delay = 0.00>
 ST_4 : Operation 62 [1/1] (0.00ns)   --->   "br label %.preheader19"   --->   Operation 62 'br' <Predicate = (icmp_ln7)> <Delay = 0.00>
 
@@ -198,7 +198,7 @@ br_ln6       (br               ) [ 00111]
 ret_ln9      (ret              ) [ 00000]
 row_0        (phi              ) [ 00010]
 icmp_ln6     (icmp             ) [ 00111]
-empty_42     (speclooptripcount) [ 00000]
+empty_38     (speclooptripcount) [ 00000]
 row          (add              ) [ 00111]
 br_ln6       (br               ) [ 00000]
 tmp          (bitconcatenate   ) [ 00000]
@@ -207,7 +207,7 @@ br_ln7       (br               ) [ 00111]
 br_ln0       (br               ) [ 01111]
 col_0        (phi              ) [ 00001]
 icmp_ln7     (icmp             ) [ 00111]
-empty_43     (speclooptripcount) [ 00000]
+empty_39     (speclooptripcount) [ 00000]
 col          (add              ) [ 00111]
 br_ln7       (br               ) [ 00000]
 zext_ln203   (zext             ) [ 00000]
@@ -506,7 +506,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="54" class="1004" name="A_0_V_addr_gep_fu_54">
 <pin_list>
-<pin id="55" dir="0" index="0" bw="14" slack="0"/>
+<pin id="55" dir="0" index="0" bw="15" slack="0"/>
 <pin id="56" dir="0" index="1" bw="1" slack="0"/>
 <pin id="57" dir="0" index="2" bw="8" slack="0"/>
 <pin id="58" dir="1" index="3" bw="6" slack="0"/>
@@ -519,7 +519,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="61" class="1004" name="A_1_V_addr_gep_fu_61">
 <pin_list>
-<pin id="62" dir="0" index="0" bw="14" slack="0"/>
+<pin id="62" dir="0" index="0" bw="15" slack="0"/>
 <pin id="63" dir="0" index="1" bw="1" slack="0"/>
 <pin id="64" dir="0" index="2" bw="8" slack="0"/>
 <pin id="65" dir="1" index="3" bw="6" slack="0"/>
@@ -532,7 +532,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="68" class="1004" name="A_2_V_addr_gep_fu_68">
 <pin_list>
-<pin id="69" dir="0" index="0" bw="14" slack="0"/>
+<pin id="69" dir="0" index="0" bw="15" slack="0"/>
 <pin id="70" dir="0" index="1" bw="1" slack="0"/>
 <pin id="71" dir="0" index="2" bw="8" slack="0"/>
 <pin id="72" dir="1" index="3" bw="6" slack="0"/>
@@ -545,7 +545,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="75" class="1004" name="A_3_V_addr_gep_fu_75">
 <pin_list>
-<pin id="76" dir="0" index="0" bw="14" slack="0"/>
+<pin id="76" dir="0" index="0" bw="15" slack="0"/>
 <pin id="77" dir="0" index="1" bw="1" slack="0"/>
 <pin id="78" dir="0" index="2" bw="8" slack="0"/>
 <pin id="79" dir="1" index="3" bw="6" slack="0"/>
@@ -558,7 +558,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="82" class="1004" name="A_4_V_addr_gep_fu_82">
 <pin_list>
-<pin id="83" dir="0" index="0" bw="14" slack="0"/>
+<pin id="83" dir="0" index="0" bw="15" slack="0"/>
 <pin id="84" dir="0" index="1" bw="1" slack="0"/>
 <pin id="85" dir="0" index="2" bw="8" slack="0"/>
 <pin id="86" dir="1" index="3" bw="6" slack="0"/>
@@ -571,7 +571,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="89" class="1004" name="A_5_V_addr_gep_fu_89">
 <pin_list>
-<pin id="90" dir="0" index="0" bw="14" slack="0"/>
+<pin id="90" dir="0" index="0" bw="15" slack="0"/>
 <pin id="91" dir="0" index="1" bw="1" slack="0"/>
 <pin id="92" dir="0" index="2" bw="8" slack="0"/>
 <pin id="93" dir="1" index="3" bw="6" slack="0"/>
@@ -584,7 +584,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="96" class="1004" name="A_6_V_addr_gep_fu_96">
 <pin_list>
-<pin id="97" dir="0" index="0" bw="14" slack="0"/>
+<pin id="97" dir="0" index="0" bw="15" slack="0"/>
 <pin id="98" dir="0" index="1" bw="1" slack="0"/>
 <pin id="99" dir="0" index="2" bw="8" slack="0"/>
 <pin id="100" dir="1" index="3" bw="6" slack="0"/>
@@ -597,7 +597,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="103" class="1004" name="A_7_V_addr_gep_fu_103">
 <pin_list>
-<pin id="104" dir="0" index="0" bw="14" slack="0"/>
+<pin id="104" dir="0" index="0" bw="15" slack="0"/>
 <pin id="105" dir="0" index="1" bw="1" slack="0"/>
 <pin id="106" dir="0" index="2" bw="8" slack="0"/>
 <pin id="107" dir="1" index="3" bw="6" slack="0"/>
@@ -610,7 +610,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="110" class="1004" name="A_8_V_addr_gep_fu_110">
 <pin_list>
-<pin id="111" dir="0" index="0" bw="14" slack="0"/>
+<pin id="111" dir="0" index="0" bw="15" slack="0"/>
 <pin id="112" dir="0" index="1" bw="1" slack="0"/>
 <pin id="113" dir="0" index="2" bw="8" slack="0"/>
 <pin id="114" dir="1" index="3" bw="6" slack="0"/>
@@ -623,7 +623,7 @@ br_ln0       (br               ) [ 00111]
 
 <comp id="117" class="1004" name="A_9_V_addr_gep_fu_117">
 <pin_list>
-<pin id="118" dir="0" index="0" bw="14" slack="0"/>
+<pin id="118" dir="0" index="0" bw="15" slack="0"/>
 <pin id="119" dir="0" index="1" bw="1" slack="0"/>
 <pin id="120" dir="0" index="2" bw="8" slack="0"/>
 <pin id="121" dir="1" index="3" bw="6" slack="0"/>
@@ -637,9 +637,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="124" class="1004" name="store_ln8_access_fu_124">
 <pin_list>
 <pin id="125" dir="0" index="0" bw="6" slack="0"/>
-<pin id="126" dir="0" index="1" bw="14" slack="0"/>
+<pin id="126" dir="0" index="1" bw="15" slack="0"/>
 <pin id="127" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="128" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="128" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -650,9 +650,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="131" class="1004" name="store_ln8_access_fu_131">
 <pin_list>
 <pin id="132" dir="0" index="0" bw="6" slack="0"/>
-<pin id="133" dir="0" index="1" bw="14" slack="0"/>
+<pin id="133" dir="0" index="1" bw="15" slack="0"/>
 <pin id="134" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="135" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="135" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -663,9 +663,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="138" class="1004" name="store_ln8_access_fu_138">
 <pin_list>
 <pin id="139" dir="0" index="0" bw="6" slack="0"/>
-<pin id="140" dir="0" index="1" bw="14" slack="0"/>
+<pin id="140" dir="0" index="1" bw="15" slack="0"/>
 <pin id="141" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="142" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="142" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -676,9 +676,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="145" class="1004" name="store_ln8_access_fu_145">
 <pin_list>
 <pin id="146" dir="0" index="0" bw="6" slack="0"/>
-<pin id="147" dir="0" index="1" bw="14" slack="0"/>
+<pin id="147" dir="0" index="1" bw="15" slack="0"/>
 <pin id="148" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="149" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="149" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -689,9 +689,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="152" class="1004" name="store_ln8_access_fu_152">
 <pin_list>
 <pin id="153" dir="0" index="0" bw="6" slack="0"/>
-<pin id="154" dir="0" index="1" bw="14" slack="0"/>
+<pin id="154" dir="0" index="1" bw="15" slack="0"/>
 <pin id="155" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="156" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="156" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -702,9 +702,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="159" class="1004" name="store_ln8_access_fu_159">
 <pin_list>
 <pin id="160" dir="0" index="0" bw="6" slack="0"/>
-<pin id="161" dir="0" index="1" bw="14" slack="0"/>
+<pin id="161" dir="0" index="1" bw="15" slack="0"/>
 <pin id="162" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="163" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="163" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -715,9 +715,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="166" class="1004" name="store_ln8_access_fu_166">
 <pin_list>
 <pin id="167" dir="0" index="0" bw="6" slack="0"/>
-<pin id="168" dir="0" index="1" bw="14" slack="0"/>
+<pin id="168" dir="0" index="1" bw="15" slack="0"/>
 <pin id="169" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="170" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="170" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -728,9 +728,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="173" class="1004" name="store_ln8_access_fu_173">
 <pin_list>
 <pin id="174" dir="0" index="0" bw="6" slack="0"/>
-<pin id="175" dir="0" index="1" bw="14" slack="0"/>
+<pin id="175" dir="0" index="1" bw="15" slack="0"/>
 <pin id="176" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="177" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="177" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -741,9 +741,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="180" class="1004" name="store_ln8_access_fu_180">
 <pin_list>
 <pin id="181" dir="0" index="0" bw="6" slack="0"/>
-<pin id="182" dir="0" index="1" bw="14" slack="0"/>
+<pin id="182" dir="0" index="1" bw="15" slack="0"/>
 <pin id="183" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="184" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="184" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>
@@ -754,9 +754,9 @@ br_ln0       (br               ) [ 00111]
 <comp id="187" class="1004" name="store_ln8_access_fu_187">
 <pin_list>
 <pin id="188" dir="0" index="0" bw="6" slack="0"/>
-<pin id="189" dir="0" index="1" bw="14" slack="0"/>
+<pin id="189" dir="0" index="1" bw="15" slack="0"/>
 <pin id="190" dir="0" index="2" bw="0" slack="2147483647"/>
-<pin id="191" dir="1" index="3" bw="14" slack="2147483647"/>
+<pin id="191" dir="1" index="3" bw="15" slack="2147483647"/>
 </pin_list>
 <bind>
 <opcode="store(28) " fcode="store"/>

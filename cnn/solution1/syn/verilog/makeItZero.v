@@ -70,43 +70,43 @@ output   ap_ready;
 output  [5:0] A_0_V_address0;
 output   A_0_V_ce0;
 output   A_0_V_we0;
-output  [13:0] A_0_V_d0;
+output  [14:0] A_0_V_d0;
 output  [5:0] A_1_V_address0;
 output   A_1_V_ce0;
 output   A_1_V_we0;
-output  [13:0] A_1_V_d0;
+output  [14:0] A_1_V_d0;
 output  [5:0] A_2_V_address0;
 output   A_2_V_ce0;
 output   A_2_V_we0;
-output  [13:0] A_2_V_d0;
+output  [14:0] A_2_V_d0;
 output  [5:0] A_3_V_address0;
 output   A_3_V_ce0;
 output   A_3_V_we0;
-output  [13:0] A_3_V_d0;
+output  [14:0] A_3_V_d0;
 output  [5:0] A_4_V_address0;
 output   A_4_V_ce0;
 output   A_4_V_we0;
-output  [13:0] A_4_V_d0;
+output  [14:0] A_4_V_d0;
 output  [5:0] A_5_V_address0;
 output   A_5_V_ce0;
 output   A_5_V_we0;
-output  [13:0] A_5_V_d0;
+output  [14:0] A_5_V_d0;
 output  [5:0] A_6_V_address0;
 output   A_6_V_ce0;
 output   A_6_V_we0;
-output  [13:0] A_6_V_d0;
+output  [14:0] A_6_V_d0;
 output  [5:0] A_7_V_address0;
 output   A_7_V_ce0;
 output   A_7_V_we0;
-output  [13:0] A_7_V_d0;
+output  [14:0] A_7_V_d0;
 output  [5:0] A_8_V_address0;
 output   A_8_V_ce0;
 output   A_8_V_we0;
-output  [13:0] A_8_V_d0;
+output  [14:0] A_8_V_d0;
 output  [5:0] A_9_V_address0;
 output   A_9_V_ce0;
 output   A_9_V_we0;
-output  [13:0] A_9_V_d0;
+output  [14:0] A_9_V_d0;
 
 reg ap_done;
 reg ap_idle;
@@ -433,43 +433,43 @@ end
 
 assign A_0_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_0_V_d0 = 14'd0;
+assign A_0_V_d0 = 15'd0;
 
 assign A_1_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_1_V_d0 = 14'd0;
+assign A_1_V_d0 = 15'd0;
 
 assign A_2_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_2_V_d0 = 14'd0;
+assign A_2_V_d0 = 15'd0;
 
 assign A_3_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_3_V_d0 = 14'd0;
+assign A_3_V_d0 = 15'd0;
 
 assign A_4_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_4_V_d0 = 14'd0;
+assign A_4_V_d0 = 15'd0;
 
 assign A_5_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_5_V_d0 = 14'd0;
+assign A_5_V_d0 = 15'd0;
 
 assign A_6_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_6_V_d0 = 14'd0;
+assign A_6_V_d0 = 15'd0;
 
 assign A_7_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_7_V_d0 = 14'd0;
+assign A_7_V_d0 = 15'd0;
 
 assign A_8_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_8_V_d0 = 14'd0;
+assign A_8_V_d0 = 15'd0;
 
 assign A_9_V_address0 = zext_ln203_5_fu_285_p1;
 
-assign A_9_V_d0 = 14'd0;
+assign A_9_V_d0 = 15'd0;
 
 assign add_ln203_fu_280_p2 = (zext_ln7_reg_315 + zext_ln203_fu_276_p1);
 

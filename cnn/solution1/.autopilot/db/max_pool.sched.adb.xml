@@ -125,10 +125,10 @@
 
 <Node id="12" bw="5" op_0_bw="5" op_1_bw="3" op_2_bw="2">
 <![CDATA[
-:3  %tmp_3 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %feature_V_offset_rea, i2 0)
+:3  %tmp_2 = call i5 @_ssdm_op_BitConcatenate.i5.i3.i2(i3 %feature_V_offset_rea, i2 0)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_3"/></StgValue>
+<StgValue><ssdm name="tmp_2"/></StgValue>
 </operation>
 
 <operation id="11" st_id="1" stage="1" lat="1">
@@ -140,7 +140,7 @@
 
 <Node id="13" bw="8" op_0_bw="5">
 <![CDATA[
-:4  %zext_ln203_1 = zext i5 %tmp_3 to i8
+:4  %zext_ln203_1 = zext i5 %tmp_2 to i8
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln203_1"/></StgValue>
@@ -264,10 +264,10 @@
 
 <Node id="23" bw="4" op_0_bw="4" op_1_bw="5" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-.preheader15.preheader:0  %tmp_10 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %r_0, i32 1, i32 4)
+.preheader15.preheader:0  %tmp_7 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %r_0, i32 1, i32 4)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_10"/></StgValue>
+<StgValue><ssdm name="tmp_7"/></StgValue>
 </operation>
 
 <operation id="20" st_id="2" stage="1" lat="1">
@@ -280,7 +280,7 @@
 
 <Node id="24" bw="9" op_0_bw="4">
 <![CDATA[
-.preheader15.preheader:1  %zext_ln203_2 = zext i4 %tmp_10 to i9
+.preheader15.preheader:1  %zext_ln203_2 = zext i4 %tmp_7 to i9
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln203_2"/></StgValue>
@@ -440,10 +440,10 @@
 
 <Node id="34" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-.preheader15:2  %empty_39 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 12, i64 12, i64 12)
+.preheader15:2  %empty_35 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 12, i64 12, i64 12)
 
 ]]></Node>
-<StgValue><ssdm name="empty_39"/></StgValue>
+<StgValue><ssdm name="empty_35"/></StgValue>
 </operation>
 
 <operation id="31" st_id="3" stage="1" lat="1">
@@ -455,7 +455,7 @@
 
 <Node id="35" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-.preheader15:3  br i1 %icmp_ln42, label %ap_fixed_base.1.exit.preheader, label %3
+.preheader15:3  br i1 %icmp_ln42, label %ap_fixed_base.exit.preheader, label %3
 
 ]]></Node>
 <StgValue><ssdm name="br_ln42"/></StgValue>
@@ -471,7 +471,7 @@
 
 <Node id="37" bw="0" op_0_bw="0">
 <![CDATA[
-ap_fixed_base.1.exit.preheader:0  br label %ap_fixed_base.1.exit
+ap_fixed_base.exit.preheader:0  br label %ap_fixed_base.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln46"/></StgValue>
@@ -519,9 +519,9 @@ ap_fixed_base.1.exit.preheader:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="39" bw="14" op_0_bw="14" op_1_bw="0" op_2_bw="14" op_3_bw="0">
+<Node id="39" bw="15" op_0_bw="15" op_1_bw="0" op_2_bw="15" op_3_bw="0">
 <![CDATA[
-ap_fixed_base.1.exit:0  %pool_0 = phi i14 [ %pool_1, %ap_fixed_base.1.exit.loopexit ], [ 0, %ap_fixed_base.1.exit.preheader ]
+ap_fixed_base.exit:0  %pool_0 = phi i15 [ %pool_1, %ap_fixed_base.exit.loopexit ], [ 0, %ap_fixed_base.exit.preheader ]
 
 ]]></Node>
 <StgValue><ssdm name="pool_0"/></StgValue>
@@ -536,7 +536,7 @@ ap_fixed_base.1.exit:0  %pool_0 = phi i14 [ %pool_1, %ap_fixed_base.1.exit.loope
 
 <Node id="40" bw="2" op_0_bw="2" op_1_bw="0" op_2_bw="2" op_3_bw="0">
 <![CDATA[
-ap_fixed_base.1.exit:1  %pr_0 = phi i2 [ %pr, %ap_fixed_base.1.exit.loopexit ], [ 0, %ap_fixed_base.1.exit.preheader ]
+ap_fixed_base.exit:1  %pr_0 = phi i2 [ %pr, %ap_fixed_base.exit.loopexit ], [ 0, %ap_fixed_base.exit.preheader ]
 
 ]]></Node>
 <StgValue><ssdm name="pr_0"/></StgValue>
@@ -551,7 +551,7 @@ ap_fixed_base.1.exit:1  %pr_0 = phi i2 [ %pr, %ap_fixed_base.1.exit.loopexit ], 
 
 <Node id="41" bw="5" op_0_bw="2">
 <![CDATA[
-ap_fixed_base.1.exit:2  %zext_ln46 = zext i2 %pr_0 to i5
+ap_fixed_base.exit:2  %zext_ln46 = zext i2 %pr_0 to i5
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln46"/></StgValue>
@@ -566,7 +566,7 @@ ap_fixed_base.1.exit:2  %zext_ln46 = zext i2 %pr_0 to i5
 
 <Node id="42" bw="1" op_0_bw="2" op_1_bw="2">
 <![CDATA[
-ap_fixed_base.1.exit:3  %icmp_ln46 = icmp eq i2 %pr_0, -2
+ap_fixed_base.exit:3  %icmp_ln46 = icmp eq i2 %pr_0, -2
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln46"/></StgValue>
@@ -581,10 +581,10 @@ ap_fixed_base.1.exit:3  %icmp_ln46 = icmp eq i2 %pr_0, -2
 
 <Node id="43" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-ap_fixed_base.1.exit:4  %empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)
+ap_fixed_base.exit:4  %empty_36 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)
 
 ]]></Node>
-<StgValue><ssdm name="empty_40"/></StgValue>
+<StgValue><ssdm name="empty_36"/></StgValue>
 </operation>
 
 <operation id="40" st_id="4" stage="1" lat="1">
@@ -596,7 +596,7 @@ ap_fixed_base.1.exit:4  %empty_40 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(
 
 <Node id="44" bw="2" op_0_bw="2" op_1_bw="2">
 <![CDATA[
-ap_fixed_base.1.exit:5  %pr = add i2 %pr_0, 1
+ap_fixed_base.exit:5  %pr = add i2 %pr_0, 1
 
 ]]></Node>
 <StgValue><ssdm name="pr"/></StgValue>
@@ -611,7 +611,7 @@ ap_fixed_base.1.exit:5  %pr = add i2 %pr_0, 1
 
 <Node id="45" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
+ap_fixed_base.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 ]]></Node>
 <StgValue><ssdm name="br_ln46"/></StgValue>
@@ -643,10 +643,10 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="48" bw="10" op_0_bw="10" op_1_bw="5" op_2_bw="5">
 <![CDATA[
-.preheader.preheader:1  %tmp_6 = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %add_ln49, i5 0)
+.preheader.preheader:1  %tmp_5 = call i10 @_ssdm_op_BitConcatenate.i10.i5.i5(i5 %add_ln49, i5 0)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_6"/></StgValue>
+<StgValue><ssdm name="tmp_5"/></StgValue>
 </operation>
 
 <operation id="44" st_id="4" stage="1" lat="1">
@@ -659,7 +659,7 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="49" bw="11" op_0_bw="10">
 <![CDATA[
-.preheader.preheader:2  %zext_ln1494 = zext i10 %tmp_6 to i11
+.preheader.preheader:2  %zext_ln1494 = zext i10 %tmp_5 to i11
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln1494"/></StgValue>
@@ -675,10 +675,10 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="50" bw="8" op_0_bw="8" op_1_bw="5" op_2_bw="3">
 <![CDATA[
-.preheader.preheader:3  %tmp_7 = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %add_ln49, i3 0)
+.preheader.preheader:3  %tmp_6 = call i8 @_ssdm_op_BitConcatenate.i8.i5.i3(i5 %add_ln49, i3 0)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_7"/></StgValue>
+<StgValue><ssdm name="tmp_6"/></StgValue>
 </operation>
 
 <operation id="46" st_id="4" stage="1" lat="1">
@@ -691,7 +691,7 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="51" bw="11" op_0_bw="8">
 <![CDATA[
-.preheader.preheader:4  %zext_ln1494_2 = zext i8 %tmp_7 to i11
+.preheader.preheader:4  %zext_ln1494_2 = zext i8 %tmp_6 to i11
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln1494_2"/></StgValue>
@@ -739,10 +739,10 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="92" bw="4" op_0_bw="4" op_1_bw="5" op_2_bw="32" op_3_bw="32">
 <![CDATA[
-:0  %tmp_11 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %c_0, i32 1, i32 4)
+:0  %tmp_8 = call i4 @_ssdm_op_PartSelect.i4.i5.i32.i32(i5 %c_0, i32 1, i32 4)
 
 ]]></Node>
-<StgValue><ssdm name="tmp_11"/></StgValue>
+<StgValue><ssdm name="tmp_8"/></StgValue>
 </operation>
 
 <operation id="50" st_id="4" stage="1" lat="1">
@@ -755,7 +755,7 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="93" bw="11" op_0_bw="4">
 <![CDATA[
-:1  %zext_ln203_3 = zext i4 %tmp_11 to i11
+:1  %zext_ln203_3 = zext i4 %tmp_8 to i11
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln203_3"/></StgValue>
@@ -801,9 +801,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="96" bw="10" op_0_bw="14" op_1_bw="64" op_2_bw="64">
+<Node id="96" bw="10" op_0_bw="15" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-:4  %pool_feature_V_addr = getelementptr [864 x i14]* %pool_feature_V, i64 0, i64 %zext_ln203_4
+:4  %pool_feature_V_addr = getelementptr [864 x i15]* %pool_feature_V, i64 0, i64 %zext_ln203_4
 
 ]]></Node>
 <StgValue><ssdm name="pool_feature_V_addr"/></StgValue>
@@ -817,9 +817,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="97" bw="0" op_0_bw="14" op_1_bw="10">
+<Node id="97" bw="0" op_0_bw="15" op_1_bw="10">
 <![CDATA[
-:5  store i14 %pool_0, i14* %pool_feature_V_addr, align 2
+:5  store i15 %pool_0, i15* %pool_feature_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="store_ln53"/></StgValue>
@@ -867,9 +867,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="55" bw="14" op_0_bw="14" op_1_bw="0" op_2_bw="14" op_3_bw="0">
+<Node id="55" bw="15" op_0_bw="15" op_1_bw="0" op_2_bw="15" op_3_bw="0">
 <![CDATA[
-.preheader:0  %pool_1 = phi i14 [ %pool_0, %.preheader.preheader ], [ %select_ln49, %._crit_edge ]
+.preheader:0  %pool_1 = phi i15 [ %pool_0, %.preheader.preheader ], [ %select_ln49, %._crit_edge ]
 
 ]]></Node>
 <StgValue><ssdm name="pool_1"/></StgValue>
@@ -929,10 +929,10 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="59" bw="32" op_0_bw="32" op_1_bw="64" op_2_bw="64" op_3_bw="64">
 <![CDATA[
-.preheader:4  %empty_41 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)
+.preheader:4  %empty_37 = call i32 (...)* @_ssdm_op_SpecLoopTripCount(i64 2, i64 2, i64 2)
 
 ]]></Node>
-<StgValue><ssdm name="empty_41"/></StgValue>
+<StgValue><ssdm name="empty_37"/></StgValue>
 </operation>
 
 <operation id="62" st_id="5" stage="1" lat="1">
@@ -959,7 +959,7 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="61" bw="0" op_0_bw="1" op_1_bw="0" op_2_bw="0">
 <![CDATA[
-.preheader:6  br i1 %icmp_ln47, label %ap_fixed_base.1.exit.loopexit, label %._crit_edge
+.preheader:6  br i1 %icmp_ln47, label %ap_fixed_base.exit.loopexit, label %._crit_edge
 
 ]]></Node>
 <StgValue><ssdm name="br_ln47"/></StgValue>
@@ -1037,9 +1037,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="67" bw="10" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="67" bw="10" op_0_bw="14" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-._crit_edge:4  %feature_0_V_addr = getelementptr [576 x i13]* %feature_0_V, i64 0, i64 %sext_ln1494
+._crit_edge:4  %feature_0_V_addr = getelementptr [576 x i14]* %feature_0_V, i64 0, i64 %sext_ln1494
 
 ]]></Node>
 <StgValue><ssdm name="feature_0_V_addr"/></StgValue>
@@ -1053,9 +1053,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="68" bw="10" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="68" bw="10" op_0_bw="14" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-._crit_edge:5  %feature_1_V_addr = getelementptr [576 x i13]* %feature_1_V, i64 0, i64 %sext_ln1494
+._crit_edge:5  %feature_1_V_addr = getelementptr [576 x i14]* %feature_1_V, i64 0, i64 %sext_ln1494
 
 ]]></Node>
 <StgValue><ssdm name="feature_1_V_addr"/></StgValue>
@@ -1069,9 +1069,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="69" bw="10" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="69" bw="10" op_0_bw="14" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-._crit_edge:6  %feature_2_V_addr = getelementptr [576 x i13]* %feature_2_V, i64 0, i64 %sext_ln1494
+._crit_edge:6  %feature_2_V_addr = getelementptr [576 x i14]* %feature_2_V, i64 0, i64 %sext_ln1494
 
 ]]></Node>
 <StgValue><ssdm name="feature_2_V_addr"/></StgValue>
@@ -1085,9 +1085,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="70" bw="10" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="70" bw="10" op_0_bw="14" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-._crit_edge:7  %feature_3_V_addr = getelementptr [576 x i13]* %feature_3_V, i64 0, i64 %sext_ln1494
+._crit_edge:7  %feature_3_V_addr = getelementptr [576 x i14]* %feature_3_V, i64 0, i64 %sext_ln1494
 
 ]]></Node>
 <StgValue><ssdm name="feature_3_V_addr"/></StgValue>
@@ -1101,9 +1101,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="71" bw="10" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="71" bw="10" op_0_bw="14" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-._crit_edge:8  %feature_4_V_addr = getelementptr [576 x i13]* %feature_4_V, i64 0, i64 %sext_ln1494
+._crit_edge:8  %feature_4_V_addr = getelementptr [576 x i14]* %feature_4_V, i64 0, i64 %sext_ln1494
 
 ]]></Node>
 <StgValue><ssdm name="feature_4_V_addr"/></StgValue>
@@ -1117,9 +1117,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="72" bw="10" op_0_bw="13" op_1_bw="64" op_2_bw="64">
+<Node id="72" bw="10" op_0_bw="14" op_1_bw="64" op_2_bw="64">
 <![CDATA[
-._crit_edge:9  %feature_5_V_addr = getelementptr [576 x i13]* %feature_5_V, i64 0, i64 %sext_ln1494
+._crit_edge:9  %feature_5_V_addr = getelementptr [576 x i14]* %feature_5_V, i64 0, i64 %sext_ln1494
 
 ]]></Node>
 <StgValue><ssdm name="feature_5_V_addr"/></StgValue>
@@ -1133,9 +1133,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="73" bw="13" op_0_bw="10">
+<Node id="73" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:10  %feature_0_V_load = load i13* %feature_0_V_addr, align 2
+._crit_edge:10  %feature_0_V_load = load i14* %feature_0_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_0_V_load"/></StgValue>
@@ -1149,9 +1149,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="75" bw="13" op_0_bw="10">
+<Node id="75" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:12  %feature_1_V_load = load i13* %feature_1_V_addr, align 2
+._crit_edge:12  %feature_1_V_load = load i14* %feature_1_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_1_V_load"/></StgValue>
@@ -1165,9 +1165,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="77" bw="13" op_0_bw="10">
+<Node id="77" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:14  %feature_2_V_load = load i13* %feature_2_V_addr, align 2
+._crit_edge:14  %feature_2_V_load = load i14* %feature_2_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_2_V_load"/></StgValue>
@@ -1181,9 +1181,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="79" bw="13" op_0_bw="10">
+<Node id="79" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:16  %feature_3_V_load = load i13* %feature_3_V_addr, align 2
+._crit_edge:16  %feature_3_V_load = load i14* %feature_3_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_3_V_load"/></StgValue>
@@ -1197,9 +1197,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="81" bw="13" op_0_bw="10">
+<Node id="81" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:18  %feature_4_V_load = load i13* %feature_4_V_addr, align 2
+._crit_edge:18  %feature_4_V_load = load i14* %feature_4_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_4_V_load"/></StgValue>
@@ -1213,9 +1213,9 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 </and_exp></or_exp>
 </condition>
 
-<Node id="83" bw="13" op_0_bw="10">
+<Node id="83" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:20  %feature_5_V_load = load i13* %feature_5_V_addr, align 2
+._crit_edge:20  %feature_5_V_load = load i14* %feature_5_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_5_V_load"/></StgValue>
@@ -1231,7 +1231,7 @@ ap_fixed_base.1.exit:6  br i1 %icmp_ln46, label %2, label %.preheader.preheader
 
 <Node id="90" bw="0" op_0_bw="0">
 <![CDATA[
-ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
+ap_fixed_base.exit.loopexit:0  br label %ap_fixed_base.exit
 
 ]]></Node>
 <StgValue><ssdm name="br_ln0"/></StgValue>
@@ -1247,9 +1247,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="73" bw="13" op_0_bw="10">
+<Node id="73" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:10  %feature_0_V_load = load i13* %feature_0_V_addr, align 2
+._crit_edge:10  %feature_0_V_load = load i14* %feature_0_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_0_V_load"/></StgValue>
@@ -1262,9 +1262,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="74" bw="14" op_0_bw="13">
+<Node id="74" bw="15" op_0_bw="14">
 <![CDATA[
-._crit_edge:11  %zext_ln1494_4 = zext i13 %feature_0_V_load to i14
+._crit_edge:11  %zext_ln1494_4 = zext i14 %feature_0_V_load to i15
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln1494_4"/></StgValue>
@@ -1277,9 +1277,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="75" bw="13" op_0_bw="10">
+<Node id="75" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:12  %feature_1_V_load = load i13* %feature_1_V_addr, align 2
+._crit_edge:12  %feature_1_V_load = load i14* %feature_1_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_1_V_load"/></StgValue>
@@ -1292,9 +1292,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="76" bw="14" op_0_bw="13">
+<Node id="76" bw="15" op_0_bw="14">
 <![CDATA[
-._crit_edge:13  %zext_ln1494_5 = zext i13 %feature_1_V_load to i14
+._crit_edge:13  %zext_ln1494_5 = zext i14 %feature_1_V_load to i15
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln1494_5"/></StgValue>
@@ -1307,9 +1307,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="77" bw="13" op_0_bw="10">
+<Node id="77" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:14  %feature_2_V_load = load i13* %feature_2_V_addr, align 2
+._crit_edge:14  %feature_2_V_load = load i14* %feature_2_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_2_V_load"/></StgValue>
@@ -1322,9 +1322,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="78" bw="14" op_0_bw="13">
+<Node id="78" bw="15" op_0_bw="14">
 <![CDATA[
-._crit_edge:15  %zext_ln1494_6 = zext i13 %feature_2_V_load to i14
+._crit_edge:15  %zext_ln1494_6 = zext i14 %feature_2_V_load to i15
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln1494_6"/></StgValue>
@@ -1337,9 +1337,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="79" bw="13" op_0_bw="10">
+<Node id="79" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:16  %feature_3_V_load = load i13* %feature_3_V_addr, align 2
+._crit_edge:16  %feature_3_V_load = load i14* %feature_3_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_3_V_load"/></StgValue>
@@ -1352,9 +1352,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="80" bw="14" op_0_bw="13">
+<Node id="80" bw="15" op_0_bw="14">
 <![CDATA[
-._crit_edge:17  %zext_ln1494_7 = zext i13 %feature_3_V_load to i14
+._crit_edge:17  %zext_ln1494_7 = zext i14 %feature_3_V_load to i15
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln1494_7"/></StgValue>
@@ -1367,9 +1367,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="81" bw="13" op_0_bw="10">
+<Node id="81" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:18  %feature_4_V_load = load i13* %feature_4_V_addr, align 2
+._crit_edge:18  %feature_4_V_load = load i14* %feature_4_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_4_V_load"/></StgValue>
@@ -1382,9 +1382,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="82" bw="14" op_0_bw="13">
+<Node id="82" bw="15" op_0_bw="14">
 <![CDATA[
-._crit_edge:19  %zext_ln1494_8 = zext i13 %feature_4_V_load to i14
+._crit_edge:19  %zext_ln1494_8 = zext i14 %feature_4_V_load to i15
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln1494_8"/></StgValue>
@@ -1397,9 +1397,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="83" bw="13" op_0_bw="10">
+<Node id="83" bw="14" op_0_bw="10">
 <![CDATA[
-._crit_edge:20  %feature_5_V_load = load i13* %feature_5_V_addr, align 2
+._crit_edge:20  %feature_5_V_load = load i14* %feature_5_V_addr, align 2
 
 ]]></Node>
 <StgValue><ssdm name="feature_5_V_load"/></StgValue>
@@ -1412,9 +1412,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="84" bw="14" op_0_bw="13">
+<Node id="84" bw="15" op_0_bw="14">
 <![CDATA[
-._crit_edge:21  %zext_ln1494_9 = zext i13 %feature_5_V_load to i14
+._crit_edge:21  %zext_ln1494_9 = zext i14 %feature_5_V_load to i15
 
 ]]></Node>
 <StgValue><ssdm name="zext_ln1494_9"/></StgValue>
@@ -1427,9 +1427,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="85" bw="14" op_0_bw="14" op_1_bw="14" op_2_bw="14" op_3_bw="14" op_4_bw="14" op_5_bw="14" op_6_bw="14" op_7_bw="3">
+<Node id="85" bw="15" op_0_bw="15" op_1_bw="15" op_2_bw="15" op_3_bw="15" op_4_bw="15" op_5_bw="15" op_6_bw="15" op_7_bw="3">
 <![CDATA[
-._crit_edge:22  %pool_V = call i14 @_ssdm_op_Mux.ap_auto.6i14.i3(i14 %zext_ln1494_4, i14 %zext_ln1494_5, i14 %zext_ln1494_6, i14 %zext_ln1494_7, i14 %zext_ln1494_8, i14 %zext_ln1494_9, i3 %feature_V_offset_rea)
+._crit_edge:22  %pool_V = call i15 @_ssdm_op_Mux.ap_auto.6i15.i3(i15 %zext_ln1494_4, i15 %zext_ln1494_5, i15 %zext_ln1494_6, i15 %zext_ln1494_7, i15 %zext_ln1494_8, i15 %zext_ln1494_9, i3 %feature_V_offset_rea)
 
 ]]></Node>
 <StgValue><ssdm name="pool_V"/></StgValue>
@@ -1442,9 +1442,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="86" bw="1" op_0_bw="14" op_1_bw="14">
+<Node id="86" bw="1" op_0_bw="15" op_1_bw="15">
 <![CDATA[
-._crit_edge:23  %icmp_ln1494 = icmp sgt i14 %pool_V, %pool_1
+._crit_edge:23  %icmp_ln1494 = icmp sgt i15 %pool_V, %pool_1
 
 ]]></Node>
 <StgValue><ssdm name="icmp_ln1494"/></StgValue>
@@ -1457,9 +1457,9 @@ ap_fixed_base.1.exit.loopexit:0  br label %ap_fixed_base.1.exit
 <or_exp><and_exp></and_exp></or_exp>
 </condition>
 
-<Node id="87" bw="14" op_0_bw="1" op_1_bw="14" op_2_bw="14">
+<Node id="87" bw="15" op_0_bw="1" op_1_bw="15" op_2_bw="15">
 <![CDATA[
-._crit_edge:24  %select_ln49 = select i1 %icmp_ln1494, i14 %pool_V, i14 %pool_1
+._crit_edge:24  %select_ln49 = select i1 %icmp_ln1494, i15 %pool_V, i15 %pool_1
 
 ]]></Node>
 <StgValue><ssdm name="select_ln49"/></StgValue>

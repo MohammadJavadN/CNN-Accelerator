@@ -37,11 +37,11 @@ output   ap_idle;
 output   ap_ready;
 output  [7:0] pool_features_V_address0;
 output   pool_features_V_ce0;
-input  [12:0] pool_features_V_q0;
+input  [13:0] pool_features_V_q0;
 output  [7:0] flat_array_V_address0;
 output   flat_array_V_ce0;
 output   flat_array_V_we0;
-output  [12:0] flat_array_V_d0;
+output  [13:0] flat_array_V_d0;
 
 reg ap_done;
 reg ap_idle;
@@ -66,8 +66,8 @@ wire    ap_CS_fsm_state3;
 wire   [7:0] add_ln17_fu_174_p2;
 reg   [7:0] add_ln17_reg_260;
 wire   [0:0] icmp_ln13_fu_162_p2;
-wire   [8:0] tmp_9_cast_fu_189_p3;
-reg   [8:0] tmp_9_cast_reg_265;
+wire   [8:0] tmp_8_cast_fu_189_p3;
+reg   [8:0] tmp_8_cast_reg_265;
 wire   [2:0] c_fu_203_p2;
 reg   [2:0] c_reg_273;
 wire    ap_CS_fsm_state4;
@@ -153,7 +153,7 @@ end
 always @ (posedge ap_clk) begin
     if (((icmp_ln13_fu_162_p2 == 1'd0) & (1'b1 == ap_CS_fsm_state3))) begin
         add_ln17_reg_260 <= add_ln17_fu_174_p2;
-        tmp_9_cast_reg_265[8 : 2] <= tmp_9_cast_fu_189_p3[8 : 2];
+        tmp_8_cast_reg_265[8 : 2] <= tmp_8_cast_fu_189_p3[8 : 2];
     end
 end
 
@@ -273,7 +273,7 @@ assign add_ln17_1_fu_228_p2 = (index_2_reg_110 + 8'd1);
 
 assign add_ln17_fu_174_p2 = (index_1_reg_88 + 8'd4);
 
-assign add_ln203_2_fu_213_p2 = (tmp_9_cast_reg_265 + zext_ln203_6_fu_209_p1);
+assign add_ln203_2_fu_213_p2 = (tmp_8_cast_reg_265 + zext_ln203_6_fu_209_p1);
 
 assign add_ln203_fu_184_p2 = (zext_ln203_fu_180_p1 + zext_ln13_reg_247);
 
@@ -307,7 +307,7 @@ assign pool_features_V_address0 = zext_ln203_7_fu_218_p1;
 
 assign r_fu_168_p2 = (r_0_reg_99 + 3'd1);
 
-assign tmp_9_cast_fu_189_p3 = {{add_ln203_fu_184_p2}, {2'd0}};
+assign tmp_8_cast_fu_189_p3 = {{add_ln203_fu_184_p2}, {2'd0}};
 
 assign tmp_fu_150_p3 = {{f_0_reg_77}, {2'd0}};
 
@@ -324,7 +324,7 @@ assign zext_ln203_fu_180_p1 = r_0_reg_99;
 always @ (posedge ap_clk) begin
     zext_ln13_reg_247[1:0] <= 2'b00;
     zext_ln13_reg_247[6] <= 1'b0;
-    tmp_9_cast_reg_265[1:0] <= 2'b00;
+    tmp_8_cast_reg_265[1:0] <= 2'b00;
 end
 
 endmodule //flattening_layer

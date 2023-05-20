@@ -1,7 +1,7 @@
 # This script segment is generated automatically by AutoPilot
 
-set id 44
-set name cnn_fadd_32ns_32ndEe
+set id 38
+set name cnn_fadd_32ns_32nbkb
 set corename simcore_fadd
 set op fadd
 set stage_num 4
@@ -91,8 +91,8 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 45
-set name cnn_fdiv_32ns_32neOg
+set id 39
+set name cnn_fdiv_32ns_32ncud
 set corename simcore_fdiv
 set op fdiv
 set stage_num 10
@@ -179,8 +179,90 @@ puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your p
 }
 
 
-set id 47
-set name cnn_fexp_32ns_32nfYi
+set id 40
+set name cnn_fpext_32ns_64dEe
+set corename simcore_fpext
+set op fpext
+set stage_num 2
+set max_latency -1
+set registered_input 1
+set Futype4reduceCEFanout 1
+set clk_width 1
+set clk_signed 0
+set reset_width 1
+set reset_signed 0
+set in0_width 32
+set in0_signed 0
+set ce_width 1
+set ce_signed 0
+set out_width 64
+if {${::AESL::PGuard_simmodel_gen}} {
+if {[info proc ap_gen_simcore_fpext] == "ap_gen_simcore_fpext"} {
+eval "ap_gen_simcore_fpext { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    Futype4reduceCEFanout ${Futype4reduceCEFanout} \
+    clk_width ${clk_width} \
+    clk_signed ${clk_signed} \
+    reset_width ${reset_width} \
+    reset_signed ${reset_signed} \
+    in0_width ${in0_width} \
+    in0_signed ${in0_signed} \
+    ce_width ${ce_width} \
+    ce_signed ${ce_signed} \
+    out_width ${out_width} \
+}"
+} else {
+puts "@W \[IMPL-100\] Cannot find ap_gen_simcore_fpext, check your AutoPilot builtin lib"
+}
+}
+
+
+if {${::AESL::PGuard_rtl_comp_handler}} {
+	::AP::rtl_comp_handler ${name}
+}
+
+
+set op fpext
+set corename Float2Double
+if {${::AESL::PGuard_autocg_gen} && (${::AESL::PGuard_autocg_fpip} || ${::AESL::PGuard_autocg_fpv6en} || ${::AESL::PGuard_autocg_hpen})} {
+if {[info proc ::AESL_LIB_XILINX_FPV6::fpv6_gen] == "::AESL_LIB_XILINX_FPV6::fpv6_gen"} {
+eval "::AESL_LIB_XILINX_FPV6::fpv6_gen { \
+    id ${id} \
+    name ${name} \
+    corename ${corename} \
+    op ${op} \
+    reset_level 1 \
+    sync_rst true \
+    stage_num ${stage_num} \
+    max_latency ${max_latency} \
+    registered_input ${registered_input} \
+    Futype4reduceCEFanout ${Futype4reduceCEFanout} \
+    clk_width ${clk_width} \
+    clk_signed ${clk_signed} \
+    reset_width ${reset_width} \
+    reset_signed ${reset_signed} \
+    in0_width ${in0_width} \
+    in0_signed ${in0_signed} \
+    ce_width ${ce_width} \
+    ce_signed ${ce_signed} \
+    out_width ${out_width} \
+}"
+} else {
+puts "@W \[IMPL-101\] Cannot find ::AESL_LIB_XILINX_FPV6::fpv6_gen, check your platform lib"
+}
+}
+
+
+set id 41
+set name cnn_fexp_32ns_32neOg
 set corename simcore_fexp
 set op fexp
 set stage_num 8
@@ -281,7 +363,7 @@ if {${::AESL::PGuard_autoexp_gen}} {
 if {${::AESL::PGuard_autoexp_gen}} {
 if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
 eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 51 \
+    id 46 \
     name dense_array \
     reset_level 1 \
     sync_rst true \
@@ -296,21 +378,21 @@ puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored ge
 }
 
 
-# XIL_BRAM:
+# Native AXIS:
 if {${::AESL::PGuard_autoexp_gen}} {
-if {[info proc ::AESL_LIB_XILADAPTER::xil_bram_gen] == "::AESL_LIB_XILADAPTER::xil_bram_gen"} {
-eval "::AESL_LIB_XILADAPTER::xil_bram_gen { \
-    id 52 \
-    name pred_V \
+if {[info proc ::AESL_LIB_XILADAPTER::native_axis_add] == "::AESL_LIB_XILADAPTER::native_axis_add"} {
+eval "::AESL_LIB_XILADAPTER::native_axis_add { \
+    id 47 \
+    name pred_V_V \
     reset_level 1 \
     sync_rst true \
-    dir O \
-    corename pred_V \
+    corename {} \
+    metadata {  } \
     op interface \
-    ports { pred_V_address0 { O 4 vector } pred_V_ce0 { O 1 bit } pred_V_we0 { O 1 bit } pred_V_d0 { O 14 vector } } \
+    ports { pred_V_V_TDATA { O 16 vector } pred_V_V_TVALID { O 1 bit } pred_V_V_TREADY { I 1 bit } } \
 } "
 } else {
-puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'pred_V'"
+puts "@W \[IMPL-110\] Cannot find bus interface model in the library. Ignored generation of bus interface for 'pred_V_V'"
 }
 }
 

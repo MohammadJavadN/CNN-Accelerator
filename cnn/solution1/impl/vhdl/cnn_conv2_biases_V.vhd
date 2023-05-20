@@ -8,7 +8,7 @@ use ieee.std_logic_unsigned.all;
 
 entity cnn_conv2_biases_V_rom is 
     generic(
-             DWIDTH     : integer := 9; 
+             DWIDTH     : integer := 10; 
              AWIDTH     : integer := 4; 
              MEM_SIZE    : integer := 10
     ); 
@@ -26,9 +26,9 @@ architecture rtl of cnn_conv2_biases_V_rom is
 signal addr0_tmp : std_logic_vector(AWIDTH-1 downto 0); 
 type mem_array is array (0 to MEM_SIZE-1) of std_logic_vector (DWIDTH-1 downto 0); 
 signal mem : mem_array := (
-    0 => "111011101", 1 => "000010000", 2 => "000101010", 3 => "000110100", 
-    4 => "000001110", 5 => "110111010", 6 => "111101000", 7 => "110111010", 
-    8 => "101110010", 9 => "110110011" );
+    0 => "1110111011", 1 => "0000100000", 2 => "0001010100", 3 => "0001101001", 
+    4 => "0000011100", 5 => "1101110100", 6 => "1111010000", 7 => "1101110101", 
+    8 => "1011100100", 9 => "1101100111" );
 
 attribute syn_rom_style : string;
 attribute syn_rom_style of mem : signal is "select_rom";
@@ -66,7 +66,7 @@ use IEEE.std_logic_1164.all;
 
 entity cnn_conv2_biases_V is
     generic (
-        DataWidth : INTEGER := 9;
+        DataWidth : INTEGER := 10;
         AddressRange : INTEGER := 10;
         AddressWidth : INTEGER := 4);
     port (
